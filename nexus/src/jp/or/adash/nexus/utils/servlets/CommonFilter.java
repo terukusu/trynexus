@@ -11,7 +11,8 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
 /**
- * Servlet Filter implementation class CommonFilter
+ * サーブレットを呼び出す際の共通の初期処理を行うサーブレットフィルター
+ * @author T.Kawasaki
  */
 @WebFilter("/*")
 public class CommonFilter implements Filter {
@@ -20,7 +21,7 @@ public class CommonFilter implements Filter {
      * Default constructor.
      */
     public CommonFilter() {
-        // TODO Auto-generated constructor stub
+
     }
 
 	/**
