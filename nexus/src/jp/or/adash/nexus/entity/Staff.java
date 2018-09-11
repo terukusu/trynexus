@@ -1,7 +1,25 @@
 package jp.or.adash.nexus.entity;
 import java.sql.Timestamp;
 
+/**
+ * 職業紹介者マスタのEntityクラス
+ * @author pgjavaAT
+ *
+ */
 public class Staff {
+
+	/**
+	 * id 職業紹介者ID
+	 * name 職業紹介者氏名
+	 * kana 氏名（カナ）
+	 * authority 権限
+	 * password パスワード
+	 * createdt 新規登録日
+	 * createuserid 新規登録ユーザー
+	 * updatedt 最終更新日
+	 * updateuserid 最終更新ユーザー
+	 * deleteflag  削除フラグ
+	 */
 	private String id;
 	private String name;
 	private String kana;
@@ -28,6 +46,7 @@ public class Staff {
 	}
 
 	/**
+	 * 職業紹介者IDを返す
 	 * @return id
 	 */
 	public String getId() {
@@ -35,6 +54,7 @@ public class Staff {
 	}
 
 	/**
+	 * 職業紹介者氏名を返す
 	 * @return name
 	 */
 	public String getName() {
@@ -42,6 +62,7 @@ public class Staff {
 	}
 
 	/**
+	 * 氏名（カナ）を返す
 	 * @return kana
 	 */
 	public String getKana() {
@@ -49,6 +70,7 @@ public class Staff {
 	}
 
 	/**
+	 * 権限を返す
 	 * @return authority
 	 */
 	public String getAuthority() {
@@ -56,6 +78,7 @@ public class Staff {
 	}
 
 	/**
+	 * パスワードを返す
 	 * @return password
 	 */
 	public String getPassword() {
@@ -63,6 +86,7 @@ public class Staff {
 	}
 
 	/**
+	 * 新規登録日を返す
 	 * @return createdt
 	 */
 	public Timestamp getCreatedt() {
@@ -70,6 +94,7 @@ public class Staff {
 	}
 
 	/**
+	 * 新規登録ユーザーを返す
 	 * @return createuserid
 	 */
 	public String getCreateuserid() {
@@ -77,6 +102,7 @@ public class Staff {
 	}
 
 	/**
+	 * 最終更新日を返す
 	 * @return updatedt
 	 */
 	public Timestamp getUpdatedt() {
@@ -84,6 +110,7 @@ public class Staff {
 	}
 
 	/**
+	 * 最終更新ユーザーを返す
 	 * @return updateuserid
 	 */
 	public String getUpdateuserid() {
@@ -91,6 +118,7 @@ public class Staff {
 	}
 
 	/**
+	 * 削除フラグを返す
 	 * @return deleteflag
 	 */
 	public String getDeleteflag() {
