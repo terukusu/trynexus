@@ -9,13 +9,21 @@ public class Character {
 		this.character = character;
 	}
 
+	/**
+	 * @return id
+	 */
 	public int getId() {
 		return id;
 	}
 
+	/**
+	 * @return character
+	 */
 	public String getCharacter() {
 		return character;
 	}
+
+
 
 
 }

@@ -129,229 +129,399 @@ public class Kyujin {
 		this.deleteflag = deleteflag;
 	}
 
+	/**
+	 * @return no
+	 */
 	public String getNo() {
 		return no;
 	}
 
+	/**
+	 * @return receptiondt
+	 */
 	public Date getReceptiondt() {
 		return receptiondt;
 	}
 
+	/**
+	 * @return perioddt
+	 */
 	public Date getPerioddt() {
 		return perioddt;
 	}
 
+	/**
+	 * @return companyno
+	 */
 	public String getCompanyno() {
 		return companyno;
 	}
 
+	/**
+	 * @return jobsmallcd1
+	 */
 	public String getJobsmallcd1() {
 		return jobsmallcd1;
 	}
 
+	/**
+	 * @return jobsmallcd2
+	 */
 	public String getJobsmallcd2() {
 		return jobsmallcd2;
 	}
 
+	/**
+	 * @return jobsmallcd3
+	 */
 	public String getJobsmallcd3() {
 		return jobsmallcd3;
 	}
 
+	/**
+	 * @return joblargecd1
+	 */
 	public String getJoblargecd1() {
 		return joblargecd1;
 	}
 
+	/**
+	 * @return joblargecd2
+	 */
 	public String getJoblargecd2() {
 		return joblargecd2;
 	}
 
+	/**
+	 * @return joblargecd3
+	 */
 	public String getJoblargecd3() {
 		return joblargecd3;
 	}
 
+	/**
+	 * @return jobcategorysmallcd
+	 */
 	public String getJobcategorysmallcd() {
 		return jobcategorysmallcd;
 	}
 
+	/**
+	 * @return jobcategorylargecd
+	 */
 	public String getJobcategorylargecd() {
 		return jobcategorylargecd;
 	}
 
+	/**
+	 * @return jobcategory
+	 */
 	public String getJobcategory() {
 		return jobcategory;
 	}
 
+	/**
+	 * @return companykana
+	 */
 	public String getCompanykana() {
 		return companykana;
 	}
 
+	/**
+	 * @return companyname
+	 */
 	public String getCompanyname() {
 		return companyname;
 	}
 
+	/**
+	 * @return companypostal
+	 */
 	public String getCompanypostal() {
 		return companypostal;
 	}
 
+	/**
+	 * @return companyplace
+	 */
 	public String getCompanyplace() {
 		return companyplace;
 	}
 
+	/**
+	 * @return companyurl
+	 */
 	public String getCompanyurl() {
 		return companyurl;
 	}
 
+	/**
+	 * @return postal
+	 */
 	public String getPostal() {
 		return postal;
 	}
 
+	/**
+	 * @return adress
+	 */
 	public String getAdress() {
 		return adress;
 	}
 
+	/**
+	 * @return nearstation
+	 */
 	public String getNearstation() {
 		return nearstation;
 	}
 
+	/**
+	 * @return job
+	 */
 	public String getJob() {
 		return job;
 	}
 
+	/**
+	 * @return hakencd
+	 */
 	public int getHakencd() {
 		return hakencd;
 	}
 
+	/**
+	 * @return detail
+	 */
 	public String getDetail() {
 		return detail;
 	}
 
+	/**
+	 * @return koyoukeitaicd
+	 */
 	public String getKoyoukeitaicd() {
 		return koyoukeitaicd;
 	}
 
+	/**
+	 * @return koyoukikan
+	 */
 	public String getKoyoukikan() {
 		return koyoukikan;
 	}
 
+	/**
+	 * @return koyoukikankaishi
+	 */
 	public Date getKoyoukikankaishi() {
 		return koyoukikankaishi;
 	}
 
+	/**
+	 * @return koyoukikanowari
+	 */
 	public Date getKoyoukikanowari() {
 		return koyoukikanowari;
 	}
 
+	/**
+	 * @return education
+	 */
 	public String getEducation() {
 		return education;
 	}
 
+	/**
+	 * @return experience
+	 */
 	public String getExperience() {
 		return experience;
 	}
 
+	/**
+	 * @return license
+	 */
 	public String getLicense() {
 		return license;
 	}
 
+	/**
+	 * @return agemin
+	 */
 	public int getAgemin() {
 		return agemin;
 	}
 
+	/**
+	 * @return agemax
+	 */
 	public int getAgemax() {
 		return agemax;
 	}
 
+	/**
+	 * @return salarymin
+	 */
 	public int getSalarymin() {
 		return salarymin;
 	}
 
+	/**
+	 * @return salarymax
+	 */
 	public int getSalarymax() {
 		return salarymax;
 	}
 
+	/**
+	 * @return salaryformcd
+	 */
 	public String getSalaryformcd() {
 		return salaryformcd;
 	}
 
+	/**
+	 * @return begintime
+	 */
 	public int getBegintime() {
 		return begintime;
 	}
 
+	/**
+	 * @return endtime
+	 */
 	public int getEndtime() {
 		return endtime;
 	}
 
+	/**
+	 * @return establishdt
+	 */
 	public int getEstablishdt() {
 		return establishdt;
 	}
 
+	/**
+	 * @return capital
+	 */
 	public long getCapital() {
 		return capital;
 	}
 
+	/**
+	 * @return companyfeature
+	 */
 	public String getCompanyfeature() {
 		return companyfeature;
 	}
 
+	/**
+	 * @return tantouyakushoku
+	 */
 	public String getTantouyakushoku() {
 		return tantouyakushoku;
 	}
 
+	/**
+	 * @return tantoukana
+	 */
 	public String getTantoukana() {
 		return tantoukana;
 	}
 
+	/**
+	 * @return tantou
+	 */
 	public String getTantou() {
 		return tantou;
 	}
 
+	/**
+	 * @return tantoustaff_id
+	 */
 	public String getTantoustaff_id() {
 		return tantoustaff_id;
 	}
 
+	/**
+	 * @return applicationform
+	 */
 	public String getApplicationform() {
 		return applicationform;
 	}
 
+	/**
+	 * @return background
+	 */
 	public String getBackground() {
 		return background;
 	}
 
+	/**
+	 * @return hiddensex
+	 */
 	public String getHiddensex() {
 		return hiddensex;
 	}
 
+	/**
+	 * @return hiddenagemin
+	 */
 	public int getHiddenagemin() {
 		return hiddenagemin;
 	}
 
+	/**
+	 * @return hiddenagemax
+	 */
 	public int getHiddenagemax() {
 		return hiddenagemax;
 	}
 
+	/**
+	 * @return hiddenetc
+	 */
 	public String getHiddenetc() {
 		return hiddenetc;
 	}
 
+	/**
+	 * @return createdt
+	 */
 	public Timestamp getCreatedt() {
 		return createdt;
 	}
 
+	/**
+	 * @return createuserid
+	 */
 	public String getCreateuserid() {
 		return createuserid;
 	}
 
+	/**
+	 * @return upDatedt
+	 */
 	public Timestamp getUpDatedt() {
 		return upDatedt;
 	}
 
+	/**
+	 * @return upDateuserid
+	 */
 	public String getUpDateuserid() {
 		return upDateuserid;
 	}
 
+	/**
+	 * @return deleteflag
+	 */
 	public String getDeleteflag() {
 		return deleteflag;
 	}
+
+
 
 
 

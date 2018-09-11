@@ -27,45 +27,76 @@ public class Staff {
 		this.deleteflag = deleteflag;
 	}
 
+	/**
+	 * @return id
+	 */
 	public String getId() {
 		return id;
 	}
 
+	/**
+	 * @return name
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * @return kana
+	 */
 	public String getKana() {
 		return kana;
 	}
 
+	/**
+	 * @return authority
+	 */
 	public String getAuthority() {
 		return authority;
 	}
 
+	/**
+	 * @return password
+	 */
 	public String getPassword() {
 		return password;
 	}
 
+	/**
+	 * @return createdt
+	 */
 	public Timestamp getCreatedt() {
 		return createdt;
 	}
 
+	/**
+	 * @return createuserid
+	 */
 	public String getCreateuserid() {
 		return createuserid;
 	}
 
+	/**
+	 * @return updatedt
+	 */
 	public Timestamp getUpdatedt() {
 		return updatedt;
 	}
 
+	/**
+	 * @return updateuserid
+	 */
 	public String getUpdateuserid() {
 		return updateuserid;
 	}
 
+	/**
+	 * @return deleteflag
+	 */
 	public String getDeleteflag() {
 		return deleteflag;
 	}
+
 
 
 	}

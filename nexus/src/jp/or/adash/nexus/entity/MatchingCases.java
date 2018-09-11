@@ -33,50 +33,86 @@ public class MatchingCases {
 		this.upDateuserid = upDateuserid;
 	}
 
+	/**
+	 * @return id
+	 */
 	public int getId() {
 		return id;
 	}
 
+	/**
+	 * @return kyujinno
+	 */
 	public String getKyujinno() {
 		return kyujinno;
 	}
 
+	/**
+	 * @return jobseekerid
+	 */
 	public String getJobseekerid() {
 		return jobseekerid;
 	}
 
+	/**
+	 * @return staffid
+	 */
 	public String getStaffid() {
 		return staffid;
 	}
 
+	/**
+	 * @return interviewdt
+	 */
 	public Date getInterviewdt() {
 		return interviewdt;
 	}
 
+	/**
+	 * @return enterdt
+	 */
 	public Date getEnterdt() {
 		return enterdt;
 	}
 
+	/**
+	 * @return assessment
+	 */
 	public String getAssessment() {
 		return assessment;
 	}
 
+	/**
+	 * @return note
+	 */
 	public String getNote() {
 		return note;
 	}
 
+	/**
+	 * @return createdt
+	 */
 	public Timestamp getCreatedt() {
 		return createdt;
 	}
 
+	/**
+	 * @return createuserid
+	 */
 	public String getCreateuserid() {
 		return createuserid;
 	}
 
+	/**
+	 * @return upDatedt
+	 */
 	public Timestamp getUpDatedt() {
 		return upDatedt;
 	}
 
+	/**
+	 * @return upDateuserid
+	 */
 	public String getUpDateuserid() {
 		return upDateuserid;
 	}

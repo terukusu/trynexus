@@ -13,18 +13,30 @@ public class JobCategory {
 		this.name = name;
 	}
 
+	/**
+	 * @return largecd
+	 */
 	public String getLargecd() {
 		return largecd;
 	}
 
+	/**
+	 * @return middlecd
+	 */
 	public String getMiddlecd() {
 		return middlecd;
 	}
 
+	/**
+	 * @return smallcd
+	 */
 	public String getSmallcd() {
 		return smallcd;
 	}
 
+	/**
+	 * @return name
+	 */
 	public String getName() {
 		return name;
 	}
