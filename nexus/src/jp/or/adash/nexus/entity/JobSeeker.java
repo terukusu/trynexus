@@ -1,8 +1,53 @@
 package jp.or.adash.nexus.entity;
+
 import java.sql.Date;
 import java.sql.Timestamp;
 
+/**
+ * 求職者マスタのEntityクラス
+ * @author pgjavaAT
+ *
+ */
 public class JobSeeker {
+	/**
+	 * id 求職者ID
+	* name 求職者氏名
+	* kana 氏名（カナ）
+	* birthdt 生年月日
+	* sex 性別
+	* age 年齢
+	* postal 自宅郵便番号
+	* address 自宅住所
+	* nearstation 最寄り駅
+	* phone 自宅TEL
+	* mobile 携帯TEL
+	* partner 配偶者
+	* huyou 扶養家族
+	* education 学歴
+	* hopejob1 希望職種１
+	* hopejob2 希望職種２
+	* hopejob3 希望職種３
+	* hopejobcategory 希望業種
+	* hopeworkplace 希望勤務地
+	* hopekoyoukeitai 希望雇用形態
+	* hopeworkingdate 希望勤務日時
+	* hopebegintime 希望勤務時間（開始）
+	* hopeendtime 希望勤務時間（終了）
+	* hopesalary 希望月給
+	* hopejikyu 希望時間給
+	* hopeetc その他希望
+	* driverlicense 自動車免許
+	* licenseetc その他免許
+	* pasokonskill パソコンスキル
+	* caution 留意点
+	* tantoustaffid 担当職業紹介者ID
+	* password パスワード
+	* createdt 新規登録日
+	* createuserid 新規登録ユーザー
+	* updatedt 最終更新日
+	* updateuserid 最終更新ユーザー
+	* deleteflag 削除フラグ
+	 */
 	private String id;
 	private String name;
 	private String kana;
@@ -89,6 +134,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 求職者IDを返す
 	 * @return id
 	 */
 	public String getId() {
@@ -96,6 +142,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 求職者氏名を返す
 	 * @return name
 	 */
 	public String getName() {
@@ -103,6 +150,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 氏名（カナ）を返す
 	 * @return kana
 	 */
 	public String getKana() {
@@ -110,6 +158,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 生年月日を返す
 	 * @return birthdt
 	 */
 	public Date getBirthdt() {
@@ -117,6 +166,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 性別を返す
 	 * @return sex
 	 */
 	public String getSex() {
@@ -124,6 +174,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 年齢を返す
 	 * @return age
 	 */
 	public int getAge() {
@@ -131,6 +182,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 自宅郵便番号を返す
 	 * @return postal
 	 */
 	public String getPostal() {
@@ -138,6 +190,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 自宅住所を返す
 	 * @return address
 	 */
 	public String getAddress() {
@@ -145,6 +198,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 最寄り駅を返す
 	 * @return nearstation
 	 */
 	public String getNearstation() {
@@ -152,6 +206,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 自宅TELを返す
 	 * @return phone
 	 */
 	public String getPhone() {
@@ -159,6 +214,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 携帯TELを返す
 	 * @return mobile
 	 */
 	public String getMobile() {
@@ -166,6 +222,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 配偶者を返す
 	 * @return partner
 	 */
 	public String getPartner() {
@@ -173,6 +230,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 扶養家族を返す
 	 * @return huyou
 	 */
 	public int getHuyou() {
@@ -180,6 +238,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 学歴を返す
 	 * @return education
 	 */
 	public String getEducation() {
@@ -187,6 +246,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 希望職種１を返す
 	 * @return hopejob1
 	 */
 	public String getHopejob1() {
@@ -194,6 +254,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 希望職種２を返す
 	 * @return hopejob2
 	 */
 	public String getHopejob2() {
@@ -201,6 +262,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 希望職種３を返す
 	 * @return hopejob3
 	 */
 	public String getHopejob3() {
@@ -208,6 +270,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 希望業種を返す
 	 * @return hopejobcategory
 	 */
 	public String getHopejobcategory() {
@@ -215,6 +278,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 希望勤務地を返す
 	 * @return hopeworkplace
 	 */
 	public String getHopeworkplace() {
@@ -222,6 +286,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 希望雇用形態を返す
 	 * @return hopekoyoukeitai
 	 */
 	public String getHopekoyoukeitai() {
@@ -229,6 +294,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 希望勤務日時を返す
 	 * @return hopeworkingDate
 	 */
 	public int getHopeworkingDate() {
@@ -236,6 +302,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 希望勤務時間（開始）を返す
 	 * @return hopebegintime
 	 */
 	public int getHopebegintime() {
@@ -243,6 +310,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 希望勤務時間（終了）を返す
 	 * @return hopeendtime
 	 */
 	public int getHopeendtime() {
@@ -250,6 +318,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 希望月給を返す
 	 * @return hopesalary
 	 */
 	public int getHopesalary() {
@@ -257,6 +326,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 希望時間給を返す
 	 * @return hopejikyu
 	 */
 	public int getHopejikyu() {
@@ -264,6 +334,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * その他希望を返す
 	 * @return hopeetc
 	 */
 	public String getHopeetc() {
@@ -271,6 +342,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 自動車免許を返す
 	 * @return driverlicense
 	 */
 	public String getDriverlicense() {
@@ -278,6 +350,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * その他免許を返す
 	 * @return licenseetc
 	 */
 	public String getLicenseetc() {
@@ -285,6 +358,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * パソコンスキルを返す
 	 * @return pasokonskill
 	 */
 	public String getPasokonskill() {
@@ -292,6 +366,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 留意点を返す
 	 * @return caution
 	 */
 	public String getCaution() {
@@ -299,6 +374,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 担当職業紹介者IDを返す
 	 * @return tantoustaffid
 	 */
 	public String getTantoustaffid() {
@@ -306,6 +382,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * パスワードを返す
 	 * @return password
 	 */
 	public String getPassword() {
@@ -313,6 +390,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 新規登録日を返す
 	 * @return createdt
 	 */
 	public Timestamp getCreatedt() {
@@ -320,6 +398,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 新規登録ユーザーを返す
 	 * @return createuserid
 	 */
 	public String getCreateuserid() {
@@ -327,6 +406,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 最終更新日を返す
 	 * @return upDatedt
 	 */
 	public Timestamp getUpDatedt() {
@@ -334,6 +414,7 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 最終更新ユーザーを返す
 	 * @return upDateuserid
 	 */
 	public String getUpDateuserid() {
@@ -341,12 +422,11 @@ public class JobSeeker {
 	}
 
 	/**
+	 * 削除フラグを返す
 	 * @return deleteflag
 	 */
 	public String getDeleteflag() {
 		return deleteflag;
 	}
 
-
 }
-

@@ -1,8 +1,29 @@
 package jp.or.adash.nexus.entity;
+
 import java.sql.Date;
 import java.sql.Timestamp;
 
+/**
+ * マッチング事例マスタのEntityクラス
+ * @author pgjavaAT
+ *
+ */
 public class MatchingCases {
+
+	/**
+	 * id マッチング事例ID
+	* kyujinno 求人NO
+	* jobseekerid 求職者ID
+	* staffid 職業紹介者ID
+	* interviewdt 面接日
+	* enterdt 入社日
+	* assessment 評価
+	* note 備考
+	* createdt 新規登録日
+	* createuserid 新規登録ユーザー
+	* updatedt 最終更新日
+	* updateuserid 最終更新ユーザー
+	 */
 	private int id;
 	private String kyujinno;
 	private String jobseekerid;
@@ -34,6 +55,7 @@ public class MatchingCases {
 	}
 
 	/**
+	 * マッチング事例IDを返す
 	 * @return id
 	 */
 	public int getId() {
@@ -41,6 +63,7 @@ public class MatchingCases {
 	}
 
 	/**
+	 * 求人NOを返す
 	 * @return kyujinno
 	 */
 	public String getKyujinno() {
@@ -48,6 +71,7 @@ public class MatchingCases {
 	}
 
 	/**
+	 * 求職者IDを返す
 	 * @return jobseekerid
 	 */
 	public String getJobseekerid() {
@@ -55,6 +79,7 @@ public class MatchingCases {
 	}
 
 	/**
+	 * 職業紹介者IDを返す
 	 * @return staffid
 	 */
 	public String getStaffid() {
@@ -62,6 +87,7 @@ public class MatchingCases {
 	}
 
 	/**
+	 * 面接日を返す
 	 * @return interviewdt
 	 */
 	public Date getInterviewdt() {
@@ -69,6 +95,7 @@ public class MatchingCases {
 	}
 
 	/**
+	 * 入社日を返す
 	 * @return enterdt
 	 */
 	public Date getEnterdt() {
@@ -76,6 +103,7 @@ public class MatchingCases {
 	}
 
 	/**
+	 * 評価を返す
 	 * @return assessment
 	 */
 	public String getAssessment() {
@@ -83,6 +111,7 @@ public class MatchingCases {
 	}
 
 	/**
+	 * 備考を返す
 	 * @return note
 	 */
 	public String getNote() {
@@ -90,6 +119,7 @@ public class MatchingCases {
 	}
 
 	/**
+	 * 新規登録日を返す
 	 * @return createdt
 	 */
 	public Timestamp getCreatedt() {
@@ -97,6 +127,7 @@ public class MatchingCases {
 	}
 
 	/**
+	 * 新規登録ユーザーを返す
 	 * @return createuserid
 	 */
 	public String getCreateuserid() {
@@ -104,6 +135,7 @@ public class MatchingCases {
 	}
 
 	/**
+	 * 最終更新日を返す
 	 * @return upDatedt
 	 */
 	public Timestamp getUpDatedt() {
@@ -111,11 +143,11 @@ public class MatchingCases {
 	}
 
 	/**
+	 * 最終更新ユーザーを返す
 	 * @return upDateuserid
 	 */
 	public String getUpDateuserid() {
 		return upDateuserid;
 	}
-
 
 }

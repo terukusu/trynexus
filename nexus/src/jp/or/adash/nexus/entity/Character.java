@@ -1,6 +1,16 @@
 package jp.or.adash.nexus.entity;
 
+/**
+ * 特性マスタのEntityクラス
+ * @author pgjavaAT
+ *
+ */
 public class Character {
+
+	/**
+	 * id 特性ID
+  	* character 特性
+	 */
 	private int id;
 	private String character;
 
@@ -10,6 +20,7 @@ public class Character {
 	}
 
 	/**
+	 * 特性IDを返す
 	 * @return id
 	 */
 	public int getId() {
@@ -17,13 +28,11 @@ public class Character {
 	}
 
 	/**
+	 * 特性を返す
 	 * @return character
 	 */
 	public String getCharacter() {
 		return character;
 	}
-
-
-
 
 }

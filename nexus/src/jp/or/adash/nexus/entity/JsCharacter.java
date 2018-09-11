@@ -1,6 +1,16 @@
 package jp.or.adash.nexus.entity;
 
+/**
+ * 求職者特性マスタのEntityクラス
+ * @author pgjavaAT
+ *
+ */
 public class JsCharacter {
+
+	/**
+	 * jobseekerid 求職者ID
+	* characterid 特性ID
+	 */
 	private char jobseekerid;
 	private int characterid;
 
@@ -10,6 +20,7 @@ public class JsCharacter {
 	}
 
 	/**
+	 * 求職者IDを返す
 	 * @return jobseekerid
 	 */
 	public char getJobseekerid() {
@@ -17,6 +28,7 @@ public class JsCharacter {
 	}
 
 	/**
+	 * 特性IDを返す
 	 * @return characterid
 	 */
 	public int getCharacterid() {
