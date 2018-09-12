@@ -1,5 +1,5 @@
 package jp.or.adash.nexus.entity;
-import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * 職業紹介者マスタのEntityクラス
@@ -25,14 +25,14 @@ public class Staff {
 	private String kana;
 	private String authority;
 	private String password;
-	private Timestamp createdt;
+	private Date createdt;
 	private String createuserid;
-	private Timestamp updatedt;
+	private Date updatedt;
 	private String updateuserid;
 	private String deleteflag;
 
-	public Staff(String id, String name, String kana, String authority, String password, Timestamp createdt,
-			String createuserid, Timestamp updatedt, String updateuserid, String deleteflag) {
+	public Staff(String id, String name, String kana, String authority, String password, Date createdt,
+			String createuserid, Date updatedt, String updateuserid, String deleteflag) {
 		this.id = id;
 		this.name = name;
 		this.kana = kana;
@@ -89,7 +89,7 @@ public class Staff {
 	 * 新規登録日を返す
 	 * @return createdt
 	 */
-	public Timestamp getCreatedt() {
+	public Date getCreatedt() {
 		return createdt;
 	}
 
@@ -105,7 +105,7 @@ public class Staff {
 	 * 最終更新日を返す
 	 * @return updatedt
 	 */
-	public Timestamp getUpdatedt() {
+	public Date getUpdatedt() {
 		return updatedt;
 	}
 
