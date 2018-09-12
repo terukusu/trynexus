@@ -8,7 +8,7 @@ import java.sql.Timestamp;
  * @author pgjavaAT
  *
  */
-public class MatchingCases {
+public class MatchingCase {
 
 	/**
 	 * id マッチング事例ID
@@ -37,7 +37,7 @@ public class MatchingCases {
 	private Timestamp upDatedt;
 	private String upDateuserid;
 
-	public MatchingCases(int id, String kyujinno, String jobseekerid, String staffid, Date interviewdt, Date enterdt,
+	public MatchingCase(int id, String kyujinno, String jobseekerid, String staffid, Date interviewdt, Date enterdt,
 			String assessment, String note, Timestamp createdt, String createuserid, Timestamp upDatedt,
 			String upDateuserid) {
 		this.id = id;

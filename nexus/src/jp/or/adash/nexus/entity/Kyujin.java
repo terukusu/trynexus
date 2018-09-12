@@ -82,7 +82,6 @@ public class Kyujin {
 	private String joblargecd3;
 	private String jobcategorysmallcd;
 	private String jobcategorylargecd;
-	private String jobcategory;
 	private String companykana;
 	private String companyname;
 	private String companypostal;
@@ -92,7 +91,7 @@ public class Kyujin {
 	private String address;
 	private String nearstation;
 	private String job;
-	private int hakencd;
+	private String hakencd;
 	private String detail;
 	private String koyoukeitaicd;
 	private String koyoukikan;
@@ -129,9 +128,9 @@ public class Kyujin {
 
 	public Kyujin(String no, Date receptiondt, Date perioddt, String companyno, String addresscd, String jobsmallcd1,
 			String jobsmallcd2, String jobsmallcd3, String joblargecd1, String joblargecd2, String joblargecd3,
-			String jobcategorysmallcd, String jobcategorylargecd, String jobcategory, String companykana,
+			String jobcategorysmallcd, String jobcategorylargecd, String companykana,
 			String companyname, String companypostal, String companyplace, String companyurl, String postal,
-			String address, String nearstation, String job, int hakencd, String detail, String koyoukeitaicd,
+			String address, String nearstation, String job, String hakencd, String detail, String koyoukeitaicd,
 			String koyoukikan, Date koyoukikankaishi, Date koyoukikanowari, String education, String experience,
 			String license, int agemin, int agemax, int salarymin, int salarymax, String salaryformcd, int begintime,
 			int endtime, int establishdt, long capital, String companyfeature, String tantouyakushoku,
@@ -152,7 +151,6 @@ public class Kyujin {
 		this.joblargecd3 = joblargecd3;
 		this.jobcategorysmallcd = jobcategorysmallcd;
 		this.jobcategorylargecd = jobcategorylargecd;
-		this.jobcategory = jobcategory;
 		this.companykana = companykana;
 		this.companyname = companyname;
 		this.companypostal = companypostal;
@@ -303,14 +301,6 @@ public class Kyujin {
 	}
 
 	/**
-	 * 産業分類名を返す
-	 * @return jobcategory
-	 */
-	public String getJobcategory() {
-		return jobcategory;
-	}
-
-	/**
 	 * 事業所名（かな）を返す
 	 * @return companykana
 	 */
@@ -386,7 +376,7 @@ public class Kyujin {
 	 * 派遣／請負コードを返す
 	 * @return hakencd
 	 */
-	public int getHakencd() {
+	public String getHakencd() {
 		return hakencd;
 	}
 
