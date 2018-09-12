@@ -251,7 +251,7 @@
   </tr>
   <tr>
     <td>新規登録ユーザ</td>
-     <td><input type="text" name="createuserid" value="<c:out value="${ kyujin. }" />" tabindex=""></td>
+     <td><input type="text" name="createuserid" value="<c:out value="${ kyujin.createuserid }" />" tabindex=""></td>
   </tr>
   <tr>
     <td>最終更新日</td>
