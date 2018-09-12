@@ -18,18 +18,18 @@
 <main>
   <div id="job_edit">
   <h2>求人登録</h2>
-  <class="edit_table"></class>
   </div>
 
   <div id="message">
-      <td>メッセージを表示</td>
+      メッセージを表示
     </div>
 
 <table border="1">
   <tr>
     <th>項目名</th>
     <th>内容</th>
-  </tr>  <tr>
+  </tr>
+  <tr>
     <td>求人No.</td>
     <td><input type="text" name="no" value="<c:out value="${ kyujin.no }" />" tabindex="1"></td>
   </tr>
