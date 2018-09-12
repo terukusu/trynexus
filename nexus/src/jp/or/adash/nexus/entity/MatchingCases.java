@@ -1,4 +1,5 @@
 package jp.or.adash.nexus.entity;
+
 import java.sql.Date;
 import java.sql.Timestamp;
 
@@ -7,8 +8,8 @@ public class MatchingCases {
 	private String kyujinno;
 	private String jobseekerid;
 	private String staffid;
-	private Date interviewdt;
-	private Date enterdt;
+	private java.util.Date interviewdt;
+	private java.util.Date enterdt;
 	private String assessment;
 	private String note;
 	private Timestamp createdt;
@@ -16,15 +17,16 @@ public class MatchingCases {
 	private Timestamp upDatedt;
 	private String upDateuserid;
 
-	public MatchingCases(int id, String kyujinno, String jobseekerid, String staffid, Date interviewdt, Date enterdt,
+	public MatchingCases(int id, String kyujinno, String jobseekerid, String staffid, java.util.Date interviewdt2,
+			java.util.Date enterdt2,
 			String assessment, String note, Timestamp createdt, String createuserid, Timestamp upDatedt,
 			String upDateuserid) {
 		this.id = id;
 		this.kyujinno = kyujinno;
 		this.jobseekerid = jobseekerid;
 		this.staffid = staffid;
-		this.interviewdt = interviewdt;
-		this.enterdt = enterdt;
+		this.interviewdt = interviewdt2;
+		this.enterdt = enterdt2;
 		this.assessment = assessment;
 		this.note = note;
 		this.createdt = createdt;
@@ -33,7 +35,7 @@ public class MatchingCases {
 		this.upDateuserid = upDateuserid;
 	}
 
-	public int getId() {
+	public int getid() {
 		return id;
 	}
 
@@ -50,11 +52,11 @@ public class MatchingCases {
 	}
 
 	public Date getInterviewdt() {
-		return interviewdt;
+		return (Date) interviewdt;
 	}
 
 	public Date getEnterdt() {
-		return enterdt;
+		return (Date) enterdt;
 	}
 
 	public String getAssessment() {
@@ -80,6 +82,5 @@ public class MatchingCases {
 	public String getUpDateuserid() {
 		return upDateuserid;
 	}
-
 
 }
