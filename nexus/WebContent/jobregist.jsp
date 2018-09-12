@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -15,7 +16,7 @@
 <body>
 
 
-<main>
+
   <div id="job_edit">
   <h2>求人登録</h2>
   </div>
@@ -52,27 +53,27 @@
   <tr>
   <tr>
      <td>職種細分類コード１</td>
-     <td><input type="text" name="jobsmallcd１" value="<c:out value="${ kyujin.jobsmallcd１ }" />" tabindex=""></td>
+     <td><input type="text" name="jobsmallcd1" value="<c:out value="${ kyujin.jobsmallcd1 }" />" tabindex=""></td>
    </tr>
    <tr>
     <td>職種細分類コード2</td>
-     <td><input type="text" name="jobsmallcd２" value="<c:out value="${ kyujin.jobsmallcd２ }" />" tabindex=""></td>
+     <td><input type="text" name="jobsmallcd2" value="<c:out value="${ kyujin.jobsmallcd2 }" />" tabindex=""></td>
   </tr>
   <tr>
     <td>職種細分類コード3</td>
-     <td><input type="text" name="jobsmallcd３" value="<c:out value="${ kyujin.jobsmallcd３ }" />" tabindex=""></td>
+     <td><input type="text" name="jobsmallcd3" value="<c:out value="${ kyujin.jobsmallcd3 }" />" tabindex=""></td>
   </tr>
   <tr>
     <td>職種大分類コード１</td>
-     <td><input type="text" name="joblargecd１" value="<c:out value="${ kyujin.joblargecd１ }" />" tabindex=""></td>
+     <td><input type="text" name="joblargecd1" value="<c:out value="${ kyujin.joblargecd1 }" />" tabindex=""></td>
   </tr>
   <tr>
     <td>職種大分類コード2</td>
-     <td><input type="text" name="joblargecd２" value="<c:out value="${ kyujin.joblargecd２ }" />" tabindex=""></td>
+     <td><input type="text" name="joblargecd2" value="<c:out value="${ kyujin.joblargecd2 }" />" tabindex=""></td>
   </tr>
   <tr>
     <td>職種大分類コード3</td>
-     <td><input type="text" name="joblargecd３" value="<c:out value="${ kyujin.joblargecd３ }" />" tabindex=""></td>
+     <td><input type="text" name="joblargecd3" value="<c:out value="${ kyujin.joblargecd3 }" />" tabindex=""></td>
   </tr>
   <tr>
     <td>産業細分類コード</td>
