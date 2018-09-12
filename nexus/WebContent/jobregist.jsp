@@ -32,56 +32,56 @@
   </tr>
   <tr>
     <td>求人No.</td>
-    <td><input type="text" name="no" value="<c:out value="${ kyujin.no }" />" tabindex="1"></td>
+    <td><c:out value="${ kyujin.no }" /></td>
   </tr>
   <tr>
     <td>受付年月日</td>
-     <td><input type="date" name="receptiondt" value="<c:out value="${ kyujin.receptiondt }" />" tabindex="2"></td>
+     <td><input type="date" name="receptiondt" value="<c:out value="${ kyujin.receptiondt }" />" maxlength="" tabindex=""></td>
   </tr>
   <tr>
     <td>求人有効年月日</td>
-     <td><input type="date" name="perioddt" value="<c:out value="${ kyujin.perioddt }" />" tabindex="3"></td>
+     <td><input type="date" name="perioddt" value="<c:out value="${ kyujin.perioddt }" />" maxlength="" tabindex=""></td>
   </tr>
   <tr>
     <td>事業所番号</td>
-     <td><input type="text" name="companyno" value="<c:out value="${ kyujin.companyno }" />" tabindex="4"></td>
+     <td><input type="text" name="companyno" value="<c:out value="${ kyujin.companyno }" />" maxlength="13" tabindex=""></td>
   </tr>
   <tr>
     <td>就業場所コード</td>
-    <td><input type="text" name="addresscd" value="<c:out value="${ kyujin.addresscd }" />" tabindex="5"></td>
+    <td><input type="text" name="addresscd" value="<c:out value="${ kyujin.addresscd }" />" maxlength="2" tabindex=""></td>
   </tr>
   <tr>
-  <tr>
      <td>職種細分類コード１</td>
-     <td><input type="text" name="jobsmallcd1" value="<c:out value="${ kyujin.jobsmallcd1 }" />" tabindex=""></td>
+     <td><input type="text" name="jobsmallcd1" value="<c:out value="${ kyujin.jobsmallcd1 }" />" maxlength="6" tabindex=""></td>
    </tr>
    <tr>
     <td>職種細分類コード2</td>
-     <td><input type="text" name="jobsmallcd2" value="<c:out value="${ kyujin.jobsmallcd2 }" />" tabindex=""></td>
+     <td><input type="text" name="jobsmallcd2" value="<c:out value="${ kyujin.jobsmallcd2 }" />" maxlength="6" tabindex=""></td>
   </tr>
   <tr>
     <td>職種細分類コード3</td>
-     <td><input type="text" name="jobsmallcd3" value="<c:out value="${ kyujin.jobsmallcd3 }" />" tabindex=""></td>
+     <td><input type="text" name="jobsmallcd3" value="<c:out value="${ kyujin.jobsmallcd3 }" />" maxlength="6" tabindex=""></td>
   </tr>
   <tr>
     <td>職種大分類コード１</td>
-     <td><input type="text" name="joblargecd1" value="<c:out value="${ kyujin.joblargecd1 }" />" tabindex=""></td>
+     <td><input type="text" name="joblargecd1" value="<c:out value="${ kyujin.joblargecd1 }" />" maxlength="1" tabindex=""></td>
   </tr>
   <tr>
     <td>職種大分類コード2</td>
-     <td><input type="text" name="joblargecd2" value="<c:out value="${ kyujin.joblargecd2 }" />" tabindex=""></td>
+     <td><input type="text" name="joblargecd2" value="<c:out value="${ kyujin.joblargecd2 }" />" maxlength="1" tabindex=""></td>
   </tr>
   <tr>
     <td>職種大分類コード3</td>
-     <td><input type="text" name="joblargecd3" value="<c:out value="${ kyujin.joblargecd3 }" />" tabindex=""></td>
+     <td><input type="text" name="joblargecd3" value="<c:out value="${ kyujin.joblargecd3 }" />" maxlength="1" tabindex=""></td>
   </tr>
   <tr>
     <td>産業細分類コード</td>
-     <td><input type="text" name="jobcategorysmallcd" value="<c:out value="${ kyujin.jobcategorysmallcd }" />" tabindex=""></td>
+     <td><input type="text" name="jobcategorysmallcd" value="<c:out value="${ kyujin.jobcategorysmallcd }" />" maxlength="3" tabindex=""></td>
   </tr>
   <tr>
     <td>産業大分類コード</td>
-     <td><input type="text" name="jobcategorylargecd" value="<c:out value="${ kyujin.jobcategorylargecd }" />" tabindex=""></td>
+     <td><input type="text" name="jobcategorylargecd" value="<c:out value="${ kyujin.jobcategorylargecd }" />" maxlength="1
+     " tabindex=""></td>
   </tr>
   <tr>
     <td>産業分類名</td>
@@ -89,35 +89,35 @@
   </tr>
   <tr>
     <td>事業所名（かな）</td>
-     <td><input type="text" name="companykana" value="<c:out value="${ kyujin.companykana }" />" tabindex=""></td>
+     <td><input type="text" name="companykana" value="<c:out value="${ kyujin.companykana }" />" size="60" tabindex=""></td>
   </tr>
   <tr>
     <td>事業所名</td>
-     <td><input type="text" name="companyname" value="<c:out value="${ kyujin.companyname }" />" tabindex=""></td>
+     <td><input type="text" name="companyname" value="<c:out value="${ kyujin.companyname }" />" size="60" tabindex=""></td>
   </tr>
   <tr>
     <td>事業所郵便番号</td>
-     <td><input type="text" name="companypostal" value="<c:out value="${ kyujin.companypostal }" />" tabindex=""></td>
+     <td><input type="text" name="companypostal" value="<c:out value="${ kyujin.companypostal }" />" maxlength="8" tabindex=""></td>
   </tr>
   <tr>
     <td>事業所所在地</td>
-     <td><input type="text" name="companyplace" value="<c:out value="${ kyujin.companyplace }" />" tabindex=""></td>
+     <td><input type="text" name="companyplace" value="<c:out value="${ kyujin.companyplace }" />" size="100" tabindex=""></td>
   </tr>
   <tr>
     <td>事業所URL</td>
-     <td><input type="text" name="companyurl" value="<c:out value="${ kyujin.companyurl }" />" tabindex=""></td>
+     <td><input type="text" name="companyurl" value="<c:out value="${ kyujin.companyurl }" />" size="60" tabindex=""></td>
   </tr>
   <tr>
     <td>就業場所郵便番号</td>
-     <td><input type="text" name="postal" value="<c:out value="${ kyujin.postal }" />" tabindex=""></td>
+     <td><input type="text" name="postal" value="<c:out value="${ kyujin.postal }" />" maxlength="8" tabindex=""></td>
   </tr>
   <tr>
     <td>就業場所</td>
-     <td><input type="text" name="adress" value="<c:out value="${ kyujin.adress }" />" tabindex=""></td>
+     <td><input type="text" name="adress" value="<c:out value="${ kyujin.adress }" />" size="100" tabindex=""></td>
   </tr>
   <tr>
     <td>最寄り駅</td>
-     <td><input type="text" name="nearstation" value="<c:out value="${ kyujin.nearstation }" />" tabindex=""></td>
+     <td><input type="text" name="nearstation" value="<c:out value="${ kyujin.nearstation }" />" size="60" tabindex=""></td>
   </tr>
   <tr>
     <td>職種</td>
@@ -125,7 +125,19 @@
   </tr>
   <tr>
     <td>派遣/請負コード</td>
-     <td><input type="text" name="hakencd" value="<c:out value="${ kyujin.hakencd }" />" tabindex=""></td>
+    <td> 
+    <c:if test="${1 == kyujin.hakencd}">
+    <input type="radio" name="hakencd" value="1" checked="checked"/> 派遣
+    </c:if>
+    <c:if test="${2 == kyujin.hakencd}">
+    <input type="radio" name="hakencd" value="2" checked="checked"/> 請負
+    </c:if>
+    <c:if test="${1 != kyujin.hakencd && 2 != kyujin.hakencd}">
+    <input type="radio" name="hakencd" value="1"/> 派遣
+    <input type="radio" name="hakencd" value="2"/> 請負
+    </c:if>
+
+    <!--input type="text" name="hakencd" value="<c:out value="${ kyujin.hakencd }" />" tabindex=""--></td>
   </tr>
   <tr>
     <td>仕事の内容</td>
@@ -135,11 +147,34 @@
   </tr>
   <tr>
     <td>雇用形態コード</td>
-     <td><input type="text" name="koyoukeitaicd" value="<c:out value="${ kyujin.koyoukeitaicd }" />" tabindex="25"></td>
+     <td>
+ 	 <select id="region" name="koyoukeitaicd" required>
+          <option value=""></option>
+          <option value="1">正社員</option>
+          <option value="2">正社員以外</option>
+          <option value="3">有期雇用派遣</option>
+          <option value="4">無期雇用派遣</option>
+          <option value="5">パート労働者</option>
+          <option value="6">有期派遣パート</option>
+          <option value="7">無期派遣パート</option>
+     </select>
+
+    <!-- input type="text" name="koyoukeitaicd" value="<c:out value="${ kyujin.koyoukeitaicd }" />" tabindex=""--></td>
   </tr>
   <tr>
     <td>雇用期間の定め</td>
-     <td><input type="text" name="koyoukikan" value="<c:out value="${ kyujin.koyoukikan }" />" tabindex="26"></td>
+    <td><c:if test="${1 == kyujin.koyoukikan}">
+    <input type="radio" name="koyoukikan" value="1" checked="checked"/> 有り
+    </c:if>
+    <c:if test="${2 == kyujin.koyoukikan}">
+    <input type="radio" name="koyoukikan" value="2" checked="checked"/> 無し
+    </c:if>
+    <c:if test="${1 != kyujin.koyoukikan && 2 != kyujin.koyoukikan}">
+    <input type="radio" name="koyoukikan" value="1"/> 有り
+    <input type="radio" name="koyoukikan" value="2"/> 無し
+    </c:if>
+	<!--input type="text" name="koyoukikan" value="<c:out value="${ kyujin.koyoukikan }" />" tabindex=""-->
+	</td>
   </tr>
   <tr>
     <td>雇用期間開始年月日</td>
@@ -151,23 +186,23 @@
   </tr>
   <tr>
     <td>学歴</td>
-     <td><input type="text" name="education" value="<c:out value="${ kyujin.education }" />" tabindex=""></td>
+     <td><input type="text" name="education" value="<c:out value="${ kyujin.education }" />" size="60" tabindex=""></td>
   </tr>
   <tr>
     <td>必要な経験等</td>
-     <td><input type="text" name="experience" value="<c:out value="${ kyujin.experience }" />" tabindex=""></td>
+     <td><input type="text" name="experience" value="<c:out value="${ kyujin.experience }" />" size="60" tabindex=""></td>
   </tr>
   <tr>
     <td>必要な免許・資格等</td>
-     <td><input type="text" name="license" value="<c:out value="${ kyujin.license }" />" tabindex=""></td>
+     <td><input type="text" name="license" value="<c:out value="${ kyujin.license }" />" size="60" tabindex=""></td>
   </tr>
   <tr>
     <td>年齢制限・下限</td>
-     <td><input type="number" name="agemin" value="<c:out value="${ kyujin.agemin }" />" tabindex=""></td>
+     <td><input type="number" name="agemin" value="<c:out value="${ kyujin.agemin }" />" maxlength="3" tabindex=""></td>
   </tr>
   <tr>
     <td>年齢制限・上限</td>
-     <td><input type="number" name="agemax" value="<c:out value="${ kyujin.agemax }" />" tabindex=""></td>
+     <td><input type="number" name="agemax" value="<c:out value="${ kyujin.agemax }" />" maxlength="3" tabindex=""></td>
   </tr>
   <tr>
     <td>基本給下限</td>
@@ -179,19 +214,43 @@
   </tr>
   <tr>
     <td>賃金形態コード</td>
-     <td><input type="text" name="salaryformcd" value="<c:out value="${ kyujin.salaryformcd }" />" tabindex=""></td>
+     <td>
+     <c:if test="${1 == kyujin.salaryformcd}">
+        <input type="radio" name="salaryformcd" value="1" checked="checked"/> 月給
+        </c:if>
+        <c:if test="${3 == kyujin.salaryformcd}">
+        <input type="radio" name="salaryformcd" value="3" checked="checked"/> 日給
+        </c:if>
+        <c:if test="${4 == kyujin.salaryformcd}">
+        <input type="radio" name="salaryformcd" value="4" checked="checked"/> 時間給
+        </c:if>
+        <c:if test="${5 == kyujin.salaryformcd}">
+        <input type="radio" name="salaryformcd" value="5" checked="checked"/> 年棒
+        </c:if>
+        <c:if test="${6 == kyujin.salaryformcd}">
+        <input type="radio" name="salaryformcd" value="6" checked="checked"/> その他
+        </c:if>
+
+        <c:if test="${1 != kyujin.salaryformcd && 3 != kyujin.salaryformcd}">
+        <input type="radio" name="salaryformcd" value="1"/> 月給
+        <input type="radio" name="salaryformcd" value="3"/> 日給
+        <input type="radio" name="salaryformcd" value="4"/> 時間給
+        <input type="radio" name="salaryformcd" value="5"/> 年俸
+        <input type="radio" name="salaryformcd" value="6"/> その他
+        </c:if>
+       <!--input type="text" name="salaryformcd" value="<c:out value="${ kyujin.salaryformcd }" />" maxlength="1" tabindex=""--></td>
   </tr>
   <tr>
     <td>就業時間・始業</td>
-     <td><input type="time" name="begintime" value="<c:out value="${ kyujin.begintime }" />" tabindex=""></td>
+     <td><input type="time" name="begintime" value="<c:out value="${ kyujin.begintime }" />" maxlength="4" tabindex=""></td>
   </tr>
   <tr>
     <td>就業時間・終業</td>
-     <td><input type="time" name="endtime" value="<c:out value="${ kyujin.endtime }" />" tabindex=""></td>
+     <td><input type="time" name="endtime" value="<c:out value="${ kyujin.endtime }" />" maxlength="4" tabindex=""></td>
   </tr>
   <tr>
     <td>創業設立年</td>
-     <td><input type="number" name="establishdt" value="<c:out value="${ kyujin.establishdt }" />" tabindex=""></td>
+     <td><input type="number" name="establishdt" value="<c:out value="${ kyujin.establishdt }" />" maxlength="4" tabindex=""></td>
   </tr>
   <tr>
     <td>資本金</td>
@@ -230,15 +289,27 @@
   </tr>
   <tr>
     <td>性別（求職者に非公開）</td>
-     <td><input type="text" name="hiddensex" value="<c:out value="${ kyujin.hiddensex }" />" tabindex=""></td>
+     <td>
+     <c:if test="${1 == kyujin.hiddensex}">
+    <input type="radio" name="hiddensex" value="1" checked="checked"/> 男
+    </c:if>
+    <c:if test="${2 == kyujin.hiddensex}">
+    <input type="radio" name="hiddensex" value="2" checked="checked"/> 女
+    </c:if>
+    <c:if test="${1 != kyujin.hiddensex && 2 != kyujin.hiddensex}">
+    <input type="radio" name="hiddensex" value="1"/> 男
+    <input type="radio" name="hiddensex" value="2"/> 女
+    </c:if>
+    <!--      <input type="text" name="hiddensex" value="<c:out value="${ kyujin.hiddensex }" />" maxlength="1" tabindex=""> -->
+    </td>
   </tr>
   <tr>
     <td>年齢下限（求職者に非公開）</td>
-     <td><input type="number" name="hiddenagemin" value="<c:out value="${ kyujin.hiddenagemin }" />" tabindex=""></td>
+     <td><input type="number" name="hiddenagemin" value="<c:out value="${ kyujin.hiddenagemin }" />" maxlength="3" tabindex=""></td>
   </tr>
   <tr>
     <td>年齢上限（求職者に非公開）</td>
-     <td><input type="number" name="hiddenagemax" value="<c:out value="${ kyujin.hiddenagemax }" />" tabindex=""></td>
+     <td><input type="number" name="hiddenagemax" value="<c:out value="${ kyujin.hiddenagemax }" />" maxlength="3" tabindex=""></td>
   </tr>
   <tr>
     <td>その他非公開情報</td>
@@ -247,24 +318,20 @@
   </tr>
   <tr>
     <td>新規登録日</td>
-     <td><input type="date" name="createdt" value="<c:out value="${ kyujin.createdt }" />" tabindex=""></td>
+     <td><c:out value="${ kyujin.createdt }" /></td>
   </tr>
   <tr>
     <td>新規登録ユーザ</td>
-     <td><input type="text" name="createuserid" value="<c:out value="${ kyujin.createuserid }" />" tabindex=""></td>
-  </tr>
+     <td><c:out value="${ kyujin.createuserid }" />
   <tr>
     <td>最終更新日</td>
-     <td><input type="date" name="updatedt" value="<c:out value="${ kyujin.updatedt }" />" tabindex=""></td>
+     <td><c:out value="${ kyujin.updatedt }" /></td>
   </tr>
   <tr>
     <td>最終更新ユーザ</td>
-     <td><input type="text" name="updateuserid" value="<c:out value="${ kyujin.updateuserid }" />" tabindex=""></td>
+     <td><c:out value="${ kyujin.updateuserid }" /></td>
   </tr>
-  <tr>
-    <td>削除フラグ</td>
-     <td><input type="text" name="deleteflag" value="<c:out value="${ kyujin.deleteflag }" />" tabindex=""></td>
-  </tr>
+
 </table>
 
 <button class="main_b main_b_jobedit return" tabindex="">戻る</button>
