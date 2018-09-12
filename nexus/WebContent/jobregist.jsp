@@ -19,6 +19,7 @@
   <div id="job_edit">
   <h2>求人登録</h2>
   <class="edit_table"></class>
+  </div>
 
   <div id="message">
       <td>メッセージを表示</td>
