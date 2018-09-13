@@ -16,6 +16,7 @@ import jp.or.adash.nexus.utils.dao.Transaction;
  */
 public class KyujinService {
 
+
 	/**
 	 * トランザクションオブジェクト
 	 */
