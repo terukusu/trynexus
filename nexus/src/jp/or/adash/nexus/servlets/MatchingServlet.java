@@ -36,7 +36,8 @@ public class MatchingServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,
 			IOException {
 		//1.1 リクエストから値を取得する
-		int id = Integer.parseInt(request.getParameter("id"));
+		//int id = Integer.parseInt(request.getParameter("id"));
+		int id=100;
 		String kyujinno = request.getParameter("kyujinno");
 		String jobseekerid = request.getParameter("jobseekerid");
 		String stffid = request.getParameter("staffid");
@@ -57,7 +58,7 @@ public class MatchingServlet extends HttpServlet {
 		MatchingCase matching = new MatchingCase(id, kyujinno, jobseekerid, stffid, interviewdt, enterdt,
 				assessment, note, createdt, createuserid, upDatedt, upDateuserid);
 		MatchingService service =new MatchingService();
-		service.insertMatchingCases(matching);
+		boolean hako= service.insertMatchingCases(matching);
 		// 1.3 入力チェック
 		/*MaService service = new MaService();
 		if (!service.check(matching)) {
@@ -85,7 +86,7 @@ public class MatchingServlet extends HttpServlet {
 		//request.setAttribute("messages", service.getMessages());
 
 		//1.8 JSPにフォワード
-		request.getRequestDispatcher("/mainput.jsp")
+		request.getRequestDispatcher("/matchingregist.jsp")
 				.forward(request, response);
 	}
 
