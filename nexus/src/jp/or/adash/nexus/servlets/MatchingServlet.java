@@ -19,7 +19,7 @@ import jp.or.adash.nexus.service.MatchingService;
 /**
  * Servlet implementation class MaServlet
  */
-@WebServlet("/machinngservlet")
+@WebServlet("/matchingservlet")
 public class MatchingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
