@@ -43,7 +43,7 @@
 
     <!-- ログインできないとき　※リンクはダミーです　-->
 	<div>
-		<a href="http://www.fureai.or.jp/~irie/html-tag/">ログインできない／アカウントをお持ちでない場合</a>
+		<a href="http:localhost:8080/nexus/message.jsp">ログインできない／アカウントをお持ちでない場合</a>
 	</div>
 
 </div><!--　コンテナ終了-->

@@ -64,6 +64,13 @@
         </tr>
     </table>
 	</div>
+	<input type="submit" value="ログアウト">
+	<div>
+	<form method="get" action="./LogoutServlet">
+
+
+	</form>
+	</div>
 
 
 

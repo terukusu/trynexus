@@ -8,11 +8,15 @@
 <title>ログアウト</title>
 </head>
 <body>
+<div>
 <h1>ログアウト完了</h1>
-
+</div>
+<div>
 <p>ログアウト完了いたしました。</p>
 <p>ご利用ありがとうございました。</p>
-
+</div>
+<div>
 <a href="http:localhost:8080/nexus/login.jsp">ログイン画面へ</a>
+</div>
 </body>
 </html>
