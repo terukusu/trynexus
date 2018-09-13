@@ -1,7 +1,6 @@
 package jp.or.adash.nexus.entity;
 
-import java.sql.Date;
-import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * マッチング事例マスタのEntityクラス
@@ -32,13 +31,13 @@ public class MatchingCase {
 	private Date enterdt;
 	private String assessment;
 	private String note;
-	private Timestamp createdt;
+	private Date createdt;
 	private String createuserid;
-	private Timestamp upDatedt;
+	private Date upDatedt;
 	private String upDateuserid;
 
 	public MatchingCase(int id, String kyujinno, String jobseekerid, String staffid, Date interviewdt, Date enterdt,
-			String assessment, String note, Timestamp createdt, String createuserid, Timestamp upDatedt,
+			String assessment, String note, Date createdt, String createuserid, Date upDatedt,
 			String upDateuserid) {
 		this.id = id;
 		this.kyujinno = kyujinno;
@@ -122,7 +121,7 @@ public class MatchingCase {
 	 * 新規登録日を返す
 	 * @return createdt
 	 */
-	public Timestamp getCreatedt() {
+	public Date getCreatedt() {
 		return createdt;
 	}
 
@@ -138,7 +137,7 @@ public class MatchingCase {
 	 * 最終更新日を返す
 	 * @return upDatedt
 	 */
-	public Timestamp getUpDatedt() {
+	public Date getUpDatedt() {
 		return upDatedt;
 	}
 
