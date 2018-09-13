@@ -1,4 +1,4 @@
-package jp.or.adash.nexus.utils.servlets;
+package jp.or.adash.nexus.servlets;
 
 import java.io.IOException;
 
@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import Service.LoginService;
 import jp.or.adash.nexus.entity.Staff;
+import jp.or.adash.nexus.services.LoginService;
 
 
 /**
