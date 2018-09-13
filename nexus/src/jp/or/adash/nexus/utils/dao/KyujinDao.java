@@ -288,6 +288,7 @@ public class KyujinDao {
 			throw new IOException(e);
 		}
 
+
 		return kyujins;
 	}
 
