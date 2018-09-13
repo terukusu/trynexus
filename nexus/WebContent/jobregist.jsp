@@ -16,6 +16,7 @@
 <body>
 
 
+<form method="post" action="./regist">
 
   <div id="job_edit">
   <h2>求人登録</h2>
@@ -125,7 +126,7 @@
   </tr>
   <tr>
     <td>派遣/請負コード</td>
-    <td> 
+    <td>
     <c:if test="${1 == kyujin.hakencd}">
     <input type="radio" name="hakencd" value="1" checked="checked"/> 派遣
     </c:if>
@@ -148,7 +149,8 @@
   <tr>
     <td>雇用形態コード</td>
      <td>
- 	 <select id="region" name="koyoukeitaicd" required>
+ 	 <!-- JSで設定する -->
+ 	 <select name="koyoukeitaicd" required>
           <option value=""></option>
           <option value="1">正社員</option>
           <option value="2">正社員以外</option>
@@ -334,12 +336,12 @@
 
 </table>
 
-<button class="main_b main_b_jobedit return" tabindex="">戻る</button>
-<button class="main_b main_b_jobedit regist" tabindex="">登録</button>
-<button class="main_b main_b_jobedit update" tabindex="">更新</button>
-<button class="main_b main_b_jobedit delete" tabindex="">削除</button>
+<button type="reset" class="main_b main_b_jobedit return" tabindex="">戻る</button>
+<button type="submit" class="main_b main_b_jobedit regist" tabindex="">登録</button>
+<button type="submit" class="main_b main_b_jobedit update" tabindex="">更新</button>
+<button type="submit" class="main_b main_b_jobedit delete" tabindex="">削除</button>
 
-</main>
+</form>
 
 <footer>
   <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館)　All Rights Reserved.</small>
