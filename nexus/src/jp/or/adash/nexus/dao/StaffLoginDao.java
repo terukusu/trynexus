@@ -35,11 +35,11 @@ public class StaffLoginDao {
 	 * @throws IOException
 	 */
 	public Staff getLogin(String user,String pass) throws IOException {
-		Staff login = null;
+		Staff userData = null;
 
 		// SQL文を生成する
 		StringBuffer sql = new StringBuffer();
-		sql.append("select id, password,name");
+		sql.append("select id,name");
 		sql.append(" from staff");
 		sql.append(" where id = ? and passWord = ?");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
@@ -52,7 +52,7 @@ public class StaffLoginDao {
 				// 取得結果をリストに格納する
 				while (rs.next()) {
 
-					login = new Staff(
+					userData = new Staff(
 							rs.getString("id"),
 							rs.getString("name"),
 							null,
@@ -74,7 +74,7 @@ public class StaffLoginDao {
 			throw new IOException(e);
 		}
 
-		return login;
+		return userData;
 	}
 
 }
