@@ -16,7 +16,6 @@ import jp.or.adash.nexus.utils.dao.Transaction;
  */
 public class KyujinService {
 
-
 	/**
 	 * トランザクションオブジェクト
 	 */
@@ -123,7 +122,6 @@ public class KyujinService {
 
 		return establishdt;
 	}
-
 
 	/**
 	 * 商品データの内容をチェックする
@@ -290,6 +288,50 @@ public class KyujinService {
 			messages.add(MessageCommons.ERR_DB_CONNECT);
 		} finally {
 			// データベース接続を終了する
+			transaction.close();
+		}
+
+		return result;
+	}
+
+	/*	 * 求人票データに削除フラグを立てる
+	 * @return 処理結果（true:成功、false:失敗）
+	 */
+	public boolean deleteKyujin(String no, String delflag) {
+		boolean result = false; // 処理結果
+
+		try {
+			// データベース接続を開始する
+			transaction.open();
+
+			// トランザクションを開始する
+			transaction.beginTrans();
+
+			// 商品単価を取得する
+			KyujinDao dao = new KyujinDao(transaction);
+			int count = dao.delete(no, delflag);
+
+			if (count > 0) {
+				// 完了メッセージをセットする
+				messages.add(MSG_ITEM_REGIST_COMPLETE);
+				result = true;
+			} else {
+				// エラーメッセージをセットする
+				messages.add(MSG_ITEM_REGIST_FAILURE);
+				result = false;
+			}
+
+			// トランザクションをコミットする
+			transaction.commit();
+
+		} catch (IOException e) {
+			// トランザクションをロールバックする
+			transaction.rollback();
+
+			// エラーメッセージをセットする
+			messages.add(MessageCommons.ERR_DB_CONNECT);
+		} finally {
+			// データベース接続をを終了する
 			transaction.close();
 		}
 

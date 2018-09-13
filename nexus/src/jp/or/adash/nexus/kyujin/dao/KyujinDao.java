@@ -427,4 +427,31 @@ public class KyujinDao {
 
 		return count;
 	}
+	/**
+	 * 求人データ二削除フラグを立てる
+	 * @param kyujin 求人データ
+	 * @return 更新件数
+	 * @throws IOException
+	 */
+	public int delete(String no,String delflag) throws IOException {
+		int count = 0;
+
+		// SQL文を生成する
+		StringBuffer sql = new StringBuffer();
+		sql.append("update item set");
+		sql.append(" deleteflag = ?");
+		sql.append(" where");
+		sql.append(" no = ?");
+		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
+			ps.setString(2, no);
+			ps.setString(1, delflag);
+
+			// SQL文を実行する
+			count = ps.executeUpdate();
+		} catch (SQLException e) {
+			throw new IOException(e);
+		}
+
+		return count;
+	}
 }
