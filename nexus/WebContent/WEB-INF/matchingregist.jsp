@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<form method="post" action="./MaServlet">
+	<form method="post" action="./MatchingServlet">
 
 		<table border="1">
 			<caption>マッチング結果登録</caption>
@@ -22,7 +22,8 @@
 			</tr>
 			<tr>
 				<td>求人No</td>
-				<td><input type="text" name="NO" size="14"><input
+				<td>
+				<input type="text" name="NO" size="14"><input
 					type="submit" value="求人No一覧"></td>
 
 			</tr>
@@ -36,7 +37,7 @@
 				<td>入社日</td>
 				<td><input type="date">
 					<link rel="stylesheet" href="build/kalendae.css" type="text/css"
-						charset="utf-8"> <script src="build/kalendae.standalone.js"
+						> <script src="build/kalendae.standalone.js"
 						type="text/javascript" charset="utf-8"></script></td>
 
 			</tr>
@@ -53,7 +54,7 @@
 				<td>面接日</td>
 				<td><input type="date">
 					<link rel="stylesheet" href="build/kalendae.css" type="text/css"
-						charset="utf-8"> <script src="build/kalendae.standalone.js"
+						> <script src="build/kalendae.standalone.js"
 						type="text/javascript" charset="utf-8"></script></td>
 
 			</tr>
@@ -64,7 +65,7 @@
 			</tr>
 			<tr>
 				<td>備考欄</td>
-				<td><input type="text" name="field1" size="30"></td>
+				<td><textarea name="field1" rows="5" cols="50"></textarea></td>
 
 			</tr>
 
