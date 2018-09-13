@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Service.LoginService;
+import jp.or.adash.nexus.entity.Staff;
 
 
 /**
@@ -44,13 +45,13 @@ public class LoginServlet extends HttpServlet {
 		//0.セッション情報を取得し、無い場合新規作成。
 		HttpSession session = request.getSession(true);
 
-		LoginService ls = new LoginService(user,pass);
+		LoginService ls = new LoginService();
 		//0　ユーザーID、パスワードが正しいかどうかの変数
-		boolean authCheck = ls.authUser(user,pass);
+		Staff userData = ls.getAuthUser(user,pass);
 		//0 認証処理
-		if(authCheck == true) {
+		if(userData != null) {
 			 //0 認証情報を格納する
-		      session.setAttribute("loginuser", user);
+		      session.setAttribute("UserData", userData);
 		      //0　メインjspにフォワード
 		      request.getRequestDispatcher("/main.jsp").
 		      forward(request, response);
