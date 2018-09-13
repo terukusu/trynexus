@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import jp.or.adash.nexus.entity.Kyujin;
+import jp.or.adash.nexus.kyujin.services.KyujinService;
 
 /**
  * 求人登録画面初期表示サーブレット
@@ -39,7 +40,7 @@ public class KyujinRegistDisplayServlet extends HttpServlet {
 		Kyujin kyujin = null;
 		if (no >= 0) {
 			KyujinService service = new KyujinService();
-			kyujin = service.getItem(no);
+			kyujin = service.getKyujin(no);
 		}
 
 		// 1.3 リクエストに求人情報をセットする

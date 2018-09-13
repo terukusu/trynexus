@@ -174,7 +174,7 @@ public class KyujinService {
 		boolean result = false;
 
 		// データベースに商品が既に存在するかどうか確認する
-		if (exists(kyujin.getNo())) {
+		if (exists(kyujin.getEstablishdt())) {
 			// 存在する場合は、商品データを更新する
 			result = this.updateKyujin(kyujin);
 		} else {
