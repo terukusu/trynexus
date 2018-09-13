@@ -65,10 +65,11 @@
     </table>
 	</div>
 
+
 	<div>
-	<form method="get" action="./LogoutServlet">
-	<input type="submit" value="ログアウト">
-	</form>
+	 <form name= "logout" method="GET" action="LogoutSerVlet">
+    <input type="submit" name="close" value="ログアウト">
+  </form>
 	</div>
 
 
