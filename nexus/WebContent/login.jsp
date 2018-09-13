@@ -37,13 +37,14 @@
 			</tr>
 	</table>
     	<input type=submit value="ログイン">
+    	<input type="reset"value="リセット">
     </form>
 
     </div>
 
     <!-- ログインできないとき　※リンクはダミーです　-->
 	<div>
-		<a href="http:localhost:8080/nexus/message.jsp">ログインできない／アカウントをお持ちでない場合</a>
+		<a href="http://localhost:8080/nexus/message.jsp">ログインできない／アカウントをお持ちでない場合</a>
 	</div>
 
 </div><!--　コンテナ終了-->
