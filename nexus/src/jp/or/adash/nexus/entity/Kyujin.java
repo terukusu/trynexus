@@ -1,7 +1,6 @@
 package jp.or.adash.nexus.entity;
 
-import java.sql.Date;
-import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * 求人票マスタのEntityクラス
@@ -120,9 +119,9 @@ public class Kyujin {
 	private int hiddenagemin;
 	private int hiddenagemax;
 	private String hiddenetc;
-	private Timestamp createdt;
+	private Date createdt;
 	private String createuserid;
-	private Timestamp upDatedt;
+	private Date upDatedt;
 	private String upDateuserid;
 	private String deleteflag;
 
@@ -135,8 +134,8 @@ public class Kyujin {
 			String license, int agemin, int agemax, int salarymin, int salarymax, String salaryformcd, int begintime,
 			int endtime, int establishdt, long capital, String companyfeature, String tantouyakushoku,
 			String tantoukana, String tantou, String tantoustaff_id, String applicationform, String background,
-			String hiddensex, int hiddenagemin, int hiddenagemax, String hiddenetc, Timestamp createdt,
-			String createuserid, Timestamp upDatedt, String upDateuserid, String deleteflag) {
+			String hiddensex, int hiddenagemin, int hiddenagemax, String hiddenetc, Date createdt,
+			String createuserid, Date upDatedt, String upDateuserid, String deleteflag) {
 		super();
 		this.no = no;
 		this.receptiondt = receptiondt;
@@ -608,7 +607,7 @@ public class Kyujin {
 	 * 新規登録日を返す
 	 * @return createdt
 	 */
-	public Timestamp getCreatedt() {
+	public Date getCreatedt() {
 		return createdt;
 	}
 
@@ -624,7 +623,7 @@ public class Kyujin {
 	 * 最終更新日を返す
 	 * @return upDatedt
 	 */
-	public Timestamp getUpDatedt() {
+	public Date getUpDatedt() {
 		return upDatedt;
 	}
 
