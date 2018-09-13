@@ -24,7 +24,7 @@ public class StaffLoginDao {
 	 * コンストラクタ
 	 * @param transaction トランザクションオブジェクト
 	 */
-	public void LoginDao(Transaction transaction) {
+	public  StaffLoginDao(Transaction transaction) {
 		this.conn = transaction.getConnection();
 	}
 

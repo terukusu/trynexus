@@ -57,7 +57,8 @@ public class LoginServlet extends HttpServlet {
 		      forward(request, response);
 		}else{
 			//0 認証失敗した場合エラーメッセージの表示
-			request.getRequestDispatcher("/message.jsp").
+			request.setAttribute("message", "IDまたはパスワードが違います");
+			request.getRequestDispatcher("/login.jsp").
 		      forward(request, response);
 			}
 		}

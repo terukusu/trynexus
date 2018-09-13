@@ -18,6 +18,9 @@
 	</div>
     <!--ID&PW入力フォーム-->
     <div>
+    <p style="color:red">
+    ${message}
+    </p>
     <form action="./loginServlet" method="POST">
     <table>
     	<tr>

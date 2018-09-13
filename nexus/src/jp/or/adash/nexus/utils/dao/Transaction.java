@@ -1,7 +1,6 @@
 package jp.or.adash.nexus.utils.dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import javax.naming.InitialContext;
@@ -32,6 +31,7 @@ public class Transaction {
 				DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc/nexus");
 				connection = dataSource.getConnection();
 
+				/*
 				//0接続文字列を生成する
 				StringBuffer connStrBuffer = new StringBuffer();
 				connStrBuffer.append("jdbc:mysql://172.20.76.252:3306/tomonari");
@@ -45,6 +45,7 @@ public class Transaction {
 				// データベース接続を開始する
 				connection = DriverManager.getConnection(
 						connStrBuffer.toString(), "tomonari", "pgJav@1807");
+			*/
 
 			} catch (SQLException|NamingException e) {
 				throw new TransactionException(e);

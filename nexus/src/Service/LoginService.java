@@ -24,7 +24,7 @@ public class LoginService {
 			//0データベース接続を開始する
 			transaction.open();
 			//0ユーザー情報を取得する
-			StaffLoginDao dao = new StaffLoginDao();
+			StaffLoginDao dao = new StaffLoginDao(transaction);
 			userData = dao.getLogin(user, pass);
 		} catch (IOException e) {
 			//0エラー処理を行う
