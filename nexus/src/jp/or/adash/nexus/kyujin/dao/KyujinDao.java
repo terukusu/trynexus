@@ -1,4 +1,4 @@
-package jp.or.adash.nexus.utils.dao;
+package jp.or.adash.nexus.kyujin.dao;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jp.or.adash.nexus.entity.Kyujin;
+import jp.or.adash.nexus.utils.dao.Transaction;
 
 /**
  * 求人データアクセスクラス
@@ -122,7 +123,7 @@ public class KyujinDao {
 	 * @return 求人オブジェクト
 	 * @throws IOException
 	 */
-	public Kyujin selectItem(int no) throws IOException {
+	public Kyujin selectKyujin(int no) throws IOException {
 		Kyujin kyujin = null;
 
 		// SQL文を生成する
@@ -210,7 +211,7 @@ public class KyujinDao {
 	 * @return 求人票リスト
 	 * @throws IOException
 	 */
-	public List<Kyujin> selectItemList() throws IOException {
+	public List<Kyujin> selectKyujinList() throws IOException {
 		List<Kyujin> kyujins = new ArrayList<Kyujin>();
 
 		// SQL文を生成する
@@ -287,7 +288,6 @@ public class KyujinDao {
 		} catch (SQLException e) {
 			throw new IOException(e);
 		}
-
 
 		return kyujins;
 	}

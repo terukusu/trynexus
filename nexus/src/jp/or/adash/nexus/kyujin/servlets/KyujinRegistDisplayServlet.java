@@ -1,4 +1,4 @@
-package jp.or.adash.nexus.utils.servlets;
+package jp.or.adash.nexus.kyujin.servlets;
 
 import java.io.IOException;
 
