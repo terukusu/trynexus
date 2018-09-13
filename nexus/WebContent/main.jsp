@@ -67,7 +67,7 @@
 
 
 	<div>
-	 <form name= "logout" method="GET" action="LogoutSerVlet">
+	 <form name= "logout" method="GET" action="logoutservlet">
     <input type="submit" name="close" value="ログアウト">
   </form>
 	</div>
