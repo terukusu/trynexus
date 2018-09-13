@@ -288,7 +288,7 @@ public class KyujinService {
 			// エラーメッセージをセットする
 			messages.add(MessageCommons.ERR_DB_CONNECT);
 		} finally {
-			// データベース接続をを終了する
+			// データベース接続を終了する
 			transaction.close();
 		}
 
