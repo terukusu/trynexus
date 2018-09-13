@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
 		//0　ユーザーID、パスワードが正しいかどうかの変数
 		boolean authCheck = ls.authUser(user,pass);
 		//0 認証処理
-		if(authCheck == true) {
+		if(authCheck != null) {
 			 //0 認証情報を格納する
 		      session.setAttribute("loginuser", user);
 		      //0　メインjspにフォワード

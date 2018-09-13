@@ -52,12 +52,12 @@ public class StaffLoginDao {
 				// 取得結果をリストに格納する
 				while (rs.next()) {
 
-					new Staff(
+					login = new Staff(
 							rs.getString("id"),
 							rs.getString("name"),
 							null,
 							null,
-							rs.getString("password"),
+							null,
 							null,
 							null,
 							null,
