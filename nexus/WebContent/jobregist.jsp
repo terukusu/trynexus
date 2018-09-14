@@ -16,7 +16,7 @@
 <body>
 
 
-<form method="post" action="./regist">
+<form id="form" method="post" action="./regist">
 
   <div id="job_edit">
   <h2>求人登録</h2>
@@ -33,7 +33,7 @@
   </tr>
   <tr>
     <td>求人No.</td>
-    <td><c:out value="${ kyujin.no }" /></td>
+    <td><input type="text" name="receptiondt" value="<c:out value="${ kyujin.no }" />"></td>
   </tr>
   <tr>
     <td>受付年月日</td>
@@ -150,7 +150,7 @@
     <td>雇用形態コード</td>
      <td>
  	 <!-- JSで設定する -->
- 	 <select name="koyoukeitaicd" required>
+ 	 <select name="koyoukeitaicd">
           <option value=""></option>
           <option value="1">正社員</option>
           <option value="2">正社員以外</option>
@@ -233,7 +233,7 @@
         <input type="radio" name="salaryformcd" value="6" checked="checked"/> その他
         </c:if>
 
-        <c:if test="${1 != kyujin.salaryformcd && 3 != kyujin.salaryformcd}">
+        <c:if test="${ null == kyujin.salaryformcd}">
         <input type="radio" name="salaryformcd" value="1"/> 月給
         <input type="radio" name="salaryformcd" value="3"/> 日給
         <input type="radio" name="salaryformcd" value="4"/> 時間給
@@ -335,17 +335,23 @@
   </tr>
 
 </table>
+<!-- jsでウィンドウクローズにする -->
+<button type="button" class="main_b main_b_jobedit return" tabindex="">戻る</button>
 
-<button type="reset" class="main_b main_b_jobedit return" tabindex="">戻る</button>
-<button type="submit" class="main_b main_b_jobedit regist" tabindex="">登録</button>
-<button type="submit" class="main_b main_b_jobedit update" tabindex="">更新</button>
-<button type="submit" class="main_b main_b_jobedit delete" tabindex="">削除</button>
-
+<c:if test="${ kyujin.no == null }">
+	<button type="submit" id="regist" class="main_b main_b_jobedit regist" tabindex="">登録</button>
+</c:if>
+<c:if test="${ kyujin.no != null }">
+	<button type="submit" id="update"  class="main_b main_b_jobedit update" tabindex="">更新</button>
+	<button type="submit" id="delete" class="main_b main_b_jobedit delete" tabindex="">削除</button>
+</c:if>
 </form>
 
 <footer>
   <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館)　All Rights Reserved.</small>
 </footer>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
+<script type="text/javascript" src="js/jobregist.js"></script>
 </body>
 </html>
