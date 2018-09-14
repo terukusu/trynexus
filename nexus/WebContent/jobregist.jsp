@@ -47,7 +47,16 @@
   </section>
 </header>
 <main>
-  <h2>求人情報（登録・編集・削除）</h2>
+<form method="post" action="./regist">
+
+  <div id="job_edit">
+  <h2>求人登録</h2>
+  </div>
+
+  <div id="message">
+      メッセージを表示
+    </div>
+
 
     <table>
       <tr>
@@ -373,7 +382,7 @@
   </tr>
 
 </table>
-</div>
+
 </main>
 
 <!-- jsでウィンドウクローズにする -->
