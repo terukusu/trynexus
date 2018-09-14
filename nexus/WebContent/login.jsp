@@ -36,8 +36,10 @@
 				<td><input type="password" id="pass" name="pass" required></td>
 			</tr>
 	</table>
+	<div>
     	<input type=submit value="ログイン">
     	<input type="reset"value="リセット">
+	</div>
     </form>
 
     </div>

@@ -9,6 +9,7 @@
 </head>
 <body>
 <div>
+<div>
 <h1>ログアウト完了</h1>
 </div>
 <div>
@@ -17,6 +18,7 @@
 </div>
 <div>
 <a href="http://localhost:8080/nexus/login.jsp">ログイン画面へ</a>
+</div>
 </div>
 </body>
 </html>
