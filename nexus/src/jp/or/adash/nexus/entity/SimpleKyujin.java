@@ -55,7 +55,7 @@ public class SimpleKyujin {
 		return no;
 	}
 
-	public String getAdresscd() {
+	public String getAddresscd() {
 		return addresscd;
 	}
 
@@ -83,7 +83,7 @@ public class SimpleKyujin {
 	public String getCompanyname() {
 		return companyname;
 	}
-	public String getAdress() {
+	public String getAddress() {
 		return address;
 	}
 	public String getNearstation() {
