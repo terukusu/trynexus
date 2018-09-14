@@ -8,7 +8,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>スタッフページ</title>
-    <link rel="stylesheet" type="text/css" href="staff_main.css" />
+   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"rel="stylesheet" >
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
+<link href="bootstrap-reboot.css" rel="stylesheet">
+<link href="applicantlist.css" rel="stylesheet">
+<link href="common.css" rel="stylesheet">
+<link href="header.css" rel="stylesheet">
+<link href="footer.css" rel="stylesheet">
+<link href="stafftop.css" rel="stylesheet">
 </head>
 <body>
 <div><!--　コンテナー-->
@@ -75,6 +82,11 @@
 
 
 </div><!--　コンテナ終了-->
+
+<footer>
+  <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館)　All Rights Reserved.</small>
+</footer>
+
 <body>
 </body>
 </html>
