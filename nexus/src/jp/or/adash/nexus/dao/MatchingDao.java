@@ -40,25 +40,26 @@ public class MatchingDao {
 
 		// SQL文を生成する
 		StringBuffer sql = new StringBuffer();
-		sql.append("insert into matchingcase(");
-		sql.append("id,kyujinno,jobseekerid,staffid,interviewdt,enterdt,assessment,"
-				+ "note,createdt,createuserid,upDatedt,upDateuserid");
+		sql.append("insert into matchingcase");
+		sql.append("kyujinno,jobseekerid,staffid,interviewdt,enterdt,assessment,"
+				+ "note,createdt,createuserid,updatedt,updateuserid");
 		sql.append(") values (");
-		sql.append("?,?,?,?,?,?,?,?,?,?");
+		sql.append("?,?,?,?,?,?,?,?,?,?,?");
 		sql.append(")");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
-			ps.setInt(1,matching.getId());
-			ps.setString(2,matching.getKyujinno());
-			ps.setString(3,matching.getJobseekerid());
-			ps.setString(4,matching.getStaffid());
-			ps.setDate(5,(Date) matching.getInterviewdt());
-			ps.setDate(6,(Date) matching.getEnterdt());
-			ps.setString(7,matching.getAssessment());
-		//	ps.setDate(8,(Date)matching.getCreatedt());
-			ps.setString(9,matching.getNote());
-			ps.setString(10,matching.getCreateuserid());
-		//	ps.setDate(11,(Date)matching.getUpDatedt());
-			ps.setString(12,matching. getUpDateuserid());
+			//ps.setInt(1,matching.getId());
+			ps.setString(1,matching.getKyujinno());
+			ps.setString(2,matching.getJobseekerid());
+			ps.setString(3,matching.getStaffid());
+			ps.setDate(4,(Date) matching.getInterviewdt());
+			ps.setDate(5,(Date) matching.getEnterdt());
+			ps.setString(6,matching.getAssessment());
+			ps.setString(7,matching.getNote());
+			ps.setDate(8,(Date)matching.getCreatedt());
+
+			ps.setString(9,matching.getCreateuserid());
+		    ps.setDate(10,(Date)matching.getUpDatedt());
+			ps.setString(11,matching. getUpDateuserid());
 
 
 			// SQL文を実行する

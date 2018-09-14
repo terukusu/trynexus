@@ -37,7 +37,7 @@ public class MatchingServlet extends HttpServlet {
 			IOException {
 		//1.1 リクエストから値を取得する
 		//int id = Integer.parseInt(request.getParameter("id"));
-		int id=100;
+		//int id=100;
 		String kyujinno = request.getParameter("kyujinno");
 		String jobseekerid = request.getParameter("jobseekerid");
 		String stffid = request.getParameter("staffid");
@@ -55,7 +55,7 @@ public class MatchingServlet extends HttpServlet {
 		String upDateuserid = request.getParameter("upDateuserid");
 
 		//1.2 マッチング結果オブジェクトを作成
-		MatchingCase matching = new MatchingCase(id, kyujinno, jobseekerid, stffid, interviewdt, enterdt,
+		MatchingCase matching = new MatchingCase(kyujinno, jobseekerid, stffid, interviewdt, enterdt,
 				assessment, note, createdt, createuserid, upDatedt, upDateuserid);
 		MatchingService service =new MatchingService();
 		boolean hako= service.insertMatchingCases(matching);
