@@ -13,13 +13,13 @@ public class JsCareer {
 	* nyusyokudt 入職年月
 	* taisyokudt 退職年月
 	 */
-	private int id;
+	private String jobseekerid;
 	private String career;
 	private int nyusyokudt;
 	private int taisyokudt;
 
-	public JsCareer(int id, String career, int nyusyokudt, int taisyokudt) {
-		this.id = id;
+	public JsCareer(String jobseekerid, String career, int nyusyokudt, int taisyokudt) {
+		this.jobseekerid = jobseekerid;
 		this.career = career;
 		this.nyusyokudt = nyusyokudt;
 		this.taisyokudt = taisyokudt;
@@ -29,8 +29,8 @@ public class JsCareer {
 	 * 求職者IDを返す
 	 * @return id
 	 */
-	public int getId() {
-		return id;
+	public String getJobseekerid() {
+		return jobseekerid;
 	}
 
 	/**
