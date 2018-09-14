@@ -56,7 +56,7 @@ public class JobSerarchService {
 	 */
 	public List<SimpleKyujin> getKyujin(String job, String addresscd,String jobsmallcd1, String jobsmallcd2, String jobsmallcd3, String joblargecd1,
 			String joblargecd2, String joblargecd3, int salarymin, int salarymax, int koyoukeitaicd) {
-		List<SimpleKyujin> kj = new ArrayList<SimpleKyujin>();
+		List<SimpleKyujin> kyujinlist = new ArrayList<SimpleKyujin>();
 
 		try {
 			// 1.データベース接続を開始する
@@ -65,7 +65,7 @@ public class JobSerarchService {
 			// 1.求人票を取得する
 			JobSearchDao dao = new JobSearchDao(transaction);
 
-			kj = dao.selectKyujin(job, addresscd,jobsmallcd1, jobsmallcd2, jobsmallcd3, joblargecd1,
+			kyujinlist = dao.selectKyujin(job, addresscd,jobsmallcd1, jobsmallcd2, jobsmallcd3, joblargecd1,
 					joblargecd2, joblargecd3, salarymin, salarymax,  koyoukeitaicd);
 
 		} catch(IOException e) {
@@ -75,6 +75,6 @@ public class JobSerarchService {
 			transaction.close();
 		}
 
-		return kj;
+		return kyujinlist;
 	}
 }

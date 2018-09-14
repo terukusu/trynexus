@@ -12,7 +12,7 @@
 	<!--　求人検索項目 -->
 	<div id="job_search">
 		<h3>求人検索項目</h3>
-		<form action="SimpleKyujin" method="post">
+		<form action="./jobsearch" method="post">
 			<div class="listbox1">
 				<h4>職種中分類</h4>
 				<select name="jobsmallcd2" tabindex="1">
@@ -112,22 +112,21 @@
 					<th scope="col">年齢制限</th>
 					<th scope="col">基本給</th>
 				</tr>
-				<c:forEach var="SimpleKyujin" items="${ kyujinList }">
+				<c:forEach var="JobSearchServlet" items="${ kyujin }">
 					<tr>
 						<td><button type="button"
 								onclick="location.href='job_info.html'">詳細</button></td>
-						<td><c:out value="${ SimpleKyujin.NO }" /></td>
-						<td><c:out value="${ SimpleKyujin.COMPANYNAME }" /></td>
-						<td><c:out value="${ SimpleKyujin.ADRESS }" /></td>
-						<td><c:out value="${ SimpleKyujin.NEARSTATION }" /></td>
-						<td><c:out value="${ SimpleKyujin.JOB }" /></td>
-						<td><c:out value="${ SimpleKyujin.KOYOUKEITAICD }" /></td>
-						<td><c:out value="${ SimpleKyujin.AGEMIN }" />～<c:out value="${ AGEMAX }" /></td>
-						<td><c:out value="${ SimpleKyujin.SALARYMIN }" />～<c:out
-								value="${ SimpleKyujin.SALARYMAX }" /></td>
+						<td><c:out value="${ SimpleKyujin.no }" /></td>
+						<td><c:out value="${ SimpleKyujin.companyname }" /></td>
+						<td><c:out value="${ SimpleKyujin.adress }" /></td>
+						<td><c:out value="${ SimpleKyujin.nearstation }" /></td>
+						<td><c:out value="${ SimpleKyujin.job }" /></td>
+						<td><c:out value="${ SimpleKyujin.koyoukeitaicd }" /></td>
+						<td><c:out value="${ SimpleKyujin.agemin }" />～<c:out value="${ SimpleKyujin.agemax }" /></td>
+						<td><c:out value="${ SimpleKyujin.salarymin }" />～<c:out
+								value="${ SimpleKyujin.salarymax }" /></td>
 					</tr>
 				</c:forEach>
-
 			</tbody>
 		</table>
 	</div>

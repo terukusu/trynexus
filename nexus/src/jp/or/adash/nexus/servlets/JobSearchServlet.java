@@ -61,13 +61,13 @@ public class JobSearchServlet extends HttpServlet {
 		String joblargecd3 = null;
 		joblargecd3 = request.getParameter("joblargecd3");
 
-		// 1.8基本給上限を取得
+		// 1.8基本給下限を取得
 		int salarymin = -1;
 		if (!"".equals(request.getParameter("salarymin"))
 				&& request.getParameter("salarymin") != null) {
 			salarymin = Integer.parseInt(request.getParameter("salarymin"));
 		}
-		// 1.9 基本給下限を取得
+		// 1.9 基本給上限を取得
 		int salarymax = -1;
 		if (!"".equals(request.getParameter("salarymax"))
 				&& request.getParameter("salarymax") != null) {
