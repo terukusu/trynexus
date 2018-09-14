@@ -53,12 +53,12 @@ public class LoginServlet extends HttpServlet {
 			 //0 認証情報を格納する
 		      session.setAttribute("UserData", userData);
 		      //0　メインjspにフォワード
-		      request.getRequestDispatcher("/main.jsp").
+		      request.getRequestDispatcher("/stafftop.jsp").
 		      forward(request, response);
 		}else{
 			//0 認証失敗した場合エラーメッセージの表示
 			request.setAttribute("message", "IDまたはパスワードが違います");
-			request.getRequestDispatcher("/login.jsp").
+			request.getRequestDispatcher("/stafflogin.jsp").
 		      forward(request, response);
 			}
 		}
