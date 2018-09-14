@@ -31,15 +31,15 @@ public class KyujinRegistDisplayServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 1.1 リクエストから求人コードを取得
-		int no = -1;
+		String no = "12457-44446666"; //仮の値
 		if (!"".equals(request.getParameter("no"))
 				&& request.getParameter("no") != null) {
-			no = Integer.parseInt(request.getParameter("no"));
+			no = (request.getParameter("no"));
 		}
 
 		// 1.2 求人コードがある場合、商品情報を取得
 		Kyujin kyujin = null;
-		if (no >= 0) {
+		if (no != null) {
 			KyujinService service = new KyujinService();
 			kyujin = service.getKyujin(no);
 		}

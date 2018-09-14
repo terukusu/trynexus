@@ -6,6 +6,7 @@ import java.util.List;
 
 import jp.or.adash.nexus.entity.Kyujin;
 import jp.or.adash.nexus.kyujin.dao.KyujinDao;
+import jp.or.adash.nexus.kyujin.dao.SaibanDao;
 import jp.or.adash.nexus.utils.common.MessageCommons;
 import jp.or.adash.nexus.utils.dao.Transaction;
 
@@ -47,7 +48,7 @@ public class KyujinService {
 	 * @param code 商品コード
 	 * @return 商品情報
 	 */
-	public Kyujin getKyujin(int no) {
+	public Kyujin getKyujin(String no) {
 		Kyujin kyujin = null;
 
 		try {
@@ -69,8 +70,8 @@ public class KyujinService {
 	}
 
 	/**
-	 * 商品リストを取得する
-	 * @return 商品リスト
+	 * 求人票リストを取得する
+	 * @return 求人票リスト
 	 */
 	public List<Kyujin> getKyujinList() {
 		List<Kyujin> kyujinList = new ArrayList<Kyujin>();
@@ -99,7 +100,7 @@ public class KyujinService {
 	 * @param no 求人番号
 	 * @return 商品価格（エラーの場合、-1をセット）
 	 */
-	public int getKyujinEstablishdt(int no) {
+	public int getKyujinEstablishdt(String no) {
 		// 創業設立年（創業設立年がなければ、0）
 		int establishdt = 0;
 
@@ -126,33 +127,32 @@ public class KyujinService {
 	/**
 	 * 商品データの内容をチェックする
 	 * @param item 商品データ
-	 * @return 処理結果（true:成功、false:失敗）
-	public boolean check(Item item) {
+	 * @return 処理結果（true:成功、false:失敗）*/
+	public boolean check(Kyujin kyujin) {
 		boolean result = true; // チェック結果
 
-		// 商品コードの値が正しいか
-		if (item.getItemNo() <= 0) {
-			messages.add("商品コードに0より小さい値は指定できません。");
-			result = false;
-		}
+		/*		// 商品コードの値が正しいか
+				if (item.getItemNo() <= 0) {
+					messages.add("商品コードに0より小さい値は指定できません。");
+					result = false;
+				}
 
-		// 商品名の長さが適切か
-		DataCommons commons = new DataCommons();
-		int length = commons.getBytes(item.getItemName());
-		if (length <= 0 || length >= 100) {
-			messages.add("商品名の文字数が多すぎます。");
-			result = false;
-		}
+				// 商品名の長さが適切か
+				DataCommons commons = new DataCommons();
+				int length = commons.getBytes(item.getItemName());
+				if (length <= 0 || length >= 100) {
+					messages.add("商品名の文字数が多すぎます。");
+					result = false;
+				}
 
-		// 単価の値が正しいか
-		if (item.getUnitPrice() <= 0) {
-			messages.add("単価は1円以上で入力してください。");
-			result = false;
-		}
-
+				// 単価の値が正しいか
+				if (item.getUnitPrice() <= 0) {
+					messages.add("単価は1円以上で入力してください。");
+					result = false;
+				}
+		*/
 		return result;
 	}
-	*/
 
 	/**
 	 * 登録完了メッセージ
@@ -165,47 +165,8 @@ public class KyujinService {
 	private static final String MSG_ITEM_REGIST_FAILURE = "求人データの登録に失敗しました。";
 
 	/**
-	 * 商品データを登録する
-	 * @param item 商品データ
-	 * @return 処理結果（true:成功、false:失敗）
-	 */
-	public boolean registKyujin(Kyujin kyujin) {
-		boolean result = false;
-
-		// データベースに商品が既に存在するかどうか確認する
-		if (exists(kyujin.getEstablishdt())) {
-			// 存在する場合は、商品データを更新する
-			result = this.updateKyujin(kyujin);
-		} else {
-			// 存在しなければ、商品データを登録する
-			result = this.insertKyujin(kyujin);
-		}
-
-		return result;
-	}
-
-	/**
-	 * 商品コードがデータベースに既に存在するかどうかを確認する
-	 * @param code 商品コード
-	 * @return true:存在する、false:存在しない
-	 */
-	private boolean exists(int no) {
-		boolean result = false; // 確認結果
-
-		// コードをキーにして、データベースを検索する
-		int establishdt = this.getKyujinEstablishdt(no);
-
-		// データが存在する場合、true	を返す
-		if (establishdt > 0) {
-			result = true;
-		}
-
-		return result;
-	}
-
-	/**
-	 * 商品データを更新する
-	 * @param item 商品データ
+	 * 求人票データを更新する
+	 * @param kyujin 求人票データ
 	 * @return 処理結果（true:成功、false:失敗）
 	 */
 	public boolean updateKyujin(Kyujin kyujin) {
@@ -249,8 +210,8 @@ public class KyujinService {
 	}
 
 	/**
-	 * 商品データをデータベースに登録する
-	 * @param item 商品データ
+	 * 求人票データをデータベースに登録する
+	 * @param kyujin 求人票データ
 	 * @return 処理結果（true:成功、false:失敗）
 	 */
 	public boolean insertKyujin(Kyujin kyujin) {
@@ -262,6 +223,14 @@ public class KyujinService {
 
 			// トランザクションを開始する
 			transaction.beginTrans();
+
+			//采番マスタよりデータ取得
+			SaibanDao saidao = new SaibanDao(transaction);
+			int saiban = saidao.getsaiban();
+
+			//とってきた番号を加工し、Kyujin.noにデータ格納
+			String str = "A" + String.format("%013d", saiban);
+			Kyujin.setNo(str);
 
 			// 商品単価を取得する
 			KyujinDao dao = new KyujinDao(transaction);
