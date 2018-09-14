@@ -32,7 +32,8 @@ public class LogoutServlet extends HttpServlet {
 		//0セッション破棄
 		session.invalidate();
 		//0セッション破棄後ログアウト完了ページへ
-		response.sendRedirect("http://localhost:8080/nexus/logout.jsp");
+		response.sendRedirect("./logout.jsp");
+
 	}
 
 	/**

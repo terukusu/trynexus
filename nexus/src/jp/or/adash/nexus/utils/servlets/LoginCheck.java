@@ -13,14 +13,23 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-@WebFilter("/LoginCheck")
+import jp.or.adash.nexus.entity.Staff;
+
+@WebFilter("/*")
 public class LoginCheck implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		// 0セッションが存在しない場合NULLを返す
-        HttpSession session = ((HttpServletRequest)request).getSession(false);
+        HttpSession session = ((HttpServletRequest)request).getSession();
 
-        if(session != null){
+		// 1.内作
+		// Staff user = new Staff(null, null, null, null, null, null, null, null, null, null);
+		// session.setAttribute("UserData", user);
+		// 1.内作
+
+        Staff userData = (Staff)session.getAttribute("UserData");
+
+        if(userData != null){
             //　0セッションがnullでなければ、通常どおりの遷移
             chain.doFilter(request, response);
         }else{
