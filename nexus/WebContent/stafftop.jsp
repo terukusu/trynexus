@@ -32,7 +32,7 @@
 		</th>
         </tr>
         <tr>
-        <td><a href="http://www.fureai.or.jp/~irie/html-tag/">■求人検索</a></td>
+        <td><a href="./jobsearch">■求人検索</a></td>
         </tr>
     </table>
 	</div>
@@ -46,16 +46,18 @@
 		</th>
         </tr>
         <tr>
-        <td><a href="http://www.fureai.or.jp/~irie/html-tag/">■求人情報</a></td>
+
+        <td>■求人情報</td>
+
         </tr>
         <tr>
-        <td><a href="http://www.fureai.or.jp/~irie/html-tag/">■求職者情報</a></td>
+        <td><a href="./jobseekerservlet">■求職者情報</a></td>
         </tr>
         <tr>
-        <td><a href="http://www.fureai.or.jp/~irie/html-tag/">■企業マスター</a></td>
+        <td>■企業マスター</td>
         </tr>
         <tr>
-        <td><a href="http://www.fureai.or.jp/~irie/html-tag/">■マッチング履歴</a></td>
+        <td><a href="./matchingservlet">■マッチング登録</a></td>
         </tr>
     </table>
 	</div>
@@ -68,7 +70,7 @@
 		</th>
         </tr>
         <tr>
-        <td><a href="http://www.fureai.or.jp/~irie/html-tag/">■アカウント</a></td>
+        <td>■アカウント</td>
         </tr>
     </table>
 	</div>
