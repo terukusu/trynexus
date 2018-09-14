@@ -70,10 +70,10 @@
     <td>事業所番号</td>
      <td><input type="text" name="companyno" value="<c:out value="${ kyujin.companyno }" />" maxlength="13" tabindex=""></td>
   </tr>
+<!-- コード類はc:でマスタからのリスト表示 -->
   <tr>
     <td>産業大分類コード</td>
      <td>
-
      <input type="text" name="jobcategorylargecd" value="<c:out value="${ kyujin.jobcategorylargecd }" />" maxlength="1
      " tabindex=""></td>
   </tr>
