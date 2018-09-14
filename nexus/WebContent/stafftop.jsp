@@ -6,7 +6,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>実習</title>
+<title>スタッフページ</title>
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"rel="stylesheet" >
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
 <link href="bootstrap-reboot.css" rel="stylesheet">
@@ -50,7 +50,7 @@
   </section>
 </header>
 
-<main>
+
 <div><!--　コンテナー-->
 	<div>
 		<h2>トップページ</h2>
@@ -107,10 +107,11 @@
 	<div class="clear">
 	 <form name= "logout" method="GET" action="logoutservlet">
     <input class="main-b" type="submit" name="close" value="ログアウト">
+    </form>
 	</div>
 
 </div><!--　コンテナ終了-->
-</main>
+
 
 <footer>
   <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館)　All Rights Reserved.</small>
