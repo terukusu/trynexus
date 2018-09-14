@@ -13,6 +13,7 @@ import java.util.List;
 import jp.or.adash.nexus.entity.Kyujin;
 import jp.or.adash.nexus.utils.dao.Transaction;
 
+
 /**
  * 求人データアクセスクラス
  * @author pgjavaAT

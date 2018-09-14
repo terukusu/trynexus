@@ -8,6 +8,7 @@ import java.sql.SQLException;
 
 import jp.or.adash.nexus.utils.dao.Transaction;
 
+
 /**
  *　采番データアクセスクラス
  */
