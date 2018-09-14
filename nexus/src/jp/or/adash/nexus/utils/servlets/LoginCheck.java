@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import jp.or.adash.nexus.entity.Staff;
-
+/*
 @WebFilter("/*")
 public class LoginCheck implements Filter {
 
@@ -43,3 +43,4 @@ public class LoginCheck implements Filter {
 	public void destroy(){
 	}
 }
+*/
