@@ -16,7 +16,8 @@
 <p>ご利用ありがとうございました。</p>
 </div>
 <div>
-<a href="http:localhost:8080/nexus/login.jsp">ログイン画面へ</a>
+<a href="./login.jsp">ログイン画面へ</a>
 </div>
+
 </body>
 </html>
