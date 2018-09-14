@@ -643,4 +643,10 @@ public class Kyujin {
 		return deleteflag;
 	}
 
+	/**
+	 * @param no セットする no
+	 */
+	public void setNo(String no) {
+		this.no = no;
+	}
 }
