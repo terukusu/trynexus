@@ -21,7 +21,7 @@
     <p>アカウントをお持ちでない場合は、当館管理担当者までお申し出くださいませ。</p>
     </div>
 	<div>
-	<a href="http://localhost:8080/nexus/login.jsp">ログイン画面へ</a>
+	<a href="http://localhost:8080/nexus/stafflogin.jsp">ログイン画面へ</a>
 	</div>
 
 
