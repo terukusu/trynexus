@@ -18,6 +18,7 @@
 <link href="stafftop.css" rel="stylesheet">
 </head>
 <body>
+<main>
 <div><!--　コンテナー-->
 	<div>
 		<h1>トップページ</h1>
@@ -82,11 +83,10 @@
 
 
 </div><!--　コンテナ終了-->
-
+</main>
 <footer>
   <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館)　All Rights Reserved.</small>
 </footer>
 
-<body>
 </body>
 </html>
