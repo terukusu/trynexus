@@ -47,7 +47,7 @@
   </section>
 </header>
 <main>
-<form method="post" action="./regist">
+<form id="form" method="post" action="">
 
   <div id="job_edit">
   <h2>求人登録</h2>
@@ -389,11 +389,11 @@
 <button type="button" class="main_b return" tabindex="" onClick="window.CloseWindow();">戻る</button>
 
 <c:if test="${ kyujin.no == null }">
-	<button type="submit" id="regist" class="" tabindex="">登録</button>
+	<button type="submit" id="KyujinInsertServlet" class="" tabindex="" onclick="MovePages(this)">登録</button>
 </c:if>
 <c:if test="${ kyujin.no != null }">
-	<button type="submit" id="update"  class="main_b" tabindex="">更新</button>
-	<button type="submit" id="delete" class="main_b" tabindex="">削除</button>
+	<button type="submit" id="KyujinUpdateServlet"  class="main_b" tabindex="" onclick="MovePages(this)">更新</button>
+	<button type="submit" id="KyujinDeleteServlet" class="main_b" tabindex="" onclick="MovePages(this)">削除</button>
 </c:if>
 </form>
 
