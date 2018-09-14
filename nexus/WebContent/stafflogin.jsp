@@ -49,7 +49,6 @@
 	<div>
 		<a href="./message.jsp">ログインできない／アカウントをお持ちでない場合</a>
 	</div>
-
 </div><!--　コンテナ終了-->
 <body>
 </body>
