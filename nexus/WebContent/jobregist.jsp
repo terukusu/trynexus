@@ -149,7 +149,7 @@
   <tr>
     <td>雇用形態コード</td>
      <td>
- 	 <!-- JSで設定する -->
+ 	 <!-- JSで設定する  -->
  	 <select name="koyoukeitaicd">
           <option value=""></option>
           <option value="1">正社員</option>
@@ -336,7 +336,7 @@
 
 </table>
 <!-- jsでウィンドウクローズにする -->
-<button type="button" class="main_b main_b_jobedit return" tabindex="">戻る</button>
+<button type="button" class="main_b main_b_jobedit return" tabindex="" onClick="window.CloseWindow();">戻る</button>
 
 <c:if test="${ kyujin.no == null }">
 	<button type="submit" id="regist" class="main_b main_b_jobedit regist" tabindex="">登録</button>
