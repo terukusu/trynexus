@@ -32,6 +32,7 @@ public class KyujinServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		// 1.1 リクエストから職種を取得
 		String job = null;
 		job = request.getParameter("job");

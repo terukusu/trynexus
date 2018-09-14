@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 
 import jp.or.adash.nexus.entity.Staff;
 
-@WebFilter("/*")
+@WebFilter("/nexus/web")
 public class LoginCheck implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
@@ -34,7 +34,7 @@ public class LoginCheck implements Filter {
             chain.doFilter(request, response);
         }else{
             //　0セッションがnullならば、ログイン画面へ飛ばす
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/stafflogin.jsp");
             dispatcher.forward(request,response);
         }
 	}
