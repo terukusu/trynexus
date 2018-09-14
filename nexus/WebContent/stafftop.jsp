@@ -5,10 +5,9 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>スタッフページ</title>
-   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"rel="stylesheet" >
+<meta charset="UTF-8">
+<title>実習</title>
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"rel="stylesheet" >
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
 <link href="bootstrap-reboot.css" rel="stylesheet">
 <link href="applicantlist.css" rel="stylesheet">
