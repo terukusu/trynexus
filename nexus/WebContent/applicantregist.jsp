@@ -12,7 +12,7 @@
 <link href="../css/bootstrap-reboot.css" rel="stylesheet" type="text/css" />
 <link href="../css/common.css" rel="stylesheet" type="text/css" />
 <link href="../css/header.css" rel="stylesheet" type="text/css" />
-<link href="../css/footer.css" rel="stylesheet" type="text/css" />
+<link href="../css/job_seeker.css" rel="stylesheet" type="text/css" />
 <title>求人情報登録</title>
 </head>
 <body><!-- ヘッダー　-->
@@ -45,6 +45,8 @@
     </div>
   </section>
 </header>
+<main>
+<div id="job_seeker">
 	<ul>
 	<c:forEach var="message" items="${ messages }">
 		<li><c:out value="${ message }" /></li>
@@ -52,11 +54,11 @@
 	</ul>
 
 	<form method="post" action="./regist">
-		<table>
+		<table width="" border="0">
 		<tr>
-			<th>ID</th>
+			<th width="20%">ID</th>
 			<td>
-				<input type="text" name="id" value="<c:out value="${ seeker.id }" />">
+			  <input type="text" name="id" value="<c:out value="${ seeker.id }" />">
 				<input type="hidden" name="hiddenid" value="<c:out value="${ seeker.id }" />">
 			</td>
 		</tr>
@@ -187,6 +189,8 @@
 	</table>
 		<input type="submit" value="登録">
 	</form>
+    </div>
+    </main>
 	<!-- フッター　-->
 <footer> <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館)　All Rights Reserved.</small> </footer>
 </body>
