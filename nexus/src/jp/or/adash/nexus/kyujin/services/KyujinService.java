@@ -230,7 +230,7 @@ public class KyujinService {
 
 			//とってきた番号を加工し、Kyujin.noにデータ格納
 			String str = "A" + String.format("%013d", saiban);
-			Kyujin.setNo(str);
+			kyujin.setNo(str);
 
 			// 商品単価を取得する
 			KyujinDao dao = new KyujinDao(transaction);

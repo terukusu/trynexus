@@ -5,7 +5,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>求人登録</title>
+<title>実習</title>
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"rel="stylesheet" >
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
 <link href="css/bootstrap-reboot.css" rel="stylesheet">
@@ -15,8 +15,39 @@
 </head>
 <body>
 
-
-<form method="post" action="./regist">
+<header>
+  <section>
+    <h1 class="logo"><a href="#">LOGO</a></h1>
+    <nav>
+      <ul class="mainnavi">
+        <li><a href="#"><i class="fas fa-home"></i>検索</a></li>
+        <li>
+          <a href="#"><i class="fas fa-search"></i>登録&amp;閲覧</a>
+          <ul class="drop-menu">
+            <li><a href="#">求人情報<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="#">求職者情報<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="#">企業マスタ<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="#">マッチング履歴<i class="fas fa-angle-right"></i></a></li>
+          </ul>
+        </li>
+        <li><a href="#"><i class="far fa-bookmark"></i>管理</a></li>
+      </ul>
+    </nav>
+    <div class="user">
+      <div class="user__wrapper">
+        <!-- <div class="user__image"></div> -->
+        <div class="user__name">
+          <a href="#">山田 太郎<i class="fas fa-ellipsis-v"></i></a>
+          <ul class="drop-menu">
+            <li><a href="#">サインアウト<i class="fas fa-angle-right"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+<main>
+<form id="form" method="post" action="">
 
   <div id="job_edit">
   <h2>求人登録</h2>
@@ -26,14 +57,15 @@
       メッセージを表示
     </div>
 
-<table border="1">
-  <tr>
-    <th>項目名</th>
-    <th>内容</th>
-  </tr>
-  <tr>
-    <td>求人No.</td>
-    <td><c:out value="${ kyujin.no }" /></td>
+
+    <table>
+      <tr>
+        <th>項目名</th>
+        <th></th>
+      </tr>
+      <tr>
+         <td>求人No.</td>
+    <td><input type="text" name="receptiondt" value="<c:out value="${ kyujin.no }" />"></td>
   </tr>
   <tr>
     <td>受付年月日</td>
@@ -47,46 +79,16 @@
     <td>事業所番号</td>
      <td><input type="text" name="companyno" value="<c:out value="${ kyujin.companyno }" />" maxlength="13" tabindex=""></td>
   </tr>
+<!-- コード類はc:でマスタからのリスト表示 -->
   <tr>
-    <td>就業場所コード</td>
-    <td><input type="text" name="addresscd" value="<c:out value="${ kyujin.addresscd }" />" maxlength="2" tabindex=""></td>
-  </tr>
-  <tr>
-     <td>職種細分類コード１</td>
-     <td><input type="text" name="jobsmallcd1" value="<c:out value="${ kyujin.jobsmallcd1 }" />" maxlength="6" tabindex=""></td>
-   </tr>
-   <tr>
-    <td>職種細分類コード2</td>
-     <td><input type="text" name="jobsmallcd2" value="<c:out value="${ kyujin.jobsmallcd2 }" />" maxlength="6" tabindex=""></td>
-  </tr>
-  <tr>
-    <td>職種細分類コード3</td>
-     <td><input type="text" name="jobsmallcd3" value="<c:out value="${ kyujin.jobsmallcd3 }" />" maxlength="6" tabindex=""></td>
-  </tr>
-  <tr>
-    <td>職種大分類コード１</td>
-     <td><input type="text" name="joblargecd1" value="<c:out value="${ kyujin.joblargecd1 }" />" maxlength="1" tabindex=""></td>
-  </tr>
-  <tr>
-    <td>職種大分類コード2</td>
-     <td><input type="text" name="joblargecd2" value="<c:out value="${ kyujin.joblargecd2 }" />" maxlength="1" tabindex=""></td>
-  </tr>
-  <tr>
-    <td>職種大分類コード3</td>
-     <td><input type="text" name="joblargecd3" value="<c:out value="${ kyujin.joblargecd3 }" />" maxlength="1" tabindex=""></td>
+    <td>産業大分類コード</td>
+     <td>
+     <input type="text" name="jobcategorylargecd" value="<c:out value="${ kyujin.jobcategorylargecd }" />" maxlength="1
+     " tabindex=""></td>
   </tr>
   <tr>
     <td>産業細分類コード</td>
      <td><input type="text" name="jobcategorysmallcd" value="<c:out value="${ kyujin.jobcategorysmallcd }" />" maxlength="3" tabindex=""></td>
-  </tr>
-  <tr>
-    <td>産業大分類コード</td>
-     <td><input type="text" name="jobcategorylargecd" value="<c:out value="${ kyujin.jobcategorylargecd }" />" maxlength="1
-     " tabindex=""></td>
-  </tr>
-  <tr>
-    <td>産業分類名</td>
-     <td><input type="text" name="jobcategory" value="<c:out value="${ kyujin.jobcategory }" />" tabindex=""></td>
   </tr>
   <tr>
     <td>事業所名（かな）</td>
@@ -109,15 +111,73 @@
      <td><input type="text" name="companyurl" value="<c:out value="${ kyujin.companyurl }" />" size="60" tabindex=""></td>
   </tr>
   <tr>
+    <td>創業設立年</td>
+     <td><input type="number" name="establishdt" value="<c:out value="${ kyujin.establishdt }" />" maxlength="4" tabindex="">年</td>
+  </tr>
+  <tr>
+    <td>資本金</td>
+     <td><input type="number" name="capital" value="<c:out value="${ kyujin.capital }" />" tabindex="">円</td>
+  </tr>
+  <tr>
+    <td>会社の特徴</td>
+     <td>
+      <textarea name="companyfeature" cols="80" rows="10" value="<c:out value="${ kyujin.companyfeature }" />"  tabindex=""></textarea></td>
+  </tr>
+<!-- 　　メモ　：JS使って大分類から細分類マスタに、プルダウンリストにする -->
+  <tr>
+    <td>職種大分類コード１</td>
+     <td>
+     <!-- c:forEach var="" -->
+
+     <input type="text" name="joblargecd1" value="<c:out value="${ kyujin.joblargecd1 }" />" maxlength="1" tabindex=""></td>
+  </tr>
+  <tr>
+     <td>職種細分類コード１</td>
+     <td><input type="text" name="jobsmallcd1" value="<c:out value="${ kyujin.jobsmallcd1 }" />" maxlength="6" tabindex=""></td>
+   </tr>
+  <tr>
+    <td>職種大分類コード2</td>
+     <td><input type="text" name="joblargecd2" value="<c:out value="${ kyujin.joblargecd2 }" />" maxlength="1" tabindex=""></td>
+  </tr>
+   <tr>
+    <td>職種細分類コード2</td>
+     <td><input type="text" name="jobsmallcd2" value="<c:out value="${ kyujin.jobsmallcd2 }" />" maxlength="6" tabindex=""></td>
+  </tr>
+  <tr>
+    <td>職種大分類コード3</td>
+     <td><input type="text" name="joblargecd3" value="<c:out value="${ kyujin.joblargecd3 }" />" maxlength="1" tabindex=""></td>
+  </tr>
+  <tr>
+    <td>職種細分類コード3</td>
+     <td><input type="text" name="jobsmallcd3" value="<c:out value="${ kyujin.jobsmallcd3 }" />" maxlength="6" tabindex=""></td>
+  </tr>
+   <tr>
     <td>就業場所郵便番号</td>
      <td><input type="text" name="postal" value="<c:out value="${ kyujin.postal }" />" maxlength="8" tabindex=""></td>
   </tr>
+  <!--　メモ： リストで就業場所コードマスタを参照 -->
   <tr>
-    <td>就業場所</td>
-     <td><input type="text" name="adress" value="<c:out value="${ kyujin.adress }" />" size="100" tabindex=""></td>
+    <td>就業場所都道府県</td>
+    <td>
+     	 <!-- JSで設定する  -->
+ 	 <select name="koyoukeitaicd">
+          <option value=""></option>
+          <option value="1">正社員</option>
+          <option value="2">正社員以外</option>
+          <option value="3">有期雇用派遣</option>
+          <option value="4">無期雇用派遣</option>
+          <option value="5">パート労働者</option>
+          <option value="6">有期派遣パート</option>
+          <option value="7">無期派遣パート</option>
+     </select>
+    <input type="text" name="addresscd" value="<c:out value="${ kyujin.addresscd }" />" maxlength="2" tabindex=""></td>
   </tr>
   <tr>
-    <td>最寄り駅</td>
+    <td>就業場所住所</td>
+     <td><input type="text" name="adress" value="<c:out value="${ kyujin.address }" />" size="100" tabindex=""></td>
+  </tr>
+  <tr>
+    <td>就業場所最寄り駅</td>
      <td><input type="text" name="nearstation" value="<c:out value="${ kyujin.nearstation }" />" size="60" tabindex=""></td>
   </tr>
   <tr>
@@ -125,7 +185,7 @@
      <td><input type="text" name="job" value="<c:out value="${ kyujin.job }" />" tabindex=""></td>
   </tr>
   <tr>
-    <td>派遣/請負コード</td>
+    <td>派遣/請負</td>
     <td>
     <c:if test="${1 == kyujin.hakencd}">
     <input type="radio" name="hakencd" value="1" checked="checked"/> 派遣
@@ -147,10 +207,10 @@
       </td>
   </tr>
   <tr>
-    <td>雇用形態コード</td>
+    <td>雇用形態</td>
      <td>
- 	 <!-- JSで設定する -->
- 	 <select name="koyoukeitaicd" required>
+ 	 <!-- JSで設定する  -->
+ 	 <select name="koyoukeitaicd">
           <option value=""></option>
           <option value="1">正社員</option>
           <option value="2">正社員以外</option>
@@ -200,22 +260,22 @@
   </tr>
   <tr>
     <td>年齢制限・下限</td>
-     <td><input type="number" name="agemin" value="<c:out value="${ kyujin.agemin }" />" maxlength="3" tabindex=""></td>
+     <td><input type="number" name="agemin" value="<c:out value="${ kyujin.agemin }" />" maxlength="3" tabindex="">歳</td>
   </tr>
   <tr>
     <td>年齢制限・上限</td>
-     <td><input type="number" name="agemax" value="<c:out value="${ kyujin.agemax }" />" maxlength="3" tabindex=""></td>
+     <td><input type="number" name="agemax" value="<c:out value="${ kyujin.agemax }" />" maxlength="3" tabindex="">歳</td>
   </tr>
   <tr>
     <td>基本給下限</td>
-     <td><input type="number" name="salarymin" value="<c:out value="${ kyujin.salarymin }" />" tabindex=""></td>
+     <td><input type="number" name="salarymin" value="<c:out value="${ kyujin.salarymin }" />" tabindex="">円</td>
   </tr>
   <tr>
     <td>基本給上限</td>
-     <td><input type="number" name="salarymax" value="<c:out value="${ kyujin.salarymax }" />" tabindex=""></td>
+     <td><input type="number" name="salarymax" value="<c:out value="${ kyujin.salarymax }" />" tabindex="">円</td>
   </tr>
   <tr>
-    <td>賃金形態コード</td>
+    <td>賃金形態</td>
      <td>
      <c:if test="${1 == kyujin.salaryformcd}">
         <input type="radio" name="salaryformcd" value="1" checked="checked"/> 月給
@@ -233,7 +293,7 @@
         <input type="radio" name="salaryformcd" value="6" checked="checked"/> その他
         </c:if>
 
-        <c:if test="${1 != kyujin.salaryformcd && 3 != kyujin.salaryformcd}">
+        <c:if test="${ 1 != kyujin.salaryformcd && 3 != kyujin.salaryformcd && 4 != kyujin.salaryformcd && 5 != kyujin.salaryformcd && 6 != kyujin.salaryformcd }">
         <input type="radio" name="salaryformcd" value="1"/> 月給
         <input type="radio" name="salaryformcd" value="3"/> 日給
         <input type="radio" name="salaryformcd" value="4"/> 時間給
@@ -249,19 +309,6 @@
   <tr>
     <td>就業時間・終業</td>
      <td><input type="time" name="endtime" value="<c:out value="${ kyujin.endtime }" />" maxlength="4" tabindex=""></td>
-  </tr>
-  <tr>
-    <td>創業設立年</td>
-     <td><input type="number" name="establishdt" value="<c:out value="${ kyujin.establishdt }" />" maxlength="4" tabindex=""></td>
-  </tr>
-  <tr>
-    <td>資本金</td>
-     <td><input type="number" name="capital" value="<c:out value="${ kyujin.capital }" />" tabindex=""></td>
-  </tr>
-  <tr>
-    <td>会社の特徴</td>
-     <td>
-      <textarea name="companyfeature" cols="80" rows="10" value="<c:out value="${ kyujin.companyfeature }" />"  tabindex=""></textarea></td>
   </tr>
   <tr>
     <td>選考担当者課係名/役職名</td>
@@ -307,11 +354,11 @@
   </tr>
   <tr>
     <td>年齢下限（求職者に非公開）</td>
-     <td><input type="number" name="hiddenagemin" value="<c:out value="${ kyujin.hiddenagemin }" />" maxlength="3" tabindex=""></td>
+     <td><input type="number" name="hiddenagemin" value="<c:out value="${ kyujin.hiddenagemin }" />" maxlength="3" tabindex="">歳</td>
   </tr>
   <tr>
     <td>年齢上限（求職者に非公開）</td>
-     <td><input type="number" name="hiddenagemax" value="<c:out value="${ kyujin.hiddenagemax }" />" maxlength="3" tabindex=""></td>
+     <td><input type="number" name="hiddenagemax" value="<c:out value="${ kyujin.hiddenagemax }" />" maxlength="3" tabindex="">歳</td>
   </tr>
   <tr>
     <td>その他非公開情報</td>
@@ -336,16 +383,24 @@
 
 </table>
 
-<button type="reset" class="main_b main_b_jobedit return" tabindex="">戻る</button>
-<button type="submit" class="main_b main_b_jobedit regist" tabindex="">登録</button>
-<button type="submit" class="main_b main_b_jobedit update" tabindex="">更新</button>
-<button type="submit" class="main_b main_b_jobedit delete" tabindex="">削除</button>
+</main>
 
+<!-- jsでウィンドウクローズにする -->
+<button type="button" class="main_b return" tabindex="" onClick="window.CloseWindow();">戻る</button>
+
+<c:if test="${ kyujin.no == null }">
+	<button type="submit" id="KyujinInsertServlet" class="" tabindex="" onclick="MovePages(this)">登録</button>
+</c:if>
+<c:if test="${ kyujin.no != null }">
+	<button type="submit" id="KyujinUpdateServlet"  class="main_b" tabindex="" onclick="MovePages(this)">更新</button>
+	<button type="submit" id="KyujinDeleteServlet" class="main_b" tabindex="" onclick="MovePages(this)">削除</button>
+</c:if>
 </form>
 
 <footer>
   <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館)　All Rights Reserved.</small>
 </footer>
-
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/jobregist.js"></script>
 </body>
 </html>
