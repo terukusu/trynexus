@@ -644,7 +644,8 @@ public class Kyujin {
 	}
 
 	/**
-	 * @param no セットする no
+	 * 求人Ｎo.をセットする
+	 * @param no 求人Ｎo.
 	 */
 	public void setNo(String no) {
 		this.no = no;
