@@ -1,6 +1,7 @@
 package jp.or.adash.nexus.utils.dao;
 
 import java.sql.Connection;
+//import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import javax.naming.InitialContext;
