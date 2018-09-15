@@ -216,7 +216,7 @@ public List<Jobseeker_simple_entity> getJobSeekerList(){
 	 * @param seeker 求職者情報
 	 * @return 処理結果（true:成功、false:失敗）
 	 */
-	public boolean updateItem(JobSeeker seeker) {
+	public boolean updateJobSeeker(JobSeeker seeker) {
 		boolean result = false;	// 処理結果
 
 		try {

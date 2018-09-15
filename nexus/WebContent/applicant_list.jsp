@@ -74,7 +74,7 @@
 	        </form>
  </div>
 
-        <form action="./reserve.html" method="post">
+        <form action="./jobseeker/display" method="get">
             <input type="submit" class="main-b" name="send" value="新規登録">
         </form>
 

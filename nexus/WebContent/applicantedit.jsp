@@ -14,7 +14,7 @@
 <link href="../css/header.css" rel="stylesheet" type="text/css" />
 <link href="../css/footer.css" rel="stylesheet" type="text/css" />
 <link href="../css/job_seeker.css" rel="stylesheet" type="text/css" />
-<title>求人情報登録</title>
+<title>求職者編集画面</title>
 </head>
 <body><!-- ヘッダー　-->
 <header>
@@ -54,7 +54,7 @@
 	</c:forEach>
 	</ul>
 
-	<form method="post" action="./regist">
+	<form method="post" action="./edit">
 		<table width="" border="0">
 		<tr>
 			<th width="20%">ID</th>
@@ -188,11 +188,8 @@
 			<td><input type="text" name="password" value="<c:out value="${ seeker.password }" />"></td>
 		</tr>
 	</table>
-		<input type="submit" value="登録">
+		<input type="submit" value="編集">
 	</form>
-	<form action="../JobSeekerServlet" method="get">
-            <input type="submit" class="main-b" name="send" value="一覧に戻る">
-        </form>
     </div>
     </main>
 	<!-- フッター　-->
