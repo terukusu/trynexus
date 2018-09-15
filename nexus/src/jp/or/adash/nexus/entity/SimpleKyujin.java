@@ -15,8 +15,8 @@ public class SimpleKyujin {
 	private String joblargecd2;
 	private String joblargecd3;
 	private String companyname;
-	private String adress;
-	private String adresscd;
+	private String address;
+	private String addresscd;
 	private String nearstation;
 	private String job;
 	private String koyoukeitaicd;
@@ -27,7 +27,7 @@ public class SimpleKyujin {
 
 	public SimpleKyujin(String no,String companyno,String jobsmallcd1,String jobsmallcd2,String jobsmallcd3,
 			String joblargecd1,String joblargecd2,String joblargecd3,
-			String companyname,String adress,String adresscd,String nearstation,
+			String companyname,String address,String addresscd,String nearstation,
 			String job,String koyoukeitaicd,
 			int agemin,int agemax,int salarymin,int salarymax
 			) {
@@ -40,8 +40,8 @@ public class SimpleKyujin {
 		this.joblargecd2=joblargecd2;
 		this.joblargecd3=joblargecd3;
 		this.companyname=companyname;
-		this.adress=adress;
-		this.adresscd=adresscd;
+		this.address=address;
+		this.addresscd=addresscd;
 		this.nearstation=nearstation;
 		this.job=job;
 		this.koyoukeitaicd=koyoukeitaicd;
@@ -55,8 +55,8 @@ public class SimpleKyujin {
 		return no;
 	}
 
-	public String getAdresscd() {
-		return adresscd;
+	public String getAddresscd() {
+		return addresscd;
 	}
 
 	public String getCompanyno() {
@@ -83,8 +83,8 @@ public class SimpleKyujin {
 	public String getCompanyname() {
 		return companyname;
 	}
-	public String getAdress() {
-		return adress;
+	public String getAddress() {
+		return address;
 	}
 	public String getNearstation() {
 		return nearstation;
