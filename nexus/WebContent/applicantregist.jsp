@@ -12,6 +12,7 @@
 <link href="../css/bootstrap-reboot.css" rel="stylesheet" type="text/css" />
 <link href="../css/common.css" rel="stylesheet" type="text/css" />
 <link href="../css/header.css" rel="stylesheet" type="text/css" />
+<link href="../css/footer.css" rel="stylesheet" type="text/css" />
 <link href="../css/job_seeker.css" rel="stylesheet" type="text/css" />
 <title>求人情報登録</title>
 </head>
