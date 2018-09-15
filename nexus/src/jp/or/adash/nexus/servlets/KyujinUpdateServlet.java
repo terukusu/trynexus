@@ -1,4 +1,4 @@
-package jp.or.adash.nexus.kyujin.servlets;
+package jp.or.adash.nexus.servlets;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import jp.or.adash.nexus.entity.Kyujin;
-import jp.or.adash.nexus.kyujin.services.KyujinService;
+import jp.or.adash.nexus.services.KyujinService;
 
 
 /**

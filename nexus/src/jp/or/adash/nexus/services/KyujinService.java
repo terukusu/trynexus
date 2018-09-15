@@ -1,12 +1,12 @@
-package jp.or.adash.nexus.kyujin.services;
+package jp.or.adash.nexus.services;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import jp.or.adash.nexus.dao.KyujinDao;
+import jp.or.adash.nexus.dao.SaibanDao;
 import jp.or.adash.nexus.entity.Kyujin;
-import jp.or.adash.nexus.kyujin.dao.KyujinDao;
-import jp.or.adash.nexus.kyujin.dao.SaibanDao;
 import jp.or.adash.nexus.utils.common.MessageCommons;
 import jp.or.adash.nexus.utils.dao.Transaction;
 

@@ -1,4 +1,4 @@
-package jp.or.adash.nexus.kyujin.dao;
+package jp.or.adash.nexus.dao;
 
 import java.io.IOException;
 import java.sql.Connection;
