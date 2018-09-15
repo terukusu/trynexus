@@ -12,5 +12,5 @@ function MovePages(ele){
 	var loc = location.pathname;
 	var url = loc.substring(0, loc.lastIndexOf('/')) + '/';
 	console.log(url);
-	$("#form").attr("action",url + page_id + '.jsp');
+	$("#form").attr("action",url + page_id );
 }

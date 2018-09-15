@@ -65,7 +65,7 @@
       </tr>
       <tr>
          <td>求人No.</td>
-    <td><input type="text" name="receptiondt" value="<c:out value="${ kyujin.no }" />"></td>
+    <td><input type="text" name="no" value="<c:out value="${ kyujin.no }" />"></td>
   </tr>
   <tr>
     <td>受付年月日</td>
@@ -160,15 +160,15 @@
     <td>就業場所都道府県</td>
     <td>
      	 <!-- JSで設定する  -->
- 	 <select name="koyoukeitaicd">
+ 	 <select name="addresscd">
           <option value=""></option>
-          <option value="1">正社員</option>
-          <option value="2">正社員以外</option>
-          <option value="3">有期雇用派遣</option>
-          <option value="4">無期雇用派遣</option>
-          <option value="5">パート労働者</option>
-          <option value="6">有期派遣パート</option>
-          <option value="7">無期派遣パート</option>
+          <option value="27">大阪</option>
+          <option value="2"></option>
+          <option value="3"></option>
+          <option value="4"></option>
+          <option value="5"></option>
+          <option value="6"></option>
+          <option value="7"></option>
      </select>
     <input type="text" name="addresscd" value="<c:out value="${ kyujin.addresscd }" />" maxlength="2" tabindex=""></td>
   </tr>

@@ -16,7 +16,7 @@ import jp.or.adash.nexus.services.KyujinService;
 /**
  * 求人登録画面初期表示サーブレット
  */
-@WebServlet("job/detail")
+@WebServlet("/detail")
 public class KyujinRegistDisplayServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
