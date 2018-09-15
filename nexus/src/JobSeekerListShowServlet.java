@@ -14,7 +14,7 @@ import jp.or.adash.nexus.entity.Jobseeker_simple_entity;
 /**
  * Servlet implementation class JobSeekerServlet
  */
-@WebServlet("/JobSeekerServlet")
+@WebServlet("/jobseekerservlet")
 public class JobSeekerListShowServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
