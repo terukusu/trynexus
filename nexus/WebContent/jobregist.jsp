@@ -5,7 +5,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>実習</title>
+<title>求人登録</title>
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"rel="stylesheet" >
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
 <link href="css/bootstrap-reboot.css" rel="stylesheet">
@@ -92,11 +92,11 @@
   </tr>
   <tr>
     <td>事業所名（かな）</td>
-     <td><input type="text" name="companykana" value="<c:out value="${ kyujin.companykana }" />" size="60" tabindex=""></td>
+     <td><input type="text" name="companykana" value="<c:out value="${ kyujin.companykana }" />" tabindex=""></td>
   </tr>
   <tr>
     <td>事業所名</td>
-     <td><input type="text" name="companyname" value="<c:out value="${ kyujin.companyname }" />" size="60" tabindex=""></td>
+     <td><input type="text" name="companyname" value="<c:out value="${ kyujin.companyname }" />" tabindex=""></td>
   </tr>
   <tr>
     <td>事業所郵便番号</td>
@@ -104,11 +104,11 @@
   </tr>
   <tr>
     <td>事業所所在地</td>
-     <td><input type="text" name="companyplace" value="<c:out value="${ kyujin.companyplace }" />" size="100" tabindex=""></td>
+     <td><input type="text" name="companyplace" value="<c:out value="${ kyujin.companyplace }" />" tabindex=""></td>
   </tr>
   <tr>
     <td>事業所URL</td>
-     <td><input type="text" name="companyurl" value="<c:out value="${ kyujin.companyurl }" />" size="60" tabindex=""></td>
+     <td><input type="text" name="companyurl" value="<c:out value="${ kyujin.companyurl }" />" tabindex=""></td>
   </tr>
   <tr>
     <td>創業設立年</td>
@@ -121,7 +121,7 @@
   <tr>
     <td>会社の特徴</td>
      <td>
-      <textarea name="companyfeature" cols="80" rows="10" value="<c:out value="${ kyujin.companyfeature }" />"  tabindex=""></textarea></td>
+      <textarea name="companyfeature" value="<c:out value="${ kyujin.companyfeature }" />"  tabindex=""></textarea></td>
   </tr>
 <!-- 　　メモ　：JS使って大分類から細分類マスタに、プルダウンリストにする -->
   <tr>
@@ -174,11 +174,11 @@
   </tr>
   <tr>
     <td>就業場所住所</td>
-     <td><input type="text" name="adress" value="<c:out value="${ kyujin.address }" />" size="100" tabindex=""></td>
+     <td><input type="text" name="adress" value="<c:out value="${ kyujin.address }" />" tabindex=""></td>
   </tr>
   <tr>
     <td>就業場所最寄り駅</td>
-     <td><input type="text" name="nearstation" value="<c:out value="${ kyujin.nearstation }" />" size="60" tabindex=""></td>
+     <td><input type="text" name="nearstation" value="<c:out value="${ kyujin.nearstation }" />" tabindex=""></td>
   </tr>
   <tr>
     <td>職種</td>
@@ -203,7 +203,7 @@
   <tr>
     <td>仕事の内容</td>
      <td>
-      <textarea name="detail" cols="80" rows="10" value="<c:out value="${ kyujin.detail }" />"  tabindex=""></textarea>
+      <textarea name="detail" value="<c:out value="${ kyujin.detail }" />"  tabindex=""></textarea>
       </td>
   </tr>
   <tr>
@@ -248,15 +248,15 @@
   </tr>
   <tr>
     <td>学歴</td>
-     <td><input type="text" name="education" value="<c:out value="${ kyujin.education }" />" size="60" tabindex=""></td>
+     <td><input type="text" name="education" value="<c:out value="${ kyujin.education }" />" tabindex=""></td>
   </tr>
   <tr>
     <td>必要な経験等</td>
-     <td><input type="text" name="experience" value="<c:out value="${ kyujin.experience }" />" size="60" tabindex=""></td>
+     <td><input type="text" name="experience" value="<c:out value="${ kyujin.experience }" />" tabindex=""></td>
   </tr>
   <tr>
     <td>必要な免許・資格等</td>
-     <td><input type="text" name="license" value="<c:out value="${ kyujin.license }" />" size="60" tabindex=""></td>
+     <td><input type="text" name="license" value="<c:out value="${ kyujin.license }" />" tabindex=""></td>
   </tr>
   <tr>
     <td>年齢制限・下限</td>
@@ -329,12 +329,12 @@
   <tr>
     <td>応募書類</td>
      <td>
-      <textarea name="applicationform" cols="80" rows="10" value="<c:out value="${ kyujin.applicationform }" />" tabindex=""></textarea></td>
+      <textarea name="applicationform" value="<c:out value="${ kyujin.applicationform }" />" tabindex=""></textarea></td>
   </tr>
   <tr>
     <td>募集背景</td>
      <td>
-      <textarea name="background" cols="80" rows="10" tabindex="47" value="<c:out value="${ kyujin.background }" />"  tabindex=""></textarea></td>
+      <textarea name="background" value="<c:out value="${ kyujin.background }" />"  tabindex=""></textarea></td>
   </tr>
   <tr>
     <td>性別（求職者に非公開）</td>
@@ -363,7 +363,7 @@
   <tr>
     <td>その他非公開情報</td>
      <td>
-        <textarea name="hiddenetc" cols="80" rows="10" value="<c:out value="${ kyujin.hiddenetc }" />"  tabindex=""></textarea></td>
+        <textarea name="hiddenetc" value="<c:out value="${ kyujin.hiddenetc }" />"  tabindex=""></textarea></td>
   </tr>
   <tr>
     <td>新規登録日</td>
@@ -383,20 +383,20 @@
 
 </table>
 
-</main>
 
 <!-- jsでウィンドウクローズにする -->
-<button type="button" class="main_b return" tabindex="" onClick="window.CloseWindow();">戻る</button>
+<button type="button" class="main-b" tabindex="" onClick="window.CloseWindow();">戻る</button>
 
 <c:if test="${ kyujin.no == null }">
-	<button type="submit" id="KyujinInsertServlet" class="" tabindex="" onclick="MovePages(this)">登録</button>
+	<button type="submit" id="KyujinInsertServlet" class="main-b" tabindex="" onclick="MovePages(this)">登録</button>
 </c:if>
 <c:if test="${ kyujin.no != null }">
-	<button type="submit" id="KyujinUpdateServlet"  class="main_b" tabindex="" onclick="MovePages(this)">更新</button>
-	<button type="submit" id="KyujinDeleteServlet" class="main_b" tabindex="" onclick="MovePages(this)">削除</button>
+	<button type="submit" id="KyujinUpdateServlet"  class="main-b" tabindex="" onclick="MovePages(this)">更新</button>
+	<button type="submit" id="KyujinDeleteServlet" class="main-b" tabindex="" onclick="MovePages(this)">削除</button>
 </c:if>
-</form>
 
+</form>
+</main>
 <footer>
   <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館)　All Rights Reserved.</small>
 </footer>
