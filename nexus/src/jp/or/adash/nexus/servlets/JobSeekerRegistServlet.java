@@ -1,4 +1,4 @@
-package jp.or.adash.nexus.utils.servlets;
+package jp.or.adash.nexus.servlets;
 
 import java.io.IOException;
 import java.text.ParseException;

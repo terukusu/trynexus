@@ -165,8 +165,8 @@ public List<Jobseeker_simple_entity> getJobSeekerList(){
 	}
 
 	/**
-	 * 商品データをデータベースに登録する
-	 * @param item 商品データ
+	 * 求職者情報をデータベースに登録する
+	 * @param seeker 求職者情報
 	 * @return 処理結果（true:成功、false:失敗）
 	 */
 	public boolean insertJobSeeker(JobSeeker seeker) {
@@ -191,6 +191,52 @@ public List<Jobseeker_simple_entity> getJobSeekerList(){
 				// エラーメッセージをセットする
 				messages.add("登録失敗");
 				result = false;
+			}
+
+			// トランザクションをコミットする
+			transaction.commit();
+
+		} catch(IOException e) {
+			// トランザクションをロールバックする
+			transaction.rollback();
+
+			// エラーメッセージをセットする
+			messages.add("データベースアクセスに失敗しました。");
+		} finally {
+			// データベース接続をを終了する
+			transaction.close();
+		}
+
+		return result;
+	}
+
+
+	/**
+	 * 求職者情報を更新する
+	 * @param seeker 求職者情報
+	 * @return 処理結果（true:成功、false:失敗）
+	 */
+	public boolean updateItem(JobSeeker seeker) {
+		boolean result = false;	// 処理結果
+
+		try {
+			// データベース接続を開始する
+			transaction.open();
+
+			// トランザクションを開始する
+			transaction.beginTrans();
+
+			// 商品単価を取得する
+			JobSeekerDao dao = new JobSeekerDao(transaction);
+			int count = dao.update(seeker);
+
+			if (count > 0) {
+				// 完了メッセージをセットする
+				messages.add("編集が完了しました。");
+				result = true;
+			} else {
+				// エラーメッセージをセットする
+				messages.add("編集に失敗しました。");
 			}
 
 			// トランザクションをコミットする
