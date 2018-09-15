@@ -5,7 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jp.or.adash.nexus.entity.JobSeeker;
+import jp.or.adash.nexus.entity.Jobseeker_simple_entity;
+import jp.or.adash.nexus.utils.common.MessageCommons;
 import jp.or.adash.nexus.utils.dao.JobSeekerDao;
+import jp.or.adash.nexus.utils.dao.JobSeeker_dao;
 import jp.or.adash.nexus.utils.dao.Transaction;
 
 
@@ -29,7 +32,56 @@ public class JobSeekerService {
 		transaction = new Transaction();
 		messages = new ArrayList<String>();
 	}
+	/**
+	 * 求職者idを元に絞込み、求職者情報を取得する
+	 * @param id 求職者id
+	 * @return idで絞り込んだ求職者情報
+	 */
+	public Jobseeker_simple_entity getJobseeker(int js_id) {
+		Jobseeker_simple_entity jobseeker = null;
 
+		try {
+			// データベース接続を開始する
+			transaction.open();
+
+			// 商品単価を取得する
+			JobSeeker_dao dao = new JobSeeker_dao(transaction);
+			jobseeker = dao.selectItem(js_id);
+
+		} catch(IOException e) {
+			// エラーメッセージをセットする
+		} finally {
+			// データベース接続をを終了する
+			transaction.close();
+		}
+
+		return jobseeker;
+	}
+
+	/**
+	 * 求職者情報一覧を取得する
+	 * @return 商品リスト
+	 */
+public List<Jobseeker_simple_entity> getJobSeekerList(){
+	List<Jobseeker_simple_entity> jobseekerList = new ArrayList<Jobseeker_simple_entity>();
+	try {
+		// データベース接続を開始する
+		transaction.open();
+
+		// 商品リストを取得する
+		JobSeeker_dao dao = new JobSeeker_dao(transaction);
+		jobseekerList = dao.selectJobseekerList();
+
+	} catch(IOException e) {
+		// エラーメッセージをセットする
+		messages.add(MessageCommons.ERR_DB_CONNECT);
+	} finally {
+		// データベース接続を終了する
+		transaction.close();
+	}
+
+	return jobseekerList;
+	}
 
 	/**
 	 * 求職者IDを元に、求職者情報を取得する
@@ -113,8 +165,8 @@ public class JobSeekerService {
 	}
 
 	/**
-	 * 商品データをデータベースに登録する
-	 * @param item 商品データ
+	 * 求職者情報をデータベースに登録する
+	 * @param seeker 求職者情報
 	 * @return 処理結果（true:成功、false:失敗）
 	 */
 	public boolean insertJobSeeker(JobSeeker seeker) {
@@ -139,6 +191,52 @@ public class JobSeekerService {
 				// エラーメッセージをセットする
 				messages.add("登録失敗");
 				result = false;
+			}
+
+			// トランザクションをコミットする
+			transaction.commit();
+
+		} catch(IOException e) {
+			// トランザクションをロールバックする
+			transaction.rollback();
+
+			// エラーメッセージをセットする
+			messages.add("データベースアクセスに失敗しました。");
+		} finally {
+			// データベース接続をを終了する
+			transaction.close();
+		}
+
+		return result;
+	}
+
+
+	/**
+	 * 求職者情報を更新する
+	 * @param seeker 求職者情報
+	 * @return 処理結果（true:成功、false:失敗）
+	 */
+	public boolean updateJobSeeker(JobSeeker seeker) {
+		boolean result = false;	// 処理結果
+
+		try {
+			// データベース接続を開始する
+			transaction.open();
+
+			// トランザクションを開始する
+			transaction.beginTrans();
+
+			// 商品単価を取得する
+			JobSeekerDao dao = new JobSeekerDao(transaction);
+			int count = dao.update(seeker);
+
+			if (count > 0) {
+				// 完了メッセージをセットする
+				messages.add("編集が完了しました。");
+				result = true;
+			} else {
+				// エラーメッセージをセットする
+				messages.add("編集に失敗しました。");
 			}
 
 			// トランザクションをコミットする

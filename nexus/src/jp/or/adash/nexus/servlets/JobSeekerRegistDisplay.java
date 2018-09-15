@@ -36,14 +36,14 @@ public class JobSeekerRegistDisplay extends HttpServlet {
 				String id = request.getParameter("id");
 
 
-				// 1.2 商品コードがある場合、商品情報を取得
+				// 1.2 求職者IDがある場合、求職者情報を取得
 				JobSeeker seeker = null;
 				if (id != null) {
 					JobSeekerService service = new JobSeekerService();
 					seeker = service.getJobSeeker(id);
 				}
 
-				// 1.3 リクエストに商品情報をセットする
+				// 1.3 リクエストに求職者情報をセットする
 				request.setAttribute("seeker", seeker);
 
 				// 1.4 JSPにフォワードする
