@@ -159,22 +159,66 @@
   <tr>
     <td>就業場所都道府県</td>
     <td>
-     	 <!-- JSで設定する  -->
- 	 <select name="addresscd">
-          <option value=""></option>
-          <option value="27">大阪</option>
-          <option value="2"></option>
-          <option value="3"></option>
-          <option value="4"></option>
-          <option value="5"></option>
-          <option value="6"></option>
-          <option value="7"></option>
+     	 <!--
+ 	 <c:forEach var="addrescd" items="&{todouhuken}" />-->
+
+
+ 	  	 <select name="addresscd">
+<option value="1" <c:if test="${1 == kyujin.addresscd}">selected="selected"</c:if> />北海道</option>
+<option value="2" <c:if test="${2 == kyujin.addresscd}">selected="selected"</c:if> />青森県</option>
+<option value="3" <c:if test="${3 == kyujin.addresscd}">selected="selected"</c:if> />岩手県</option>
+<option value="4" <c:if test="${4 == kyujin.addresscd}">selected="selected"</c:if> />宮城県</option>
+<option value="5" <c:if test="${5 == kyujin.addresscd}">selected="selected"</c:if> />秋田県</option>
+<option value="6" <c:if test="${6 == kyujin.addresscd}">selected="selected"</c:if> />山形県</option>
+<option value="7" <c:if test="${7 == kyujin.addresscd}">selected="selected"</c:if> />福島県</option>
+<option value="8" <c:if test="${8 == kyujin.addresscd}">selected="selected"</c:if> />茨城県</option>
+<option value="9" <c:if test="${9 == kyujin.addresscd}">selected="selected"</c:if> />栃木県</option>
+<option value="10" <c:if test="${10 == kyujin.addresscd}">selected="selected"</c:if> />群馬県</option>
+<option value="11" <c:if test="${11 == kyujin.addresscd}">selected="selected"</c:if> />埼玉県</option>
+<option value="12" <c:if test="${12 == kyujin.addresscd}">selected="selected"</c:if> />千葉県</option>
+<option value="13" <c:if test="${13 == kyujin.addresscd}">selected="selected"</c:if> />東京都</option>
+<option value="14" <c:if test="${14 == kyujin.addresscd}">selected="selected"</c:if> />神奈川県</option>
+<option value="15" <c:if test="${15 == kyujin.addresscd}">selected="selected"</c:if> />新潟県</option>
+<option value="16" <c:if test="${16 == kyujin.addresscd}">selected="selected"</c:if> />富山県</option>
+<option value="17" <c:if test="${17 == kyujin.addresscd}">selected="selected"</c:if> />石川県</option>
+<option value="18" <c:if test="${18 == kyujin.addresscd}">selected="selected"</c:if> />福井県</option>
+<option value="19" <c:if test="${19 == kyujin.addresscd}">selected="selected"</c:if> />山梨県</option>
+<option value="20" <c:if test="${20 == kyujin.addresscd}">selected="selected"</c:if> />長野県</option>
+<option value="21" <c:if test="${21 == kyujin.addresscd}">selected="selected"</c:if> />岐阜県</option>
+<option value="22" <c:if test="${22 == kyujin.addresscd}">selected="selected"</c:if> />静岡県</option>
+<option value="23" <c:if test="${23 == kyujin.addresscd}">selected="selected"</c:if> />愛知県</option>
+<option value="24" <c:if test="${24 == kyujin.addresscd}">selected="selected"</c:if> />三重県</option>
+<option value="25" <c:if test="${25 == kyujin.addresscd}">selected="selected"</c:if> />滋賀県</option>
+<option value="26" <c:if test="${26 == kyujin.addresscd}">selected="selected"</c:if> />京都府</option>
+<option value="27" <c:if test="${27 == kyujin.addresscd}">selected="selected"</c:if> />大阪府</option>
+<option value="28" <c:if test="${28 == kyujin.addresscd}">selected="selected"</c:if> />兵庫県</option>
+<option value="29" <c:if test="${29 == kyujin.addresscd}">selected="selected"</c:if> />奈良県</option>
+<option value="30" <c:if test="${30 == kyujin.addresscd}">selected="selected"</c:if> />和歌山県</option>
+<option value="31" <c:if test="${31 == kyujin.addresscd}">selected="selected"</c:if> />鳥取県</option>
+<option value="32" <c:if test="${32 == kyujin.addresscd}">selected="selected"</c:if> />島根県</option>
+<option value="33" <c:if test="${33 == kyujin.addresscd}">selected="selected"</c:if> />岡山県</option>
+<option value="34" <c:if test="${34 == kyujin.addresscd}">selected="selected"</c:if> />広島県</option>
+<option value="35" <c:if test="${35 == kyujin.addresscd}">selected="selected"</c:if> />山口県</option>
+<option value="36" <c:if test="${36 == kyujin.addresscd}">selected="selected"</c:if> />徳島県</option>
+<option value="37" <c:if test="${37 == kyujin.addresscd}">selected="selected"</c:if> />香川県</option>
+<option value="38" <c:if test="${38 == kyujin.addresscd}">selected="selected"</c:if> />愛媛県</option>
+<option value="39" <c:if test="${39 == kyujin.addresscd}">selected="selected"</c:if> />高知県</option>
+<option value="40" <c:if test="${40 == kyujin.addresscd}">selected="selected"</c:if> />福岡県</option>
+<option value="41" <c:if test="${41 == kyujin.addresscd}">selected="selected"</c:if> />佐賀県</option>
+<option value="42" <c:if test="${42 == kyujin.addresscd}">selected="selected"</c:if> />長崎県</option>
+<option value="43" <c:if test="${43 == kyujin.addresscd}">selected="selected"</c:if> />熊本県</option>
+<option value="44" <c:if test="${44 == kyujin.addresscd}">selected="selected"</c:if> />大分県</option>
+<option value="45" <c:if test="${45 == kyujin.addresscd}">selected="selected"</c:if> />宮崎県</option>
+<option value="46" <c:if test="${46 == kyujin.addresscd}">selected="selected"</c:if> />鹿児島県</option>
+<option value="47" <c:if test="${47 == kyujin.addresscd}">selected="selected"</c:if> />沖縄県</option>
+
      </select>
+
     <input type="text" name="addresscd" value="<c:out value="${ kyujin.addresscd }" />" maxlength="2" tabindex=""></td>
   </tr>
   <tr>
     <td>就業場所住所</td>
-     <td><input type="text" name="adress" value="<c:out value="${ kyujin.address }" />" tabindex=""></td>
+     <td><input type="text" name="address" value="<c:out value="${ kyujin.address }" />" tabindex=""></td>
   </tr>
   <tr>
     <td>就業場所最寄り駅</td>
@@ -210,27 +254,26 @@
     <td>雇用形態</td>
      <td>
  	 <!-- JSで設定する  -->
+
  	 <select name="koyoukeitaicd">
-          <option value=""></option>
-          <option value="1">正社員</option>
-          <option value="2">正社員以外</option>
-          <option value="3">有期雇用派遣</option>
-          <option value="4">無期雇用派遣</option>
-          <option value="5">パート労働者</option>
-          <option value="6">有期派遣パート</option>
-          <option value="7">無期派遣パート</option>
+<option value="1" <c:if test="${1 == kyujin.addresscd}">selected="selected"</c:if> />正社員</option>
+<option value="2" <c:if test="${2 == kyujin.addresscd}">selected="selected"</c:if> />正社員以外</option>
+<option value="3" <c:if test="${3 == kyujin.addresscd}">selected="selected"</c:if> />有期雇用派遣</option>
+<option value="4" <c:if test="${4 == kyujin.addresscd}">selected="selected"</c:if> />無期雇用派遣</option>
+<option value="5" <c:if test="${5 == kyujin.addresscd}">selected="selected"</c:if> />パート労働者</option>
+<option value="6" <c:if test="${6 == kyujin.addresscd}">selected="selected"</c:if> />有期派遣パート</option>
+<option value="7" <c:if test="${7 == kyujin.addresscd}">selected="selected"</c:if> />無期派遣パート</option>
      </select>
+
 
     <!-- input type="text" name="koyoukeitaicd" value="<c:out value="${ kyujin.koyoukeitaicd }" />" tabindex=""--></td>
   </tr>
   <tr>
     <td>雇用期間の定め</td>
-    <td><c:if test="${1 == kyujin.koyoukikan}">
-    <input type="radio" name="koyoukikan" value="1" checked="checked"/> 有り
-    </c:if>
-    <c:if test="${2 == kyujin.koyoukikan}">
-    <input type="radio" name="koyoukikan" value="2" checked="checked"/> 無し
-    </c:if>
+    <td>
+    <input type="radio" name="koyoukikan" value="1" <c:if test="${1 == kyujin.koyoukikan}">checked="checked"</c:if>/> 有り
+    <input type="radio" name="koyoukikan" value="2" <c:if test="${2 == kyujin.koyoukikan}">checked="checked"</c:if>/> 無し
+
     <c:if test="${1 != kyujin.koyoukikan && 2 != kyujin.koyoukikan}">
     <input type="radio" name="koyoukikan" value="1"/> 有り
     <input type="radio" name="koyoukikan" value="2"/> 無し
@@ -277,21 +320,12 @@
   <tr>
     <td>賃金形態</td>
      <td>
-     <c:if test="${1 == kyujin.salaryformcd}">
-        <input type="radio" name="salaryformcd" value="1" checked="checked"/> 月給
-        </c:if>
-        <c:if test="${3 == kyujin.salaryformcd}">
-        <input type="radio" name="salaryformcd" value="3" checked="checked"/> 日給
-        </c:if>
-        <c:if test="${4 == kyujin.salaryformcd}">
-        <input type="radio" name="salaryformcd" value="4" checked="checked"/> 時間給
-        </c:if>
-        <c:if test="${5 == kyujin.salaryformcd}">
-        <input type="radio" name="salaryformcd" value="5" checked="checked"/> 年棒
-        </c:if>
-        <c:if test="${6 == kyujin.salaryformcd}">
-        <input type="radio" name="salaryformcd" value="6" checked="checked"/> その他
-        </c:if>
+
+        <input type="radio" name="salaryformcd" value="1" <c:if test="${1 == kyujin.salaryformcd}">checked="checked</c:if>/> 月給
+        <input type="radio" name="salaryformcd" value="3"  <c:if test="${3 == kyujin.salaryformcd}">checked="checked"</c:if>/> 日給
+        <input type="radio" name="salaryformcd" value="4" <c:if test="${4 == kyujin.salaryformcd}">checked="checked"</c:if>/> 時間給
+        <input type="radio" name="salaryformcd" value="5" <c:if test="${5 == kyujin.salaryformcd}">checked="checked"</c:if>/> 年棒
+        <input type="radio" name="salaryformcd" value="6" <c:if test="${6 == kyujin.salaryformcd}">checked="checked"</c:if>/> その他
 
         <c:if test="${ 1 != kyujin.salaryformcd && 3 != kyujin.salaryformcd && 4 != kyujin.salaryformcd && 5 != kyujin.salaryformcd && 6 != kyujin.salaryformcd }">
         <input type="radio" name="salaryformcd" value="1"/> 月給
@@ -304,11 +338,11 @@
   </tr>
   <tr>
     <td>就業時間・始業</td>
-     <td><input type="time" name="begintime" value="<c:out value="${ kyujin.begintime }" />" maxlength="4" tabindex=""></td>
+     <td><input type="text" name="begintime" value="<c:out value="${ kyujin.begintime }" />" maxlength="4" tabindex=""></td>
   </tr>
   <tr>
     <td>就業時間・終業</td>
-     <td><input type="time" name="endtime" value="<c:out value="${ kyujin.endtime }" />" maxlength="4" tabindex=""></td>
+     <td><input type="text" name="endtime" value="<c:out value="${ kyujin.endtime }" />" maxlength="4" tabindex=""></td>
   </tr>
   <tr>
     <td>選考担当者課係名/役職名</td>
@@ -339,12 +373,9 @@
   <tr>
     <td>性別（求職者に非公開）</td>
      <td>
-     <c:if test="${1 == kyujin.hiddensex}">
-    <input type="radio" name="hiddensex" value="1" checked="checked"/> 男
-    </c:if>
-    <c:if test="${2 == kyujin.hiddensex}">
-    <input type="radio" name="hiddensex" value="2" checked="checked"/> 女
-    </c:if>
+
+    <input type="radio" name="hiddensex" value="1" <c:if test="${1 == kyujin.hiddensex}">checked="checked"</c:if>/> 男
+    <input type="radio" name="hiddensex" value="2" <c:if test="${2 == kyujin.hiddensex}">checked="checked"</c:if>/> 女
     <c:if test="${1 != kyujin.hiddensex && 2 != kyujin.hiddensex}">
     <input type="radio" name="hiddensex" value="1"/> 男
     <input type="radio" name="hiddensex" value="2"/> 女
