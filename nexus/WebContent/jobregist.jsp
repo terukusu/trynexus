@@ -6,12 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>求人登録</title>
-<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"rel="stylesheet" >
-<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
-<link href="css/bootstrap-reboot.css" rel="stylesheet">
-<link href="css/common.css" rel="stylesheet">
-<link href="css/header.css" rel="stylesheet">
-<link href="css/footer.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet" type="text/css" />
+<link href="../css/bootstrap-reboot.css" rel="stylesheet" type="text/css" />
+<link href="../css/common.css" rel="stylesheet" type="text/css" />
+<link href="../css/header.css" rel="stylesheet" type="text/css" />
+<link href="../css/footer.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
@@ -401,6 +402,6 @@
   <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館)　All Rights Reserved.</small>
 </footer>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script type="text/javascript" src="js/jobregist.js"></script>
+<script type="text/javascript" src="../js/jobregist.js"></script>
 </body>
 </html>

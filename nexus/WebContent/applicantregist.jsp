@@ -190,7 +190,7 @@
 	</table>
 		<input type="submit" value="登録">
 	</form>
-	<form action="../JobSeekerServlet" method="get">
+	<form action="../jobseekerservlet" method="get">
             <input type="submit" class="main-b" name="send" value="一覧に戻る">
         </form>
     </div>
