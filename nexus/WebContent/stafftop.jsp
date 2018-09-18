@@ -79,7 +79,7 @@
         </tr>
         <tr>
 
-        <td><a href="./job/detail">■求人情報</td>
+        <td><a href="./job/detail">■求人情報</a></td>
 
         </tr>
         <tr>
