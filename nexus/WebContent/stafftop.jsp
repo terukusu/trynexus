@@ -28,6 +28,7 @@
           <a href="#"><i class="fas fa-search"></i>登録&amp;閲覧</a>
           <ul class="drop-menu">
             <li><a href="#">求人情報<i class="fas fa-angle-right"></i></a></li>
+
             <li><a href="#">求職者情報<i class="fas fa-angle-right"></i></a></li>
             <li><a href="#">企業マスタ<i class="fas fa-angle-right"></i></a></li>
             <li><a href="#">マッチング履歴<i class="fas fa-angle-right"></i></a></li>
@@ -49,13 +50,12 @@
     </div>
   </section>
 </header>
-<main>
 
 <div><!--　コンテナー-->
 	<div>
 		<h2>トップページ</h2>
 	</div>
-	<!-- 検索メニュ　※URLはダミー　-->
+	<!-- 検索メニュー-->
 	<div>
     <table class="staff-table">
     	<tr>
@@ -69,7 +69,7 @@
     </table>
 	</div>
 
-    <!-- 登録＆閲覧メニュー　※URLはダミー　-->
+    <!-- 登録＆閲覧メニュー-->
 	<div>
     <table class="staff-table">
     	<tr>
@@ -78,9 +78,7 @@
 		</th>
         </tr>
         <tr>
-
-        <td><a href="./job/detail">■求人情報</td>
-
+        <td><a href="./job/detail">■求人情報</a></td>
         </tr>
         <tr>
         <td><a href="./jobseekerservlet">■求職者情報</a></td>
@@ -93,7 +91,8 @@
         </tr>
     </table>
 	</div>
-    <!-- 管理メニュー　※URLはダミー　-->
+
+    <!-- 管理メニュー-->
 	<div>
     <table class="staff-table">
     	<tr>
@@ -107,9 +106,6 @@
     </table>
 	</div>
 
-
-
-	<div>
 	<div class="clear">
 	<form name= "logout" method="GET" action="logoutservlet">
     <input class="main-b" type="submit" name="close" value="ログアウト">
@@ -119,7 +115,7 @@
 
 
 </div><!--　コンテナ終了-->
-</main>
+
 <footer>
   <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館)　All Rights Reserved.</small>
 </footer>
