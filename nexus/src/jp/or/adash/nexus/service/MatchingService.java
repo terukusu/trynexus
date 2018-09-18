@@ -162,12 +162,12 @@ public class MatchingService {
 	/**
 	 * 登録完了メッセージ
 	 */
-	private static final String MSG_ITEM_REGIST_COMPLETE = "商品登録が完了しました。";
+	private static final String MSG_ITEM_REGIST_COMPLETE = "マッチング登録が完了しました。";
 
 	/**
 	 * 登録失敗メッセージ
 	 */
-	private static final String MSG_ITEM_REGIST_FAILURE = "商品登録に失敗しました。";
+	private static final String MSG_ITEM_REGIST_FAILURE = "マッチング登録に失敗しました。";
 
 	/**
 	 * マッチング結果データを登録する

@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 
 <title>マッチング結果登録</title>
-<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"rel="stylesheet" >
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" >
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
 <link href="css/bootstrap-reboot.css" rel="stylesheet">
 <link href="css/common.css" rel="stylesheet">
@@ -58,15 +58,22 @@
 <!-- body部分　-->
 
 <h2>マッチング結果登録</h2>
+
 <form method="post" action="./matchingservlet">
 
 
 
-<!-- テーブル部分　-->
+<!--　　 　テーブル部分　-->
 
 
 <table border="0">
 <caption>マッチング結果登録</caption>
+　　　　<ul>
+	<c:forEach var="message" items="${ messages }">
+		<li><c:out value="${ message }" /></li>
+	</c:forEach>
+	</ul>
+
 		<tr>
 			<th>項目名</th>
 			<th>結果</th>
@@ -75,14 +82,14 @@
 			<tr>
 				<td>求人No</td>
 				<td>
-				<input type="text" name="kyujinno" size="14"><input
-					type="submit" value="求人No一覧"></td>
+				<input type="text" name="kyujinno" size="14">
+				<input type="submit" value="求人No一覧" onclick="window.open('http://localhost:8080/nexus/jobsearch')"></td>
 
 			</tr>
 			<tr>
 				<td>求職者No</td>
-				<td><input type="text" name="jobseekerid" size="8"><input
-					type="submit" value="求職者No一覧"></td>
+				<td><input type="text" name="jobseekerid" size="8">
+				<input type="submit" value="求職者一覧" onclick="window.open('http://localhost:8080/nexus/jobseekerservlet')"></td>
 
 			</tr>
 			<tr>
@@ -120,8 +127,9 @@
 			</tr>
 
 		</table>
+			<input type="submit" value="登録">
 		</form>
-		<input type="submit" value="登録">
+
 
 
 

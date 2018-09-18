@@ -58,7 +58,7 @@ public class MatchingServlet extends HttpServlet {
 		MatchingCase matching = new MatchingCase(kyujinno, jobseekerid, stffid, interviewdt, enterdt,
 				assessment, note, createdt, createuserid, upDatedt, upDateuserid);
 		MatchingService service =new MatchingService();
-		boolean hako= service.insertMatchingCases(matching);
+		boolean matchingAll= service.insertMatchingCases(matching);
 		// 1.3 入力チェック
 		/*MaService service = new MaService();
 		if (!service.check(matching)) {
@@ -82,8 +82,10 @@ public class MatchingServlet extends HttpServlet {
 		}
 */
 		//1  処理結果メッセージをリクエストに格納する
-		//request.setAttribute("matching", matching);
-		//request.setAttribute("messages", service.getMessages());
+		request.setAttribute("matching", matching);
+		request.setAttribute("messages", service.getMessages());
+
+
 
 		//1.8 JSPにフォワード
 		request.getRequestDispatcher("/matchingregist.jsp")

@@ -40,8 +40,8 @@ public class MatchingDao {
 
 		// SQL文を生成する
 		StringBuffer sql = new StringBuffer();
-		sql.append("insert into matchingcase");
-		sql.append("kyujinno,jobseekerid,staffid,interviewdt,enterdt,assessment,"
+		sql.append("insert into matchingcase ");
+		sql.append("(kyujinno,jobseekerid,staffid,interviewdt,enterdt,assessment,"
 				+ "note,createdt,createuserid,updatedt,updateuserid");
 		sql.append(") values (");
 		sql.append("?,?,?,?,?,?,?,?,?,?,?");
