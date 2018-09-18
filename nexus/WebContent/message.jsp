@@ -9,10 +9,10 @@
 <title>ログインできない／アカウントをお持ちでない場合</title>
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"rel="stylesheet" >
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
-<link href="bootstrap-reboot.css" rel="stylesheet">
-<link href="common.css" rel="stylesheet">
-<link href="header.css" rel="stylesheet">
-<link href="footer.css" rel="stylesheet">
+<link href="css/bootstrap-reboot.css" rel="stylesheet">
+<link href="css/common.css" rel="stylesheet">
+<link href="css/header.css" rel="stylesheet">
+<link href="css/footer.css" rel="stylesheet">
 </head>
 <body>
 
@@ -61,6 +61,7 @@
     		<p>恐れ入りますが、ログインができない場合、</p>
     		<p>アカウントをお持ちでない場合は、当館管理担当者までお申し出くださいませ。</p>
    		 </div>
+   	<a href="./stafflogin.jsp">ログイン画面に戻る</a>
 
 	</div><!--　コンテナ終了-->
 
