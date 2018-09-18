@@ -6,7 +6,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>実習</title>
+<title>ログイン</title>
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"rel="stylesheet" >
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
 <link href="css/bootstrap-reboot.css" rel="stylesheet">
@@ -20,7 +20,7 @@
 
 <header>
   <section>
-    <h1 class="logo"><a href="#">LOGO</a></h1>
+    <h1 class="logo"><a href="#">TryNexus</a></h1>
     <nav>
       <ul class="mainnavi">
         <li><a href="#"><i class="fas fa-home"></i>検索</a></li>
@@ -51,6 +51,7 @@
   </section>
 </header>
 
+<main>
 <div><!--　コンテナー-->
 	<div>
 		<h2>トップページ</h2>
@@ -111,10 +112,8 @@
     <input class="main-b" type="submit" name="close" value="ログアウト">
     </form>
 	</div>
-
-
-
 </div><!--　コンテナ終了-->
+</main>
 
 <footer>
   <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館)　All Rights Reserved.</small>

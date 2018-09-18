@@ -24,7 +24,7 @@
 
 <header>
   <section>
-    <h1 class="logo"><a href="#">LOGO</a></h1>
+    <h1 class="logo"><a href="#">TryNexus</a></h1>
     <nav>
       <ul class="mainnavi">
         <li><a href="#"><i class="fas fa-home"></i>検索</a></li>
@@ -54,6 +54,9 @@
   </section>
 </header>
 
+<!-- body部分　-->
+
+<body>
 <main>
 <div><!--　コンテナー-->
 	<div>
@@ -104,3 +107,4 @@
 
 </body>
 </html>
+
