@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -55,6 +54,7 @@
   </section>
 </header>
 
+<main>
 <div><!--　コンテナー-->
 	<div>
 		<h2>ログイン</h2>
@@ -82,18 +82,20 @@
 			</tr>
 	</table>
 	<div>
-    	<input type=submit value="ログイン">
-    	<input type="reset"value="リセット">
+    	<input class="main-b" type=submit value="ログイン">
+    	<input class="main-b" type="reset"value="リセット">
 	</div>
     </form>
 
     </div>
+
 
     <!--ログインできないとき -->
 	<div>
 		<a href="./message.jsp">ログインできない／アカウントをお持ちでない場合</a>
 	</div>
 </div><!--　コンテナ終了-->
+</main>
 
 <!--フッター-->
 <footer>
