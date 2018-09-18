@@ -231,12 +231,10 @@
   <tr>
     <td>派遣/請負</td>
     <td>
-    <c:if test="${1 == kyujin.hakencd}">
-    <input type="radio" name="hakencd" value="1" checked="checked"/> 派遣
-    </c:if>
-    <c:if test="${2 == kyujin.hakencd}">
-    <input type="radio" name="hakencd" value="2" checked="checked"/> 請負
-    </c:if>
+
+    <input type="radio" name="hakencd" value="1" <c:if test="${1 == kyujin.hakencd}">checked="checked"</c:if>/> 派遣
+    <input type="radio" name="hakencd" value="2" <c:if test="${2 == kyujin.hakencd}">checked="checked"</c:if>/> 請負
+
     <c:if test="${1 != kyujin.hakencd && 2 != kyujin.hakencd}">
     <input type="radio" name="hakencd" value="1"/> 派遣
     <input type="radio" name="hakencd" value="2"/> 請負
