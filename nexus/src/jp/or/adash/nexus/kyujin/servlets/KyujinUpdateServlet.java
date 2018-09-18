@@ -2,6 +2,8 @@ package jp.or.adash.nexus.kyujin.servlets;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,8 +38,20 @@ public class KyujinUpdateServlet extends HttpServlet {
 		// 1.1 リクエストから値を取得する
 		String no = request.getParameter("no");
 		//		String hiddenno = request.getParameter("hiddenno");
-		Date receptiondt = Date.valueOf(request.getParameter("receptiondt"));
-		Date perioddt = Date.valueOf(request.getParameter("perioddt"));
+		Date receptiondt = null;
+		try {
+			receptiondt = (Date) (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")).parse(request.getParameter("receptiondt"));
+		} catch (ParseException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+		Date perioddt = null;
+		try {
+			perioddt = (Date) (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")).parse(request.getParameter("perioddt"));
+		} catch (ParseException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
 		String companyno = request.getParameter("companyno");
 		String addresscd = request.getParameter("addresscd");
 		String jobsmallcd1 = request.getParameter("jobsmallcd１");
