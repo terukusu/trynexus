@@ -148,7 +148,7 @@
 					<th scope="col">年齢制限</th>
 					<th scope="col">基本給</th>
 				</tr>
-				<c:forEach var="JobSearchServlet" items="${ kyujin }">
+				<c:forEach var="SimpleKyujin" items="${ kyujin }">
 					<tr>
 						<td><button type="button"
 								onclick="location.href='./jobinfo.jsp'">詳細</button></td>
