@@ -28,6 +28,7 @@
           <a href="#"><i class="fas fa-search"></i>登録&amp;閲覧</a>
           <ul class="drop-menu">
             <li><a href="#">求人情報<i class="fas fa-angle-right"></i></a></li>
+
             <li><a href="#">求職者情報<i class="fas fa-angle-right"></i></a></li>
             <li><a href="#">企業マスタ<i class="fas fa-angle-right"></i></a></li>
             <li><a href="#">マッチング履歴<i class="fas fa-angle-right"></i></a></li>
@@ -49,7 +50,6 @@
     </div>
   </section>
 </header>
-
 
 <div><!--　コンテナー-->
 	<div>
