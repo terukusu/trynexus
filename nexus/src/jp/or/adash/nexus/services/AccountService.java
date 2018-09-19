@@ -75,6 +75,7 @@ public class AccountService {
 				// 完了メッセージをセットする
 				messages.add(MSG_ACCOUNT_REGIST_COMPLETE);
 				result = true;
+
 			} else {
 				// エラーメッセージをセットする
 				messages.add(MSG_ACCOUNT_REGIST_FAILURE);
