@@ -20,7 +20,7 @@
 
 <header>
   <section>
-    <h1 class="logo"><a href="#">TryNexus</a></h1>
+    <h1 class="logo"><a href="/stafftop.jsp">TryNexus</a></h1>
     <nav>
       <ul class="mainnavi">
         <li><a href="#"><i class="fas fa-home"></i>検索</a></li>
@@ -28,7 +28,6 @@
           <a href="#"><i class="fas fa-search"></i>登録&amp;閲覧</a>
           <ul class="drop-menu">
             <li><a href="#">求人情報<i class="fas fa-angle-right"></i></a></li>
-
             <li><a href="#">求職者情報<i class="fas fa-angle-right"></i></a></li>
             <li><a href="#">企業マスタ<i class="fas fa-angle-right"></i></a></li>
             <li><a href="#">マッチング履歴<i class="fas fa-angle-right"></i></a></li>
@@ -41,10 +40,15 @@
       <div class="user__wrapper">
         <!-- <div class="user__image"></div> -->
         <div class="user__name">
-          <a href="#">山田 太郎<i class="fas fa-ellipsis-v"></i></a>
+          <a href="#"><p>${UserData.name}</p><i class="fas fa-ellipsis-v"></i></a>
           <ul class="drop-menu">
-            <li><a href="#">サインアウト<i class="fas fa-angle-right"></i></a></li>
+          <li>
+			<form name= "logout" method="GET" action="logoutservlet">
+				<a href="./logout.jsp">サインアウト<i class="fas fa-angle-right"></i></a>
+			</form>
+			</li>
           </ul>
+
         </div>
       </div>
     </div>
@@ -107,11 +111,6 @@
     </table>
 	</div>
 
-	<div class="clear">
-	<form name= "logout" method="GET" action="logoutservlet">
-    <input class="main-b" type="submit" name="close" value="ログアウト">
-    </form>
-	</div>
 </div><!--　コンテナ終了-->
 </main>
 
