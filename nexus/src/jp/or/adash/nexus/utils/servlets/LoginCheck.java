@@ -1,5 +1,5 @@
 package jp.or.adash.nexus.utils.servlets;
-/*
+
 import java.io.IOException;
 
 import javax.servlet.Filter;
@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 
 import jp.or.adash.nexus.entity.Staff;
 
-@WebFilter("/*")
+@WebFilter("/web/*")
 public class LoginCheck implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
@@ -43,4 +43,3 @@ public class LoginCheck implements Filter {
 	public void destroy(){
 	}
 }
-*/
