@@ -110,11 +110,6 @@
     </table>
 	</div>
 
-	<div class="clear">
-	<form name= "logout" method="GET" action="logoutservlet">
-    <input class="main-b" type="submit" name="close" value="ログアウト">
-    </form>
-	</div>
 
 
 
