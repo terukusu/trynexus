@@ -65,7 +65,7 @@
       </tr>
       <tr>
          <td>求人No.</td>
-    <td><input type="text" name="no" value="<c:out value="${ kyujin.no }" />"></td>
+    <td><c:out value="${ kyujin.no }" /></td>
   </tr>
   <tr>
     <td>受付年月日</td>
@@ -83,12 +83,19 @@
   <tr>
     <td>産業大分類コード</td>
      <td>
-     <input type="text" name="jobcategorylargecd" value="<c:out value="${ kyujin.jobcategorylargecd }" />" maxlength="1
-     " tabindex=""></td>
+
+     <select name="jobcategorylargecd"></select>
+
+     <!-- input type="text" name="jobcategorylargecd" value="<c:out value="${ kyujin.jobcategorylargecd }" />" maxlength="1
+     " tabindex=""-->
+     </td>
   </tr>
   <tr>
     <td>産業細分類コード</td>
-     <td><input type="text" name="jobcategorysmallcd" value="<c:out value="${ kyujin.jobcategorysmallcd }" />" maxlength="3" tabindex=""></td>
+     <td>
+     <select name="jobcategorysmallcd"></select>
+     <!--input type="text" name="jobcategorysmallcd" value="<c:out value="${ kyujin.jobcategorysmallcd }" />" maxlength="3" tabindex=""-->
+     </td>
   </tr>
   <tr>
     <td>事業所名（かな）</td>
@@ -123,37 +130,59 @@
      <td>
       <textarea name="companyfeature" value="<c:out value="${ kyujin.companyfeature }" />"  tabindex=""></textarea></td>
   </tr>
-<!-- 　　メモ　：JS使って大分類から細分類マスタに、プルダウンリストにする -->
   <tr>
     <td>職種大分類コード１</td>
      <td>
-     <!-- c:forEach var="" -->
+     <select name="joblargecd1">
+     <c:forEach var="kyujin" items="${ job.largecd }">
+ 	  	 <c:out value="${ kyujin.joblargecd1 }" />
+  	 </c:forEach>
+  	 </select>
 
-     <input type="text" name="joblargecd1" value="<c:out value="${ kyujin.joblargecd1 }" />" maxlength="1" tabindex=""></td>
+     <!--input type="text" name="joblargecd1" value="<c:out value="${ kyujin.joblargecd1 }" />" maxlength="1" tabindex=""-->
+     </td>
   </tr>
   <tr>
      <td>職種細分類コード１</td>
-     <td><input type="text" name="jobsmallcd1" value="<c:out value="${ kyujin.jobsmallcd1 }" />" maxlength="6" tabindex=""></td>
+     <td>
+     <select name="jobsmallcd1"></select>
+
+  	 <!--input type="text" name="jobsmallcd1" value="<c:out value="${ kyujin.jobsmallcd1 }" />" maxlength="6" tabindex=""-->
+  	 </td>
    </tr>
   <tr>
     <td>職種大分類コード2</td>
-     <td><input type="text" name="joblargecd2" value="<c:out value="${ kyujin.joblargecd2 }" />" maxlength="1" tabindex=""></td>
+     <td>
+     <select name="joblargecd2"></select>
+
+     <!-- input type="text" name="joblargecd2" value="<c:out value="${ kyujin.joblargecd2 }" />" maxlength="1" tabindex=""-->
+     </td>
   </tr>
    <tr>
     <td>職種細分類コード2</td>
-     <td><input type="text" name="jobsmallcd2" value="<c:out value="${ kyujin.jobsmallcd2 }" />" maxlength="6" tabindex=""></td>
+    <td>
+     <select name="jobsmallcd2"></select>
+     <!-- input type="text" name="jobsmallcd2" value="<c:out value="${ kyujin.jobsmallcd2 }" />" maxlength="6" tabindex=""-->
+     </td>
   </tr>
   <tr>
     <td>職種大分類コード3</td>
-     <td><input type="text" name="joblargecd3" value="<c:out value="${ kyujin.joblargecd3 }" />" maxlength="1" tabindex=""></td>
+     <td>
+     <select name="joblargecd3"></select>
+     <!--input type="text" name="joblargecd3" value="<c:out value="${ kyujin.joblargecd3 }" />" maxlength="1" tabindex=""-->
+     </td>
   </tr>
   <tr>
     <td>職種細分類コード3</td>
-     <td><input type="text" name="jobsmallcd3" value="<c:out value="${ kyujin.jobsmallcd3 }" />" maxlength="6" tabindex=""></td>
+     <td>
+     <select name="jobsmallcd3"></select>
+     <!--input type="text" name="jobsmallcd3" value="<c:out value="${ kyujin.jobsmallcd3 }" />" maxlength="6" tabindex=""-->
+     </td>
   </tr>
    <tr>
     <td>就業場所郵便番号</td>
-     <td><input type="text" name="postal" value="<c:out value="${ kyujin.postal }" />" maxlength="8" tabindex=""></td>
+     <td>
+     <input type="text" name="postal" value="<c:out value="${ kyujin.postal }" />" maxlength="8" tabindex=""></td>
   </tr>
   <!--　メモ： リストで就業場所コードマスタを参照 -->
   <tr>
@@ -214,7 +243,8 @@
 
      </select>
 
-    <input type="text" name="addresscd" value="<c:out value="${ kyujin.addresscd }" />" maxlength="2" tabindex=""></td>
+    <!-- input type="text" name="addresscd" value="<c:out value="${ kyujin.addresscd }" />" maxlength="2" tabindex=""-->
+    </td>
   </tr>
   <tr>
     <td>就業場所住所</td>
