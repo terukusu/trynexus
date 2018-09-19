@@ -68,6 +68,7 @@ public class AccountService {
 
 			// 商品単価を取得する
 			AccountDao dao = new AccountDao(transaction);
+
 			int count = dao.insert(staff);
 
 			//countが返ってくる

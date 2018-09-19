@@ -57,6 +57,7 @@ public class AccountDao {
 
 		// SQL文を実行する　executeUpdateはデータの行数が返ってくる
 			count = ps.executeUpdate();
+
 		} catch(SQLException e) {
 			throw new IOException(e);
 		}

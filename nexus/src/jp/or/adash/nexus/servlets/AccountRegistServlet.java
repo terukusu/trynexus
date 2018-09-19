@@ -16,7 +16,7 @@ import jp.or.adash.nexus.services.AccountService;
 /**
  * Servlet implementation class AccountRegistServlets
  */
-@WebServlet("/accountregistservlets")
+@WebServlet("/accountregistservlet")
 public class AccountRegistServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -30,6 +30,15 @@ public class AccountRegistServlet extends HttpServlet {
 
     }
 
+    /**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doPost(request, response);
+	}
+
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -37,20 +46,19 @@ public class AccountRegistServlet extends HttpServlet {
 
 
 	//入力された情報を登録する
-		String id = request.getParameter("id");
 		String name = request.getParameter("name");
 		String kana = request.getParameter("kana");
 		String authority = request.getParameter("authority");
 
 	//entityのオブジェクト作成
-	Staff staff = new Staff(id, name, kana, authority, null, null, null, null, null, null);
+	Staff staff = new Staff(null, name, kana, authority, null, null, null, null, null, null);
 
 	//serviceのregistAccountにstaffを渡す
 	AccountService accountservice = new AccountService();
 	boolean result = accountservice.registAccount(staff);
 
 	//JSPにフォワード
-	request.getRequestDispatcher("/accountregist.jsp").forward(request, response);
+	request.getRequestDispatcher("/acountregist.jsp").forward(request, response);
 
 
 	}
