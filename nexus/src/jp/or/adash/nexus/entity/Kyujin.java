@@ -64,8 +64,8 @@ public class Kyujin {
 	* hiddenetc その他非公開情報
 	* createdt 新規登録日
 	* createuserid 新規登録ユーザー
-	* updatedt 最終更新日
-	* updateuserid 最終更新ユーザー
+	* upDatedt 最終更新日
+	* upDateuserid 最終更新ユーザー
 	* deleteflag 削除フラグ
 	 */
 	private String no;
@@ -623,7 +623,7 @@ public class Kyujin {
 	 * 最終更新日を返す
 	 * @return upDatedt
 	 */
-	public Date getUpDatedt() {
+	public Date getupDatedt() {
 		return upDatedt;
 	}
 
@@ -631,7 +631,7 @@ public class Kyujin {
 	 * 最終更新ユーザーを返す
 	 * @return upDateuserid
 	 */
-	public String getUpDateuserid() {
+	public String getupDateuserid() {
 		return upDateuserid;
 	}
 

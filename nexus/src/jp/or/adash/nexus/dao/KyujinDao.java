@@ -107,7 +107,7 @@ public class KyujinDao {
 			//ps.setTimestamp(52, (Timestamp) kyujin.getCreatedt());
 			ps.setString(52, kyujin.getCreateuserid());
 			//ps.setTimestamp(54, (Timestamp) kyujin.getUpDatedt());
-			ps.setString(53, kyujin.getUpDateuserid());
+			ps.setString(53, kyujin.getupDateuserid());
 			ps.setString(54, kyujin.getDeleteflag());
 
 			// SQL文を実行する
@@ -418,8 +418,8 @@ public class KyujinDao {
 			ps.setString(51, kyujin.getHiddenetc());
 			//ps.setTimestamp(52, (Timestamp) kyujin.getCreatedt());
 			//ps.setString(52, kyujin.getCreateuserid());
-			ps.setTimestamp(52, (Timestamp) kyujin.getUpDatedt());
-			ps.setString(53, kyujin.getUpDateuserid());
+			ps.setTimestamp(52, (Timestamp) kyujin.getupDatedt());
+			ps.setString(53, kyujin.getupDateuserid());
 			//ps.setString(54, kyujin.getDeleteflag());
 
 			// SQL文を実行する

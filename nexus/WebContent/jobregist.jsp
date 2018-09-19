@@ -9,10 +9,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet" type="text/css" />
-<link href="../css/bootstrap-reboot.css" rel="stylesheet" type="text/css" />
-<link href="../css/common.css" rel="stylesheet" type="text/css" />
-<link href="../css/header.css" rel="stylesheet" type="text/css" />
-<link href="../css/footer.css" rel="stylesheet" type="text/css" />
+<link href="/css/bootstrap-reboot.css" rel="stylesheet" type="text/css" />
+<link href="/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/css/header.css" rel="stylesheet" type="text/css" />
+<link href="/css/footer.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
@@ -122,7 +122,7 @@
   <tr>
     <td>会社の特徴</td>
      <td>
-      <textarea name="companyfeature" value="<c:out value="${ kyujin.companyfeature }" />"  tabindex=""></textarea></td>
+      <textarea name="companyfeature"   tabindex=""><c:out value="${ kyujin.companyfeature }" /></textarea></td>
   </tr>
 <!-- 　　メモ　：JS使って大分類から細分類マスタに、プルダウンリストにする -->
   <tr>
@@ -204,7 +204,7 @@
   <tr>
     <td>仕事の内容</td>
      <td>
-      <textarea name="detail" value="<c:out value="${ kyujin.detail }" />"  tabindex=""></textarea>
+      <textarea name="detail" tabindex=""><c:out value="${ kyujin.detail }" /></textarea>
       </td>
   </tr>
   <tr>
@@ -375,11 +375,11 @@
      <td><c:out value="${ kyujin.createuserid }" />
   <tr>
     <td>最終更新日</td>
-     <td><c:out value="${ kyujin.updatedt }" /></td>
+     <td><c:out value="${ kyujin.upDatedt }" /></td>
   </tr>
   <tr>
     <td>最終更新ユーザ</td>
-     <td><c:out value="${ kyujin.updateuserid }" /></td>
+     <td><c:out value="${ kyujin.upDateuserid }" /></td>
   </tr>
 
 </table>
