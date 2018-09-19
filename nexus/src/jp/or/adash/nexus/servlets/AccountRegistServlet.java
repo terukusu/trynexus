@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import jp.or.adash.nexus.entity.Staff;
+import jp.or.adash.nexus.services.AccountService;
 
 
 
@@ -30,14 +31,6 @@ public class AccountRegistServlet extends HttpServlet {
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-	}
-
-
-	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -52,8 +45,12 @@ public class AccountRegistServlet extends HttpServlet {
 	//entityのオブジェクト作成
 	Staff staff = new Staff(id, name, kana, authority, null, null, null, null, null, null);
 
+	//serviceのregistAccountにstaffを渡す
+	AccountService accountservice = new AccountService();
+	boolean result = accountservice.registAccount(staff);
+
 	//JSPにフォワード
-	request.getRequestDispatcher("/accountregist.jsp") .forward(request, response);
+	request.getRequestDispatcher("/accountregist.jsp").forward(request, response);
 
 
 	}
