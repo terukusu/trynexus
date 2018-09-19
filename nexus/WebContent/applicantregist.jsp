@@ -398,7 +398,11 @@
 		</tr>
 		<tr>
 			<th>希望雇用形態</th>
-			<td><input type="text" name="hopekoyoukeitai" value="<c:out value="${ seeker.hopekoyoukeitai }" />"></td>
+			<td><input type="radio" name="hopekoyoukeitai" value="1" /> 正社員
+				<input type="radio" name="hopekoyoukeitai" value="2" /> 正社員以外
+				<input type="radio" name="hopekoyoukeitai" value="3" /> 有期雇用派遣
+				<input type="radio" name="hopekoyoukeitai" value="4" /> 無期雇用派遣</td>
+			<!-- <input type="text" name="hopekoyoukeitai" value="<c:out value="${ seeker.hopekoyoukeitai }" />"> -->
 		</tr>
 		<tr>
 			<th>希望勤務日時</th>
@@ -446,7 +450,7 @@
 		</tr>
 		<tr>
 			<th>留意点</th>
-			<td><input type="text" name="caution" value="<c:out value="${ seeker.caution }" />"></td>
+			<td><input type="textarea" rows="4" cols="40" name="caution" value="<c:out value="${ seeker.caution }" />"></td>
 		</tr>
 		<tr>
 			<th>担当職業者紹介者ID</th>
@@ -459,7 +463,7 @@
 	</table>
 		<input class="main-b" type="submit" value="登録">
 	</form>
-	<form action="../JobSeekerServlet" method="get">
+	<form action="../jobseekerservlet" method="get">
             <input type="submit" class="main-b" name="send" value="一覧に戻る">
         </form>
     </div>
