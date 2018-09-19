@@ -1,7 +1,6 @@
 package jp.or.adash.nexus.entity;
 
-import java.sql.Date;
-import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * 求職者マスタのEntityクラス
@@ -80,9 +79,9 @@ public class JobSeeker {
 	private String caution;
 	private String tantoustaffid;
 	private String password;
-	private Timestamp createdt;
+	private Date createdt;
 	private String createuserid;
-	private Timestamp upDatedt;
+	private Date upDatedt;
 	private String upDateuserid;
 	private String deleteflag;
 
@@ -91,8 +90,8 @@ public class JobSeeker {
 			String education, String hopejob1, String hopejob2, String hopejob3, String hopejobcategory,
 			String hopeworkplace, String hopekoyoukeitai, int hopeworkingDate, int hopebegintime, int hopeendtime,
 			int hopesalary, int hopejikyu, String hopeetc, String driverlicense, String licenseetc, String pasokonskill,
-			String caution, String tantoustaffid, String password, Timestamp createdt, String createuserid,
-			Timestamp upDatedt, String upDateuserid, String deleteflag) {
+			String caution, String tantoustaffid, String password, Date createdt, String createuserid,
+			Date upDatedt, String upDateuserid, String deleteflag) {
 
 		this.id = id;
 		this.name = name;
@@ -393,7 +392,7 @@ public class JobSeeker {
 	 * 新規登録日を返す
 	 * @return createdt
 	 */
-	public Timestamp getCreatedt() {
+	public Date getCreatedt() {
 		return createdt;
 	}
 
@@ -409,7 +408,7 @@ public class JobSeeker {
 	 * 最終更新日を返す
 	 * @return upDatedt
 	 */
-	public Timestamp getUpDatedt() {
+	public Date getUpDatedt() {
 		return upDatedt;
 	}
 
