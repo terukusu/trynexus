@@ -44,23 +44,40 @@
   </section>
 </header>
 <main>
-  <h2>アカウント管理（紹介・一覧）</h2>
-	<form action="./AccountListServlet" method="get">
-		<table>
-			<tr>
-				<th>職業紹介者ID<br>求職者ID</th>
-				<th>氏名</th>
-				<th>ユーザー権限</th>
-			</tr>
-			<c:forEach var="staff" items="${ list }"><tr>
-				<td><input type="submit" class="editButton" name="send" value="編集"></td>
-				<td><c:out value="${ staff.id }" /></td>
-				<td><c:out value="${ staff.name }" /></td>
-				<td><c:out value="${ staff.kana }" /></td>
-				<td><c:out value="${ staff.authority }" /></td>
-			</tr></c:forEach>
-		</table>
-	</form>
+	<h2>アカウント管理（紹介・一覧）</h2>
+	<div id="job_seeker">
+	<ul>
+	<c:forEach var="message" items="${ messages }">
+		<li><c:out value="${ message }" /></li>
+	</c:forEach>
+	</ul>
+		<form action="accountregistservlet" method="post">
+			<table>
+				<tr>
+					<th>項目名</th>
+					<th></th>
+				</tr>
+				<tr>
+					<td>アカウントID</td>
+					<td><input type="hidden" name="hiddenid" value="<c:out value="${ seeker.id }" />"></td>
+				</tr>
+				<tr>
+					<td>氏名</td>
+					<td><input type="text" name="name" value="<c:out value="${ seeker.name }" />"></td>
+				</tr>
+				<tr>
+					<td>氏名（カナ）</td>
+					<td><input type="text" name="kana" value="<c:out value="${ seeker.kana }" />"></td>
+				</tr>
+				<tr>
+					<td>ユーザー権限</td>
+					<td><input type="radio" name="shoukai" value="求職者">求職者</td>
+					<td><input type="radio" name="kyushoku" value="職業紹介者">職業紹介者</td>
+				</tr>
+			</table>
+			<input class="main-b" type="submit" value="登録">
+		</form>
+	</div>
 </main>
 <footer> <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館) All Rights Reserved.</small> </footer>
 </body>

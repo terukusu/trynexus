@@ -36,7 +36,7 @@ public class AccountListServlet extends HttpServlet {
 		// 2.アカウント情報をリクエストに格納する
 		request.setAttribute("list", list);
 		// 3.JSPにフォワードする
-		request.getRequestDispatcher("/applicant_list.jsp").forward(request, response);
+		request.getRequestDispatcher("/account.jsp").forward(request, response);
 	}
 
 	/**
