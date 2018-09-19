@@ -139,18 +139,169 @@ public JobSeeker getJobseekermaininfo(String js_id) {
 
 
 	/**
-	 * 商品データの内容をチェックする
-	 * @param item 商品データ
+	 * 求職者情報の内容をチェックする
+	 * @param seeker 求職者情報
 	 * @return 処理結果（true:成功、false:失敗）
 	 */
 	public boolean check(JobSeeker seeker) {
 		boolean result = true;		// チェック結果
 
-		// 商品コードの値が正しいか
-		if (seeker.getId() == null) {
+		// 求職者IDの値が入力されているか
+		if (seeker.getId() == "") {
 			messages.add("IDが入力されていません。");
 			result = false;
 		}
+
+		// 求職者IDの値が入力されているか
+				if (seeker.getName() == "") {
+					messages.add("名前が入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getKana() == "") {
+					messages.add("ふりがなが入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getBirthdt() == null) {
+					messages.add("生年月日が入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getSex() == "") {
+					messages.add("性別が入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getAge() == -1) {
+					messages.add("年齢が入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getPostal() == "") {
+					messages.add("郵便番号が入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getAddress() == "") {
+					messages.add("住所が入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getNearstation() == "") {
+					messages.add("最寄り駅が入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getPartner() == "") {
+					messages.add("配偶者の有無が入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getHuyou() == -1) {
+					messages.add("扶養家族が入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getEducation() == "") {
+					messages.add("IDが入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getHopejob1() == "") {
+					messages.add("IDが入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getHopejob2() == "") {
+					messages.add("IDが入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getHopejob3() == "") {
+					messages.add("IDが入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getHopejobcategory() == "") {
+					messages.add("IDが入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getHopeworkplace() == "") {
+					messages.add("IDが入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getHopekoyoukeitai() == "") {
+					messages.add("IDが入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getHopeworkingDate() == -1) {
+					messages.add("IDが入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getHopebegintime() == -1) {
+					messages.add("IDが入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getHopeendtime() == -1) {
+					messages.add("IDが入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getHopesalary() == -1) {
+					messages.add("IDが入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getHopejikyu() == -1) {
+					messages.add("IDが入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getDriverlicense() == "") {
+					messages.add("IDが入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getTantoustaffid() == "") {
+					messages.add("IDが入力されていません。");
+					result = false;
+				}
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getPassword() == "") {
+					messages.add("IDが入力されていません。");
+					result = false;
+				}
+
 /*
 		// 商品名の長さが適切か
 		DataCommons commons = new DataCommons();
