@@ -48,8 +48,10 @@
 	<form action="./AccountListServlet" method="get">
 		<table>
 			<tr>
-				<th>職業紹介者ID<br>求職者ID</th>
+				<th></th>
+				<th>職業紹介者ID</th>
 				<th>氏名</th>
+				<th>氏名（カナ）</th>
 				<th>ユーザー権限</th>
 			</tr>
 			<c:forEach var="account" items="${ accounts }"><tr>
