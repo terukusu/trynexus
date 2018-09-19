@@ -52,12 +52,12 @@
 				<th>氏名</th>
 				<th>ユーザー権限</th>
 			</tr>
-			<c:forEach var="staff" items="${ list }"><tr>
+			<c:forEach var="account" items="${ accounts }"><tr>
 				<td><input type="submit" class="editButton" name="send" value="編集"></td>
-				<td><c:out value="${ staff.id }" /></td>
-				<td><c:out value="${ staff.name }" /></td>
-				<td><c:out value="${ staff.kana }" /></td>
-				<td><c:out value="${ staff.authority }" /></td>
+				<td><c:out value="${ account.id }" /></td>
+				<td><c:out value="${ account.name }" /></td>
+				<td><c:out value="${ account.kana }" /></td>
+				<td><c:out value="${ account.authority }" /></td>
 			</tr></c:forEach>
 		</table>
 	</form>

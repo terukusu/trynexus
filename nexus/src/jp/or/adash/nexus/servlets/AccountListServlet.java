@@ -34,9 +34,9 @@ public class AccountListServlet extends HttpServlet {
 		AccountListService service = new AccountListService();
 		List<Staff> list = service.getAccountList();
 		// 2.アカウント情報をリクエストに格納する
-		request.setAttribute("list", list);
+		request.setAttribute("accounts", list);
 		// 3.JSPにフォワードする
-		request.getRequestDispatcher("/account.jsp").forward(request, response);
+		request.getRequestDispatcher("./account.jsp").forward(request, response);
 	}
 
 	/**
