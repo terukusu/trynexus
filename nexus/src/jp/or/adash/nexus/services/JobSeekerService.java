@@ -6,6 +6,7 @@ import java.util.List;
 
 import jp.or.adash.nexus.dao.JobSeekerDao;
 import jp.or.adash.nexus.dao.JobSeeker_dao;
+import jp.or.adash.nexus.dao.SaibanDao;
 import jp.or.adash.nexus.entity.JobSeeker;
 import jp.or.adash.nexus.entity.Jobseeker_simple_entity;
 import jp.or.adash.nexus.utils.common.MessageCommons;
@@ -145,12 +146,7 @@ public JobSeeker getJobseekermaininfo(String js_id) {
 	 */
 	public boolean check(JobSeeker seeker) {
 		boolean result = true;		// チェック結果
-
-		// 求職者IDの値が入力されているか
-		if (seeker.getId() == "") {
-			messages.add("IDが入力されていません。");
-			result = false;
-		}
+/**
 
 		// 求職者IDの値が入力されているか
 				if (seeker.getName() == "") {
@@ -158,150 +154,150 @@ public JobSeeker getJobseekermaininfo(String js_id) {
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// ふりがなの値が入力されているか
 				if (seeker.getKana() == "") {
 					messages.add("ふりがなが入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// 生年月日の値が入力されているか
 				if (seeker.getBirthdt() == null) {
 					messages.add("生年月日が入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// 性別の値が入力されているか
 				if (seeker.getSex() == "") {
 					messages.add("性別が入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// 年齢の値が入力されているか
 				if (seeker.getAge() == -1) {
 					messages.add("年齢が入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// 郵便番号の値が入力されているか
 				if (seeker.getPostal() == "") {
 					messages.add("郵便番号が入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// 住所の値が入力されているか
 				if (seeker.getAddress() == "") {
 					messages.add("住所が入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// 最寄り駅の値が入力されているか
 				if (seeker.getNearstation() == "") {
 					messages.add("最寄り駅が入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// 配偶者の値が入力されているか
 				if (seeker.getPartner() == "") {
 					messages.add("配偶者の有無が入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// 扶養家族の値が入力されているか
 				if (seeker.getHuyou() == -1) {
 					messages.add("扶養家族が入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// 学歴の値が入力されているか
 				if (seeker.getEducation() == "") {
-					messages.add("IDが入力されていません。");
+					messages.add("学歴が入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// 希望職種1の値が入力されているか
 				if (seeker.getHopejob1() == "") {
-					messages.add("IDが入力されていません。");
+					messages.add("希望職種1が入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// 希望職種2の値が入力されているか
 				if (seeker.getHopejob2() == "") {
-					messages.add("IDが入力されていません。");
+					messages.add("希望職種2が入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// 希望職種3の値が入力されているか
 				if (seeker.getHopejob3() == "") {
-					messages.add("IDが入力されていません。");
+					messages.add("希望職種3が入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// 希望業種の値が入力されているか
 				if (seeker.getHopejobcategory() == "") {
-					messages.add("IDが入力されていません。");
+					messages.add("希望業種が入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// 希望勤務地の値が入力されているか
 				if (seeker.getHopeworkplace() == "") {
-					messages.add("IDが入力されていません。");
+					messages.add("希望勤務地が入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// 雇用形態の値が入力されているか
 				if (seeker.getHopekoyoukeitai() == "") {
-					messages.add("IDが入力されていません。");
+					messages.add("雇用形態が入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// 希望勤務日時の値が入力されているか
 				if (seeker.getHopeworkingDate() == -1) {
-					messages.add("IDが入力されていません。");
+					messages.add("希望勤務日時が入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// 希望勤務時間（開始）の値が入力されているか
 				if (seeker.getHopebegintime() == -1) {
-					messages.add("IDが入力されていません。");
+					messages.add("希望勤務時間（開始）が入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// 希望勤務時間（終了）の値が入力されているか
 				if (seeker.getHopeendtime() == -1) {
-					messages.add("IDが入力されていません。");
+					messages.add("希望勤務時間（終了）が入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// 希望月給の値が入力されているか
 				if (seeker.getHopesalary() == -1) {
-					messages.add("IDが入力されていません。");
+					messages.add("希望月給が入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// 希望時間給の値が入力されているか
 				if (seeker.getHopejikyu() == -1) {
-					messages.add("IDが入力されていません。");
+					messages.add("希望時間給が入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// 自動車免許の値が入力されているか
 				if (seeker.getDriverlicense() == "") {
-					messages.add("IDが入力されていません。");
+					messages.add("自動車免許が入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// 担当職業紹介者IDの値が入力されているか
 				if (seeker.getTantoustaffid() == "") {
-					messages.add("IDが入力されていません。");
+					messages.add("担当職業紹介者IDが入力されていません。");
 					result = false;
 				}
 
-				// 求職者IDの値が入力されているか
+				// パスワードの値が入力されているか
 				if (seeker.getPassword() == "") {
-					messages.add("IDが入力されていません。");
+					messages.add("パスワードが入力されていません。");
 					result = false;
 				}
-
+*/
 /*
 		// 商品名の長さが適切か
 		DataCommons commons = new DataCommons();
@@ -357,7 +353,15 @@ public JobSeeker getJobseekermaininfo(String js_id) {
 			// トランザクションを開始する
 			transaction.beginTrans();
 
-			// 商品単価を取得する
+			//采番マスタよりデータ取得
+			SaibanDao saidao = new SaibanDao(transaction);
+			int saiban = saidao.getseeker();
+
+			//とってきた番号を加工し、Kyujin.noにデータ格納
+			String str = String.format("%08d", saiban);
+			seeker.setId(str);
+
+			// DBに求職者情報を取得する
 			JobSeekerDao dao = new JobSeekerDao(transaction);
 			int count = dao.insert(seeker);
 

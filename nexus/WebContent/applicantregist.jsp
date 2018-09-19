@@ -57,15 +57,15 @@
 
 	<form method="post" action="./regist">
 		<table width="" border="0">
-		<tr>
+		<!-- <tr>
 			<th width="20%">ID</th>
 			<td>
 			  <input type="text" name="id" value="<c:out value="${ seeker.id }" />">
 				<input type="hidden" name="hiddenid" value="<c:out value="${ seeker.id }" />">
 			</td>
-		</tr>
+		</tr> -->
 		<tr>
-			<th>名前</th>
+			<th width="20%">名前</th>
 			<td><input type="text" name="name" value="<c:out value="${ seeker.name }" />"></td>
 		</tr>
 		<tr>
@@ -319,7 +319,7 @@
 <option value="97">97</option>
 <option value="98">98</option>
 <option value="99">99</option>
-</select>歳</td>
+</select>人</td>
 <!-- <input type="text" name="huyou" value="<c:out value="${ seeker.huyou }" />"></td> -->
 		</tr>
 		<tr>
@@ -403,7 +403,7 @@
 		<tr>
 			<th>希望勤務日時</th>
 			<td>
-			<input type="text" name="hopeworkingdate" value="<c:out value="${ seeker.hopeworkingDate }" />"></td>
+			<input type="text" name="hopeworkingDate" value="<c:out value="${ seeker.hopeworkingDate }" />"></td>
 		</tr>
 		<tr>
 			<th>希望勤務時間(開始)</th>

@@ -47,14 +47,8 @@ public class JobSeekerRegistDisplay extends HttpServlet {
 				request.setAttribute("seeker", seeker);
 
 				// 1.4 JSPにフォワードする
-
 				request.getRequestDispatcher("/applicantregist.jsp")
 					.forward(request, response);
-				/*
-				// 1.4 JSPにフォワードする
-				request.getRequestDispatcher("/applicantedit.jsp")
-					.forward(request, response);
-					*/
 			}
 
 	}

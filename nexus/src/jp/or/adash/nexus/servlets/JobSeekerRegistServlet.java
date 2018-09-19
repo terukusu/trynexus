@@ -65,7 +65,7 @@ public class JobSeekerRegistServlet extends HttpServlet {
 		int huyou = -1;
 		if (!"".equals(request.getParameter("huyou"))
 				&& request.getParameter("huyou") != null) {
-			age = Integer.parseInt(request.getParameter("huyou"));
+			huyou = Integer.parseInt(request.getParameter("huyou"));
 		}
 //		int huyou = Integer.parseInt(request.getParameter("huyou"));
 		String education = request.getParameter("education");
@@ -78,31 +78,31 @@ public class JobSeekerRegistServlet extends HttpServlet {
 		int hopeworkingDate = -1;
 		if (!"".equals(request.getParameter("hopeworkingDate"))
 				&& request.getParameter("hopeworkingDate") != null) {
-			age = Integer.parseInt(request.getParameter("hopeworkingDate"));
+			hopeworkingDate = Integer.parseInt(request.getParameter("hopeworkingDate"));
 		}
 //		int hopeworkingDate = Integer.parseInt(request.getParameter("hopeworkingdate"));
 		int hopebegintime = -1;
 		if (!"".equals(request.getParameter("hopebegintime"))
 				&& request.getParameter("hopebegintime") != null) {
-			age = Integer.parseInt(request.getParameter("hopebegintime"));
+			hopebegintime = Integer.parseInt(request.getParameter("hopebegintime"));
 		}
 //		int hopebegintime = Integer.parseInt(request.getParameter("hopebegintime"));
 		int hopeendtime = -1;
 		if (!"".equals(request.getParameter("hopeendtime"))
 				&& request.getParameter("hopeendtime") != null) {
-			age = Integer.parseInt(request.getParameter("hopeendtime"));
+			hopeendtime = Integer.parseInt(request.getParameter("hopeendtime"));
 		}
 //		int hopeendtime = Integer.parseInt(request.getParameter("hopeendtime"));
 		int hopesalary = -1;
 		if (!"".equals(request.getParameter("hopesalary"))
 				&& request.getParameter("hopesalary") != null) {
-			age = Integer.parseInt(request.getParameter("hopesalary"));
+			hopesalary = Integer.parseInt(request.getParameter("hopesalary"));
 		}
 //		int hopesalary = Integer.parseInt(request.getParameter("hopesalary"));
 		int hopejikyu = -1;
 		if (!"".equals(request.getParameter("hopejikyu"))
 				&& request.getParameter("hopejikyu") != null) {
-			age = Integer.parseInt(request.getParameter("hopejikyu"));
+			hopejikyu = Integer.parseInt(request.getParameter("hopejikyu"));
 		}
 //		int hopejikyu = Integer.parseInt(request.getParameter("hopejikyu"));
 		String hopeetc = request.getParameter("hopeetc");

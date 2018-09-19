@@ -102,12 +102,12 @@ table tr:nth-child(2n+1) {
 	float:left;
 }
 
-<<<<<<< HEAD
 .a h2{
 	margin-left;
 	margin-right;}
 
-=======
-}
->>>>>>> refs/remotes/origin/#4
+.a .main-b{
+	float:right;
+	clear:both;
+	margin:10px;}
 

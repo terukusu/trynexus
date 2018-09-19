@@ -50,6 +50,29 @@ public class Transaction {
 			}
 		}
 	}
+	/*
+	public void open() throws TransactionException {
+		// データベース接続がないかどうか確認する（ある場合は何もしない）
+		if (connection == null) {
+			try {
+				// 接続文字列を生成する
+				StringBuffer connStrBuffer = new StringBuffer();
+				connStrBuffer.append("jdbc:mysql://172.20.76.252:3306/okamura");
+				connStrBuffer.append("?");
+				connStrBuffer.append("useUnicode=true");
+				connStrBuffer.append("&amp;characterEncoding=utf8");
+				connStrBuffer.append("&amp;serverTimezone=JST");
+				connStrBuffer.append("&amp;zeroDateTimeBehavior=convertToNull");
+				connStrBuffer.append("&amp;useSSL=false");
+
+				// データベース接続を開始する
+				connection = DriverManager.getConnection(
+						connStrBuffer.toString(), "okamura", "pgJav@1807");
+			} catch (SQLException e) {
+				throw new TransactionException(e);
+			}
+		}
+	}
 
 	/**
 	 * トランザクションを開始する
@@ -77,8 +100,6 @@ public class Transaction {
 			try {
 				// トランザクションをコミットする
 				connection.commit();
-				// トランザクションを終了する
-				connection.setAutoCommit(true);
 			} catch (SQLException e) {
 				throw new TransactionException(e);
 			}
@@ -94,8 +115,6 @@ public class Transaction {
 			try {
 				// トランザクションをロールバックする
 				connection.rollback();
-				// トランザクションを終了する
-				connection.setAutoCommit(true);
 			} catch (SQLException e) {
 				throw new TransactionException(e);
 			}
@@ -133,9 +152,7 @@ public class Transaction {
 	 */
 	public boolean isActive() throws TransactionException {
 		try {
-			if (connection == null) {
-				return false;
-			} else if (connection.isClosed()) {
+			if (connection != null && connection.isClosed()) {
 				connection = null;
 				return false;
 			}
@@ -147,7 +164,7 @@ public class Transaction {
 	}
 
 	/**
-	 * トランザクションに関する例外クラス
+	 * トランザクションに関する例外
 	 * @author T.Kawasaki
 	 *
 	 */
