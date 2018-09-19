@@ -44,7 +44,7 @@ public class MatchingDao {
 		sql.append("(kyujinno,jobseekerid,staffid,interviewdt,enterdt,assessment,"
 				+ "note,createdt,createuserid,updatedt,updateuserid");
 		sql.append(") values (");
-		sql.append("?,?,?,?,?,?,?,?,?,?,?");
+		sql.append("?,?,?,?,?,?,?,current_timestamp,?,current_timestamp,?");
 		sql.append(")");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
 			//ps.setInt(1,matching.getId());
@@ -55,11 +55,8 @@ public class MatchingDao {
 			ps.setDate(5,(Date) matching.getEnterdt());
 			ps.setString(6,matching.getAssessment());
 			ps.setString(7,matching.getNote());
-			ps.setDate(8,(Date)matching.getCreatedt());
-
-			ps.setString(9,matching.getCreateuserid());
-		    ps.setDate(10,(Date)matching.getUpDatedt());
-			ps.setString(11,matching. getUpDateuserid());
+			ps.setString(8,matching.getCreateuserid());
+			ps.setString(9,matching.getUpDateuserid());
 
 
 			// SQL文を実行する
@@ -128,7 +125,7 @@ public Item selectItem(int itemNo) throws IOException {
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
 			// SQL文を実行する
 			try (ResultSet rs = ps.executeQuery()) {
-				// 取得結果をリストに格納する
+				// 1取得結果をリストに格納する
 				while (rs.next()) {
 					items.add(new Item(rs.getInt("code"),
 							rs.getString("name"),

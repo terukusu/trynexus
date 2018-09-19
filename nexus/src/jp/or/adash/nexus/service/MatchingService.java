@@ -43,12 +43,12 @@ public class MatchingService {
 		return messages;
 	}
 
-	/**
-	 * 商品コードを元に、商品情報を取得する
-	 * @param code 商品コード
-	 * @return 商品情報
-	 */
-	/*public MatchingCases getItem(int id, String kyujinno, String jobseekerid, String staffid, Date interviewdt,
+	/*
+	 商品コードを元に、商品情報を取得する
+	  @param code 商品コード
+	  @return 商品情報
+
+	public MatchingCases getItem(int id, String kyujinno, String jobseekerid, String staffid, Date interviewdt,
 			Date enterdt,
 			String assessment, String note, Timestamp createdt, String createuserid,
 			Timestamp upDatedt, String upDateuserid) {
@@ -72,11 +72,11 @@ public class MatchingService {
 		return item;
 	}
 
-	/**
-	 * 商品リストを取得する
-	 * @return 商品リスト
-	 */
-	/*public List<MatchingCases> getList() {
+
+	  商品リストを取得する
+	  @return 商品リスト
+
+	public List<MatchingCases> getList() {
 		List<MatchingCases> List = new ArrayList<MatchingCases>();
 
 		try {
@@ -98,13 +98,13 @@ public class MatchingService {
 		return itemList;
 	}
 
-	/**
-	 * 商品価格を取得する
-	 * @param itemNo 商品番号
-	 * @return 商品価格（エラーの場合、-1をセット）
-	 */
-	/*public int getItemPrice(int itemNo) {
-		// 1商品単価（商品がなければ、0）
+
+	  商品価格を取得する
+	  @param itemNo 商品番号
+	  @return 商品価格（エラーの場合、-1をセット）
+
+	public int getItemPrice(int itemNo) {
+		 1商品単価（商品がなければ、0）
 		int unitPrice = 0;
 
 		try {
@@ -126,13 +126,13 @@ public class MatchingService {
 
 		return unitPrice;
 	}
-/*
-	/**
-	 * 商品データの内容をチェックする
-	 * @param item 商品データ
-	 * @return 処理結果（true:成功、false:失敗）
-	 */
-	/*
+
+
+	 商品データの内容をチェックする
+	  @param item 商品データ
+	  @return 処理結果（true:成功、false:失敗）
+
+
 	public boolean check(Item item) {
 		boolean result = true; // 1チェック結果
 
@@ -158,28 +158,20 @@ public class MatchingService {
 
 		return result;
 	}
-/*
-	/**
-	 * 登録完了メッセージ
-	 */
-	private static final String MSG_ITEM_REGIST_COMPLETE = "マッチング登録が完了しました。";
 
-	/**
-	 * 登録失敗メッセージ
-	 */
-	private static final String MSG_ITEM_REGIST_FAILURE = "マッチング登録に失敗しました。";
 
-	/**
-	 * マッチング結果データを登録する
-	 * @param maching 商品データ
-	 * @return 処理結果（true:成功、false:失敗）
-	 */
-	//public boolean registItem(MatchingCases matching) {
+
+
+	  マッチング結果データを登録する
+	  @param maching 商品データ
+	  @return 処理結果（true:成功、false:失敗）
+
+	public boolean registItem(MatchingCases matching) {
 		//boolean result = false;
 
 		// 1データベースに商品が既に存在するかどうか確認する
-		/*if (exists(item.getItemNo())) {
-			// 存在する場合は、商品データを更新する
+		if (exists(item.getItemNo())) {
+			//  1存在する場合は、商品データを更新する
 			result = this.updateItem(item);
 		} else {
 			// 1存在しなければ、商品データを登録する
@@ -188,33 +180,15 @@ public class MatchingService {
 
 		return result;
 	}
-
-	/**
-	 * 商品コードがデータベースに既に存在するかどうかを確認する
-	 * @param code 商品コード
-	 * @return true:存在する、false:存在しない
-	 */
-	/*
-	private boolean exists(int code) {
-		boolean result = false; // 1確認結果
-
-		// 1コードをキーにして、データベースを検索する
-		int price = this.getItemPrice(code);
-
-		// 1データが存在する場合、true	を返す
-		if (price > 0) {
-			result = true;
-		}
-
-		return result;
-	}
 /*
-	/**
-	 * 商品データを更新する
-	 * @param item 商品データ
-	 * @return 処理結果（true:成功、false:失敗）
-	 */
-	/*public boolean updateItem(Item item) {
+
+
+
+	  商品データを更新する
+	  @param item 商品データ
+	  @return 処理結果（true:成功、false:失敗）
+
+	public boolean updateItem(Item item) {
 		boolean result = false; // 1処理結果
 
 		try {
@@ -254,11 +228,33 @@ public class MatchingService {
 		return result;
 	}
 
-	/**
+
 	 * マッチング結果をデータベースに登録する
 	 * @param  matching マッチング結果データ
 	 * @return 処理結果（true:成功、false:失敗）
 	 */
+
+     /*
+	 *1求人ＮＯがデータベースに既に存在するかどうかを確認する
+	 * @param code 求人NO
+	 *@return true:存在する、false:存在しない
+*/
+	/*private boolean existskyujin(int no) {
+		boolean result = false; // 1確認結果
+
+		// 1求人ＮＯをキーにして、データベースを検索する
+		int no = this.getkyujinno(no);
+
+		// 1データが存在する場合、true	を返す
+		if (kyujinno = no) {
+			result = true;
+		}
+
+		return result;
+	}
+
+
+*/
 	public boolean insertMatchingCases(MatchingCase matching) {
 		boolean result = false; //1処理結果
 
@@ -299,5 +295,15 @@ public class MatchingService {
 
 		return result;
 	}
+	/* 1登録完了メッセージ
+	 */
+	private static final String MSG_ITEM_REGIST_COMPLETE = "マッチング登録が完了しました。";
 
+	/*
+	 * 登録失敗メッセージ
+	 */
+	private static final String MSG_ITEM_REGIST_FAILURE = "マッチング登録に失敗しました。";
 }
+
+
+

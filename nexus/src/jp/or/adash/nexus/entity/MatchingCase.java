@@ -61,6 +61,11 @@ public class MatchingCase {
 		//return id;
 	//}
 
+	public MatchingCase(String kyujinno2, String jobseekerid2, String stffid, Date interviewdt2, Date enterdt2,
+			String assessment2, String note2) {
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
+
 	/**
 	 * 求人NOを返す
 	 * @return kyujinno

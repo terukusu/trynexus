@@ -1,7 +1,6 @@
 package jp.or.adash.nexus.servlets;
 
 import java.io.IOException;
-import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -47,16 +46,14 @@ public class MatchingServlet extends HttpServlet {
 		request.getParameter("enterdt");
 		String assessment = request.getParameter("assessment");
 		String note = request.getParameter("note");
-		Timestamp createdt = null;
-		request.getParameter("createdt");
-		String createuserid = request.getParameter("createuserid");
-		Timestamp upDatedt = null;
-		request.getParameter("upDatedt");
-		String upDateuserid = request.getParameter("upDateuserid");
+		Date createdt = null;
+		Date upDatedt = null;
 
+		String upDateuserid=null;
+		String createuserid=null;
 		//1.2 マッチング結果オブジェクトを作成
-		MatchingCase matching = new MatchingCase(kyujinno, jobseekerid, stffid, interviewdt, enterdt,
-				assessment, note, createdt, createuserid, upDatedt, upDateuserid);
+		MatchingCase matching = new MatchingCase(kyujinno,jobseekerid,stffid,interviewdt,enterdt,assessment,note,createdt,
+				createuserid,upDatedt,upDateuserid);
 		MatchingService service =new MatchingService();
 		boolean matchingAll= service.insertMatchingCases(matching);
 		// 1.3 入力チェック

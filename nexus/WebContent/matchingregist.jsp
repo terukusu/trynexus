@@ -77,7 +77,6 @@
 		<tr>
 			<th>項目名</th>
 			<th>結果</th>
-
 			</tr>
 			<tr>
 				<td>求人No</td>
