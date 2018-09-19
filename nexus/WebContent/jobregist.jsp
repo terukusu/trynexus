@@ -235,10 +235,7 @@
     <input type="radio" name="hakencd" value="1" <c:if test="${1 == kyujin.hakencd}">checked="checked"</c:if>/> 派遣
     <input type="radio" name="hakencd" value="2" <c:if test="${2 == kyujin.hakencd}">checked="checked"</c:if>/> 請負
 
-    <c:if test="${1 != kyujin.hakencd && 2 != kyujin.hakencd}">
-    <input type="radio" name="hakencd" value="1"/> 派遣
-    <input type="radio" name="hakencd" value="2"/> 請負
-    </c:if>
+
 
     <!--input type="text" name="hakencd" value="<c:out value="${ kyujin.hakencd }" />" tabindex=""--></td>
   </tr>
@@ -272,10 +269,6 @@
     <input type="radio" name="koyoukikan" value="1" <c:if test="${1 == kyujin.koyoukikan}">checked="checked"</c:if>/> 有り
     <input type="radio" name="koyoukikan" value="2" <c:if test="${2 == kyujin.koyoukikan}">checked="checked"</c:if>/> 無し
 
-    <c:if test="${1 != kyujin.koyoukikan && 2 != kyujin.koyoukikan}">
-    <input type="radio" name="koyoukikan" value="1"/> 有り
-    <input type="radio" name="koyoukikan" value="2"/> 無し
-    </c:if>
 	<!--input type="text" name="koyoukikan" value="<c:out value="${ kyujin.koyoukikan }" />" tabindex=""-->
 	</td>
   </tr>
@@ -325,13 +318,6 @@
         <input type="radio" name="salaryformcd" value="5" <c:if test="${5 == kyujin.salaryformcd}">checked="checked"</c:if>/> 年棒
         <input type="radio" name="salaryformcd" value="6" <c:if test="${6 == kyujin.salaryformcd}">checked="checked"</c:if>/> その他
 
-        <c:if test="${ 1 != kyujin.salaryformcd && 3 != kyujin.salaryformcd && 4 != kyujin.salaryformcd && 5 != kyujin.salaryformcd && 6 != kyujin.salaryformcd }">
-        <input type="radio" name="salaryformcd" value="1"/> 月給
-        <input type="radio" name="salaryformcd" value="3"/> 日給
-        <input type="radio" name="salaryformcd" value="4"/> 時間給
-        <input type="radio" name="salaryformcd" value="5"/> 年俸
-        <input type="radio" name="salaryformcd" value="6"/> その他
-        </c:if>
        <!--input type="text" name="salaryformcd" value="<c:out value="${ kyujin.salaryformcd }" />" maxlength="1" tabindex=""--></td>
   </tr>
   <tr>
@@ -374,10 +360,7 @@
 
     <input type="radio" name="hiddensex" value="1" <c:if test="${1 == kyujin.hiddensex}">checked="checked"</c:if>/> 男
     <input type="radio" name="hiddensex" value="2" <c:if test="${2 == kyujin.hiddensex}">checked="checked"</c:if>/> 女
-    <c:if test="${1 != kyujin.hiddensex && 2 != kyujin.hiddensex}">
-    <input type="radio" name="hiddensex" value="1"/> 男
-    <input type="radio" name="hiddensex" value="2"/> 女
-    </c:if>
+
     <!--      <input type="text" name="hiddensex" value="<c:out value="${ kyujin.hiddensex }" />" maxlength="1" tabindex=""> -->
     </td>
   </tr>
