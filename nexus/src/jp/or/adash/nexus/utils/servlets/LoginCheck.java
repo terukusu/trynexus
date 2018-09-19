@@ -34,7 +34,7 @@ public class LoginCheck implements Filter {
             chain.doFilter(request, response);
         }else{
             //　0セッションがnullならば、ログイン画面へ飛ばす
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/stafflogin.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("./stafflogin.jsp");
             dispatcher.forward(request,response);
         }
 	}

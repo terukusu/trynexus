@@ -6,21 +6,21 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>実習</title>
+<title>トップページ</title>
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"rel="stylesheet" >
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
-<link href="css/bootstrap-reboot.css" rel="stylesheet">
-<link href="css/applicantlist.css" rel="stylesheet">
-<link href="css/common.css" rel="stylesheet">
-<link href="css/header.css" rel="stylesheet">
-<link href="css/footer.css" rel="stylesheet">
-<link href="css/stafftop.css" rel="stylesheet">
+<link href="http://localhost:8080/nexus/css/bootstrap-reboot.css" rel="stylesheet">
+<link href="http://localhost:8080/nexus/css/applicantlist.css" rel="stylesheet">
+<link href="http://localhost:8080/nexus/css/common.css" rel="stylesheet">
+<link href="http://localhost:8080/nexus/css/header.css" rel="stylesheet">
+<link href="http://localhost:8080/nexus/css/footer.css" rel="stylesheet">
+<link href="http://localhost:8080/nexus/css/stafftop.css" rel="stylesheet">
 </head>
 <body>
 
 <header>
   <section>
-    <h1 class="logo"><a href="#">LOGO</a></h1>
+    <h1 class="logo"><a href="http://localhost:8080/nexus/web/stafftop.jsp">TryNexus</a></h1>
     <nav>
       <ul class="mainnavi">
         <li><a href="#"><i class="fas fa-home"></i>検索</a></li>
