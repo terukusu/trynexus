@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>ログイン（紹介者・スタッフ）</title>
-    <link rel="stylesheet" type="text/css" href="login.css" />
+    <link rel="stylesheet" type="text/css" href="stafflogin.css" />
 </head>
 <body>
 <div><!--　コンテナー-->
