@@ -86,6 +86,7 @@
      <td>
 
      <select name="jobcategorylargecd" tabindex="">
+		<option></option>
       	 <option>1</option>
      </select>
 
@@ -97,6 +98,7 @@
     <td>産業細分類コード</td>
      <td>
      <select name="jobcategorysmallcd" tabindex="">
+		<option></option>
       	 <option>2</option>
       	 </select>
      <!--input type="text" name="jobcategorysmallcd" value="<c:out value="${ kyujin.jobcategorysmallcd }" />" maxlength="3" tabindex=""-->
@@ -139,6 +141,7 @@
     <td>職種大分類コード１</td>
      <td>
      <select name="joblargecd1" tabindex="">
+		<option></option>
       	 <option>3</option>
   	 </select>
 
@@ -149,6 +152,7 @@
      <td>職種細分類コード１</td>
      <td>
      <select name="jobsmallcd1" tabindex="">
+		<option></option>
       	 <option>4</option>
       	 </select>
 
@@ -159,6 +163,7 @@
     <td>職種大分類コード2</td>
      <td>
      <select name="joblargecd2" tabindex="">
+		<option></option>
       	 <option>5</option>
       	 </select>
 
@@ -169,6 +174,7 @@
     <td>職種細分類コード2</td>
     <td>
      <select name="jobsmallcd2" tabindex="">
+		<option></option>
       	 <option>6</option>
       	 </select>
      <!-- input type="text" name="jobsmallcd2" value="<c:out value="${ kyujin.jobsmallcd2 }" />" maxlength="6" tabindex=""-->
@@ -178,6 +184,7 @@
     <td>職種大分類コード3</td>
      <td>
      <select name="joblargecd3" tabindex="">
+		<option></option>
       	 <option>7</option>
       	 </select>
      <!--input type="text" name="joblargecd3" value="<c:out value="${ kyujin.joblargecd3 }" />" maxlength="1" tabindex=""-->
@@ -187,7 +194,8 @@
     <td>職種細分類コード3</td>
      <td>
      <select name="jobsmallcd3" tabindex="">
-      	 <option>8</option>
+		<option></option>
+      	<option>8</option>
       	 </select>
      <!--input type="text" name="jobsmallcd3" value="<c:out value="${ kyujin.jobsmallcd3 }" />" maxlength="6" tabindex=""-->
      </td>
@@ -289,13 +297,13 @@
 
  	 <select name="koyoukeitaicd" tabindex="">
  	 <option></option>
-	<option value="1" <c:if test="${1 == kyujin.addresscd}">selected="selected"</c:if> />正社員</option>
-	<option value="2" <c:if test="${2 == kyujin.addresscd}">selected="selected"</c:if> />正社員以外</option>
-	<option value="3" <c:if test="${3 == kyujin.addresscd}">selected="selected"</c:if> />有期雇用派遣</option>
-	<option value="4" <c:if test="${4 == kyujin.addresscd}">selected="selected"</c:if> />無期雇用派遣</option>
-	<option value="5" <c:if test="${5 == kyujin.addresscd}">selected="selected"</c:if> />パート労働者</option>
-	<option value="6" <c:if test="${6 == kyujin.addresscd}">selected="selected"</c:if> />有期派遣パート</option>
-	<option value="7" <c:if test="${7 == kyujin.addresscd}">selected="selected"</c:if> />無期派遣パート</option>
+	<option value="1" <c:if test="${1 == kyujin.koyoukeitaicd}">selected="selected"</c:if> />正社員</option>
+	<option value="2" <c:if test="${2 == kyujin.koyoukeitaicd}">selected="selected"</c:if> />正社員以外</option>
+	<option value="3" <c:if test="${3 == kyujin.koyoukeitaicd}">selected="selected"</c:if> />有期雇用派遣</option>
+	<option value="4" <c:if test="${4 == kyujin.koyoukeitaicd}">selected="selected"</c:if> />無期雇用派遣</option>
+	<option value="5" <c:if test="${5 == kyujin.koyoukeitaicd}">selected="selected"</c:if> />パート労働者</option>
+	<option value="6" <c:if test="${6 == kyujin.koyoukeitaicd}">selected="selected"</c:if> />有期派遣パート</option>
+	<option value="7" <c:if test="${7 == kyujin.koyoukeitaicd}">selected="selected"</c:if> />無期派遣パート</option>
      </select>
 
   </tr>
