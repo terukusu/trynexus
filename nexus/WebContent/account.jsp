@@ -59,7 +59,10 @@
 				<td><c:out value="${ account.id }" /></td>
 				<td><c:out value="${ account.name }" /></td>
 				<td><c:out value="${ account.kana }" /></td>
-				<td><c:out value="${ account.authority }" /></td>
+				<td>
+				<c:if test="${account.authority == 1}">管理者</c:if>
+				<c:if test="${account.authority == 2}">その他</c:if>
+				</td>
 			</tr></c:forEach>
 		</table>
 	</form>
