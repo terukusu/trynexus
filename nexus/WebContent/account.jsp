@@ -57,12 +57,7 @@
 			</tr>
 			<c:forEach var="account" items="${ accounts }">
 			<tr>
-				<td>
-
-				<form action="./AccountEditServlet" method="post">
-				<input class="main-b" type="button"  value="<c:out value="${account.id}"/>">編集
-				</form>
-				</td>
+				<td><input class="main-b" onclick="location.href='AccountEditServlet'" value="<c:out value="${account.id}"/>">編集</td>
 				<td><c:out value="${ account.id }" /></td>
 				<td><c:out value="${ account.name }" /></td>
 				<td><c:out value="${ account.kana }" /></td>
