@@ -115,7 +115,7 @@ public class JobSeekerRegistServlet extends HttpServlet {
 				request.setAttribute("messages", service.getMessages());
 
 				//JSPにフォワード
-				request.getRequestDispatcher("/applicantregist.jsp") //ここにjspを入力
+				request.getRequestDispatcher("./web/applicantregist.jsp") //ここにjspを入力
 					.forward(request, response);
 
 				return;

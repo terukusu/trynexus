@@ -38,9 +38,13 @@
       <div class="user__wrapper">
         <!-- <div class="user__image"></div> -->
         <div class="user__name">
-          <a href="#">山田 太郎<i class="fas fa-ellipsis-v"></i></a>
+          <a href="#">${UserData.name}<i class="fas fa-ellipsis-v"></i></a>
           <ul class="drop-menu">
-            <li><a href="#">サインアウト<i class="fas fa-angle-right"></i></a></li>
+            <li>
+			<form name= "logout" method="GET" action="logoutservlet">
+				<a href="/nexus/logoutservlet">サインアウト<i class="fas fa-angle-right"></i></a>
+			</form>
+			</li>
           </ul>
         </div>
       </div>

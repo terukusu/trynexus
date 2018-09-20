@@ -11,12 +11,12 @@
 
 <title>ログイン</title>
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"rel="stylesheet" >
-<link href="css?family=M+PLUS+1p" rel="stylesheet">
-<link href="css/bootstrap-reboot.css" rel="stylesheet">
-<link href="css/common.css" rel="stylesheet">
-<link href="css/header.css" rel="stylesheet">
-<link href="css/footer.css" rel="stylesheet">
-<link href="css/stafflogin.css" rel="stylesheet">
+<link href="./css?family=M+PLUS+1p" rel="stylesheet">
+<link href="./css/bootstrap-reboot.css" rel="stylesheet">
+<link href="./css/common.css" rel="stylesheet">
+<link href="./css/header.css" rel="stylesheet">
+<link href="./css/footer.css" rel="stylesheet">
+<link href="./css/stafflogin.css" rel="stylesheet">
 
 </head>
 
@@ -37,7 +37,7 @@
     </div>
   </section>
 </header>
-<div>
+
 
 <!-- body部分　-->
 
@@ -90,6 +90,9 @@
   <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館)　All Rights Reserved.</small>
 </footer>
 
+<script>
+history.forward();
+</script>
 </body>
 </html>
 

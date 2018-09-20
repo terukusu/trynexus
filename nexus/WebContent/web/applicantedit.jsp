@@ -19,7 +19,7 @@
 <body><!-- ヘッダー　-->
 <header>
   <section>
-    <h1 class="logo"><a href="#">LOGO</a></h1>
+    <h1 class="logo"><a href="http://localhost:8080/nexus/web/stafftop.jsp">TryNexus</a></h1>
     <nav>
       <ul class="mainnavi">
         <li><a href="#"><i class="fas fa-home"></i>検索</a></li>
@@ -37,9 +37,14 @@
     <div class="user">
       <div class="user__wrapper">
         <!-- <div class="user__image"></div> -->
-        <div class="user__name"> <a href="#">山田 太郎<i class="fas fa-ellipsis-v"></i></a>
+        <div class="user__name">
+          <a href="#">${UserData.name}<i class="fas fa-ellipsis-v"></i></a>
           <ul class="drop-menu">
-            <li><a href="#">サインアウト<i class="fas fa-angle-right"></i></a></li>
+            <li>
+			<form name= "logout" method="GET" action="logoutservlet">
+				<a href="/nexus/logoutservlet">サインアウト<i class="fas fa-angle-right"></i></a>
+			</form>
+			</li>
           </ul>
         </div>
       </div>

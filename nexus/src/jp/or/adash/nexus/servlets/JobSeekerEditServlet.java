@@ -99,7 +99,7 @@ public class JobSeekerEditServlet extends HttpServlet {
 					request.setAttribute("messages", service.getMessages());
 
 					//JSPにフォワード
-					request.getRequestDispatcher("/applicantedit.jsp") //ここにjspを入力
+					request.getRequestDispatcher("./web/applicantedit.jsp") //ここにjspを入力
 						.forward(request, response);
 
 					return;

@@ -45,7 +45,7 @@
           <ul class="drop-menu">
             <li>
 			<form name= "logout" method="GET" action="logoutservlet">
-				<a href="./logout.jsp">サインアウト<i class="fas fa-angle-right"></i></a>
+				<a href="/nexus/logoutservlet">サインアウト<i class="fas fa-angle-right"></i></a>
 			</form>
 			</li>
           </ul>
@@ -66,6 +66,9 @@
     	<th>
 			<label>検索</label>
 		</th>
+        </tr>
+        <tr>
+        <td><a href="./applicantedit.jsp">実験用</a></td>
         </tr>
         <tr>
         <td><a href="./jobsearch">■求人検索</a></td>
@@ -109,9 +112,6 @@
         </tr>
     </table>
 	</div>
-
-
-
 
 </div><!--　コンテナ終了-->
 

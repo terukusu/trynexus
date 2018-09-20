@@ -39,7 +39,7 @@ public class JobSeekerListShowServlet extends HttpServlet {
 		// 2.求職者情報をリクエストに格納する
 		request.setAttribute("list", list);
 		// 3.JSPにフォワードする
-		request.getRequestDispatcher("/applicant_list.jsp").forward(request, response);
+		request.getRequestDispatcher("./web/applicant_list.jsp").forward(request, response);
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

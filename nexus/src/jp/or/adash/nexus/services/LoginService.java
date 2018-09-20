@@ -28,6 +28,7 @@ public class LoginService {
 			userData = dao.getLogin(user, pass);
 		} catch (IOException e) {
 			//0エラー処理を行う
+			
 		} finally {
 			//0データベース接続をを終了する
 			transaction.close();
