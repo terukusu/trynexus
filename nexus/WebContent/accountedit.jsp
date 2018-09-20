@@ -5,7 +5,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>アカウント一覧</title>
+<title>アカウント編集</title>
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
 <link href="css/bootstrap-reboot.css" rel="stylesheet">
@@ -44,35 +44,45 @@
   </section>
 </header>
 <main>
-	<h2>アカウント一覧</h2>
-	<form action="./AccountListServlet" method="get">
-		<input class="main-b" type="button" onclick="location.href='accountregistservlet'" value="新規登録">
+	<h2>アカウント編集</h2>
+	<ul>
+	<c:forEach var="message" items="${ messages }">
+		<li><c:out value="${ message }" /></li>
+	</c:forEach>
+	</ul>
+	<form action="AccountEditServlet" method="post">
 		<table>
 			<tr>
+				<th>項目名</th>
 				<th></th>
-				<th>職業紹介者ID</th>
-				<th>氏名</th>
-				<th>氏名（カナ）</th>
-				<th>ユーザー権限</th>
 			</tr>
-			<c:forEach var="account" items="${ accounts }">
 			<tr>
-				<td>
-
-				<form action="./AccountEditServlet" method="post">
-				<input class="main-b" type="button"  value="<c:out value="${account.id}"/>">編集
-				</form>
-				</td>
-				<td><c:out value="${ account.id }" /></td>
-				<td><c:out value="${ account.name }" /></td>
-				<td><c:out value="${ account.kana }" /></td>
+				<td>アカウントID</td>
+				<td><input type="hidden" name="hiddenid" value="<c:out value="${ seeker.id }" />"></td>
+			</tr>
+			<tr>
+				<td>氏名</td>
+				<td><input type="text" name="name" value="<c:out value="${ seeker.name }" />"></td>
+			</tr>
+			<tr>
+				<td>氏名（カナ）</td>
+				<td><input type="text" name="kana" value="<c:out value="${ seeker.kana }" />"></td>
+			</tr>
+			<tr>
+				<td>ユーザー権限</td>
 				<td>
 					<c:if test="${account.authority == 1}">管理者</c:if>
 					<c:if test="${account.authority == 2}">その他</c:if>
 				</td>
 			</tr>
-			</c:forEach>
+			<tr>
+				<td>新しいパスワード</td>
+				<td><input type="password" name="password"></td>
+			</tr>
 		</table>
+		<input class="main-b" type="button" onclick="location.href='AccountListServlet'" value="戻る">
+		<input class="main-b" type="submit" value="更新">
+		<input class="main-b" type="submit" value="削除">
 	</form>
 </main>
 <footer> <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館) All Rights Reserved.</small> </footer>

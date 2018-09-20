@@ -31,6 +31,11 @@ public class AccountEditServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String id = request.getParameter("id");
+		String name = request.getParameter("name");
+		String kana = request.getParameter("kana");
+		String authority =request.getParameter("authority");
+		String password = request.getParameter("password");
 		// 1.アカウント情報一覧を取得する
 		AccountListService service = new AccountListService();
 		List<Staff> list = service.getAccountList();
