@@ -80,9 +80,9 @@
 				<td><input type="password" name="password"></td>
 			</tr>
 		</table>
-		<input type="button" onclick="location.href='AccountListServlet'" value="戻る">
-		<input type="submit" value="更新">
-		<input type="submit" value="削除">
+		<input class="main-b" type="button" onclick="location.href='AccountListServlet'" value="戻る">
+		<input class="main-b" type="submit" value="更新">
+		<input class="main-b" type="submit" value="削除">
 	</form>
 </main>
 <footer> <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館) All Rights Reserved.</small> </footer>
