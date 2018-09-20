@@ -50,7 +50,7 @@
 		<li><c:out value="${ message }" /></li>
 	</c:forEach>
 	</ul>
-	<form action="AccountRegistServlet" method="post">
+	<form action="accountregistservlet" method="post">
 		<table>
 			<tr>
 				<th>項目名</th>
