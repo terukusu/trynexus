@@ -86,7 +86,7 @@
      <td>
 
      <select name="jobcategorylargecd" tabindex="">
-      	 <option></option>
+      	 <option>1</option>
      </select>
 
      <!-- input type="text" name="jobcategorylargecd" value="<c:out value="${ kyujin.jobcategorylargecd }" />" maxlength="1
@@ -97,7 +97,7 @@
     <td>産業細分類コード</td>
      <td>
      <select name="jobcategorysmallcd" tabindex="">
-      	 <option></option>
+      	 <option>2</option>
       	 </select>
      <!--input type="text" name="jobcategorysmallcd" value="<c:out value="${ kyujin.jobcategorysmallcd }" />" maxlength="3" tabindex=""-->
      </td>
@@ -139,7 +139,7 @@
     <td>職種大分類コード１</td>
      <td>
      <select name="joblargecd1" tabindex="">
-      	 <option></option>
+      	 <option>3</option>
   	 </select>
 
      <!--input type="text" name="joblargecd1" value="<c:out value="${ kyujin.joblargecd1 }" />" maxlength="1" tabindex=""-->
@@ -149,7 +149,7 @@
      <td>職種細分類コード１</td>
      <td>
      <select name="jobsmallcd1" tabindex="">
-      	 <option></option>
+      	 <option>4</option>
       	 </select>
 
   	 <!--input type="text" name="jobsmallcd1" value="<c:out value="${ kyujin.jobsmallcd1 }" />" maxlength="6" tabindex=""-->
@@ -159,7 +159,7 @@
     <td>職種大分類コード2</td>
      <td>
      <select name="joblargecd2" tabindex="">
-      	 <option></option>
+      	 <option>5</option>
       	 </select>
 
      <!-- input type="text" name="joblargecd2" value="<c:out value="${ kyujin.joblargecd2 }" />" maxlength="1" tabindex=""-->
@@ -169,7 +169,7 @@
     <td>職種細分類コード2</td>
     <td>
      <select name="jobsmallcd2" tabindex="">
-      	 <option></option>
+      	 <option>6</option>
       	 </select>
      <!-- input type="text" name="jobsmallcd2" value="<c:out value="${ kyujin.jobsmallcd2 }" />" maxlength="6" tabindex=""-->
      </td>
@@ -178,7 +178,7 @@
     <td>職種大分類コード3</td>
      <td>
      <select name="joblargecd3" tabindex="">
-      	 <option></option>
+      	 <option>7</option>
       	 </select>
      <!--input type="text" name="joblargecd3" value="<c:out value="${ kyujin.joblargecd3 }" />" maxlength="1" tabindex=""-->
      </td>
@@ -187,7 +187,7 @@
     <td>職種細分類コード3</td>
      <td>
      <select name="jobsmallcd3" tabindex="">
-      	 <option></option>
+      	 <option>8</option>
       	 </select>
      <!--input type="text" name="jobsmallcd3" value="<c:out value="${ kyujin.jobsmallcd3 }" />" maxlength="6" tabindex=""-->
      </td>
