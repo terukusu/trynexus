@@ -44,7 +44,7 @@ public class MatchingServlet extends HttpServlet {
 		String stffid = request.getParameter("staffid");
 		Date interviewdt = null;
 		try {
-			interviewdt = (Date) (new SimpleDateFormat("yyyy-MM-dd")).parse(request.getParameter("interviewdt"));
+			interviewdt = (new SimpleDateFormat("yyyy-MM-dd")).parse(request.getParameter("interviewdt"));
 		} catch (ParseException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
@@ -52,7 +52,7 @@ public class MatchingServlet extends HttpServlet {
 		request.getParameter("interviewdt");
 		Date enterdt = null;
 		try {
-			enterdt = (Date) (new SimpleDateFormat("yyyy-MM-dd")).parse(request.getParameter("enterdt"));
+			enterdt = (new SimpleDateFormat("yyyy-MM-dd")).parse(request.getParameter("enterdt"));
 		} catch (ParseException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
@@ -104,5 +104,6 @@ public class MatchingServlet extends HttpServlet {
 		request.getRequestDispatcher("/matchingregist.jsp")
 				.forward(request, response);
 	}
+
 
 }

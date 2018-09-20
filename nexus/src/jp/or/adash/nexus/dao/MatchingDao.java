@@ -43,17 +43,17 @@ public class MatchingDao {
 		sql.append("(kyujinno,jobseekerid,staffid,interviewdt,enterdt,assessment,"
 				+ "note,createuserid,updateuserid");
 		sql.append(") values (");
-		sql.append("?,?,?,current_timestamp,current_timestamp,?,?,1,1");
+		sql.append("?,?,?,?,?,?,?,1,1");
 		sql.append(")");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
 			//ps.setInt(1,matching.getId());
 			ps.setString(1,matching.getKyujinno());
 			ps.setString(2,matching.getJobseekerid());
 			ps.setString(3,matching.getStaffid());
-//			ps.setDate(4,(Date) matching.getInterviewdt());
-//			ps.setDate(5,(Date) matching.getEnterdt());
-			ps.setString(4,matching.getAssessment());
-			ps.setString(5,matching.getNote());
+			ps.setDate(4,convertToSqlDate(matching.getInterviewdt()));
+			ps.setDate(5,convertToSqlDate(matching.getEnterdt()));
+			ps.setString(6,matching.getAssessment());
+			ps.setString(7,matching.getNote());
 //			ps.setString(6,matching.getCreateuserid());
 //			ps.setString(7,matching.getUpDateuserid());
 
@@ -67,6 +67,10 @@ public class MatchingDao {
 		return count;
 	}
 
+
+	public java.sql.Date convertToSqlDate(java.util.Date utilDate){
+	    return new java.sql.Date(utilDate.getTime());
+	}
 	//private void setString(int i, String jobseekerid) {
 		// TODO 自動生成されたメソッド・スタブ
 
