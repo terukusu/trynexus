@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jp.or.adash.nexus.dao.AccountDao;
+import jp.or.adash.nexus.dao.SaibanDao;
 import jp.or.adash.nexus.entity.Staff;
 import jp.or.adash.nexus.utils.common.MessageCommons;
 import jp.or.adash.nexus.utils.dao.Transaction;
@@ -67,8 +68,11 @@ public class AccountService {
 			transaction.beginTrans();
 
 			// 商品単価を取得する
-			AccountDao dao = new AccountDao(transaction);
-			int count = dao.insert(staff);
+			AccountDao accountdao = new AccountDao(transaction);
+			SaibanDao saibandao = new SaibanDao(transaction);
+
+
+			int count = accountdao.insert(staff);
 
 			//countが返ってくる
 			if (count > 0) {
