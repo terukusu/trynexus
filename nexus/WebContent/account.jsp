@@ -57,7 +57,7 @@
 			</tr>
 			<c:forEach var="account" items="${ accounts }">
 			<tr>
-				<td><input type="submit" class="editButton" name="send" value="編集"></td>
+				<td><input type="button" onclick="location.href='AccountListServlet'" value="編集"></td>
 				<td><c:out value="${ account.id }" /></td>
 				<td><c:out value="${ account.name }" /></td>
 				<td><c:out value="${ account.kana }" /></td>

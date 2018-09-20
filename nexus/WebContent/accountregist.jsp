@@ -80,7 +80,7 @@
 				<td><input type="password" name="password"></td>
 			</tr>
 		</table>
-		<input type="button" onclick="location.href='acount.jsp'" value="戻る">
+		<input type="button" onclick="location.href='AccountListServlet'" value="戻る">
 		<input class="main-b" type="submit" value="登録">
 	</form>
 </main>
