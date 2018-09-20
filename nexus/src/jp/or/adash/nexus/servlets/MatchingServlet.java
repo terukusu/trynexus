@@ -1,6 +1,8 @@
 package jp.or.adash.nexus.servlets;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -41,16 +43,30 @@ public class MatchingServlet extends HttpServlet {
 		String jobseekerid = request.getParameter("jobseekerid");
 		String stffid = request.getParameter("staffid");
 		Date interviewdt = null;
+		try {
+			interviewdt = (Date) (new SimpleDateFormat("yyyy-MM-dd")).parse(request.getParameter("interviewdt"));
+		} catch (ParseException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
 		request.getParameter("interviewdt");
 		Date enterdt = null;
+		try {
+			enterdt = (Date) (new SimpleDateFormat("yyyy-MM-dd")).parse(request.getParameter("enterdt"));
+		} catch (ParseException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
 		request.getParameter("enterdt");
 		String assessment = request.getParameter("assessment");
 		String note = request.getParameter("note");
 		Date createdt = null;
 		Date upDatedt = null;
 
-		String upDateuserid=null;
-		String createuserid=null;
+
+		String createuserid = request.getParameter("createuserid");
+		String upDateuserid = request.getParameter("upDateuserid");
+
 		//1.2 マッチング結果オブジェクトを作成
 		MatchingCase matching = new MatchingCase(kyujinno,jobseekerid,stffid,interviewdt,enterdt,assessment,note,createdt,
 				createuserid,upDatedt,upDateuserid);

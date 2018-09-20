@@ -2,7 +2,6 @@ package jp.or.adash.nexus.dao;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -42,21 +41,21 @@ public class MatchingDao {
 		StringBuffer sql = new StringBuffer();
 		sql.append("insert into matchingcase ");
 		sql.append("(kyujinno,jobseekerid,staffid,interviewdt,enterdt,assessment,"
-				+ "note,createdt,createuserid,updatedt,updateuserid");
+				+ "note,createuserid,updateuserid");
 		sql.append(") values (");
-		sql.append("?,?,?,?,?,?,?,current_timestamp,?,current_timestamp,?");
+		sql.append("?,?,?,current_timestamp,current_timestamp,?,?,1,1");
 		sql.append(")");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
 			//ps.setInt(1,matching.getId());
 			ps.setString(1,matching.getKyujinno());
 			ps.setString(2,matching.getJobseekerid());
 			ps.setString(3,matching.getStaffid());
-			ps.setDate(4,(Date) matching.getInterviewdt());
-			ps.setDate(5,(Date) matching.getEnterdt());
-			ps.setString(6,matching.getAssessment());
-			ps.setString(7,matching.getNote());
-			ps.setString(8,matching.getCreateuserid());
-			ps.setString(9,matching.getUpDateuserid());
+//			ps.setDate(4,(Date) matching.getInterviewdt());
+//			ps.setDate(5,(Date) matching.getEnterdt());
+			ps.setString(4,matching.getAssessment());
+			ps.setString(5,matching.getNote());
+//			ps.setString(6,matching.getCreateuserid());
+//			ps.setString(7,matching.getUpDateuserid());
 
 
 			// SQL文を実行する
