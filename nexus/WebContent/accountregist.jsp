@@ -50,7 +50,7 @@
 		<li><c:out value="${ message }" /></li>
 	</c:forEach>
 	</ul>
-	<form action="accountregistservlet" method="post">
+	<form action="AccountRegistServlet" method="post">
 		<table>
 			<tr>
 				<th>項目名</th>
@@ -87,4 +87,3 @@
 <footer> <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館) All Rights Reserved.</small> </footer>
 </body>
 </html>
-
