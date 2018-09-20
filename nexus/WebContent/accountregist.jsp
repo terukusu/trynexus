@@ -5,7 +5,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>アカウント管理（紹介・一覧）</title>
+<title>アカウント登録</title>
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
 <link href="css/bootstrap-reboot.css" rel="stylesheet">
@@ -44,7 +44,7 @@
   </section>
 </header>
 <main>
-	<h2>アカウント管理（紹介・一覧）</h2>
+	<h2>アカウント登録</h2>
 	<div id="job_seeker">
 	<ul>
 	<c:forEach var="message" items="${ messages }">
@@ -75,6 +75,7 @@
 					<td><input type="radio" name="kyushoku" value="職業紹介者">職業紹介者</td>
 				</tr>
 			</table>
+			<input type="button" onclick="location.href='acount.jsp'" value="戻る">
 			<input class="main-b" type="submit" value="登録">
 		</form>
 	</div>
