@@ -7,12 +7,12 @@
 <head>
 <meta charset="UTF-8">
 <title>ログインできない／アカウントをお持ちでない場合</title>
-<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"rel="stylesheet" >
-<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
-<link href="bootstrap-reboot.css" rel="stylesheet">
-<link href="common.css" rel="stylesheet">
-<link href="header.css" rel="stylesheet">
-<link href="footer.css" rel="stylesheet">
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet" />
+<link href="css/bootstrap-reboot.css" rel="stylesheet" type="text/css" />
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/header.css" rel="stylesheet" type="text/css" />
+<link href="css/footer.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
