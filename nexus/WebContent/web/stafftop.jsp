@@ -68,9 +68,6 @@
 		</th>
         </tr>
         <tr>
-        <td><a href="./applicantedit.jsp">実験用</a></td>
-        </tr>
-        <tr>
         <td><a href="./jobsearch">■求人検索</a></td>
         </tr>
     </table>
