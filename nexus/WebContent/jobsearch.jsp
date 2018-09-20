@@ -165,8 +165,13 @@
 					<th scope="col">基本給</th>
 				</tr>
 				<c:forEach var="SimpleKyujin" items="${ kyujin }">
+
 					<tr>
-						<td><button type="button" onclick="location.href='./detail'" name ="no" value="${ SimpleKyujin.no }">詳細</button></td>
+						<td>
+							<form method="get" action="/nexus/detail">
+								<input type="hidden" name="no" value="${ SimpleKyujin.no }">
+									<input type="submit" value="詳細"></form>
+						</td>
 						<td><c:out value="${ SimpleKyujin.no }" /></td>
 						<td><c:out value="${ SimpleKyujin.companyname }" /></td>
 						<td><c:out value="${ SimpleKyujin.address }" /></td>
