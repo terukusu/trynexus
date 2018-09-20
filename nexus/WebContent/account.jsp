@@ -44,7 +44,7 @@
   </section>
 </header>
 <main>
-  <h2>アカウント一覧</h2>
+	<h2>アカウント一覧</h2>
 	<form action="./AccountListServlet" method="get">
 		<input type="button" onclick="location.href='acountregist.jsp'" value="新規登録">
 		<table>
@@ -55,7 +55,8 @@
 				<th>氏名（カナ）</th>
 				<th>ユーザー権限</th>
 			</tr>
-			<c:forEach var="account" items="${ accounts }"><tr>
+			<c:forEach var="account" items="${ accounts }">
+			<tr>
 				<td><input type="submit" class="editButton" name="send" value="編集"></td>
 				<td><c:out value="${ account.id }" /></td>
 				<td><c:out value="${ account.name }" /></td>
@@ -64,7 +65,8 @@
 					<c:if test="${account.authority == 1}">管理者</c:if>
 					<c:if test="${account.authority == 2}">その他</c:if>
 				</td>
-			</tr></c:forEach>
+			</tr>
+			</c:forEach>
 		</table>
 	</form>
 </main>
