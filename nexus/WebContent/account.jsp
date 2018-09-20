@@ -46,6 +46,7 @@
 <main>
   <h2>アカウント管理（紹介・一覧）</h2>
 	<form action="./AccountListServlet" method="get">
+		<input type="button" onclick="location.href='acountregist.jsp'" value="新規登録">
 		<table>
 			<tr>
 				<th></th>
@@ -60,8 +61,8 @@
 				<td><c:out value="${ account.name }" /></td>
 				<td><c:out value="${ account.kana }" /></td>
 				<td>
-				<c:if test="${account.authority == 1}">管理者</c:if>
-				<c:if test="${account.authority == 2}">その他</c:if>
+					<c:if test="${account.authority == 1}">管理者</c:if>
+					<c:if test="${account.authority == 2}">その他</c:if>
 				</td>
 			</tr></c:forEach>
 		</table>
