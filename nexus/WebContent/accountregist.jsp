@@ -71,8 +71,14 @@
 				</tr>
 				<tr>
 					<td>ユーザー権限</td>
-					<td><input type="radio" name="shoukai" value="求職者">求職者</td>
-					<td><input type="radio" name="kyushoku" value="職業紹介者">職業紹介者</td>
+					<td>
+						<input type="radio" name="kengen" value="1">管理者
+						<input type="radio" name="kengen" value="2">その他
+					</td>
+				</tr>
+				<tr>
+					<td>パスワード</td>
+					<td><input type="password" name="password"></td>
 				</tr>
 			</table>
 			<input type="button" onclick="location.href='acount.jsp'" value="戻る">
