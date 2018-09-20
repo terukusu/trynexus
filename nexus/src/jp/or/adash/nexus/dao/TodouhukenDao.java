@@ -40,7 +40,7 @@ public class TodouhukenDao {
 	 * @return 都道府県オブジェクト
 	 * @throws IOException
 	 */
-	public Todouhuken selectItem(int cd) throws IOException {
+	public Todouhuken selectTodouhuken(String cd) throws IOException {
 		Todouhuken todouhuken = null;
 
 		// SQL文を生成する
@@ -49,13 +49,13 @@ public class TodouhukenDao {
 		sql.append(" from todouhuken");
 		sql.append(" where cd = ?");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
-			ps.setInt(0, cd);
+			ps.setString(0, cd);
 
 			// SQL文を実行する
 			try (ResultSet rs = ps.executeQuery()) {
 				// 取得結果をリストに格納する
 				while(rs.next()) {
-					return new Todouhuken(rs.getInt("cd"),
+					return new Todouhuken(rs.getString("cd"),
 							rs.getString("name"));
 
 				}
@@ -74,7 +74,7 @@ public class TodouhukenDao {
 	 * @return 都道府県リスト
 	 * @throws IOException
 	 */
-	public List<Todouhuken> selectItemList() throws IOException {
+	public List<Todouhuken> selectTodouhukenList() throws IOException {
 		List<Todouhuken> todouhukens = new ArrayList<Todouhuken>();
 
 		// SQL文を生成する
@@ -87,7 +87,7 @@ public class TodouhukenDao {
 			try (ResultSet rs = ps.executeQuery()) {
 				// 取得結果をリストに格納する
 				while(rs.next()) {
-					todouhukens.add(new Todouhuken(rs.getInt("cd"),
+					todouhukens.add(new Todouhuken(rs.getString("cd"),
 							rs.getString("name")));
 				}
 			} catch(SQLException e) {

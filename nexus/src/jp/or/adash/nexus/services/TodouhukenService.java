@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import jp.or.adash.nexus.dao.TodouhukenDao;
 import jp.or.adash.nexus.entity.Todouhuken;
 import jp.or.adash.nexus.utils.common.MessageCommons;
 import jp.or.adash.nexus.utils.dao.Transaction;
@@ -42,15 +43,15 @@ public class TodouhukenService {
 	 * 都道府県リストを取得する
 	 * @return 都道府県リスト
 	 */
-	public List<Todouhuken> getTodohukenList() {
-		List<Todouhuken> itemList = new ArrayList<Todohuken>();
+	public List<Todouhuken> getTodouhukenList() {
+		List<Todouhuken> todouhukenList = new ArrayList<Todouhuken>();
 
 		try {
 			// データベース接続を開始する
 			transaction.open();
 
 			// 商品リストを取得する
-			TodohukenDao dao = new TodohukenDao(transaction);
+			TodouhukenDao dao = new TodouhukenDao(transaction);
 			todouhukenList = dao.selectTodouhukenList();
 
 		} catch(IOException e) {
