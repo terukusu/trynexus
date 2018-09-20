@@ -52,12 +52,12 @@
 				<th></th>
 				<th>職業紹介者ID</th>
 				<th>氏名</th>
-				<th>氏名（カナ）</th>
+				<th>氏名（かな）</th>
 				<th>ユーザー権限</th>
 			</tr>
 			<c:forEach var="account" items="${ accounts }">
 			<tr>
-				<td><input class="main-b" type="hidden" onclick="location.href='AccountEditServlet'" name="<c:out value="${account.id}"/>">編集</td>
+				<td><input class="main-b" type="" onclick="location.href='AccountEditServlet'" name="<c:out value="${account.id}"/>">編集</td>
 				<td><c:out value="${ account.id }" /></td>
 				<td><c:out value="${ account.name }" /></td>
 				<td><c:out value="${ account.kana }" /></td>

@@ -65,7 +65,7 @@
 				<td><input type="text" name="name" value="<c:out value="${ seeker.name }" />"></td>
 			</tr>
 			<tr>
-				<td>氏名（カナ）</td>
+				<td>氏名（かな）</td>
 				<td><input type="text" name="kana" value="<c:out value="${ seeker.kana }" />"></td>
 			</tr>
 			<tr>
