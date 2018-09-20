@@ -30,7 +30,7 @@ public class AccountEditService {
 	 * @param Staff アカウント情報
 	 * @return 処理結果（true:成功、false:失敗）
 	 */
-	public boolean updateJobSeeker(Staff staff) {
+	public boolean updateStaff(Staff staff) {
 		boolean result = false;	// 0処理結果
 
 		try {
@@ -46,11 +46,11 @@ public class AccountEditService {
 
 			if (count > 0) {
 				//0完了メッセージをセットする
-				messages.add("編集が完了しました。");
+				messages.add("更新が完了しました。");
 				result = true;
 			} else {
 				//0エラーメッセージをセットする
-				messages.add("編集に失敗しました。");
+				messages.add("更新に失敗しました。");
 			}
 
 			//0トランザクションをコミットする

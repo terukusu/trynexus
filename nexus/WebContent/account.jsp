@@ -46,7 +46,7 @@
 <main>
 	<h2>アカウント一覧</h2>
 	<form action="./AccountListServlet" method="get">
-		<input class="main-b" type="button" onclick="location.href='AccountRegistServlet'" value="新規登録">
+		<input class="main-b" type="button" onclick="location.href='accountregistservlet'" value="新規登録">
 		<table>
 			<tr>
 				<th></th>
@@ -57,7 +57,11 @@
 			</tr>
 			<c:forEach var="account" items="${ accounts }">
 			<tr>
-				<td><input class="main-b" type="button" onclick="location.href='AccountEditServlet'" value="編集"></td>
+				<td>
+				<form action="./AccountEditServlet" method="post">
+				<input class="main-b" type="button"  value="<c:out value="${account.id}"/>">編集
+				</form>
+				</td>
 				<td><c:out value="${ account.id }" /></td>
 				<td><c:out value="${ account.name }" /></td>
 				<td><c:out value="${ account.kana }" /></td>
