@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import jp.or.adash.nexus.entity.Staff;
 import jp.or.adash.nexus.services.AccountService;
@@ -49,18 +50,30 @@ public class AccountRegistServlet extends HttpServlet {
 	//入力された情報を登録する
 		String name = request.getParameter("name");
 		String kana = request.getParameter("kana");
-		String authority = request.getParameter("authority");
+		String authority = request.getParameter("kengen");
+		String password = request.getParameter("password");
+
+	//TODO:0.セッションオブジェクトをつくり、無理やりデータをつめる。ここが友成さん　跡で消す
+		HttpSession session = request.getSession(true);
+		Staff staffsession = new Staff(null, null, null, null, null, null, "0001", null, "0001", "0");
+		session.setAttribute("UserData", staffsession);
 
 
-	//entityのオブジェクト作成
-	Staff staff = new Staff(null, name, kana, authority, null, null, null, null, null, null );
+	//0ここからは必要	Objectはいろんな型を入れておける　ユーザーIdとユーザー名
+		Staff sessionStaff = (Staff)session.getAttribute("UserData");
+
+
+	//staffのオブジェクトからデータを取る
+
+	Staff staff = new Staff("10", name, kana, authority, password,
+			null, sessionStaff.getCreateuserid(), null, sessionStaff.getUpdateuserid(), "0");
 
 	//serviceのregistAccountにstaffを渡す
 	AccountService accountservice = new AccountService();
 	boolean result = accountservice.registAccount(staff);
 
 	//JSPにフォワード
-	request.getRequestDispatcher("/acountregist.jsp").forward(request, response);
+	request.getRequestDispatcher("/accountregist.jsp").forward(request, response);
 
 
 	}

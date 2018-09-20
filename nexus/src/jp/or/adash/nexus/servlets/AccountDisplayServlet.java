@@ -27,7 +27,7 @@ public class AccountDisplayServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//フォワードする
-		request.getRequestDispatcher("/acountregist.jsp")
+		request.getRequestDispatcher("/accountregist.jsp")
 		.forward(request, response);
 
 

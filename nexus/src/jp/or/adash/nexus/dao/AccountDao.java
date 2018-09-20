@@ -42,7 +42,7 @@ public class AccountDao {
 		sql.append("insert into ishida.staff");
 		sql.append("(id, name, kana, authority, password, createuserid, updateuserid, deleteflag)");
 		sql.append("values");
-		sql.append("(1, ?, ?, ?, 1, 1, 1, 1, 1, 1)");
+		sql.append("(?, ?, ?, ?, ?, ?, ?, ?)");
 		//プリコンパイル（約束事）みたいな　これすると実行が早くなる　psにデータをいったん入れる
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
 		//1は?の1こめ　データにセットしてる
