@@ -427,7 +427,8 @@
 		</tr>
 		<tr>
 			<th>その他希望</th>
-			<td><input type="text" name="hopeetc" value="<c:out value="${ seeker.hopeetc }" />"></td>
+			<td><textarea rows="4" cols="40" name="hopeetc" value="<c:out value="${ seeker.hopeetc }" />">
+			</textarea></td>
 		</tr>
 		<tr>
 			<th>自動車免許</th>
@@ -442,15 +443,18 @@
 		</tr>
 		<tr>
 			<th>その他免許</th>
-			<td><input type="text" name="licenseetc" value="<c:out value="${ seeker.licenseetc }" />"></td>
+			<td><textarea rows="4" cols="40" name="licenseetc" value="<c:out value="${ seeker.licenseetc }" />">
+			</textarea></td>
 		</tr>
 		<tr>
 			<th>パソコンスキル</th>
-			<td><input type="text" name="pasokonskill" value="<c:out value="${ seeker.pasokonskill }" />"></td>
+			<td><textarea rows="4" cols="40" name="pasokonskill" value="<c:out value="${ seeker.pasokonskill }" />">
+			</textarea></td>
 		</tr>
 		<tr>
 			<th>留意点</th>
-			<td><input type="textarea" rows="4" cols="40" name="caution" value="<c:out value="${ seeker.caution }" />"></td>
+			<td><textarea rows="4" cols="40" name="caution" value="<c:out value="${ seeker.caution }" />">身体上に注意することを書いてください。
+			</textarea></td>
 		</tr>
 		<tr>
 			<th>担当職業者紹介者ID</th>

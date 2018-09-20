@@ -146,7 +146,7 @@ public JobSeeker getJobseekermaininfo(String js_id) {
 	 */
 	public boolean check(JobSeeker seeker) {
 		boolean result = true;		// チェック結果
-/**
+/*
 
 		// 求職者IDの値が入力されているか
 				if (seeker.getName() == "") {
