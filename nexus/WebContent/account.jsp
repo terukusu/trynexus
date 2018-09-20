@@ -45,29 +45,28 @@
 </header>
 <main>
 	<h2>アカウント一覧</h2>
-		<form action="accountregistservlet" method="get"><input class="main-b" type="button" value="新規登録"></form>
-		<table>
-			<tr>
-				<th></th>
-				<th>職業紹介者ID</th>
-				<th>氏名</th>
-				<th>氏名（かな）</th>
-				<th>ユーザー権限</th>
-			</tr>
-			<c:forEach var="account" items="${ accounts }">
-			<tr>
-				<td><form action="AccountEditServlet" method="get"><input class="main-b" value="<c:out value="${account.id}"/>">編集</form></td>
-				<td><c:out value="${ account.id }" /></td>
-				<td><c:out value="${ account.name }" /></td>
-				<td><c:out value="${ account.kana }" /></td>
-				<td>
-					<c:if test="${account.authority == 1}">管理者</c:if>
-					<c:if test="${account.authority == 2}">その他</c:if>
-				</td>
-			</tr>
-			</c:forEach>
-		</table>
-
+	<form action="accountregistservlet" method="get"><input class="main-b" type="button" value="新規登録"></form>
+	<table>
+		<tr>
+			<th></th>
+			<th>職業紹介者ID</th>
+			<th>氏名</th>
+			<th>氏名（かな）</th>
+			<th>ユーザー権限</th>
+		</tr>
+		<c:forEach var="account" items="${ accounts }">
+		<tr>
+			<td><form action="AccountEditServlet" method="get"><input class="main-b" value="<c:out value="${account.id}"/>">編集</form></td>
+			<td><c:out value="${ account.id }" /></td>
+			<td><c:out value="${ account.name }" /></td>
+			<td><c:out value="${ account.kana }" /></td>
+			<td>
+				<c:if test="${account.authority == 1}">管理者</c:if>
+				<c:if test="${account.authority == 2}">その他</c:if>
+			</td>
+		</tr>
+		</c:forEach>
+	</table>
 </main>
 <footer> <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館) All Rights Reserved.</small> </footer>
 </body>
