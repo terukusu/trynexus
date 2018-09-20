@@ -10,8 +10,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import jp.or.adash.nexus.entity.Kyujin;
+import jp.or.adash.nexus.entity.Staff;
 import jp.or.adash.nexus.kyujin.services.KyujinService;
 
 
@@ -35,19 +37,24 @@ public class KyujinInsertServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+		HttpSession session = request.getSession(true);
+		Staff staff = (Staff) session.getAttribute("UserData");
+
+
 		// 1.1 リクエストから値を取得する
 		String no = request.getParameter("no");
-		//		String hiddenno = request.getParameter("hiddenno");
+//		//		String hiddenno = request.getParameter("hiddenno");
 		Date receptiondt = null;
 		try {
-			receptiondt = (Date) (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")).parse(request.getParameter("receptiondt"));
+			receptiondt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(request.getParameter("receptiondt"));
 		} catch (ParseException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
 		Date perioddt = null;
 		try {
-			perioddt = (Date) (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")).parse(request.getParameter("perioddt"));
+			perioddt =  new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(request.getParameter("perioddt"));
 		} catch (ParseException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
@@ -77,14 +84,14 @@ public class KyujinInsertServlet extends HttpServlet {
 		String koyoukikan = request.getParameter("koyoukikan");
 		Date koyoukikankaishi = null;
 		try {
-			koyoukikankaishi = (Date) (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")).parse(request.getParameter("koyoukikankaishi"));
+			koyoukikankaishi = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(request.getParameter("koyoukikankaishi"));
 		} catch (ParseException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
 		Date koyoukikanowari = null;
 		try {
-			koyoukikanowari = (Date) (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")).parse(request.getParameter("koyoukikanowari"));
+			koyoukikanowari = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(request.getParameter("koyoukikanowari"));
 		} catch (ParseException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
@@ -113,22 +120,31 @@ public class KyujinInsertServlet extends HttpServlet {
 		int hiddenagemax = Integer.parseInt(request.getParameter("hiddenagemax"));
 		String hiddenetc = request.getParameter("hiddenetc");
 		Date createdt= null;
-		try {
+/*		try {
 			createdt= (Date) (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")).parse(request.getParameter("koyoukikanowari"));
 		} catch (ParseException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
-		}
-		String createuserid = request.getParameter("createuserid");
-		Date upDatedt = null;
-		try {
-			upDatedt = (Date) (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")).parse(request.getParameter("upDatedt"));
+		}*/
+//		String createuserid = request.getParameter("createuserid");
+
+//		String createuserid = staff.getId();
+		String createuserid = "1234";
+
+		Date updatedt = null;
+/*		try {
+			updatedt = (Date) (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")).parse(request.getParameter("updatedt"));
 		} catch (ParseException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
-		}
-		String upDateuserid = request.getParameter("upDateuserid");
-		String deleteflag = request.getParameter("deleteflag");
+		}*/
+/*		String updateuserid = request.getParameter("updateuserid");
+		String deleteflag = request.getParameter("deleteflag");*/
+//		String updateuserid = staff.getId();
+		String updateuserid = "1234";
+
+		String deleteflag = "0";
+
 
 		// 1.2求人票オブジェクトを作成
 
@@ -143,7 +159,7 @@ public class KyujinInsertServlet extends HttpServlet {
 				endtime, establishdt, capital, companyfeature, tantouyakushoku,
 				tantoukana, tantou, tantoustaff_id, applicationform, background,
 				hiddensex, hiddenagemin, hiddenagemax, hiddenetc, createdt,
-				createuserid, upDatedt, upDateuserid, deleteflag);
+				createuserid, updatedt, updateuserid, deleteflag);
 
 		// 1.3 入力チェック
 		KyujinService service = new KyujinService();
