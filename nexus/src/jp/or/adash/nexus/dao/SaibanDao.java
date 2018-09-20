@@ -130,6 +130,58 @@ public class SaibanDao {
 		} catch (SQLException e) {
 			throw new IOException(e);
 		}
+	}
+
+
+	/**
+	 * スタッフアカウントidを取得
+	 * @throws IOException
+	 */
+	public int getAccountId() throws IOException {
+
+		// SQL文を生成する
+		StringBuffer sql = new StringBuffer();
+		sql.append("select staffsaiban");
+		sql.append(" from saiban");
+		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
+
+			// SQL文を実行する
+			try (ResultSet rs = ps.executeQuery()) {
+				// 番号を返す
+				int getsaiban = rs.getInt("staffsaiban") + 1;
+
+				// インクリメントした値で　采番マスタ更新
+				update(getsaiban);
+
+				return getsaiban;
+
+			} catch (SQLException e) {
+				throw new IOException(e);
+			}
+		} catch (SQLException e) {
+			throw new IOException(e);
+		}
+	}
+
+	/**
+	 * スタッフアカウントidを更新する
+	 * @param accountId スタッフアカウントid
+	 * @throws IOException
+	 */
+	public void updateAccountId(int accountId) throws IOException {
+
+		// SQL文を生成する
+		StringBuffer sql = new StringBuffer();
+		sql.append("update saiban set");
+		sql.append(" staffsaiban = saiban");
+		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
+
+			// SQL文を実行する
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			throw new IOException(e);
+		}
 
 	}
+
 }

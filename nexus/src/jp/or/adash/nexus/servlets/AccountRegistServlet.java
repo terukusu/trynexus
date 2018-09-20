@@ -30,6 +30,7 @@ public class AccountRegistServlet extends HttpServlet {
 
     }
 
+
     /**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -50,8 +51,9 @@ public class AccountRegistServlet extends HttpServlet {
 		String kana = request.getParameter("kana");
 		String authority = request.getParameter("authority");
 
+
 	//entityのオブジェクト作成
-	Staff staff = new Staff(null, name, kana, authority, null, null, null, null, null, null);
+	Staff staff = new Staff(null, name, kana, authority, null, null, null, null, null, null );
 
 	//serviceのregistAccountにstaffを渡す
 	AccountService accountservice = new AccountService();

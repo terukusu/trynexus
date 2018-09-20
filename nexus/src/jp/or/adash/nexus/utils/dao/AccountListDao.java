@@ -35,7 +35,7 @@ public class AccountListDao {
 		StringBuffer sql = new StringBuffer();
 		sql.append("SELECT id,name,kana,authority");
 		sql.append(" from staff");
-		sql.append(" order by id asc");
+		sql.append(" order by id");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
 			// SQL文を実行する
 			try (ResultSet rs = ps.executeQuery()) {

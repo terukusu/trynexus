@@ -12,38 +12,38 @@ import javax.servlet.http.HttpServletResponse;
 import jp.or.adash.nexus.entity.Staff;
 
 /**
- * Servlet implementation class AccountListServlet
+ * Servlet implementation class AccountEditServlet
  */
-@WebServlet("/AccountListServlet")
-public class AccountListServlet extends HttpServlet {
+@WebServlet("/AccountEditServlet")
+public class AccountEditServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public AccountListServlet() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public AccountEditServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 1.アカウント情報一覧を取得する
 		AccountListService service = new AccountListService();
 		List<Staff> list = service.getAccountList();
 		// 2.アカウント情報をリクエストに格納する
 		request.setAttribute("accounts", list);
 		// 3.JSPにフォワードする
-		request.getRequestDispatcher("./account.jsp").forward(request, response);
+		request.getRequestDispatcher("./accountedit.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
