@@ -5,7 +5,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>アカウント管理（紹介・一覧）</title>
+<title>アカウント一覧</title>
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
 <link href="css/bootstrap-reboot.css" rel="stylesheet">
@@ -44,8 +44,9 @@
   </section>
 </header>
 <main>
-  <h2>アカウント管理（紹介・一覧）</h2>
+	<h2>アカウント一覧</h2>
 	<form action="./AccountListServlet" method="get">
+		<input type="button" onclick="location.href='acountregist.jsp'" value="新規登録">
 		<table>
 			<tr>
 				<th></th>
@@ -54,20 +55,21 @@
 				<th>氏名（カナ）</th>
 				<th>ユーザー権限</th>
 			</tr>
-			<c:forEach var="account" items="${ accounts }"><tr>
+			<c:forEach var="account" items="${ accounts }">
+			<tr>
 				<td><input type="submit" class="editButton" name="send" value="編集"></td>
 				<td><c:out value="${ account.id }" /></td>
 				<td><c:out value="${ account.name }" /></td>
 				<td><c:out value="${ account.kana }" /></td>
 				<td>
-				<c:if test="${account.authority == 1}">管理者</c:if>
-				<c:if test="${account.authority == 2}">その他</c:if>
+					<c:if test="${account.authority == 1}">管理者</c:if>
+					<c:if test="${account.authority == 2}">その他</c:if>
 				</td>
-			</tr></c:forEach>
+			</tr>
+			</c:forEach>
 		</table>
 	</form>
 </main>
 <footer> <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館) All Rights Reserved.</small> </footer>
 </body>
 </html>
-
