@@ -68,4 +68,29 @@ public class AccountEditService {
 		}
 		return result;
 	}
+	/**
+	 * アカウントIDを元に、アカウント情報を取得する
+	 * @param id アカウントID
+	 * @return 求職者情報
+	 */
+	public Staff getJobSeeker(String id) {
+		Staff staff = null;
+
+		try {
+			// データベース接続を開始する
+			transaction.open();
+
+			// 商品単価を取得する
+			AccountEditDao dao = new AccountEditDao(transaction);
+			staff = dao.selectStaff(id);
+
+		} catch(IOException e) {
+			// エラーメッセージをセットする
+		} finally {
+			// データベース接続をを終了する
+			transaction.close();
+		}
+
+		return staff;
+	}
 }
