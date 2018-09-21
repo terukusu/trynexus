@@ -12,6 +12,7 @@
 <link href="css/common.css" rel="stylesheet">
 <link href="css/header.css" rel="stylesheet">
 <link href="css/footer.css" rel="stylesheet">
+<link href="css/account.css" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -45,7 +46,7 @@
 </header>
 <main>
 	<h2>アカウント一覧</h2>
-	<form action="accountregistservlet" method="get"><input class="main-b" type="button" value="新規登録"></form>
+	<input class="main-b newbutton" type="button" value="新規登録" onclick="location.href='accountregistservlet'">
 	<table>
 		<tr>
 			<th></th>
