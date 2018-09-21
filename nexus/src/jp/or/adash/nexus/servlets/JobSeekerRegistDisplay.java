@@ -38,7 +38,7 @@ public class JobSeekerRegistDisplay extends HttpServlet {
 
 				// 1.2 求職者IDがある場合、求職者情報を取得
 				JobSeeker seeker = null;
-				if (id != null) {
+				if (id != "") {
 					JobSeekerService service = new JobSeekerService();
 					seeker = service.getJobSeeker(id);
 				}
@@ -47,14 +47,8 @@ public class JobSeekerRegistDisplay extends HttpServlet {
 				request.setAttribute("seeker", seeker);
 
 				// 1.4 JSPにフォワードする
-
 				request.getRequestDispatcher("/applicantregist.jsp")
 					.forward(request, response);
-				/*
-				// 1.4 JSPにフォワードする
-				request.getRequestDispatcher("/applicantedit.jsp")
-					.forward(request, response);
-					*/
 			}
 
 	}
