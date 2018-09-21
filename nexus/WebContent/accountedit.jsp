@@ -82,7 +82,7 @@
 			</tr>
 			<tr>
 				<td>新しいパスワード</td>
-				<td><input type="text" name="password" value="<c:out value="${Staff.password }"/>"></td>
+				<td><input type="password" name="password" value="<c:out value="${Staff.password }"/>"></td>
 			</tr>
 		</table>
 		<input class="main-b" type="submit" value="更新">

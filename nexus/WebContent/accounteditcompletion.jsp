@@ -58,21 +58,21 @@
 		</tr>
 		<tr>
 			<td>アカウントID</td>
-			<td><c:out value="${ staff.id }" /></td>
+			<td><c:out value="${ Staff.id }" /></td>
 		</tr>
 		<tr>
 			<td>氏名</td>
-			<td><c:out value="${ staff.name }" /></td>
+			<td><c:out value="${ Staff.name }" /></td>
 		</tr>
 		<tr>
 			<td>氏名（かな）</td>
-			<td><c:out value="${ staff.kana }" /></td>
+			<td><c:out value="${ Staff.kana }" /></td>
 		</tr>
 		<tr>
 			<td>ユーザー権限</td>
 			<td>
-				<c:if test="${staff.authority == 1}">管理者</c:if>
-				<c:if test="${staff.authority == 2}">その他</c:if>
+				<c:if test="${Staff.authority == 1}">管理者</c:if>
+				<c:if test="${Staff.authority == 2}">その他</c:if>
 			</td>
 		</tr>
 		<tr>
