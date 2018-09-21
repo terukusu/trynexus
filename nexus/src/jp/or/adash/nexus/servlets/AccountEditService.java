@@ -25,6 +25,9 @@ public class AccountEditService {
 		transaction = new Transaction();
 		messages = new ArrayList<String>();
 	}
+	public List<String> getMessages() {
+		return messages;
+	}
 	/**
 	 * アカウント情報を更新する
 	 * @param Staff アカウント情報

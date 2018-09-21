@@ -59,7 +59,11 @@
 			<tr>
 				<td>アカウントID</td>
 
-				<td><input  readonly name="hiddenid" value="<c:out value="${ Staff.id }" />"></td>
+				<td>
+				<input type="hidden" name="id" value="<c:out value="${ Staff.id }" />">
+				<c:out value="${ Staff.id }" />
+				</td>
+
 			</tr>
 			<tr>
 				<td>氏名</td>
