@@ -75,19 +75,19 @@ public class TodouhukenDao {
 	 * @throws IOException
 	 */
 	public List<Todouhuken> selectTodouhukenList() throws IOException {
-		List<Todouhuken> todouhukens = new ArrayList<Todouhuken>();
+		List<Todouhuken> items = new ArrayList<Todouhuken>();
 
 		// SQL文を生成する
 		StringBuffer sql = new StringBuffer();
 		sql.append("select cd, name");
 		sql.append(" from todouhuken");
-		sql.append(" order by cd");
+		sql.append(" order by cast(cd as signed)");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
 			// SQL文を実行する
 			try (ResultSet rs = ps.executeQuery()) {
 				// 取得結果をリストに格納する
 				while(rs.next()) {
-					todouhukens.add(new Todouhuken(rs.getString("cd"),
+					items.add(new Todouhuken(rs.getString("cd"),
 							rs.getString("name")));
 				}
 			} catch(SQLException e) {
@@ -97,7 +97,7 @@ public class TodouhukenDao {
 			throw new IOException(e);
 		}
 
-		return todouhukens;
+		return items;
 	}
 
 

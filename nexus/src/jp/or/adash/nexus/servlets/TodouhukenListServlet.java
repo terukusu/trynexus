@@ -37,7 +37,7 @@ public class TodouhukenListServlet extends HttpServlet {
 		// 2.都道府県リストをリクエストに格納する
 		request.setAttribute("list",list);
 		// 3.JSPにフォワードする
-		request.getRequestDispatcher("/list.jsp").forward(request,response);
+		request.getRequestDispatcher("/todouhukenlist.jsp").forward(request,response);
 	}
 
 	/**
