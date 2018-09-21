@@ -10,8 +10,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import jp.or.adash.nexus.entity.MatchingCase;
+import jp.or.adash.nexus.entity.Staff;
 import jp.or.adash.nexus.service.MatchingService;
 
 //import jp.or.adash.sample.entity.Item;
@@ -36,36 +38,42 @@ public class MatchingServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,
 			IOException {
+
+		HttpSession session = request.getSession(true);
+		Staff staff = (Staff) session.getAttribute("UserData");
+
 		//1.1 リクエストから値を取得する
 		//int id = Integer.parseInt(request.getParameter("id"));
 		//int id=100;
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
 		String kyujinno = request.getParameter("kyujinno");
 		String jobseekerid = request.getParameter("jobseekerid");
 		String stffid = request.getParameter("staffid");
 		Date interviewdt = null;
 		try {
-			interviewdt = (new SimpleDateFormat("yyyy-MM-dd")).parse(request.getParameter("interviewdt"));
+			interviewdt = sdf.parse(request.getParameter("interviewdt"));
 		} catch (ParseException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
-		request.getParameter("interviewdt");
+//		request.getParameter("interviewdt");
 		Date enterdt = null;
 		try {
-			enterdt = (new SimpleDateFormat("yyyy-MM-dd")).parse(request.getParameter("enterdt"));
+			enterdt = sdf.parse(request.getParameter("enterdt"));
 		} catch (ParseException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
-		request.getParameter("enterdt");
+//		request.getParameter("enterdt");
 		String assessment = request.getParameter("assessment");
 		String note = request.getParameter("note");
 		Date createdt = null;
 		Date upDatedt = null;
 
 
-		String createuserid = request.getParameter("createuserid");
-		String upDateuserid = request.getParameter("upDateuserid");
+		String createuserid = staff.getId();
+		String upDateuserid = staff.getId();
 
 		//1.2 マッチング結果オブジェクトを作成
 		MatchingCase matching = new MatchingCase(kyujinno,jobseekerid,stffid,interviewdt,enterdt,assessment,note,createdt,

@@ -29,8 +29,8 @@ public class MatchingDao {
 	}
 
 	/**
-	 * 商品を登録する
-	 * @param item 登録する商品の情報
+	 * マッチング結果を登録する
+	 * @param matching 登録する商品の情報
 	 * @return 登録件数
 	 * @throws IOException
 	 */
@@ -54,8 +54,8 @@ public class MatchingDao {
 			ps.setDate(5,convertToSqlDate(matching.getEnterdt()));
 			ps.setString(6,matching.getAssessment());
 			ps.setString(7,matching.getNote());
-//			ps.setString(6,matching.getCreateuserid());
-//			ps.setString(7,matching.getUpDateuserid());
+//			ps.setString(8,matching.getCreateuserid());
+//			ps.setString(9,matching.getUpDateuserid());
 
 
 			// SQL文を実行する
@@ -71,20 +71,21 @@ public class MatchingDao {
 	public java.sql.Date convertToSqlDate(java.util.Date utilDate){
 	    return new java.sql.Date(utilDate.getTime());
 	}
+
 	//private void setString(int i, String jobseekerid) {
 		// TODO 自動生成されたメソッド・スタブ
 
 	}
 
-/*
-	 * 商品コードを元に、商品情報（1件）を取得する
-	 * @param itemNo 商品番号
-	 * @return 商品オブジェクト
+
+	 /* 商品コードを元に、商品情報（1件）を取得する
+	 * @param kyuNo 求人番号
+	 * @return 求人オブジェクト
 	 * @throws IOException
 	 */
-/*
-public Item selectItem(int itemNo) throws IOException {
-		Item item = null;
+
+/*public KyuNo selectkyuno(int kyujin) throws IOException {
+		KyuNo kyuno1 = null;
 
 		// SQL文を生成する
 		StringBuffer sql = new StringBuffer();
@@ -96,11 +97,11 @@ public Item selectItem(int itemNo) throws IOException {
 
 			// SQL文を実行する
 			try (ResultSet rs = ps.executeQuery()) {
-				// 取得結果をリストに格納する
+				//  1取得結果をリストに格納する
 				while (rs.next()) {
-					return new Item(rs.getInt("code"),
-							rs.getString("name"),
-							rs.getInt("unitprice"));
+					return new Kyuno(rs.getInt("no");
+
+
 				}
 			} catch (SQLException e) {
 				throw new IOException(e);
@@ -110,7 +111,7 @@ public Item selectItem(int itemNo) throws IOException {
 		}
 
 		return item;
-	}
+	}*/
 /*
 	/**
 	 * 商品の一覧を取得する
