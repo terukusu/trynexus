@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import jp.or.adash.nexus.entity.JobSeeker;
+import jp.or.adash.nexus.entity.JobSeekerMain;
 import jp.or.adash.nexus.services.JobSeekerService;
 
 /**
@@ -21,7 +21,6 @@ import jp.or.adash.nexus.services.JobSeekerService;
 public class jobseekermaininfoservlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String js_id;
-
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -30,25 +29,16 @@ public class jobseekermaininfoservlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 1.求職者情報一覧を取得する
-				JobSeekerService service = new JobSeekerService();
-				JobSeeker js_info = service.getJobseekermaininfo(js_id);
-
-				// 2.求職者情報をリクエストに格納する
-//				request.setAttribute("list", list);
-				// 3.JSPにフォワードする
-				request.getRequestDispatcher("/applicant_list.jsp").forward(request, response);
-
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response, String js_id) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		this.js_id = request.getParameter("js_id");
-		doGet(request, response);
+		// 1.求職者情報一覧を取得する
+		JobSeekerService service = new JobSeekerService();
+		JobSeekerMain js_info = service.getJobseekermaininfo(js_id);
+
+		// 2.求職者情報をリクエストに格納する
+		request.setAttribute("info", js_info);
+		// 3.JSPにフォワードする
+		request.getRequestDispatcher("/applicant_maininfo.jsp").forward(request, response);
 	}
 
 }

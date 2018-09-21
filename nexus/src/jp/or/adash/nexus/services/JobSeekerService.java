@@ -7,6 +7,7 @@ import java.util.List;
 import jp.or.adash.nexus.dao.JobSeekerDao;
 import jp.or.adash.nexus.dao.JobSeeker_dao;
 import jp.or.adash.nexus.entity.JobSeeker;
+import jp.or.adash.nexus.entity.JobSeekerMain;
 import jp.or.adash.nexus.entity.Jobseeker_simple_entity;
 import jp.or.adash.nexus.utils.common.MessageCommons;
 import jp.or.adash.nexus.utils.dao.Transaction;
@@ -64,16 +65,16 @@ public List<Jobseeker_simple_entity> getJobSeekerList(){
 	 * @return idで絞り込んだ求職者情報
      *@aihara
 	 */
-public Jobseeker_simple_entity getJobseeker(int js_id) {
-	Jobseeker_simple_entity jobseeker = null;
+public List<Jobseeker_simple_entity> getJobseeker(String js_id) {
+	List<Jobseeker_simple_entity> jobseeker = null;
 
 	try {
 		// データベース接続を開始する
 		transaction.open();
 
-		// 商品単価を取得する
+		// 求職者情報を取得する
 		JobSeeker_dao dao = new JobSeeker_dao(transaction);
-		jobseeker = dao.selectItem(js_id);
+		jobseeker = dao.selectJobSeekerId(js_id);
 
 	} catch(IOException e) {
 		// エラーメッセージをセットする
@@ -90,8 +91,8 @@ public Jobseeker_simple_entity getJobseeker(int js_id) {
 	 * @return 求職者情報の詳細情報
      *@aihara
 	 */
-public JobSeeker getJobseekermaininfo(String js_id) {
-	JobSeeker jobseeker = null;
+public JobSeekerMain getJobseekermaininfo(String js_id) {
+	JobSeekerMain jobseeker = null;
 
 	try {
 		// データベース接続を開始する
@@ -99,7 +100,7 @@ public JobSeeker getJobseekermaininfo(String js_id) {
 
 		// 商品単価を取得する
 		JobSeeker_dao dao = new JobSeeker_dao(transaction);
-		jobseeker = dao.selectItem(js_id);
+		jobseeker = dao.selectJobseekermaininfo(js_id);
 
 	} catch(IOException e) {
 		// エラーメッセージをセットする
@@ -115,16 +116,16 @@ public JobSeeker getJobseekermaininfo(String js_id) {
 	 * @param id 求職者ID
 	 * @return 求職者情報
 	 */
-	public JobSeeker getJobSeeker(String id) {
-		JobSeeker seeker = null;
+	public List<Jobseeker_simple_entity> getJobSeeker(String js_id) {
+		List<Jobseeker_simple_entity> seeker = null;
 
 		try {
 			// データベース接続を開始する
 			transaction.open();
 
 			// 商品単価を取得する
-			JobSeekerDao dao = new JobSeekerDao(transaction);
-			seeker = dao.selectJobSeeker(id);
+			JobSeeker_dao dao = new JobSeeker_dao(transaction);
+			seeker = dao.selectJobSeekerId(js_id);
 
 		} catch(IOException e) {
 			// エラーメッセージをセットする
