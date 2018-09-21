@@ -5,7 +5,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>アカウント更新完了</title>
+<title>アカウント登録完了</title>
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
 <link href="css/bootstrap-reboot.css" rel="stylesheet">
@@ -44,34 +44,36 @@
   </section>
 </header>
 <main>
-	<h2>アカウント更新完了</h2>
-	<p>アカウント更新が完了しました。</p>
+	<h2>アカウント登録完了</h2>
+	<p>アカウント登録が完了しました。</p>
 	<table>
 		<tr>
+			<th>項目名</th>
 			<th></th>
-			<th>アカウントID</th>
-			<th>氏名</th>
-			<th>氏名（かな）</th>
-			<th>ユーザー権限</th>
 		</tr>
-		<c:forEach var="account" items="${ accounts }">
 		<tr>
+			<td>アカウントID</td>
+			<td><c:out value="${ staff.id }" /></td>
+		</tr>
+		<tr>
+			<td>氏名</td>
+			<td><c:out value="${ staff.name }" /></td>
+		</tr>
+		<tr>
+			<td>氏名（かな）</td>
+			<td><c:out value="${ staff.kana }" /></td>
+		</tr>
+		<tr>
+			<td>ユーザー権限</td>
 			<td>
-				<form method="get" action="AccountEditServlet">
-					<input type="hidden" name="id" value="${ account.id }">
-					<input class="main-b" type="submit" value="編集">
-				</form>
+				<c:if test="${staff.authority == 1}">管理者</c:if>
+				<c:if test="${staff.authority == 2}">その他</c:if>
 			</td>
-			<td><c:out value="${ account.id }" /></td>
-			<td><c:out value="${ account.name }" /></td>
-			<td><c:out value="${ account.kana }" /></td>
-			<td>
-				<c:if test="${account.authority == 1}">管理者</c:if>
-				<c:if test="${account.authority == 2}">その他</c:if>
-			</td>
+		</tr>
+		<tr>
+			<td>パスワード</td>
 			<td>*****</td>
 		</tr>
-		</c:forEach>
 	</table>
 </main>
 <footer> <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館) All Rights Reserved.</small> </footer>
