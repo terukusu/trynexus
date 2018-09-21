@@ -82,7 +82,7 @@
 			</tr>
 		</table>
 		<input class="main-b" type="button" onclick="location.href='AccountListServlet'" value="戻る">
-		<input class="main-b" type="submit" value="更新">
+		<input class="main-b" type="submit" onclick="location.href='AccountEditCompletionServlet'" value="更新">
 		<input class="main-b" type="submit" value="削除">
 	</form>
 </main>
