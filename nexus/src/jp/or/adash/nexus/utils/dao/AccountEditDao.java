@@ -33,20 +33,20 @@ public class AccountEditDao {
 
 		// SQL文を生成する
 		StringBuffer sql = new StringBuffer();
-		sql.append("update staff");
-		sql.append(" id = ?,");
+		sql.append("update staff set");
 		sql.append(" name = ?,");
 		sql.append(" kana = ?,");
 		sql.append(" authority = ?,");
-		sql.append(" password = ?,");
+		sql.append(" password = ?");
 		sql.append(" where");
 		sql.append(" id = ?");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
-			ps.setString(1, staff.getId());
-			ps.setString(2, staff.getName());
-			ps.setString(3, staff.getKana());
-			ps.setString(4, staff.getAuthority());
-			ps.setString(5, staff.getPassword());
+
+			ps.setString(1, staff.getName());
+			ps.setString(2, staff.getKana());
+			ps.setString(3, staff.getAuthority());
+			ps.setString(4, staff.getPassword());
+			ps.setString(5, staff.getId());
 
 			// SQL文を実行する
 			count = ps.executeUpdate();
