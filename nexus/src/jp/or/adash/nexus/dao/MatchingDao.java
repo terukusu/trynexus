@@ -2,7 +2,6 @@ package jp.or.adash.nexus.dao;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -30,8 +29,8 @@ public class MatchingDao {
 	}
 
 	/**
-	 * 商品を登録する
-	 * @param item 登録する商品の情報
+	 * マッチング結果を登録する
+	 * @param matching 登録する商品の情報
 	 * @return 登録件数
 	 * @throws IOException
 	 */
@@ -40,25 +39,23 @@ public class MatchingDao {
 
 		// SQL文を生成する
 		StringBuffer sql = new StringBuffer();
-		sql.append("insert into matchingcase(");
-		sql.append("id,kyujinno,jobseekerid,staffid,interviewdt,enterdt,assessment,"
-				+ "note,createdt,createuserid,upDatedt,upDateuserid");
+		sql.append("insert into matchingcase ");
+		sql.append("(kyujinno,jobseekerid,staffid,interviewdt,enterdt,assessment,"
+				+ "note,createuserid,updateuserid");
 		sql.append(") values (");
-		sql.append("?,?,?,?,?,?,?,?,?,?,?,?");
+		sql.append("?,?,?,?,?,?,?,1,1");
 		sql.append(")");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
-			ps.setInt(1,matching.getId());
-			ps.setString(2,matching.getKyujinno());
-			ps.setString(3,matching.getJobseekerid());
-			ps.setString(4,matching.getStaffid());
-			ps.setDate(5,(Date) matching.getInterviewdt());
-			ps.setDate(6,(Date) matching.getEnterdt());
-			ps.setString(7,matching.getAssessment());
-		    ps.setDate(8,(Date)matching.getCreatedt());
-			ps.setString(9,matching.getNote());
-			ps.setString(10,matching.getCreateuserid());
-		    ps.setDate(11,(Date)matching.getUpDatedt());
-			ps.setString(12,matching. getUpDateuserid());
+			//ps.setInt(1,matching.getId());
+			ps.setString(1,matching.getKyujinno());
+			ps.setString(2,matching.getJobseekerid());
+			ps.setString(3,matching.getStaffid());
+			ps.setDate(4,convertToSqlDate(matching.getInterviewdt()));
+			ps.setDate(5,convertToSqlDate(matching.getEnterdt()));
+			ps.setString(6,matching.getAssessment());
+			ps.setString(7,matching.getNote());
+//			ps.setString(8,matching.getCreateuserid());
+//			ps.setString(9,matching.getUpDateuserid());
 
 
 			// SQL文を実行する
@@ -70,20 +67,25 @@ public class MatchingDao {
 		return count;
 	}
 
+
+	public java.sql.Date convertToSqlDate(java.util.Date utilDate){
+	    return new java.sql.Date(utilDate.getTime());
+	}
+
 	//private void setString(int i, String jobseekerid) {
 		// TODO 自動生成されたメソッド・スタブ
 
 	}
 
-/*
-	 * 商品コードを元に、商品情報（1件）を取得する
-	 * @param itemNo 商品番号
-	 * @return 商品オブジェクト
+
+	 /* 商品コードを元に、商品情報（1件）を取得する
+	 * @param kyuNo 求人番号
+	 * @return 求人オブジェクト
 	 * @throws IOException
 	 */
-/*
-public Item selectItem(int itemNo) throws IOException {
-		Item item = null;
+
+/*public KyuNo selectkyuno(int kyujin) throws IOException {
+		KyuNo kyuno1 = null;
 
 		// SQL文を生成する
 		StringBuffer sql = new StringBuffer();
@@ -95,11 +97,11 @@ public Item selectItem(int itemNo) throws IOException {
 
 			// SQL文を実行する
 			try (ResultSet rs = ps.executeQuery()) {
-				// 取得結果をリストに格納する
+				//  1取得結果をリストに格納する
 				while (rs.next()) {
-					return new Item(rs.getInt("code"),
-							rs.getString("name"),
-							rs.getInt("unitprice"));
+					return new Kyuno(rs.getInt("no");
+
+
 				}
 			} catch (SQLException e) {
 				throw new IOException(e);
@@ -109,7 +111,7 @@ public Item selectItem(int itemNo) throws IOException {
 		}
 
 		return item;
-	}
+	}*/
 /*
 	/**
 	 * 商品の一覧を取得する
@@ -127,7 +129,7 @@ public Item selectItem(int itemNo) throws IOException {
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
 			// SQL文を実行する
 			try (ResultSet rs = ps.executeQuery()) {
-				// 取得結果をリストに格納する
+				// 1取得結果をリストに格納する
 				while (rs.next()) {
 					items.add(new Item(rs.getInt("code"),
 							rs.getString("name"),

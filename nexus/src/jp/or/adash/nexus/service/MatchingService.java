@@ -174,16 +174,6 @@ public class MatchingService {
 
 		return result;
 	}
-/*
-	/**
-	 * 登録完了メッセージ
-	 */
-	private static final String MSG_ITEM_REGIST_COMPLETE = "商品登録が完了しました。";
-
-	/**
-	 * 登録失敗メッセージ
-	 */
-	private static final String MSG_ITEM_REGIST_FAILURE = "商品登録に失敗しました。";
 
 	/**
 	 * マッチング結果データを登録する
@@ -291,11 +281,11 @@ public class MatchingService {
 
 			if (count > 0) {
 				// 1完了メッセージをセットする
-				messages.add(MSG_ITEM_REGIST_COMPLETE);
+				messages.add(MSG_MATCHING_REGIST_COMPLETE);
 				result = true;
 			} else {
 				// 1エラーメッセージをセットする
-				messages.add(MSG_ITEM_REGIST_FAILURE);
+				messages.add(MSG_MATCHING_REGIST_FAILURE);
 				result = false;
 			}
 
@@ -315,5 +305,11 @@ public class MatchingService {
 
 		return result;
 	}
+	/* 1登録完了メッセージ
+	 */
+	private static final String MSG_MATCHING_REGIST_COMPLETE = "マッチング登録が完了しました。";
 
+	/* 1登録完了メッセージ
+	 */
+	private static final String MSG_MATCHING_REGIST_FAILURE = "マッチング登録が失敗しました。";
 }
