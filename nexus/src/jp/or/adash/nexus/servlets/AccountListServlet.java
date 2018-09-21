@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import jp.or.adash.nexus.entity.Staff;
 
@@ -30,11 +31,17 @@ public class AccountListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+		HttpSession session = request.getSession(true);
+		Staff staff = (Staff) session.getAttribute("UserData");
+
 		// 1.アカウント情報一覧を取得する
 		AccountListService service = new AccountListService();
 		List<Staff> list = service.getAccountList();
 		// 2.アカウント情報をリクエストに格納する
 		request.setAttribute("accounts", list);
+		request.setAttribute("Staff", staff);
+
 		// 3.JSPにフォワードする
 		request.getRequestDispatcher("./account.jsp").forward(request, response);
 	}
