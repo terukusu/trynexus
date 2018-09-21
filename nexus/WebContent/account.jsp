@@ -50,7 +50,7 @@
 	<table>
 		<tr>
 			<th></th>
-			<th>職業紹介者ID</th>
+			<th>アカウントID</th>
 			<th>氏名</th>
 			<th>氏名（かな）</th>
 			<th>ユーザー権限</th>

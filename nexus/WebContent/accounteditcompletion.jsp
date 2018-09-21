@@ -5,7 +5,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>アカウント登録完了</title>
+<title>アカウント更新完了</title>
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
 <link href="css/bootstrap-reboot.css" rel="stylesheet">
@@ -44,8 +44,8 @@
   </section>
 </header>
 <main>
-	<h2>アカウント登録完了</h2>
-	<p>アカウント登録が完了しました。</p>
+	<h2>アカウント更新完了</h2>
+	<p>アカウント更新が完了しました。</p>
 	<table>
 		<tr>
 			<th></th>
