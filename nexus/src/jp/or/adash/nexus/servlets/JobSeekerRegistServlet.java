@@ -51,7 +51,7 @@ public class JobSeekerRegistServlet extends HttpServlet {
 		try {
 			birthdt = sdf.parse(request.getParameter("birthdt"));
 		} catch (ParseException e) {
-			e.printStackTrace();
+			birthdt = null;
 		}
 		String sex = request.getParameter("sex");
 		int age = -1;
