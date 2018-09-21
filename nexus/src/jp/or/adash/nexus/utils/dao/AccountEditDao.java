@@ -67,7 +67,7 @@ public class AccountEditDao {
 
 		// SQL文を生成する
 		StringBuffer sql = new StringBuffer();
-		sql.append("select *");
+		sql.append("select id,name,kana,authority");
 		sql.append(" from staff");
 		sql.append(" where id = ?");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
@@ -75,9 +75,9 @@ public class AccountEditDao {
 
 			// SQL文を実行する
 			try (ResultSet rs = ps.executeQuery()) {
-				// 取得結果をリストに格納する
+				//0取得結果をリストに格納する
 				while(rs.next()) {
-					return new Staff(
+					staff= new Staff(
 							rs.getString("id"),
 							rs.getString("name"),
 							rs.getString("kana"),

@@ -15,13 +15,13 @@ import jp.or.adash.nexus.entity.Staff;
  * Servlet implementation class AccountEditDisplayServlet
  */
 @WebServlet("/AccountEditDisplayServlet")
-public class AccountEditDisplayServlet extends HttpServlet {
+public class AccountEditCompletionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AccountEditDisplayServlet() {
+    public AccountEditCompletionServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

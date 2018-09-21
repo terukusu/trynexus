@@ -37,7 +37,7 @@ public class AccountEditServlet extends HttpServlet {
 				Staff staff = null;
 				if (id != null) {
 					AccountEditService service = new AccountEditService();
-					staff = service.getJobSeeker(id);
+					staff = service.getStaffAccount(id);
 				}// 1.3 リクエストに求人情報をセットする
 				request.setAttribute("Staff", staff);
 		// 3.JSPにフォワードする
