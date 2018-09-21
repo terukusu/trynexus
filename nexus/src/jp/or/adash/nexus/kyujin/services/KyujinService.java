@@ -7,8 +7,10 @@ import java.util.List;
 import jp.or.adash.nexus.entity.Kyujin;
 import jp.or.adash.nexus.kyujin.dao.KyujinDao;
 import jp.or.adash.nexus.kyujin.dao.SaibanDao;
+import jp.or.adash.nexus.utils.common.DataCommons;
 import jp.or.adash.nexus.utils.common.MessageCommons;
 import jp.or.adash.nexus.utils.dao.Transaction;
+
 
 /**
  * 商品に関する処理を定義するクラス
@@ -95,62 +97,160 @@ public class KyujinService {
 		return kyujinList;
 	}
 
-	/**
-	 * 創業設立年を取得する
-	 * @param no 求人番号
-	 * @return 商品価格（エラーの場合、-1をセット）
-	 */
-	public int getKyujinEstablishdt(String no) {
-		// 創業設立年（創業設立年がなければ、0）
-		int establishdt = 0;
 
-		try {
-			// データベース接続を開始する
-			transaction.open();
+/*
+		 * 求人票データの内容をチェックする
+		 * @param kyujin 求人票データ
+		 * @return 処理結果（true:成功、false:失敗）
+		 */
+		public boolean check(Kyujin kyujin) {
+			boolean result = true;		// チェック結果
 
-			// 創業設立年を取得する
-			KyujinDao dao = new KyujinDao(transaction);
-			Kyujin kyujin = dao.selectKyujin(no);
-			establishdt = kyujin.getEstablishdt();
 
-		} catch (IOException e) {
-			// エラーメッセージをセットする
-			establishdt = -1;
-		} finally {
-			// データベース接続を終了する
-			transaction.close();
-		}
+			DataCommons commons = new DataCommons();
 
-		return establishdt;
-	}
+			// 事業所番号の長さが適切か
+			int length = commons.getBytes(kyujin.getCompanyno());
+			if (length <= 0 || length > 13) {
+				messages.add("事業所番号が長すぎます。");
+				result = false;
+			}
 
-	/**
-	 * 商品データの内容をチェックする
-	 * @param item 商品データ
-	 * @return 処理結果（true:成功、false:失敗）*/
-	public boolean check(Kyujin kyujin) {
-		boolean result = true; // チェック結果
+			// 事業署名（カナ）の長さが適切か
+						length = commons.getBytes(kyujin.getCompanykana());
+			if (length <= 0 || length > 54) {
+				messages.add("事業所名（カナ）が長すぎます。");
+				result = false;
+			}
 
-		/*		// 商品コードの値が正しいか
-				if (item.getItemNo() <= 0) {
-					messages.add("商品コードに0より小さい値は指定できません。");
-					result = false;
-				}
+			// 事業署名の長さが適切か
+			length = commons.getBytes(kyujin.getCompanyname());
+			if (length <= 0 || length > 60) {
+				messages.add("事業所名が長すぎます。");
+				result = false;
+			}
 
-				// 商品名の長さが適切か
-				DataCommons commons = new DataCommons();
-				int length = commons.getBytes(item.getItemName());
-				if (length <= 0 || length >= 100) {
-					messages.add("商品名の文字数が多すぎます。");
-					result = false;
-				}
+			// 事業所郵便番号の長さが適切か
+			length = commons.getBytes(kyujin.getCompanypostal());
+			if (length > 8) {
+				messages.add("郵便番号が長すぎます。");
+				result = false;
+			}
 
-				// 単価の値が正しいか
-				if (item.getUnitPrice() <= 0) {
-					messages.add("単価は1円以上で入力してください。");
-					result = false;
-				}
-		*/
+			// 事業所所在地の長さが適切か
+			length = commons.getBytes(kyujin.getCompanyplace());
+			if (length > 75) {
+				messages.add("事業所所在地が長すぎます。");
+				result = false;
+			}
+
+			// 事業所URLの長さが適切か
+			length = commons.getBytes(kyujin.getCompanyurl());
+			if (length > 100) {
+				messages.add("事業所URLが長すぎます。");
+				result = false;
+			}
+
+			// 就業場所郵便番号の長さが適切か
+			length = commons.getBytes(kyujin.getPostal());
+			if (length > 8) {
+				messages.add("就業場所郵便番号が長すぎます。");
+				result = false;
+			}
+
+			// 就業場所の長さが適切か
+			length = commons.getBytes(kyujin.getAddress());
+			if (length > 90) {
+				messages.add("就業場所が長すぎます。");
+				result = false;
+			}
+
+			// 最寄り駅の長さが適切か
+			length = commons.getBytes(kyujin.getNearstation());
+			if (length > 30) {
+				messages.add("最寄り駅が長すぎます。");
+				result = false;
+			}
+
+			// 就業場所の長さが適切か
+			length = commons.getBytes(kyujin.getJob());
+			if (length <= 0 || length > 28) {
+				messages.add("職種が長すぎます。");
+				result = false;
+			}
+
+			// 仕事の内容の長さが適切か
+			length = commons.getBytes(kyujin.getDetail());
+			if (length > 297) {
+				messages.add("仕事の内容が長すぎます。");
+				result = false;
+			}
+
+			// 学歴の内容の長さが適切か
+			length = commons.getBytes(kyujin.getEducation());
+			if (length > 64) {
+				messages.add("学歴が長すぎます。");
+				result = false;
+			}
+
+			// 必要な経験等の長さが適切か
+			length = commons.getBytes(kyujin.getExperience());
+			if (length > 84) {
+				messages.add("必要な経験等が長すぎます。");
+				result = false;
+			}
+
+			// 必要な免許・資格等の内容の長さが適切か
+			length = commons.getBytes(kyujin.getLicense());
+			if (length > 84) {
+				messages.add("必要な免許・資格等が長すぎます。");
+				result = false;
+			}
+
+			// 年齢の下限・上限の値が適切か
+			if (kyujin.getAgemin() <= 0 || kyujin.getAgemin() > 2) {
+				messages.add("年齢の下限の値が間違ってます。");
+				result = false;
+			}
+			if (kyujin.getAgemax() <= 0 || kyujin.getAgemax() > 2) {
+				messages.add("年齢の上限の値が間違ってます。");
+				result = false;
+			}
+			if (kyujin.getAgemin() > kyujin.getAgemax()) {
+				messages.add("年齢の範囲が間違ってます。");
+				result = false;
+			}
+
+			// 基本給の下限・上限の値が適切か
+			if (kyujin.getSalarymin() <= 0 || kyujin.getSalarymin() > 2) {
+				messages.add("基本給の下限の値が間違ってます。");
+				result = false;
+			}
+			if (kyujin.getSalarymax() <= 0 || kyujin.getSalarymax() > 2) {
+				messages.add("基本給の上限の値が間違ってます。");
+				result = false;
+			}
+			if (kyujin.getSalarymin() > kyujin.getSalarymax()) {
+				messages.add("基本給の範囲が間違ってます。");
+				result = false;
+			}
+
+			// 就業時間の下限・上限の値が適切か
+			if (kyujin.getBegintime() <= 0 || kyujin.getBegintime() > 2) {
+				messages.add("就業時間の下限の値が間違ってます。");
+				result = false;
+			}
+			if (kyujin.getEndtime() <= 0 || kyujin.getEndtime() > 2) {
+				messages.add("就業時間の上限の値が間違ってます。");
+				result = false;
+			}
+			if (kyujin.getEndtime() > kyujin.getEndtime()) {
+				messages.add("就業時間の範囲が間違ってます。");
+				result = false;
+			}
+
+
+
 		return result;
 	}
 
@@ -229,10 +329,10 @@ public class KyujinService {
 			int saiban = saidao.getsaiban();
 
 			//とってきた番号を加工し、Kyujin.noにデータ格納
-			String str = "A" + String.format("%013d", saiban);
+			String str = String.format("A" + "%013d", saiban);
 			kyujin.setNo(str);
 
-			// 商品単価を取得する
+			//
 			KyujinDao dao = new KyujinDao(transaction);
 			int count = dao.insert(kyujin);
 
