@@ -58,21 +58,22 @@
 			</tr>
 			<tr>
 				<td>アカウントID</td>
-				<td><input type="hidden" name="hiddenid" value="<c:out value="${ account.id }" />"></td>
+
+				<td><input  readonly name="hiddenid" value="<c:out value="${ Staff.id }" />"></td>
 			</tr>
 			<tr>
 				<td>氏名</td>
-				<td><input type="text" name="name" value="<c:out value="${ account.name }" />"></td>
+				<td><input type="text" name="name" value="<c:out value="${ Staff.name }" />"></td>
 			</tr>
 			<tr>
 				<td>氏名（かな）</td>
-				<td><input type="text" name="kana" value="<c:out value="${ account.kana }" />"></td>
+				<td><input type="text" name="kana" value="<c:out value="${ Staff.kana }" />"></td>
 			</tr>
 			<tr>
 				<td>ユーザー権限</td>
 				<td>
-					<c:if test="${account.authority == 1}">管理者</c:if>
-					<c:if test="${account.authority == 2}">その他</c:if>
+					<c:if test="${Staff.authority == 1}">管理者</c:if>
+					<c:if test="${Staff.authority == 2}">その他</c:if>
 				</td>
 			</tr>
 			<tr>

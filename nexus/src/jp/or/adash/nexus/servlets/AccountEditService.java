@@ -73,7 +73,7 @@ public class AccountEditService {
 	 * @param id アカウントID
 	 * @return 求職者情報
 	 */
-	public Staff getJobSeeker(String id) {
+	public Staff getStaffAccount(String id) {
 		Staff staff = null;
 
 		try {
