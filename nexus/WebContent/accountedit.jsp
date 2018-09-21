@@ -82,13 +82,20 @@
 			</tr>
 			<tr>
 				<td>新しいパスワード</td>
-				<td><input type="password" name="password"></td>
+				<td><input type="password" name="password" value="<c:out value="${Staff.password }"/>"></td>
 			</tr>
 		</table>
 		<input class="main-b" type="button" onclick="location.href='AccountListServlet'" value="戻る">
-		<input class="main-b" type="submit" onclick="location.href='AccountEditCompletionServlet'" value="更新">
 		<input class="main-b" type="submit" value="削除">
 	</form>
+		<form method="get" action="AccountEditCompletionServlet">
+					<input type="hidden" name="id" value="${ Staff.id }">
+					<input type="hidden" name="id" value="${ Staff.name }">
+					<input type="hidden" name="id" value="${ Staff.kana }">
+					<input type="hidden" name="id" value="${ Staff.authority }">
+					<input type="hidden" name="id" value="${ Staff.password }">
+					<input class="main-b" type="submit" value="更新">
+				</form>
 </main>
 <footer> <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館) All Rights Reserved.</small> </footer>
 </body>
