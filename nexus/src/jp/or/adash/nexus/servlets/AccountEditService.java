@@ -18,6 +18,7 @@ public class AccountEditService {
 	 * 処理結果メッセージを格納するリスト
 	 */
 	private List<String> messages;
+
 	/**
 	 * コンストラクタ
 	 */

@@ -33,7 +33,7 @@ public class AccountListDao {
 
 		// SQL文を生成する
 		StringBuffer sql = new StringBuffer();
-		sql.append("SELECT id,name,kana,authority");
+		sql.append("SELECT id,name,kana,authority,password");
 		sql.append(" from staff");
 		sql.append(" order by id");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
@@ -46,7 +46,7 @@ public class AccountListDao {
 							rs.getString("name"),
 							rs.getString("kana"),
 							rs.getString("authority"),
-							null,
+							rs.getString("password"),
 							null,
 							null,
 							null,
