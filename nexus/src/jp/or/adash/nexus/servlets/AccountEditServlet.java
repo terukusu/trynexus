@@ -33,7 +33,7 @@ public class AccountEditServlet extends HttpServlet {
 
 		String id = request.getParameter("id");
 
-		// 1.2 求人コードがある場合、商品情報を取得
+		// 1、アカウントIDがある場合、アカウント詳細情報を取得
 				Staff staff = null;
 				if (id != null) {
 					AccountEditService service = new AccountEditService();

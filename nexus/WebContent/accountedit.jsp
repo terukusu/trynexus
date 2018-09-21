@@ -89,11 +89,11 @@
 		<input class="main-b" type="submit" value="削除">
 	</form>
 		<form method="post" action="AccountEditCompletionServlet">
-					<input type="hidden" name="id" value="${ Staff.id }">
-					<input type="hidden" name="name" value="${ Staff.name }">
-					<input type="hidden" name="kana" value="${ Staff.kana }">
-					<input type="hidden" name="authority" value="${ Staff.authority }">
-					<input type="hidden" name="password" value="${ Staff.password }">
+					<input type="hidden" name="id" value="<c:out value="${ Staff.id }" />">
+					<input type="hidden" name="name" value="<c:out value="${ Staff.name }" />">
+					<input type="hidden" name="kana" value="<c:out value="${ Staff.kana }" />">
+					<input type="hidden" name="authority"value="<c:out value="${ Staff.authority }" />" >
+					<input type="hidden" name="password" value="<c:out value="${ Staff.password }" />">
 					<input class="main-b" type="submit" value="更新">
 				</form>
 

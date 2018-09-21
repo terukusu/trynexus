@@ -45,7 +45,12 @@
 </header>
 <main>
 	<h2>アカウント更新完了</h2>
-	<p>アカウント更新が完了しました。</p>
+	<ul>
+	<c:forEach var="message" items="${ messages }">
+		<li><c:out value="${ message }" /></li>
+	</c:forEach>
+	</ul>
+
 	<table>
 		<tr>
 			<th>項目名</th>
