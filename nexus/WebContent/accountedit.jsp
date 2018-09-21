@@ -82,18 +82,18 @@
 			</tr>
 			<tr>
 				<td>新しいパスワード</td>
-				<td><input type="password" name="password" value="<c:out value="${Staff.password }"/>"></td>
+				<td><input type="text" name="password" value="<c:out value="${Staff.password }"/>"></td>
 			</tr>
 		</table>
 		<input class="main-b" type="button" onclick="location.href='AccountListServlet'" value="戻る">
 		<input class="main-b" type="submit" value="削除">
 	</form>
-		<form method="get" action="AccountEditCompletionServlet">
+		<form method="post" action="AccountEditCompletionServlet">
 					<input type="hidden" name="id" value="${ Staff.id }">
-					<input type="hidden" name="id" value="${ Staff.name }">
-					<input type="hidden" name="id" value="${ Staff.kana }">
-					<input type="hidden" name="id" value="${ Staff.authority }">
-					<input type="hidden" name="id" value="${ Staff.password }">
+					<input type="hidden" name="name" value="${ Staff.name }">
+					<input type="hidden" name="kana" value="${ Staff.kana }">
+					<input type="hidden" name="authority" value="${ Staff.authority }">
+					<input type="hidden" name="password" value="${ Staff.password }">
 					<input class="main-b" type="submit" value="更新">
 				</form>
 </main>
