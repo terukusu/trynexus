@@ -46,6 +46,33 @@
 <main>
 	<h2>アカウント登録完了</h2>
 	<p>アカウント登録が完了しました。</p>
+	<table>
+		<tr>
+			<th></th>
+			<th>アカウントID</th>
+			<th>氏名</th>
+			<th>氏名（かな）</th>
+			<th>ユーザー権限</th>
+		</tr>
+		<c:forEach var="account" items="${ accounts }">
+		<tr>
+			<td>
+				<form method="get" action="AccountEditServlet">
+					<input type="hidden" name="id" value="${ account.id }">
+					<input class="main-b" type="submit" value="編集">
+				</form>
+			</td>
+			<td><c:out value="${ account.id }" /></td>
+			<td><c:out value="${ account.name }" /></td>
+			<td><c:out value="${ account.kana }" /></td>
+			<td>
+				<c:if test="${account.authority == 1}">管理者</c:if>
+				<c:if test="${account.authority == 2}">その他</c:if>
+			</td>
+			<td>*****</td>
+		</tr>
+		</c:forEach>
+	</table>
 </main>
 <footer> <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館) All Rights Reserved.</small> </footer>
 </body>
