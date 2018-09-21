@@ -50,7 +50,7 @@
 		<li><c:out value="${ message }" /></li>
 	</c:forEach>
 	</ul>
-	<form action="AccountEditServlet" method="post">
+	<form action="AccountEditCompletionServlet" method="post">
 		<table>
 			<tr>
 				<th>項目名</th>
@@ -75,7 +75,7 @@
 			</tr>
 			<tr>
 				<td>ユーザー権限</td>
-				<td>
+				<td><input type="hidden" name="authority"value="<c:out value="${ Staff.authority }" />" >
 					<c:if test="${Staff.authority == 1}">管理者</c:if>
 					<c:if test="${Staff.authority == 2}">その他</c:if>
 				</td>
@@ -85,17 +85,18 @@
 				<td><input type="text" name="password" value="<c:out value="${Staff.password }"/>"></td>
 			</tr>
 		</table>
-		<input class="main-b" type="button" onclick="location.href='AccountListServlet'" value="戻る">
-		<input class="main-b" type="submit" value="削除">
+		<input class="main-b" type="submit" value="更新">
 	</form>
-		<form method="post" action="AccountEditCompletionServlet">
+	<input class="main-b" type="button" onclick="location.href='AccountListServlet'" value="戻る">
+		<input class="main-b" type="button" onclick="location.href='AccountListServlet'" value="削除">
+		<!--  <form method="post" action="AccountEditCompletionServlet">
 					<input type="hidden" name="id" value="<c:out value="${ Staff.id }" />">
 					<input type="hidden" name="name" value="<c:out value="${ Staff.name }" />">
 					<input type="hidden" name="kana" value="<c:out value="${ Staff.kana }" />">
 					<input type="hidden" name="authority"value="<c:out value="${ Staff.authority }" />" >
 					<input type="hidden" name="password" value="<c:out value="${ Staff.password }" />">
 					<input class="main-b" type="submit" value="更新">
-				</form>
+				</form>-->
 
 </main>
 <footer> <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館) All Rights Reserved.</small> </footer>
