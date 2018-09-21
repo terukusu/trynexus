@@ -199,5 +199,16 @@ public class DataCommons {
 			return null;
 		}
 	}
+
+	/**
+	 * java.util.Dateクラスをjava.sql.Dateに変換するメソッド
+	 * @param utilDate 変換したいjava.util.Dateクラスのオブジェクト
+	 * @return java.sql.Date java.sql.Date型に変換されたオブジェクト
+	 * @author a.taya
+	 */
+
+	public java.sql.Date convertToSqlDate(java.util.Date utilDate){
+	    return new java.sql.Date(utilDate.getTime());
+	}
 }
 
