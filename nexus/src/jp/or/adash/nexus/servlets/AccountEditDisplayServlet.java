@@ -1,6 +1,7 @@
 package jp.or.adash.nexus.servlets;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,35 +12,30 @@ import javax.servlet.http.HttpServletResponse;
 import jp.or.adash.nexus.entity.Staff;
 
 /**
- * Servlet implementation class AccountEditServlet
+ * Servlet implementation class AccountEditDisplayServlet
  */
-@WebServlet("/AccountEditServlet")
-public class AccountEditServlet extends HttpServlet {
+@WebServlet("/AccountEditDisplayServlet")
+public class AccountEditDisplayServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AccountEditServlet() {
+    public AccountEditDisplayServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
-
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		String id = request.getParameter("id");
-
-		// 1.2 求人コードがある場合、商品情報を取得
-				Staff staff = null;
-				if (id != null) {
-					AccountEditService service = new AccountEditService();
-					staff = service.getJobSeeker(id);
-				}// 1.3 リクエストに求人情報をセットする
-				request.setAttribute("Staff", staff);
+		String staffid = request.getParameter("id");
+		// 1.アカウントIDを元にアカウント情報を取得する
+		AccountListService service = new AccountListService();
+		List<Staff> list = service.getAccountList();
+		// 2.アカウント情報をリクエストに格納する
+		request.setAttribute("accounts", list);
 		// 3.JSPにフォワードする
 		request.getRequestDispatcher("./accountedit.jsp").forward(request, response);
 	}

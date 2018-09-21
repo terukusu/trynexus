@@ -58,15 +58,15 @@
 			</tr>
 			<tr>
 				<td>アカウントID</td>
-				<td><input type="hidden" name="hiddenid" value="<c:out value="${ seeker.id }" />"></td>
+				<td><input type="hidden" name="hiddenid" value="<c:out value="${ account.id }" />"></td>
 			</tr>
 			<tr>
 				<td>氏名</td>
-				<td><input type="text" name="name" value="<c:out value="${ seeker.name }" />"></td>
+				<td><input type="text" name="name" value="<c:out value="${ account.name }" />"></td>
 			</tr>
 			<tr>
 				<td>氏名（かな）</td>
-				<td><input type="text" name="kana" value="<c:out value="${ seeker.kana }" />"></td>
+				<td><input type="text" name="kana" value="<c:out value="${ account.kana }" />"></td>
 			</tr>
 			<tr>
 				<td>ユーザー権限</td>
