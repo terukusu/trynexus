@@ -27,29 +27,27 @@
 
 <header>
   <section>
-    <h1 class="logo"><a href="#">LOGO</a></h1>
+    <h1 class="logo"><a href="./stafftop.jsp">LOGO</a></h1>
     <nav>
       <ul class="mainnavi">
-        <li><a href="#"><i class="fas fa-home"></i>検索</a></li>
+        <li><a href="./jobsearch"><i class="fas fa-home"></i>検索</a></li>
         <li>
-          <a href="#"><i class="fas fa-search"></i>登録&amp;閲覧</a>
+          <a href="./jobseekerservlet"><i class="fas fa-search"></i>登録&amp;閲覧</a>
           <ul class="drop-menu">
-            <li><a href="#">求人情報<i class="fas fa-angle-right"></i></a></li>
-            <li><a href="#">求職者情報<i class="fas fa-angle-right"></i></a></li>
-            <li><a href="#">企業マスタ<i class="fas fa-angle-right"></i></a></li>
-            <li><a href="#">マッチング履歴<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="./detail">求人情報<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="./jobseekerservlet">求職者情報<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="./matchingdisservlet">マッチング登録<i class="fas fa-angle-right"></i></a></li>
           </ul>
         </li>
-        <li><a href="#"><i class="far fa-bookmark"></i>管理</a></li>
+        <li><a href="./AccountListServlet"><i class="far fa-bookmark"></i>管理</a></li>
       </ul>
     </nav>
     <div class="user">
       <div class="user__wrapper">
-        <!-- <div class="user__image"></div> -->
         <div class="user__name">
-          <a href="#">山田 太郎<i class="fas fa-ellipsis-v"></i></a>
+          <a href="#"><c:out value="${ Staff.name }" /><i class="fas fa-ellipsis-v"></i></a>
           <ul class="drop-menu">
-            <li><a href="#">サインアウト<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="./logoutservlet">ログアウト<i class="fas fa-angle-right"></i></a></li>
           </ul>
         </div>
       </div>
@@ -64,7 +62,7 @@
 
 　　　　<ul>
 	<c:forEach var="message" items="${ messages }">
-		<li><c:out value="${ message }" /></li>
+		<li><font color=#F00 size=7"><c:out value="${ message }" /></font></li>
 	</c:forEach>
 	</ul>
 
@@ -99,7 +97,7 @@
 			<tr>
 				<td><font size="5">入社日</font></td>
 				<td><input type="date" name="enterdt">
-					<script src="build/kalendae.standalone.js"
+					<script src="js/kalendae.standalone.js"
 						type="text/javascript" charset="utf-8"></script></td>
 
 			</tr>
@@ -115,13 +113,13 @@
 			<tr>
 				<td><font size="5">面接日</font></td>
 				<td><input type="date" name="interviewdt">
-					 <script src="build/kalendae.standalone.js"
+					 <script src="js/kalendae.standalone.js"
 						type="text/javascript" charset="utf-8"></script></td>
 
 			</tr>
 			<tr>
 				<td><font size="5">職業紹介者ID</font></td>
-				<td><input type="text" name="staffid" size="4"></td>
+				<td><input type="text" name="staffid" size="4" value="<c:out value="${ staff.id }" />"></td>
 
 			</tr>
 			<tr>
