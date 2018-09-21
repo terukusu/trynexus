@@ -11,10 +11,12 @@ public class Todouhuken {
 	 * cd 勤務地都道府県コード
 	* name 都道府県名
 	 */
-	private int cd;
+	private String cd;
 	private String name;
+	public Todouhuken() {
 
-	public Todouhuken(int cd, String name) {
+	}
+	public Todouhuken(String cd, String name) {
 		this.cd = cd;
 		this.name = name;
 	}
@@ -23,7 +25,7 @@ public class Todouhuken {
 	 * 勤務地都道府県コードを返す
 	 * @return cd
 	 */
-	public int getCd() {
+	public String getCd() {
 		return cd;
 	}
 

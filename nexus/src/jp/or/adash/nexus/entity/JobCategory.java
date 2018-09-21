@@ -17,7 +17,8 @@ public class JobCategory {
 	private String middlecd;
 	private String smallcd;
 	private String name;
-
+	public JobCategory(){
+	}
 	public JobCategory(String largecd, String middlecd, String smallcd, String name) {
 		this.largecd = largecd;
 		this.middlecd = middlecd;

@@ -11,13 +11,14 @@ public class Job {
 	 * largecd 大分類コード
 	* middlecd 中分類コード
 	* smallcd 小分類コード
-	* name 業種名
+	* name 職種名
 	 */
 	private String largecd;
 	private String middlecd;
 	private String smallcd;
 	private String name;
-
+	public Job(){
+	}
 	public Job(String largecd, String middlecd, String smallcd, String name) {
 		this.largecd = largecd;
 		this.middlecd = middlecd;
