@@ -17,6 +17,10 @@ import jp.or.adash.nexus.utils.dao.Transaction;
  */
 public class MatchingService {
 
+
+	String errMsg = null;
+
+
 	/**
 	 * トランザクションオブジェクト
 	 */
@@ -41,6 +45,18 @@ public class MatchingService {
 	 */
 	public List<String> getMessages() {
 		return messages;
+	}
+
+	/**
+	 * エラーチェック
+	 */
+	public boolean check(MatchingService ms) {
+		//フラグをtrueに
+		boolean result = true;
+
+		//求人NOの桁数チェック
+//		errMsg = DataCommons.chksDigits()
+		return result;
 	}
 
 	/**

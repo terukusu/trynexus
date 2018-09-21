@@ -19,7 +19,7 @@ import jp.or.adash.nexus.service.MatchingService;
 /**
  * Servlet implementation class MaServlet
  */
-@WebServlet("/machinngservlet")
+@WebServlet("/matchingservlet")
 public class MatchingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -36,7 +36,8 @@ public class MatchingServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,
 			IOException {
 		//1.1 リクエストから値を取得する
-		int id = Integer.parseInt(request.getParameter("id"));
+		//int id = Integer.parseInt(request.getParameter("id"));
+		int id = 100;
 		String kyujinno = request.getParameter("kyujinno");
 		String jobseekerid = request.getParameter("jobseekerid");
 		String stffid = request.getParameter("staffid");
@@ -56,8 +57,8 @@ public class MatchingServlet extends HttpServlet {
 		//1.2 マッチング結果オブジェクトを作成
 		MatchingCase matching = new MatchingCase(id, kyujinno, jobseekerid, stffid, interviewdt, enterdt,
 				assessment, note, createdt, createuserid, upDatedt, upDateuserid);
-		MatchingService service =new MatchingService();
-		service.insertMatchingCases(matching);
+		MatchingService service = new MatchingService();
+		boolean hako = service.insertMatchingCases(matching);
 		// 1.3 入力チェック
 		/*MaService service = new MaService();
 		if (!service.check(matching)) {
@@ -79,13 +80,13 @@ public class MatchingServlet extends HttpServlet {
 			// 1.7 商品コードがある場合、商品を更新する
 			service.updateItem(item);
 		}
-*/
+		*/
 		//1  処理結果メッセージをリクエストに格納する
 		//request.setAttribute("matching", matching);
 		//request.setAttribute("messages", service.getMessages());
 
 		//1.8 JSPにフォワード
-		request.getRequestDispatcher("/mainput.jsp")
+		request.getRequestDispatcher("/matchingregist.jsp")
 				.forward(request, response);
 	}
 
