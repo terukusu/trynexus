@@ -47,14 +47,14 @@ public class KyujinInsertServlet extends HttpServlet {
 //		//		String hiddenno = request.getParameter("hiddenno");
 		Date receptiondt = null;
 		try {
-			receptiondt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(request.getParameter("receptiondt"));
+			receptiondt = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("receptiondt"));
 		} catch (ParseException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
 		Date perioddt = null;
 		try {
-			perioddt =  new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(request.getParameter("perioddt"));
+			perioddt =  new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("perioddt"));
 		} catch (ParseException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
@@ -84,14 +84,14 @@ public class KyujinInsertServlet extends HttpServlet {
 		String koyoukikan = request.getParameter("koyoukikan");
 		Date koyoukikankaishi = null;
 		try {
-			koyoukikankaishi = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(request.getParameter("koyoukikankaishi"));
+			koyoukikankaishi = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("koyoukikankaishi"));
 		} catch (ParseException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
 		Date koyoukikanowari = null;
 		try {
-			koyoukikanowari = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(request.getParameter("koyoukikanowari"));
+			koyoukikanowari = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("koyoukikanowari"));
 		} catch (ParseException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
@@ -179,7 +179,7 @@ public class KyujinInsertServlet extends HttpServlet {
 		service.insertKyujin(kyujin);
 
 		// 処理結果メッセージをリクエストに格納する
-		request.setAttribute("kyujin", kyujin);
+//		request.setAttribute("kyujin", kyujin);
 		request.setAttribute("messages", service.getMessages());
 
 		// 1.8 JSPにフォワード

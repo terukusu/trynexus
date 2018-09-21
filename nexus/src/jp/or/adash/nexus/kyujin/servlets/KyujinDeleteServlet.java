@@ -37,18 +37,19 @@ public class KyujinDeleteServlet extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		Staff staff = (Staff) session.getAttribute("UserData");
 
-		
-		
+
+
 		// 1.1 リクエストから値を取得する
 		//		int deleteflag =
 		//				Integer.parseInt(request.getParameter("deleteflag"));
 		String no = request.getParameter("no");
-		String hiddenDeleteflag = request.getParameter("hiddenDeleteflag");
+//		String hiddenDeleteflag = request.getParameter("hiddenDeleteflag");
 
 		KyujinService service = new KyujinService();
 
 		// 1.6　求人票を更新する
-		service.deleteKyujin(no, staff.getId());
+//		service.deleteKyujin(no, staff.getId());
+		service.deleteKyujin(no, "2222");
 
 		// 処理結果メッセージをリクエストに格納する
 		request.setAttribute("messages", service.getMessages());
