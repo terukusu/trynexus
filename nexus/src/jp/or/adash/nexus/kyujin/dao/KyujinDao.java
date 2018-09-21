@@ -53,8 +53,8 @@ public class KyujinDao {
 		sql.append(")");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
 			ps.setString(1, kyujin.getNo());
-			ps.setDate(2, (Date) kyujin.getReceptiondt());
-			ps.setDate(3, (Date) kyujin.getPerioddt());
+			ps.setDate(2, convertToSqlDate(kyujin.getReceptiondt()));
+			ps.setDate(3, convertToSqlDate(kyujin.getPerioddt()));
 			ps.setString(4, kyujin.getCompanyno());
 			ps.setString(5, kyujin.getAddresscd());
 			ps.setString(6, kyujin.getJobsmallcd1());
@@ -78,8 +78,8 @@ public class KyujinDao {
 			ps.setString(24, kyujin.getDetail());
 			ps.setString(25, kyujin.getKoyoukeitaicd());
 			ps.setString(26, kyujin.getKoyoukikan());
-			ps.setDate(27, (Date) kyujin.getKoyoukikankaishi());
-			ps.setDate(28, (Date) kyujin.getKoyoukikanowari());
+			ps.setDate(27, convertToSqlDate(kyujin.getKoyoukikankaishi()));
+			ps.setDate(28, convertToSqlDate(kyujin.getKoyoukikanowari()));
 			ps.setString(29, kyujin.getEducation());
 			ps.setString(30, kyujin.getExperience());
 			ps.setString(31, kyujin.getLicense());
@@ -218,7 +218,7 @@ public class KyujinDao {
 		// SQL文を生成する
 		StringBuffer sql = new StringBuffer();
 		sql.append(
-				"select no, receptiondt, perioddt, companyno, addresscd, jobsmallcd1, jobsmallcd2, jobsmallcd3, joblargecd1, joblargecd2, joblargecd3, jobcategorysmallcd, jobcategorylargecd, companykana, companyname, companypostal, companyplace, companyurl, postal, adress, nearstation, job, hakencd, detail, koyoukeitaicd, koyoukikan, koyoukikankaishi, koyoukikanowari, education, experience, license, agemin, agemax, salarymin, salarymax, salaryformcd, begintime, endtime, establishdt, capital, companyfeature, tantouyakushoku, tantoukana, tantou, tantoustaff_id, applicationform, background, hiddensex, hiddenagemin, hiddenagemax, hiddenetc, createdt, createuserid, updatedt, updateuserid, deleteflag");
+				"select no, receptiondt, perioddt, companyno, addresscd, jobsmallcd1, jobsmallcd2, jobsmallcd3, joblargecd1, joblargecd2, joblargecd3, jobcategorysmallcd, jobcategorylargecd, companykana, companyname, companypostal, companyplace, companyurl, postal, address, nearstation, job, hakencd, detail, koyoukeitaicd, koyoukikan, koyoukikankaishi, koyoukikanowari, education, experience, license, agemin, agemax, salarymin, salarymax, salaryformcd, begintime, endtime, establishdt, capital, companyfeature, tantouyakushoku, tantoukana, tantou, tantoustaff_id, applicationform, background, hiddensex, hiddenagemin, hiddenagemax, hiddenetc, createdt, createuserid, updatedt, updateuserid, deleteflag");
 		sql.append(" from kyujin");
 		sql.append(" order by no");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
@@ -245,7 +245,7 @@ public class KyujinDao {
 							rs.getString("companyplace"),
 							rs.getString("companyurl"),
 							rs.getString("postal"),
-							rs.getString("adress"),
+							rs.getString("address"),
 							rs.getString("nearstation"),
 							rs.getString("job"),
 							rs.getString("hakencd"),
@@ -323,7 +323,7 @@ public class KyujinDao {
 		sql.append(" companyplace = ?");
 		sql.append(" companyurl = ?");
 		sql.append(" postal = ?");
-		sql.append(" adress = ?");
+		sql.append(" address = ?");
 		sql.append(" nearstation = ?");
 		sql.append(" job = ?");
 		sql.append(" hakencd = ?");
@@ -364,8 +364,8 @@ public class KyujinDao {
 		sql.append(" no = ?");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
 			ps.setString(1, kyujin.getNo());
-			ps.setDate(2, (Date) kyujin.getReceptiondt());
-			ps.setDate(3, (Date) kyujin.getPerioddt());
+			ps.setDate(2, convertToSqlDate(kyujin.getReceptiondt()));
+			ps.setDate(3, convertToSqlDate(kyujin.getPerioddt()));
 			ps.setString(4, kyujin.getCompanyno());
 			ps.setString(5, kyujin.getAddresscd());
 			ps.setString(6, kyujin.getJobsmallcd1());
@@ -389,8 +389,8 @@ public class KyujinDao {
 			ps.setString(24, kyujin.getDetail());
 			ps.setString(25, kyujin.getKoyoukeitaicd());
 			ps.setString(26, kyujin.getKoyoukikan());
-			ps.setDate(27, (Date) kyujin.getKoyoukikankaishi());
-			ps.setDate(28, (Date) kyujin.getKoyoukikanowari());
+			ps.setDate(27, convertToSqlDate(kyujin.getKoyoukikankaishi()));
+			ps.setDate(28, convertToSqlDate(kyujin.getKoyoukikanowari()));
 			ps.setString(29, kyujin.getEducation());
 			ps.setString(30, kyujin.getExperience());
 			ps.setString(31, kyujin.getLicense());
@@ -417,7 +417,7 @@ public class KyujinDao {
 			//ps.setTimestamp(52, (Timestamp) kyujin.getCreatedt());
 			//ps.setString(53, kyujin.getCreateuserid());
 			//ps.setString(56, kyujin.getDeleteflag());
-			ps.setDate(52, (Date) kyujin.getupdatedt());
+			ps.setDate(52, convertToSqlDate(kyujin.getupdatedt()));
 
 			// SQL文を実行する
 			count = ps.executeUpdate();
@@ -455,5 +455,9 @@ public class KyujinDao {
 		}
 
 		return count;
+	}
+
+	public java.sql.Date convertToSqlDate(java.util.Date utilDate){
+	    return new java.sql.Date(utilDate.getTime());
 	}
 }
