@@ -14,7 +14,7 @@ import jp.or.adash.nexus.services.AccountEditService;
 /**
  * Servlet implementation class AccountEditServlet
  */
-@WebServlet("/AccountEditServlet")
+@WebServlet("/web/account-edit")
 public class AccountEditServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

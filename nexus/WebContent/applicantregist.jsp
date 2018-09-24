@@ -55,7 +55,7 @@
 	</c:forEach>
 	</ul>
 
-	<form method="post" action="./regist">
+	<form method="post" action="/web/jobseeker-regist">
 		<table width="" border="0">
 		<!-- <tr>
 			<th width="20%">ID</th>
@@ -422,7 +422,7 @@
 	</table>
 		<input class="main-b" type="submit" value="登録">
 	</form>
-	<form action="../jobseekerservlet" method="get">
+	<form action="/web/jobseeker-list" method="get">
             <input type="submit" class="main-b" name="send" value="一覧に戻る">
         </form>
     </div>

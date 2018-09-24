@@ -58,7 +58,7 @@
 		<c:forEach var="account" items="${ accounts }">
 		<tr>
 			<td>
-				<form method="get" action="AccountEditServlet">
+				<form method="get" action="/web/account-edit">
 					<input type="hidden" name="id" value="${ account.id }">
 					<input class="main-b" type="submit" value="編集">
 				</form>

@@ -75,7 +75,7 @@
 			<td>*****</td>
 		</tr>
 	</table>
-	<input class="main-b" type="button" value="アカウント一覧へ戻る" onclick="location.href='AccountListServlet'">
+	<input class="main-b" type="button" value="アカウント一覧へ戻る" onclick="location.href='/web/account-list'">
 </main>
 <footer> <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館) All Rights Reserved.</small> </footer>
 </body>

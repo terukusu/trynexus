@@ -67,7 +67,7 @@
 	</ul>
 
 
-<form method="post" action="./matchingservlet">
+<form method="post" action="/web/match">
 
 
 

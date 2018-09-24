@@ -19,7 +19,7 @@ import jp.or.adash.nexus.services.TodouhukenService;
 /**
  * 求人登録画面初期表示サーブレット
  */
-@WebServlet("/detail")
+@WebServlet("/web/kyujin-disp")
 public class KyujinRegistDisplayServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

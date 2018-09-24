@@ -456,11 +456,11 @@
 <button type="button" class="main-b" onClick="window.CloseWindow();">戻る</button>
 
 <c:if test="${ kyujin.no == null }">
-	<button type="submit" id="KyujinInsertServlet" class="main-b" onclick="MovePages(this)">登録</button>
+	<button type="submit" id="web/kyujin-insert" class="main-b" onclick="MovePages(this)">登録</button>
 </c:if>
 <c:if test="${ kyujin.no != null }">
-	<button type="submit" id="KyujinUpdateServlet"  class="main-b" onclick="MovePages(this)">更新</button>
-	<button type="submit" id="KyujinDeleteServlet" class="main-b" onclick="MovePages(this)">削除</button>
+	<button type="submit" id="web/kyujin-update"  class="main-b" onclick="MovePages(this)">更新</button>
+	<button type="submit" id="web/kyujin-delete" class="main-b" onclick="MovePages(this)">削除</button>
 </c:if>
 
 </form>

@@ -16,7 +16,7 @@ import jp.or.adash.nexus.entity.Staff;
 /**
  * Servlet implementation class MatchingDisServlet
  */
-@WebServlet("/matchingdisservlet")
+@WebServlet("/web/match-disp")
 public class MatchingDisServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

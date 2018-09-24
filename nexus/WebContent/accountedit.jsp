@@ -50,7 +50,7 @@
 		<li><c:out value="${ message }" /></li>
 	</c:forEach>
 	</ul>
-	<form action="AccountEditCompletionServlet" method="post">
+	<form action="/web/account-editcomp" method="post">
 		<table>
 			<tr>
 				<th>項目名</th>
@@ -88,8 +88,8 @@
 		</table>
 		<input class="main-b" type="submit" value="更新">
 	</form>
-	<input class="main-b" type="button" onclick="location.href='AccountListServlet'" value="戻る">
-		<input class="main-b" type="button" onclick="location.href='AccountListServlet'" value="削除">
+	<input class="main-b" type="button" onclick="location.href='/web/account-list'" value="戻る">
+		<input class="main-b" type="button" onclick="location.href='/web/account-list'" value="削除">
 		<!--  <form method="post" action="AccountEditCompletionServlet">
 					<input type="hidden" name="id" value="<c:out value="${ Staff.id }" />">
 					<input type="hidden" name="name" value="<c:out value="${ Staff.name }" />">

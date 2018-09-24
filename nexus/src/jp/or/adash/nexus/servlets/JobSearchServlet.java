@@ -17,7 +17,7 @@ import jp.or.adash.nexus.services.JobSearchService;
 /**
  * Servlet implementation class KyujinServlet
  */
-@WebServlet("/jobsearch")
+@WebServlet("/web/job-search")
 public class JobSearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

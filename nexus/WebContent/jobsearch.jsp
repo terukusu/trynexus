@@ -50,7 +50,7 @@
 	<main> <!--　求人検索項目 -->
 	<div id="job_search">
 		<h3 style="float: none;">求人検索項目</h3>
-		<form action="./jobsearch" method="post">
+		<form action="/web/job-search" method="post">
 			<div class="listbox2">
 				<h4 class="word">職種をフリーワード検索</h4>
 				<textarea class="word" name="job" cols="60" rows="3"
@@ -168,7 +168,7 @@
 
 					<tr>
 						<td>
-							<form method="get" action="/nexus/detail">
+							<form method="get" action="/web/kyujin-disp">
 								<input type="hidden" name="no" value="${ SimpleKyujin.no }">
 									<input type="submit" value="詳細"></form>
 						</td>

@@ -52,7 +52,7 @@
 	<main>
 	<h2>求職者情報検索</h2>
 	<div id="box">
-		<form action="./jobseekershowservletid" method="post">
+		<form action="/web/jobseeker-show" method="post">
 			<table>
 				<tr>
 					<td><p>求職者ID:</p>
@@ -75,7 +75,7 @@
 		</form>
 	</div>
 
-	<form action="./jobseeker/display" method="get">
+	<form action="/web/jobseeker-disp" method="get">
 		<input type="submit" class="main-b" name="send" value="新規登録">
 	</form>
 
@@ -95,7 +95,7 @@
 		<c:forEach var="jobseeker" items="${ list }">
 			<tr>
 					<td>
-					<form action="./jobseekermaininfoservlet" method="post">
+					<form action="/web/jobseeker-info" method="post">
 					<button class="mini_b mini_b_applilist" name="js_id"
 							value="<c:out value="${ jobseeker.id }" />">詳細</button>
 					</form>

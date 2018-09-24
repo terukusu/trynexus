@@ -50,7 +50,7 @@
 		<li><c:out value="${ message }" /></li>
 	</c:forEach>
 	</ul>
-	<form action="accountregistservlet" method="post">
+	<form action="/web/account-regist" method="post">
 		<table>
 			<tr>
 				<th>項目名</th>
@@ -80,7 +80,7 @@
 				<td><input type="password" name="password"></td>
 			</tr>
 		</table>
-		<input class="main-b" type="button" onclick="location.href='AccountListServlet'" value="戻る">
+		<input class="main-b" type="button" onclick="location.href='/web/account-list'" value="戻る">
 		<input class="main-b" type="submit" value="登録">
 	</form>
 </main>

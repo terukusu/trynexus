@@ -73,7 +73,7 @@
 	        </form>
  </div>
 
-        <form action="./jobseeker/display" method="get">
+        <form action="/web/jobseeker-disp" method="get">
             <input type="submit" class="main-b" name="send" value="新規登録">
         </form>
 
@@ -92,7 +92,7 @@
 		</tr>
 		<c:forEach var="jobseeker" items="${ list }">
         <tr>
-        <form action="./jobseekermaininfoservlet" method="post">
+        <form action="/web/jobseeker-info" method="post">
 			<td><button class="mini_b mini_b_applilist"name="js_id" value="<c:out value="${ jobseeker.id }" />">詳細</button>
 		</form>
 <!--		<c:out value="${ applicant_list.jsp }" /></td>  -->

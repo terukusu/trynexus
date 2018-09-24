@@ -19,7 +19,7 @@ import jp.or.adash.nexus.services.KyujinService;
 /**
  * Servlet implementation class KyujinUpdateServlet
  */
-@WebServlet("/KyujinUpdateServlet")
+@WebServlet("/web/kyujin-update")
 public class KyujinUpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
