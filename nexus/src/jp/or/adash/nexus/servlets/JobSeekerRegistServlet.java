@@ -37,6 +37,10 @@ public class JobSeekerRegistServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		/*
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		*/
 		//入力された情報を登録する
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -47,7 +51,7 @@ public class JobSeekerRegistServlet extends HttpServlet {
 		try {
 			birthdt = sdf.parse(request.getParameter("birthdt"));
 		} catch (ParseException e) {
-			e.printStackTrace();
+			birthdt = null;
 		}
 		String sex = request.getParameter("sex");
 		int age = -1;
@@ -166,7 +170,7 @@ public class JobSeekerRegistServlet extends HttpServlet {
 			request.setAttribute("messages", service.getMessages());
 
 			// 1.8 JSPにフォワード
-			request.getRequestDispatcher("/applicantregist.jsp") //ここにjspを入力
+			request.getRequestDispatcher("/applicantedit.jsp") //ここにjspを入力
 				.forward(request, response);
 	}
 

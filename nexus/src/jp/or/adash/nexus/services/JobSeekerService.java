@@ -8,7 +8,9 @@ import jp.or.adash.nexus.dao.JobSeekerDao;
 import jp.or.adash.nexus.dao.JobSeeker_dao;
 import jp.or.adash.nexus.dao.SaibanDao;
 import jp.or.adash.nexus.entity.JobSeeker;
+import jp.or.adash.nexus.entity.JobSeekerMain;
 import jp.or.adash.nexus.entity.Jobseeker_simple_entity;
+import jp.or.adash.nexus.utils.common.DataCommons;
 import jp.or.adash.nexus.utils.common.MessageCommons;
 import jp.or.adash.nexus.utils.dao.Transaction;
 
@@ -16,6 +18,8 @@ import jp.or.adash.nexus.utils.dao.Transaction;
 
 
 public class JobSeekerService {
+
+	String errMsg = null;
 	/**
 	 * トランザクションオブジェクト
 	 */
@@ -65,16 +69,16 @@ public List<Jobseeker_simple_entity> getJobSeekerList(){
 	 * @return idで絞り込んだ求職者情報
      *@aihara
 	 */
-public Jobseeker_simple_entity getJobseeker(int js_id) {
-	Jobseeker_simple_entity jobseeker = null;
+public List<Jobseeker_simple_entity> getJobseeker(String js_id) {
+	List<Jobseeker_simple_entity> jobseeker = null;
 
 	try {
 		// データベース接続を開始する
 		transaction.open();
 
-		// 商品単価を取得する
+		// 求職者情報を取得する
 		JobSeeker_dao dao = new JobSeeker_dao(transaction);
-		jobseeker = dao.selectItem(js_id);
+		jobseeker = dao.selectJobSeekerId(js_id);
 
 	} catch(IOException e) {
 		// エラーメッセージをセットする
@@ -91,8 +95,8 @@ public Jobseeker_simple_entity getJobseeker(int js_id) {
 	 * @return 求職者情報の詳細情報
      *@aihara
 	 */
-public JobSeeker getJobseekermaininfo(String js_id) {
-	JobSeeker jobseeker = null;
+public JobSeekerMain getJobseekermaininfo(String js_id) {
+	JobSeekerMain jobseeker = null;
 
 	try {
 		// データベース接続を開始する
@@ -100,7 +104,7 @@ public JobSeeker getJobseekermaininfo(String js_id) {
 
 		// 商品単価を取得する
 		JobSeeker_dao dao = new JobSeeker_dao(transaction);
-		jobseeker = dao.selectItem(js_id);
+		jobseeker = dao.selectJobseekermaininfo(js_id);
 
 	} catch(IOException e) {
 		// エラーメッセージをセットする
@@ -116,16 +120,16 @@ public JobSeeker getJobseekermaininfo(String js_id) {
 	 * @param id 求職者ID
 	 * @return 求職者情報
 	 */
-	public JobSeeker getJobSeeker(String id) {
-		JobSeeker seeker = null;
+	public List<Jobseeker_simple_entity> getJobSeeker(String js_id) {
+		List<Jobseeker_simple_entity> seeker = null;
 
 		try {
 			// データベース接続を開始する
 			transaction.open();
 
 			// 商品単価を取得する
-			JobSeekerDao dao = new JobSeekerDao(transaction);
-			seeker = dao.selectJobSeeker(id);
+			JobSeeker_dao dao = new JobSeeker_dao(transaction);
+			seeker = dao.selectJobSeekerId(js_id);
 
 		} catch(IOException e) {
 			// エラーメッセージをセットする
@@ -146,19 +150,28 @@ public JobSeeker getJobseekermaininfo(String js_id) {
 	 */
 	public boolean check(JobSeeker seeker) {
 		boolean result = true;		// チェック結果
-/**
 
-		// 求職者IDの値が入力されているか
-				if (seeker.getName() == "") {
+
+				// 求職者IDの値が入力されているか
+				if (seeker.getName().equals("")) {
 					messages.add("名前が入力されていません。");
 					result = false;
 				}
 
+				errMsg = DataCommons.chksDigits(seeker.getName(), 100);
+				messages.add(errMsg);
+
 				// ふりがなの値が入力されているか
-				if (seeker.getKana() == "") {
+				if (seeker.getKana().equals("")) {
 					messages.add("ふりがなが入力されていません。");
 					result = false;
 				}
+
+				errMsg = DataCommons.chkHiragana(seeker.getKana());
+				messages.add(errMsg);
+
+				errMsg = DataCommons.chksDigits(seeker.getKana(), 100);
+				messages.add(errMsg);
 
 				// 生年月日の値が入力されているか
 				if (seeker.getBirthdt() == null) {
@@ -167,7 +180,7 @@ public JobSeeker getJobseekermaininfo(String js_id) {
 				}
 
 				// 性別の値が入力されているか
-				if (seeker.getSex() == "") {
+				if (seeker.getSex() == null) {
 					messages.add("性別が入力されていません。");
 					result = false;
 				}
@@ -177,27 +190,52 @@ public JobSeeker getJobseekermaininfo(String js_id) {
 					messages.add("年齢が入力されていません。");
 					result = false;
 				}
+				errMsg = DataCommons.chkInt(seeker.getAge());
+				messages.add(errMsg);
+
+				errMsg = DataCommons.chkiDigits(seeker.getAge(), 3);
+				messages.add(errMsg);
 
 				// 郵便番号の値が入力されているか
-				if (seeker.getPostal() == "") {
+				if (seeker.getPostal().equals("")) {
 					messages.add("郵便番号が入力されていません。");
 					result = false;
 				}
 
+				errMsg = DataCommons.chkZipcode(seeker.getPostal());
+				messages.add(errMsg);
+
+				errMsg = DataCommons.chksDigits(seeker.getPostal(), 8);
+				messages.add(errMsg);
+
 				// 住所の値が入力されているか
-				if (seeker.getAddress() == "") {
+				if (seeker.getAddress().equals("")) {
 					messages.add("住所が入力されていません。");
 					result = false;
 				}
 
+				errMsg = DataCommons.chksDigits(seeker.getAddress(), 50);
+				messages.add(errMsg);
+
 				// 最寄り駅の値が入力されているか
-				if (seeker.getNearstation() == "") {
+				if (seeker.getNearstation().equals("")) {
 					messages.add("最寄り駅が入力されていません。");
 					result = false;
 				}
 
+				errMsg = DataCommons.chksDigits(seeker.getNearstation(), 50);
+				messages.add(errMsg);
+
+				//自宅TELが入力されているか
+				errMsg = DataCommons.chksDigits(seeker.getPhone(), 20);
+				messages.add(errMsg);
+
+				//携帯番号が入力されているか
+				errMsg = DataCommons.chksDigits(seeker.getMobile(), 20);
+				messages.add(errMsg);
+
 				// 配偶者の値が入力されているか
-				if (seeker.getPartner() == "") {
+				if (seeker.getPartner().equals("")) {
 					messages.add("配偶者の有無が入力されていません。");
 					result = false;
 				}
@@ -208,44 +246,56 @@ public JobSeeker getJobseekermaininfo(String js_id) {
 					result = false;
 				}
 
+				errMsg = DataCommons.chkInt(seeker.getHuyou());
+				messages.add(errMsg);
+
+				errMsg = DataCommons.chkiDigits(seeker.getHuyou(), 2);
+				messages.add(errMsg);
+
 				// 学歴の値が入力されているか
-				if (seeker.getEducation() == "") {
+				if (seeker.getEducation().equals("")) {
 					messages.add("学歴が入力されていません。");
 					result = false;
 				}
 
+				errMsg = DataCommons.chksDigits(seeker.getEducation(), 100);
+				messages.add(errMsg);
+
 				// 希望職種1の値が入力されているか
-				if (seeker.getHopejob1() == "") {
+				if (seeker.getHopejob1().equals("")) {
 					messages.add("希望職種1が入力されていません。");
 					result = false;
 				}
 
 				// 希望職種2の値が入力されているか
-				if (seeker.getHopejob2() == "") {
+				if (seeker.getHopejob2().equals("")) {
 					messages.add("希望職種2が入力されていません。");
 					result = false;
 				}
 
 				// 希望職種3の値が入力されているか
-				if (seeker.getHopejob3() == "") {
+				if (seeker.getHopejob3().equals("")) {
 					messages.add("希望職種3が入力されていません。");
 					result = false;
 				}
 
 				// 希望業種の値が入力されているか
-				if (seeker.getHopejobcategory() == "") {
+				if (seeker.getHopejobcategory().equals("")) {
 					messages.add("希望業種が入力されていません。");
 					result = false;
 				}
 
 				// 希望勤務地の値が入力されているか
-				if (seeker.getHopeworkplace() == "") {
+				if (seeker.getHopeworkplace().equals("")) {
 					messages.add("希望勤務地が入力されていません。");
 					result = false;
 				}
 
+				errMsg = DataCommons.chksDigits(seeker.getHopeworkplace(), 2);
+				messages.add(errMsg);
+
 				// 雇用形態の値が入力されているか
-				if (seeker.getHopekoyoukeitai() == "") {
+				if (seeker.getHopekoyoukeitai() == null) {
 					messages.add("雇用形態が入力されていません。");
 					result = false;
 				}
@@ -274,30 +324,52 @@ public JobSeeker getJobseekermaininfo(String js_id) {
 					result = false;
 				}
 
+				errMsg = DataCommons.chkInt(seeker.getHopesalary());
+				messages.add(errMsg);
+
 				// 希望時間給の値が入力されているか
 				if (seeker.getHopejikyu() == -1) {
 					messages.add("希望時間給が入力されていません。");
 					result = false;
 				}
 
+				errMsg = DataCommons.chkInt(seeker.getHopejikyu());
+				messages.add(errMsg);
+
+				//その他希望が入力されているかどうか
+				errMsg = DataCommons.chksDigits(seeker.getHopeetc(), 200);
+				messages.add(errMsg);
+
 				// 自動車免許の値が入力されているか
-				if (seeker.getDriverlicense() == "") {
+				if (seeker.getDriverlicense().equals("")) {
 					messages.add("自動車免許が入力されていません。");
 					result = false;
 				}
 
+				//その他免許が入力されているかどうか
+				errMsg = DataCommons.chksDigits(seeker.getLicenseetc(), 200);
+				messages.add(errMsg);
+
+				//パソコンスキルが入力されているかどうか
+				errMsg = DataCommons.chksDigits(seeker.getPasokonskill(), 200);
+				messages.add(errMsg);
+
+
+				//パソコンスキルが入力されているかどうか
+				errMsg = DataCommons.chksDigits(seeker.getPasokonskill(), 200);
+				messages.add(errMsg);
 				// 担当職業紹介者IDの値が入力されているか
-				if (seeker.getTantoustaffid() == "") {
+				if (seeker.getTantoustaffid().equals("")) {
 					messages.add("担当職業紹介者IDが入力されていません。");
 					result = false;
 				}
 
 				// パスワードの値が入力されているか
-				if (seeker.getPassword() == "") {
+				if (seeker.getPassword().equals("")) {
 					messages.add("パスワードが入力されていません。");
 					result = false;
 				}
-*/
+
 /*
 		// 商品名の長さが適切か
 		DataCommons commons = new DataCommons();
