@@ -207,7 +207,7 @@ public class DataCommons {
 	 * @author a.taya
 	 */
 
-	public java.sql.Date convertToSqlDate(java.util.Date utilDate){
+	public static java.sql.Date convertToSqlDate(java.util.Date utilDate){
 	    return new java.sql.Date(utilDate.getTime());
 	}
 }

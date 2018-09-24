@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jp.or.adash.nexus.entity.Kyujin;
+import jp.or.adash.nexus.utils.common.DataCommons;
 import jp.or.adash.nexus.utils.dao.Transaction;
 
 /**
@@ -52,8 +53,8 @@ public class KyujinDao {
 		sql.append(")");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
 			ps.setString(1, kyujin.getNo());
-			ps.setDate(2, convertToSqlDate(kyujin.getReceptiondt()));
-			ps.setDate(3, convertToSqlDate(kyujin.getPerioddt()));
+			ps.setDate(2, DataCommons.convertToSqlDate(kyujin.getReceptiondt()));
+			ps.setDate(3, DataCommons.convertToSqlDate(kyujin.getPerioddt()));
 			ps.setString(4, kyujin.getCompanyno());
 			ps.setString(5, kyujin.getAddresscd());
 			ps.setString(6, kyujin.getJobsmallcd1());
@@ -77,8 +78,8 @@ public class KyujinDao {
 			ps.setString(24, kyujin.getDetail());
 			ps.setString(25, kyujin.getKoyoukeitaicd());
 			ps.setString(26, kyujin.getKoyoukikan());
-			ps.setDate(27, convertToSqlDate(kyujin.getKoyoukikankaishi()));
-			ps.setDate(28, convertToSqlDate(kyujin.getKoyoukikanowari()));
+			ps.setDate(27, DataCommons.convertToSqlDate(kyujin.getKoyoukikankaishi()));
+			ps.setDate(28, DataCommons.convertToSqlDate(kyujin.getKoyoukikanowari()));
 			ps.setString(29, kyujin.getEducation());
 			ps.setString(30, kyujin.getExperience());
 			ps.setString(31, kyujin.getLicense());
@@ -362,8 +363,8 @@ public class KyujinDao {
 		sql.append(" where");
 		sql.append(" no = ?");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
-			ps.setDate(1, convertToSqlDate(kyujin.getReceptiondt()));
-			ps.setDate(2, convertToSqlDate(kyujin.getPerioddt()));
+			ps.setDate(1, DataCommons.convertToSqlDate(kyujin.getReceptiondt()));
+			ps.setDate(2, DataCommons.convertToSqlDate(kyujin.getPerioddt()));
 			ps.setString(3, kyujin.getCompanyno());
 			ps.setString(4, kyujin.getAddresscd());
 			ps.setString(5, kyujin.getJobsmallcd1());
@@ -387,8 +388,8 @@ public class KyujinDao {
 			ps.setString(23, kyujin.getDetail());
 			ps.setString(24, kyujin.getKoyoukeitaicd());
 			ps.setString(25, kyujin.getKoyoukikan());
-			ps.setDate(26, convertToSqlDate(kyujin.getKoyoukikankaishi()));
-			ps.setDate(27, convertToSqlDate(kyujin.getKoyoukikanowari()));
+			ps.setDate(26, DataCommons.convertToSqlDate(kyujin.getKoyoukikankaishi()));
+			ps.setDate(27, DataCommons.convertToSqlDate(kyujin.getKoyoukikanowari()));
 			ps.setString(28, kyujin.getEducation());
 			ps.setString(29, kyujin.getExperience());
 			ps.setString(30, kyujin.getLicense());
@@ -455,7 +456,4 @@ public class KyujinDao {
 		return count;
 	}
 
-	public java.sql.Date convertToSqlDate(java.util.Date utilDate){
-	    return new java.sql.Date(utilDate.getTime());
-	}
 }
