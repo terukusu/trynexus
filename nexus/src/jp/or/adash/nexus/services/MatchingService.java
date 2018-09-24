@@ -1,4 +1,4 @@
-package jp.or.adash.nexus.service;
+package jp.or.adash.nexus.services;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,6 +16,10 @@ import jp.or.adash.nexus.utils.dao.Transaction;
  *
  */
 public class MatchingService {
+
+
+	String errMsg = null;
+
 
 	/**
 	 * トランザクションオブジェクト
@@ -41,6 +45,57 @@ public class MatchingService {
 	 */
 	public List<String> getMessages() {
 		return messages;
+	}
+
+	/**
+	 * 商品コードがデータベースに既に存在するかどうかを確認する
+	 * @param code 商品コード
+	 * @return true:存在する、false:存在しない
+	 */
+
+
+	/*String no = request.getParameter("kyujinno");
+
+	private boolean exists(kyujinno) {
+		boolean result = false; // 1確認結果
+
+		// 1コードをキーにして、データベースを検索する
+		int price = this.getItemPrice(code);
+
+		// 1データが存在する場合、true	を返す
+		if (price > 0) {
+			result = true;
+		}
+
+		return result;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * エラーチェック
+	 */
+	public boolean check(MatchingService ms) {
+		//フラグをtrueに
+		boolean result = true;
+
+		//求人NOの桁数チェック
+//		errMsg = DataCommons.chksDigits()
+		return result;
 	}
 
 	/**
@@ -158,16 +213,6 @@ public class MatchingService {
 
 		return result;
 	}
-/*
-	/**
-	 * 登録完了メッセージ
-	 */
-	private static final String MSG_ITEM_REGIST_COMPLETE = "商品登録が完了しました。";
-
-	/**
-	 * 登録失敗メッセージ
-	 */
-	private static final String MSG_ITEM_REGIST_FAILURE = "商品登録に失敗しました。";
 
 	/**
 	 * マッチング結果データを登録する
@@ -275,11 +320,11 @@ public class MatchingService {
 
 			if (count > 0) {
 				// 1完了メッセージをセットする
-				messages.add(MSG_ITEM_REGIST_COMPLETE);
+				messages.add(MSG_MATCHING_REGIST_COMPLETE);
 				result = true;
 			} else {
 				// 1エラーメッセージをセットする
-				messages.add(MSG_ITEM_REGIST_FAILURE);
+				messages.add(MSG_MATCHING_REGIST_FAILURE);
 				result = false;
 			}
 
@@ -299,5 +344,11 @@ public class MatchingService {
 
 		return result;
 	}
+	/* 1登録完了メッセージ
+	 */
+	private static final String MSG_MATCHING_REGIST_COMPLETE = "マッチング登録が完了しました。";
 
+	/* 1登録完了メッセージ
+	 */
+	private static final String MSG_MATCHING_REGIST_FAILURE = "マッチング登録が失敗しました。";
 }

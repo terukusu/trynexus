@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 
 <title>マッチング結果登録</title>
-<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"rel="stylesheet" >
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" >
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
 <link href="css/bootstrap-reboot.css" rel="stylesheet">
 <link href="css/common.css" rel="stylesheet">
@@ -17,6 +17,9 @@
 <link href="css/footer.css" rel="stylesheet">
 <!-- <link href="css/ootuka.css" rel="stylesheet"> -->
 <link href="css/matchingregist.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
 
 </head>
 
@@ -24,29 +27,27 @@
 
 <header>
   <section>
-    <h1 class="logo"><a href="#">LOGO</a></h1>
+    <h1 class="logo"><a href="./stafftop.jsp">LOGO</a></h1>
     <nav>
       <ul class="mainnavi">
-        <li><a href="#"><i class="fas fa-home"></i>検索</a></li>
+        <li><a href="./jobsearch"><i class="fas fa-home"></i>検索</a></li>
         <li>
-          <a href="#"><i class="fas fa-search"></i>登録&amp;閲覧</a>
+          <a href="./jobseekerservlet"><i class="fas fa-search"></i>登録&amp;閲覧</a>
           <ul class="drop-menu">
-            <li><a href="#">求人情報<i class="fas fa-angle-right"></i></a></li>
-            <li><a href="#">求職者情報<i class="fas fa-angle-right"></i></a></li>
-            <li><a href="#">企業マスタ<i class="fas fa-angle-right"></i></a></li>
-            <li><a href="#">マッチング履歴<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="./detail">求人情報<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="./jobseekerservlet">求職者情報<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="./matchingdisservlet">マッチング登録<i class="fas fa-angle-right"></i></a></li>
           </ul>
         </li>
-        <li><a href="#"><i class="far fa-bookmark"></i>管理</a></li>
+        <li><a href="./AccountListServlet"><i class="far fa-bookmark"></i>管理</a></li>
       </ul>
     </nav>
     <div class="user">
       <div class="user__wrapper">
-        <!-- <div class="user__image"></div> -->
         <div class="user__name">
-          <a href="#">山田 太郎<i class="fas fa-ellipsis-v"></i></a>
+          <a href="#"><c:out value="${ Staff.name }" /><i class="fas fa-ellipsis-v"></i></a>
           <ul class="drop-menu">
-            <li><a href="#">サインアウト<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="./logoutservlet">ログアウト<i class="fas fa-angle-right"></i></a></li>
           </ul>
         </div>
       </div>
@@ -58,42 +59,50 @@
 <!-- body部分　-->
 
 <h2>マッチング結果登録</h2>
+
+　　　　<ul>
+	<c:forEach var="message" items="${ messages }">
+		<li><font color=#F00 size=7"><c:out value="${ message }" /></font></li>
+	</c:forEach>
+	</ul>
+
+
 <form method="post" action="./matchingservlet">
 
 
 
-<!-- テーブル部分　-->
+<!--　　 　テーブル部分　-->
 
 
 <table border="0">
-<caption>マッチング結果登録</caption>
+
 		<tr>
-			<th>項目名</th>
-			<th>結果</th>
+			<th><font size="5">項目名</font></th>
+			<th><font size="5">結果</font></th>
 
 			</tr>
 			<tr>
-				<td>求人No</td>
+				<td><font size="5">求人No</font></td>
 				<td>
-				<input type="text" name="kyujinno" size="14"><input
-					type="submit" value="求人No一覧"></td>
+				<input type="text" name="kyujinno" size="14">
+				<input type="submit" value="求人No一覧" onclick="window.open('http://localhost:8080/nexus/jobsearchservlet')"></td>
 
 			</tr>
 			<tr>
-				<td>求職者No</td>
-				<td><input type="text" name="jobseekerid" size="8"><input
-					type="submit" value="求職者No一覧"></td>
+				<td><font size="5">求職者No</font></td>
+				<td><input type="text" name="jobseekerid" size="8">
+				<input type="submit" value="求職者一覧" onclick="window.open('http://localhost:8080/nexus/jobseekerservlet')"></td>
 
 			</tr>
 			<tr>
-				<td>入社日</td>
+				<td><font size="5">入社日</font></td>
 				<td><input type="date" name="enterdt">
-					＜＜<script src="build/kalendae.standalone.js"
+					<script src="js/kalendae.standalone.js"
 						type="text/javascript" charset="utf-8"></script></td>
 
 			</tr>
 			<tr>
-				<td>評価</td>
+				<td><font size="5">評価</font></td>
 				<td>
 						<input name="assessment" type="radio" value="1"> 成功 <input
 							name="assessment" type="radio" value="2"> 失敗 <input name="assessment"
@@ -102,26 +111,27 @@
 
 			</tr>
 			<tr>
-				<td>面接日</td>
+				<td><font size="5">面接日</font></td>
 				<td><input type="date" name="interviewdt">
-					 <script src="build/kalendae.standalone.js"
+					 <script src="js/kalendae.standalone.js"
 						type="text/javascript" charset="utf-8"></script></td>
 
 			</tr>
 			<tr>
-				<td>職業紹介者ID</td>
-				<td><input type="text" name="staffid" size="4"></td>
+				<td><font size="5">職業紹介者ID</font></td>
+				<td><input type="text" name="staffid" size="4" value="<c:out value="${ staff.id }" />"></td>
 
 			</tr>
 			<tr>
-				<td>備考欄</td>
-				<td><textarea name="note" rows="5" cols="50"></textarea></td>
+				<td><font size="5">備考欄</font></td>
+				<td><textarea name="note" rows="7" cols="30"></textarea></td>
 
 			</tr>
 
 		</table>
+			<font size="5"><input class="main-b" type="submit" value="登録"></font>
 		</form>
-		<input type="submit" value="登録">
+
 
 
 
