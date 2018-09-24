@@ -20,7 +20,7 @@ import jp.or.adash.nexus.services.TodouhukenService;
 /**
  * Servlet implementation class JobSeekerRegistDisplay
  */
-@WebServlet("/jobseeker-disp")
+@WebServlet("/web/jobseeker-disp")
 public class JobSeekerRegistDisplay extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

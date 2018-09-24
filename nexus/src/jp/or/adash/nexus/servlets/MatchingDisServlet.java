@@ -16,7 +16,7 @@ import jp.or.adash.nexus.entity.Staff;
 /**
  * Servlet implementation class MatchingDisServlet
  */
-@WebServlet("/match-disp")
+@WebServlet("/web/match-disp")
 public class MatchingDisServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -39,7 +39,7 @@ public class MatchingDisServlet extends HttpServlet {
 		request.setAttribute("Staff", staff);
 
 		// JSPにフォワードする
-		request.getRequestDispatcher("matchingregist.jsp").forward(request, response);
+		request.getRequestDispatcher("/matchingregist.jsp").forward(request, response);
 	}
 
 }

@@ -17,7 +17,7 @@
 <p>ご利用ありがとうございました。</p>
 </div>
 <div>
-<a href="./stafflogin.jsp">ログイン画面へ</a>
+<a href="/nexus/top">ログイン画面へ</a>
 </div>
 </div>
 

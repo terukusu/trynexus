@@ -52,6 +52,8 @@ public class LoginServlet extends HttpServlet {
 		if(userData != null) {
 			 //0 認証情報を格納する
 		      session.setAttribute("UserData", userData);
+		      // メニューバーの名前用にStaffにuserDataを格納
+			  request.setAttribute("Staff", userData);
 		      //0　メインjspにフォワード
 		      request.getRequestDispatcher("/stafftop.jsp").
 		      forward(request, response);

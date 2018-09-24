@@ -15,7 +15,7 @@ import jp.or.adash.nexus.services.TodouhukenService;
 /**
  * Servlet implementation class TodouhukenListServlet
  */
-@WebServlet("/todouhuken-list")
+@WebServlet("/web/todouhuken-list")
 public class TodouhukenListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

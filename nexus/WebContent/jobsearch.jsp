@@ -9,30 +9,30 @@
 	rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p"
 	rel="stylesheet" type="text/css" />
-<link href="css/bootstrap-reboot.css" rel="stylesheet" type="text/css" />
-<link href="css/common.css" rel="stylesheet" type="text/css" />
-<link href="css/header.css" rel="stylesheet" type="text/css" />
-<link href="css/footer.css" rel="stylesheet" type="text/css" />
-<link href="css/job_search.css" rel="stylesheet" type="text/css" />
+<link href="../css/bootstrap-reboot.css" rel="stylesheet" type="text/css" />
+<link href="../css/common.css" rel="stylesheet" type="text/css" />
+<link href="../css/header.css" rel="stylesheet" type="text/css" />
+<link href="../css/footer.css" rel="stylesheet" type="text/css" />
+<link href="../css/job_search.css" rel="stylesheet" type="text/css" />
 <title>求人検索項目</title>
 </head>
 <body>
 	<!-- ヘッダー　-->
 <header>
   <section>
-    <h1 class="logo"><a href="./stafftop.jsp">LOGO</a></h1>
+    <h1 class="logo"><a href="/nexus/web/staff-top">LOGO</a></h1>
     <nav>
       <ul class="mainnavi">
-        <li><a href="./job-search"><i class="fas fa-home"></i>検索</a></li>
+        <li><a href="/nexus/web/job-search"><i class="fas fa-home"></i>検索</a></li>
         <li>
-          <a href="./jobseeker-list"><i class="fas fa-search"></i>登録&amp;閲覧</a>
+          <a href="/nexus/web/jobseeker-list"><i class="fas fa-search"></i>登録&amp;閲覧</a>
           <ul class="drop-menu">
-            <li><a href="./kyujin-disp">求人情報<i class="fas fa-angle-right"></i></a></li>
-            <li><a href="./jobseeker-list">求職者情報<i class="fas fa-angle-right"></i></a></li>
-            <li><a href="./match-disp">マッチング登録<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="/nexus/web/kyujin-disp">求人情報<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="/nexus/web/jobseeker-list">求職者情報<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="/nexus/web/match-disp">マッチング登録<i class="fas fa-angle-right"></i></a></li>
           </ul>
         </li>
-        <li><a href="./account-list"><i class="far fa-bookmark"></i>管理</a></li>
+        <li><a href="/nexus/web/account-list"><i class="far fa-bookmark"></i>管理</a></li>
       </ul>
     </nav>
     <div class="user">
@@ -40,7 +40,7 @@
         <div class="user__name">
           <a href="#"><c:out value="${ Staff.name }" /><i class="fas fa-ellipsis-v"></i></a>
           <ul class="drop-menu">
-            <li><a href="./logout">ログアウト<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="/nexus/web/logout">ログアウト<i class="fas fa-angle-right"></i></a></li>
           </ul>
         </div>
       </div>
@@ -50,7 +50,7 @@
 	<main> <!--　求人検索項目 -->
 	<div id="job_search">
 		<h3 style="float: none;">求人検索項目</h3>
-		<form action="./job-search" method="post">
+		<form action="/nexus/web/job-search" method="post">
 			<div class="listbox2">
 				<h4 class="word">職種をフリーワード検索</h4>
 				<textarea class="word" name="job" cols="60" rows="3"
@@ -168,7 +168,7 @@
 
 					<tr>
 						<td>
-							<form method="get" action="./kyujin-disp">
+							<form method="get" action="/nexus/web/kyujin-disp">
 								<input type="hidden" name="no" value="${ SimpleKyujin.no }">
 									<input type="submit" value="詳細"></form>
 						</td>

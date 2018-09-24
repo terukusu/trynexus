@@ -11,15 +11,12 @@
 <title>マッチング結果登録</title>
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" >
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
-<link href="css/bootstrap-reboot.css" rel="stylesheet">
-<link href="css/common.css" rel="stylesheet">
-<link href="css/header.css" rel="stylesheet">
-<link href="css/footer.css" rel="stylesheet">
+<link href="../css/bootstrap-reboot.css" rel="stylesheet">
+<link href="../css/common.css" rel="stylesheet">
+<link href="../css/header.css" rel="stylesheet">
+<link href="../css/footer.css" rel="stylesheet">
 <!-- <link href="css/ootuka.css" rel="stylesheet"> -->
-<link href="css/matchingregist.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
+<link href="../css/matchingregist.css" rel="stylesheet">
 
 </head>
 
@@ -27,19 +24,19 @@
 
 <header>
   <section>
-    <h1 class="logo"><a href="./stafftop.jsp">LOGO</a></h1>
+    <h1 class="logo"><a href="/nexus/web/staff-top">LOGO</a></h1>
     <nav>
       <ul class="mainnavi">
-        <li><a href="./job-search"><i class="fas fa-home"></i>検索</a></li>
+        <li><a href="/nexus/web/job-search"><i class="fas fa-home"></i>検索</a></li>
         <li>
-          <a href="./jobseeker-list"><i class="fas fa-search"></i>登録&amp;閲覧</a>
+          <a href="/nexus/web/jobseeker-list"><i class="fas fa-search"></i>登録&amp;閲覧</a>
           <ul class="drop-menu">
-            <li><a href="./kyujin-disp">求人情報<i class="fas fa-angle-right"></i></a></li>
-            <li><a href="./jobseeker-list">求職者情報<i class="fas fa-angle-right"></i></a></li>
-            <li><a href="./match-disp">マッチング登録<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="/nexus/web/kyujin-disp">求人情報<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="/nexus/web/jobseeker-list">求職者情報<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="/nexus/web/match-disp">マッチング登録<i class="fas fa-angle-right"></i></a></li>
           </ul>
         </li>
-        <li><a href="./account-list"><i class="far fa-bookmark"></i>管理</a></li>
+        <li><a href="/nexus/web/account-list"><i class="far fa-bookmark"></i>管理</a></li>
       </ul>
     </nav>
     <div class="user">
@@ -47,7 +44,7 @@
         <div class="user__name">
           <a href="#"><c:out value="${ Staff.name }" /><i class="fas fa-ellipsis-v"></i></a>
           <ul class="drop-menu">
-            <li><a href="./logout">ログアウト<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="/nexus/web/logout">ログアウト<i class="fas fa-angle-right"></i></a></li>
           </ul>
         </div>
       </div>
@@ -67,7 +64,7 @@
 	</ul>
 
 
-<form method="post" action="./match-regist">
+<form method="post" action="/nexus/web/match-regist">
 
 
 
@@ -85,20 +82,18 @@
 				<td><font size="5">求人No</font></td>
 				<td>
 				<input type="text" name="kyujinno" size="14">
-				<input type="submit" value="求人No一覧" onclick="window.open('http://localhost:8080/nexus/jobsearchservlet')"></td>
+				<input type="submit" value="求人No一覧" onclick="window.open('http://localhost:8080/nexus/web/job-search')"></td>
 
 			</tr>
 			<tr>
 				<td><font size="5">求職者No</font></td>
 				<td><input type="text" name="jobseekerid" size="8">
-				<input type="submit" value="求職者一覧" onclick="window.open('http://localhost:8080/nexus/jobseekerservlet')"></td>
+				<input type="submit" value="求職者一覧" onclick="window.open('http://localhost:8080/nexus/web/jobseeker-list')"></td>
 
 			</tr>
 			<tr>
 				<td><font size="5">入社日</font></td>
-				<td><input type="date" name="enterdt">
-					<script src="js/kalendae.standalone.js"
-						type="text/javascript" charset="utf-8"></script></td>
+				<td><input type="date" name="enterdt"></td>
 
 			</tr>
 			<tr>
@@ -112,9 +107,7 @@
 			</tr>
 			<tr>
 				<td><font size="5">面接日</font></td>
-				<td><input type="date" name="interviewdt">
-					 <script src="js/kalendae.standalone.js"
-						type="text/javascript" charset="utf-8"></script></td>
+				<td><input type="date" name="interviewdt"></td>
 
 			</tr>
 			<tr>

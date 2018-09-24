@@ -20,7 +20,7 @@ import jp.or.adash.nexus.services.KyujinService;
 /**
  * Servlet implementation class KyujinInsertServlet
  */
-@WebServlet("/kyujin-insert")
+@WebServlet("/web/kyujin-insert")
 public class KyujinInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

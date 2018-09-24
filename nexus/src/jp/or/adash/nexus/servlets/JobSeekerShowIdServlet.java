@@ -20,7 +20,7 @@ import jp.or.adash.nexus.services.JobSeekerService;
 /**
  * Servlet implementation class JobSeekerShowIdServlet
  */
-@WebServlet("/jobseeker-showid")
+@WebServlet("/web/jobseeker-showid")
 public class JobSeekerShowIdServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String js_id;

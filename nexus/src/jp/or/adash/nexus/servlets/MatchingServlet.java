@@ -22,7 +22,7 @@ import jp.or.adash.nexus.services.MatchingService;
 /**
  * Servlet implementation class MaServlet
  */
-@WebServlet("/match-regist")
+@WebServlet("/web/match-regist")
 public class MatchingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

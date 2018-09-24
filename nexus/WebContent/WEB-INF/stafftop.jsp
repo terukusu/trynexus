@@ -9,13 +9,6 @@
 <title>実習</title>
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"rel="stylesheet" >
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
-<link href="../css/bootstrap-reboot.css" rel="stylesheet">
-<link href="../css/applicantlist.css" rel="stylesheet">
-<link href="../css/common.css" rel="stylesheet">
-<link href="../css/header.css" rel="stylesheet">
-<link href="../css/footer.css" rel="stylesheet">
-<link href="../css/stafftop.css" rel="stylesheet">
-<!-- URLの階層が変わるためリンクを２種類用意している -->
 <link href="css/bootstrap-reboot.css" rel="stylesheet">
 <link href="css/applicantlist.css" rel="stylesheet">
 <link href="css/common.css" rel="stylesheet">
@@ -27,7 +20,7 @@
 
 <header>
   <section>
-    <h1 class="logo"><a href="/nexus/web/staff-top">LOGO</a></h1>
+    <h1 class="logo"><a href="/nexus/web/top">LOGO</a></h1>
     <nav>
       <ul class="mainnavi">
         <li><a href="/nexus/web/job-search"><i class="fas fa-home"></i>検索</a></li>

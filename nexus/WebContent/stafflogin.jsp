@@ -21,7 +21,7 @@
     <p style="color:red">
     ${message}
     </p>
-    <form action="./login" method="POST">
+    <form action="/nexus/login" method="POST">
     <table>
     	<tr>
 			<th rowspan="2">ID</th>
@@ -47,7 +47,7 @@
 
     <!--ログインできないとき -->
 	<div>
-		<a href="./message.jsp">ログインできない／アカウントをお持ちでない場合</a>
+		<a href="/nexus/login-message">ログインできない／アカウントをお持ちでない場合</a>
 	</div>
 </div><!--　コンテナ終了-->
 <body>

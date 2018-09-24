@@ -14,7 +14,7 @@ import jp.or.adash.nexus.services.AccountEditService;
 /**
  * Servlet implementation class AccountEditDisplayServlet
  */
-@WebServlet("/account-editcomp")
+@WebServlet("/web/account-editcomp")
 public class AccountEditCompletionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -47,7 +47,7 @@ public class AccountEditCompletionServlet extends HttpServlet {
 		request.setAttribute("Staff", staff);
 		request.setAttribute("messages", service.getMessages());
 		// 3.JSPにフォワードする
-		request.getRequestDispatcher("./accounteditcompletion.jsp").forward(request, response);
+		request.getRequestDispatcher("/accounteditcompletion.jsp").forward(request, response);
 
 	}
 	/**

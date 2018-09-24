@@ -16,7 +16,7 @@ import jp.or.adash.nexus.services.AccountListService;
 /**
  * Servlet implementation class AccountListServlet
  */
-@WebServlet("/account-list")
+@WebServlet("/web/account-list")
 public class AccountListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -44,7 +44,7 @@ public class AccountListServlet extends HttpServlet {
 		request.setAttribute("Staff", staff);
 
 		// 3.JSPにフォワードする
-		request.getRequestDispatcher("./account.jsp").forward(request, response);
+		request.getRequestDispatcher("/account.jsp").forward(request, response);
 	}
 
 	/**
