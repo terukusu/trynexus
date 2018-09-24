@@ -33,7 +33,7 @@ public class Transaction {
 /*
 				// 接続文字列を生成する
 				StringBuffer connStrBuffer = new StringBuffer();
-				connStrBuffer.append("jdbc:mysql://172.20.76.252:3306/kawasaki");
+				connStrBuffer.append("jdbc:mysql://172.20.76.252:3306/kashiwagi");
 				connStrBuffer.append("?");
 				connStrBuffer.append("useUnicode=true");
 				connStrBuffer.append("&amp;characterEncoding=utf8");
@@ -43,7 +43,7 @@ public class Transaction {
 
 				// データベース接続を開始する
 				connection = DriverManager.getConnection(
-						connStrBuffer.toString(), "kawasaki", "pgJav@1807");
+						connStrBuffer.toString(), "kashiwagi", "pgJav@1807");
 */
 			} catch (SQLException|NamingException e) {
 				throw new TransactionException(e);

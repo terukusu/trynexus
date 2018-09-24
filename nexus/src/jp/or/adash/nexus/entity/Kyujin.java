@@ -64,8 +64,8 @@ public class Kyujin {
 	* hiddenetc その他非公開情報
 	* createdt 新規登録日
 	* createuserid 新規登録ユーザー
-	* upDatedt 最終更新日
-	* upDateuserid 最終更新ユーザー
+	* updatedt 最終更新日
+	* updateuserid 最終更新ユーザー
 	* deleteflag 削除フラグ
 	 */
 	private String no;
@@ -121,8 +121,8 @@ public class Kyujin {
 	private String hiddenetc;
 	private Date createdt;
 	private String createuserid;
-	private Date upDatedt;
-	private String upDateuserid;
+	private Date updatedt;
+	private String updateuserid;
 	private String deleteflag;
 
 	public Kyujin(String no, Date receptiondt, Date perioddt, String companyno, String addresscd, String jobsmallcd1,
@@ -135,7 +135,7 @@ public class Kyujin {
 			int endtime, int establishdt, long capital, String companyfeature, String tantouyakushoku,
 			String tantoukana, String tantou, String tantoustaff_id, String applicationform, String background,
 			String hiddensex, int hiddenagemin, int hiddenagemax, String hiddenetc, Date createdt,
-			String createuserid, Date upDatedt, String upDateuserid, String deleteflag) {
+			String createuserid, Date updatedt, String updateuserid, String deleteflag) {
 		super();
 		this.no = no;
 		this.receptiondt = receptiondt;
@@ -190,8 +190,8 @@ public class Kyujin {
 		this.hiddenetc = hiddenetc;
 		this.createdt = createdt;
 		this.createuserid = createuserid;
-		this.upDatedt = upDatedt;
-		this.upDateuserid = upDateuserid;
+		this.updatedt = updatedt;
+		this.updateuserid = updateuserid;
 		this.deleteflag = deleteflag;
 	}
 
@@ -621,18 +621,18 @@ public class Kyujin {
 
 	/**
 	 * 最終更新日を返す
-	 * @return upDatedt
+	 * @return updatedt
 	 */
-	public Date getupDatedt() {
-		return upDatedt;
+	public Date getupdatedt() {
+		return updatedt;
 	}
 
 	/**
 	 * 最終更新ユーザーを返す
-	 * @return upDateuserid
+	 * @return updateuserid
 	 */
-	public String getupDateuserid() {
-		return upDateuserid;
+	public String getupdateuserid() {
+		return updateuserid;
 	}
 
 	/**
@@ -648,6 +648,8 @@ public class Kyujin {
 	 * @param no 求人Ｎo.
 	 */
 	public void setNo(String no) {
+		// TODO 自動生成されたメソッド・スタブ
 		this.no = no;
 	}
+
 }
