@@ -17,7 +17,7 @@ import jp.or.adash.nexus.services.AccountService;
 /**
  * Servlet implementation class AccountRegistServlets
  */
-@WebServlet("/web/account-regist")
+@WebServlet("/account-regist")
 public class AccountRegistServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

@@ -20,7 +20,7 @@ import jp.or.adash.nexus.services.KyujinService;
 /**
  * Servlet implementation class KyujinInsertServlet
  */
-@WebServlet("/web/kyujin-insert")
+@WebServlet("/kyujin-insert")
 public class KyujinInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -179,6 +179,7 @@ public class KyujinInsertServlet extends HttpServlet {
 		service.insertKyujin(kyujin);
 
 		// 処理結果メッセージをリクエストに格納する
+		request.setAttribute("Staff", staff);
 //		request.setAttribute("kyujin", kyujin);
 		request.setAttribute("messages", service.getMessages());
 

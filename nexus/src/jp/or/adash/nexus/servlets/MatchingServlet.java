@@ -22,7 +22,7 @@ import jp.or.adash.nexus.services.MatchingService;
 /**
  * Servlet implementation class MaServlet
  */
-@WebServlet("/web/match-regist")
+@WebServlet("/match-regist")
 public class MatchingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -108,6 +108,7 @@ public class MatchingServlet extends HttpServlet {
 		}
 */
 		//1  処理結果メッセージをリクエストに格納する
+		request.setAttribute("Staff", staff);
 		request.setAttribute("matching", matching);
 		request.setAttribute("messages", service.getMessages());
 

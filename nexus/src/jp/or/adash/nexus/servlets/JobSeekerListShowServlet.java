@@ -9,14 +9,16 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import jp.or.adash.nexus.entity.Jobseeker_simple_entity;
+import jp.or.adash.nexus.entity.Staff;
 import jp.or.adash.nexus.services.JobSeekerService;
 
 /**
  * Servlet implementation class JobSeekerServlet
  */
-@WebServlet("/web/jobseeker-list")
+@WebServlet("/jobseeker-list")
 public class JobSeekerListShowServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -32,11 +34,15 @@ public class JobSeekerListShowServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 1.求職者情報一覧を取得する
+		HttpSession session = request.getSession(true);
+		Staff staff = (Staff) session.getAttribute("UserData");
+
+    	// 1.求職者情報一覧を取得する
 		JobSeekerService service = new JobSeekerService();
 		List<Jobseeker_simple_entity> list = service.getJobSeekerList();
 
 		// 2.求職者情報をリクエストに格納する
+		request.setAttribute("Staff", staff);
 		request.setAttribute("list", list);
 		// 3.JSPにフォワードする
 		request.getRequestDispatcher("/applicant_list.jsp").forward(request, response);

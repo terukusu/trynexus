@@ -23,16 +23,16 @@
     <h1 class="logo"><a href="./stafftop.jsp">LOGO</a></h1>
     <nav>
       <ul class="mainnavi">
-        <li><a href="/web/job-search"><i class="fas fa-home"></i>検索</a></li>
+        <li><a href="./job-search"><i class="fas fa-home"></i>検索</a></li>
         <li>
-          <a href="/web/jobseeker-list"><i class="fas fa-search"></i>登録&amp;閲覧</a>
+          <a href="./jobseeker-list"><i class="fas fa-search"></i>登録&amp;閲覧</a>
           <ul class="drop-menu">
-            <li><a href="/web/kyujin-disp">求人情報<i class="fas fa-angle-right"></i></a></li>
-            <li><a href="/web/jobseeker-list">求職者情報<i class="fas fa-angle-right"></i></a></li>
-            <li><a href="/web/match-disp">マッチング登録<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="./kyujin-disp">求人情報<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="./jobseeker-list">求職者情報<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="./match-disp">マッチング登録<i class="fas fa-angle-right"></i></a></li>
           </ul>
         </li>
-        <li><a href="/web/account-list"><i class="far fa-bookmark"></i>管理</a></li>
+        <li><a href="./account-list"><i class="far fa-bookmark"></i>管理</a></li>
       </ul>
     </nav>
     <div class="user">
@@ -40,7 +40,7 @@
         <div class="user__name">
           <a href="#"><c:out value="${ UserData.name }" /><i class="fas fa-ellipsis-v"></i></a>
           <ul class="drop-menu">
-            <li><a href="/web/logout">ログアウト<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="./logout">ログアウト<i class="fas fa-angle-right"></i></a></li>
           </ul>
         </div>
       </div>
@@ -62,12 +62,12 @@
 		</th>
         </tr>
         <tr>
-        <td><a href="./jobsearch">■求人検索</a></td>
+        <td><a href="./job-search">■求人検索</a></td>
         </tr>
     </table>
 	</div>
 
-    <!-- 登録＆閲覧メニュー　※URLはダミー　-->
+    <!-- 登録＆閲覧メニュー -->
 	<div>
     <table class="staff-table">
     	<tr>
@@ -76,18 +76,16 @@
 		</th>
         </tr>
         <tr>
-
-        <td><a href="./detail">■求人情報</a></td>
-
+        <td><a href="./kyujin-disp">■求人情報</a></td>
         </tr>
         <tr>
-        <td><a href="./jobseekerservlet">■求職者情報</a></td>
+        <td><a href="./jobseeker-list">■求職者情報</a></td>
         </tr>
         <tr>
-        <td>■企業マスター</td>
+      <!--未実装   <td>■企業マスター</td> -->
         </tr>
         <tr>
-        <td><a href="./matchingservlet">■マッチング登録</a></td>
+        <td><a href="./match-disp">■マッチング登録</a></td>
         </tr>
     </table>
 	</div>
@@ -100,7 +98,7 @@
 		</th>
         </tr>
         <tr>
-        <td>■アカウント</td>
+        <td><a href="./account-list">■アカウント</a></td>
         </tr>
     </table>
 	</div>
@@ -108,7 +106,7 @@
 
 	<div>
 	<div class="clear">
-	<form name= "logout" method="GET" action="/web/logout">
+	<form name= "logout" method="GET" action="./logout">
     <input class="main-b" type="submit" name="close" value="ログアウト">
     </form>
 	</div>

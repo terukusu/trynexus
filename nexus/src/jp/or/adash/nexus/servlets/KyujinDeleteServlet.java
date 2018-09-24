@@ -16,7 +16,7 @@ import jp.or.adash.nexus.services.KyujinService;
 /**
  * Servlet implementation class KyujinUpdateServlet
  */
-@WebServlet("/web/kyujin-delete")
+@WebServlet("/kyujin-delete")
 public class KyujinDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -52,6 +52,8 @@ public class KyujinDeleteServlet extends HttpServlet {
 		service.deleteKyujin(no, "2222");
 
 		// 処理結果メッセージをリクエストに格納する
+
+		request.setAttribute("Staff", staff);
 		request.setAttribute("messages", service.getMessages());
 
 		// 1.8 JSPにフォワード

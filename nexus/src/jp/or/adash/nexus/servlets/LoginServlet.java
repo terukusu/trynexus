@@ -16,7 +16,7 @@ import jp.or.adash.nexus.services.LoginService;
 /**
  * Servlet implementation class loginServlet
  */
-@WebServlet("/web/login")
+@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

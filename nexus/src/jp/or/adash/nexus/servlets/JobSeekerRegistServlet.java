@@ -10,8 +10,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import jp.or.adash.nexus.entity.JobSeeker;
+import jp.or.adash.nexus.entity.Staff;
 import jp.or.adash.nexus.services.JobSeekerService;
 
 
@@ -19,7 +21,7 @@ import jp.or.adash.nexus.services.JobSeekerService;
 /**
  * Servlet implementation class JobSeekerRegistServlet
  */
-@WebServlet("/web/jobseeker-regist")
+@WebServlet("/jobseeker-regist")
 public class JobSeekerRegistServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -37,6 +39,10 @@ public class JobSeekerRegistServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession(true);
+		Staff staff = (Staff) session.getAttribute("UserData");
+
+		request.setAttribute("Staff", staff);
 		/*
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
@@ -166,6 +172,8 @@ public class JobSeekerRegistServlet extends HttpServlet {
 
 
 			//処理結果メッセージをリクエストに格納する
+
+			request.setAttribute("Staff", staff);
 			request.setAttribute("seeker", seeker);
 			request.setAttribute("messages", service.getMessages());
 

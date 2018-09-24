@@ -8,8 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import jp.or.adash.nexus.entity.Kyujin;
+import jp.or.adash.nexus.entity.Staff;
 import jp.or.adash.nexus.entity.Todouhuken;
 import jp.or.adash.nexus.services.KyujinService;
 import jp.or.adash.nexus.services.TodouhukenService;
@@ -19,7 +21,7 @@ import jp.or.adash.nexus.services.TodouhukenService;
 /**
  * 求人登録画面初期表示サーブレット
  */
-@WebServlet("/web/kyujin-disp")
+@WebServlet("/kyujin-disp")
 public class KyujinRegistDisplayServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -34,6 +36,10 @@ public class KyujinRegistDisplayServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		HttpSession session = request.getSession(true);
+		Staff staff = (Staff) session.getAttribute("UserData");
+
 		// 1.1 リクエストから求人コードを取得
 //		String no = "12457-44446666"; //仮の値
 		String no = null;
@@ -58,6 +64,7 @@ public class KyujinRegistDisplayServlet extends HttpServlet {
 		List<Todouhuken> list = service.getTodouhukenList();
 		// 2.都道府県リストをリクエストに格納する
 		request.setAttribute("list",list);
+		request.setAttribute("Staff", staff);
 
 		// 1.4 JSPにフォワードする
 		request.getRequestDispatcher("/jobregist.jsp")

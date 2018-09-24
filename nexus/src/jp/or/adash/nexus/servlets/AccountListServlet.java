@@ -16,7 +16,7 @@ import jp.or.adash.nexus.services.AccountListService;
 /**
  * Servlet implementation class AccountListServlet
  */
-@WebServlet("/web/account-list")
+@WebServlet("/account-list")
 public class AccountListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

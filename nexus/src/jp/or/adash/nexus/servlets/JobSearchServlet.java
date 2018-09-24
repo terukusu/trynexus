@@ -9,15 +9,16 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import jp.or.adash.nexus.entity.SimpleKyujin;
+import jp.or.adash.nexus.entity.Staff;
 import jp.or.adash.nexus.services.JobSearchService;
-
 
 /**
  * Servlet implementation class KyujinServlet
  */
-@WebServlet("/web/job-search")
+@WebServlet("/job-search")
 public class JobSearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -34,6 +35,9 @@ public class JobSearchServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		HttpSession session = request.getSession(true);
+		Staff staff = (Staff) session.getAttribute("UserData");
+
 		// 1.1 リクエストから職種を取得
 		String job = null;
 		job = request.getParameter("job");
@@ -77,8 +81,7 @@ public class JobSearchServlet extends HttpServlet {
 
 		// 1.10　就業場所コードを取得
 		String addresscd = null;
-			addresscd = request.getParameter("addresscd");
-
+		addresscd = request.getParameter("addresscd");
 
 		// 1.11 雇用形態コードを取得
 		int koyoukeitaicd = -1;
@@ -87,15 +90,17 @@ public class JobSearchServlet extends HttpServlet {
 			koyoukeitaicd = Integer.parseInt(request.getParameter("koyoukeitaicd"));
 		}
 
-
 		// 2.求人票の取得
 
 		List<SimpleKyujin> kyujinlist = new ArrayList<SimpleKyujin>();
-			JobSearchService service = new JobSearchService();
-			kyujinlist = service.getKyujin(job, addresscd,jobsmallcd1, jobsmallcd2, jobsmallcd3, joblargecd1, joblargecd2, joblargecd3,
-					salarymin, salarymax ,koyoukeitaicd);
+		JobSearchService service = new JobSearchService();
+		kyujinlist = service.getKyujin(job, addresscd, jobsmallcd1, jobsmallcd2, jobsmallcd3, joblargecd1, joblargecd2,
+				joblargecd3,
+				salarymin, salarymax, koyoukeitaicd);
 
 		// 1.3 リクエストに求人票情報をセットする
+
+		request.setAttribute("Staff", staff);
 		request.setAttribute("kyujin", kyujinlist);
 
 		// 1.4 JSPにフォワードする
@@ -106,7 +111,8 @@ public class JobSearchServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
