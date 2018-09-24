@@ -1,4 +1,4 @@
-package jp.or.adash.nexus.servlets;
+package jp.or.adash.nexus.services;
 
 import java.io.IOException;
 import java.util.ArrayList;
