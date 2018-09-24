@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import jp.or.adash.nexus.entity.SimpleKyujin;
-import jp.or.adash.nexus.services.JobSerarchService;
+import jp.or.adash.nexus.services.JobSearchService;
+
 
 /**
  * Servlet implementation class KyujinServlet
@@ -88,15 +89,14 @@ public class JobSearchServlet extends HttpServlet {
 
 
 		// 2.求人票の取得
-		List<SimpleKyujin> kj = new ArrayList<SimpleKyujin>();
-		if (salarymin >= 0 && salarymax >= 0  && koyoukeitaicd >= 0) {
-			JobSerarchService service = new JobSerarchService();
-			kj = service.getKyujin(job, addresscd,jobsmallcd1, jobsmallcd2, jobsmallcd3, joblargecd1, joblargecd2, joblargecd3,
+
+		List<SimpleKyujin> kyujinlist = new ArrayList<SimpleKyujin>();
+			JobSearchService service = new JobSearchService();
+			kyujinlist = service.getKyujin(job, addresscd,jobsmallcd1, jobsmallcd2, jobsmallcd3, joblargecd1, joblargecd2, joblargecd3,
 					salarymin, salarymax ,koyoukeitaicd);
-		}
 
 		// 1.3 リクエストに求人票情報をセットする
-		request.setAttribute("kyujin", kj);
+		request.setAttribute("kyujin", kyujinlist);
 
 		// 1.4 JSPにフォワードする
 		request.getRequestDispatcher("/jobsearch.jsp")

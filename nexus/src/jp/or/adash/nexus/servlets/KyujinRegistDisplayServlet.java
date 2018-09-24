@@ -1,6 +1,7 @@
 package jp.or.adash.nexus.servlets;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import jp.or.adash.nexus.entity.Kyujin;
+import jp.or.adash.nexus.entity.Todouhuken;
 import jp.or.adash.nexus.services.KyujinService;
+import jp.or.adash.nexus.services.TodouhukenService;
 
 
 
@@ -32,7 +35,9 @@ public class KyujinRegistDisplayServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 1.1 リクエストから求人コードを取得
-		String no = "12457-44446666"; //仮の値
+//		String no = "12457-44446666"; //仮の値
+		String no = null;
+
 		if (!"".equals(request.getParameter("no"))
 				&& request.getParameter("no") != null) {
 			no = (request.getParameter("no"));
@@ -48,9 +53,17 @@ public class KyujinRegistDisplayServlet extends HttpServlet {
 		// 1.3 リクエストに求人情報をセットする
 		request.setAttribute("kyujin", kyujin);
 
+		// 1.都道府県リストを取得する
+		TodouhukenService service = new TodouhukenService();
+		List<Todouhuken> list = service.getTodouhukenList();
+		// 2.都道府県リストをリクエストに格納する
+		request.setAttribute("list",list);
+
 		// 1.4 JSPにフォワードする
 		request.getRequestDispatcher("/jobregist.jsp")
 			.forward(request, response);
+
+
 	}
 
 }

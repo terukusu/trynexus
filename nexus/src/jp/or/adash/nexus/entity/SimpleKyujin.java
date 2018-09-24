@@ -1,6 +1,4 @@
 package jp.or.adash.nexus.entity;
-
-
 /*
  * 簡易型求人表示用求人データオブジェクト
  */

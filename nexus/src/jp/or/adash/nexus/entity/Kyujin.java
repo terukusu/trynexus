@@ -125,6 +125,10 @@ public class Kyujin {
 	private String updateuserid;
 	private String deleteflag;
 
+	public Kyujin() {
+
+	}
+
 	public Kyujin(String no, Date receptiondt, Date perioddt, String companyno, String addresscd, String jobsmallcd1,
 			String jobsmallcd2, String jobsmallcd3, String joblargecd1, String joblargecd2, String joblargecd3,
 			String jobcategorysmallcd, String jobcategorylargecd, String companykana,
@@ -623,7 +627,7 @@ public class Kyujin {
 	 * 最終更新日を返す
 	 * @return updatedt
 	 */
-	public Date getupdatedt() {
+	public Date getUpdatedt() {
 		return updatedt;
 	}
 
@@ -631,7 +635,7 @@ public class Kyujin {
 	 * 最終更新ユーザーを返す
 	 * @return updateuserid
 	 */
-	public String getupdateuserid() {
+	public String getUpdateuserid() {
 		return updateuserid;
 	}
 

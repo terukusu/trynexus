@@ -8,7 +8,8 @@ import jp.or.adash.nexus.dao.JobSearchDao;
 import jp.or.adash.nexus.entity.SimpleKyujin;
 import jp.or.adash.nexus.utils.dao.Transaction;
 
-public class JobSerarchService {
+public class JobSearchService {
+
 	/**
 	 * トランザクションオブジェクト
 	 */
@@ -22,7 +23,7 @@ public class JobSerarchService {
 	/**
 	 * コンストラクタ
 	 */
-	public JobSerarchService() {
+	public JobSearchService() {
 		transaction = new Transaction();
 		messages = new ArrayList<String>();
 	}
