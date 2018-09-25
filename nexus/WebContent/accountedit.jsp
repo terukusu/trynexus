@@ -67,11 +67,11 @@
 			</tr>
 			<tr>
 				<td>氏名</td>
-				<td><input type="text" name="name" value="<c:out value="${ Staff.name }" />"required></td>
+				<td><input type="text" name="name" value="<c:out value="${ Staff.name }" />"></td>
 			</tr>
 			<tr>
 				<td>氏名（かな）</td>
-				<td><input type="text" name="kana" value="<c:out value="${ Staff.kana }" />"required></td>
+				<td><input type="text" name="kana" value="<c:out value="${ Staff.kana }" />"></td>
 			</tr>
 			<tr>
 				<td>ユーザー権限</td>
@@ -82,7 +82,7 @@
 			</tr>
 			<tr>
 				<td>新しいパスワード</td>
-				<td><input type="text" name="password" value="<c:out value="${ Staff.password }"/>" required>
+				<td><input type="password" name="password" value="<c:out value="${ Staff.password }"/>" >
 				</td>
 			</tr>
 		</table>

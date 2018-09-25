@@ -151,7 +151,6 @@ public JobSeekerMain getJobseekermaininfo(String js_id) {
 	public boolean check(JobSeeker seeker) {
 		boolean result = true;		// チェック結果
 
-
 				// 求職者IDの値が入力されているか
 				if (seeker.getName().equals("")) {
 					messages.add("名前が入力されていません。");
@@ -252,7 +251,7 @@ public JobSeekerMain getJobseekermaininfo(String js_id) {
 				errMsg = DataCommons.chkiDigits(seeker.getHuyou(), 2);
 				messages.add(errMsg);
 
-				// 学歴の値が入力されているか
+				// 0学歴の値が入力されているか
 				if (seeker.getEducation().equals("")) {
 					messages.add("学歴が入力されていません。");
 					result = false;
@@ -346,16 +345,16 @@ public JobSeekerMain getJobseekermaininfo(String js_id) {
 					result = false;
 				}
 
-				//その他免許が入力されているかどうか
+				//0その他免許が入力されているかどうか
 				errMsg = DataCommons.chksDigits(seeker.getLicenseetc(), 200);
 				messages.add(errMsg);
 
-				//パソコンスキルが入力されているかどうか
+				//0パソコンスキルが入力されているかどうか
 				errMsg = DataCommons.chksDigits(seeker.getPasokonskill(), 200);
 				messages.add(errMsg);
 
 
-				//パソコンスキルが入力されているかどうか
+				//0パソコンスキルが入力されているかどうか
 				errMsg = DataCommons.chksDigits(seeker.getPasokonskill(), 200);
 				messages.add(errMsg);
 				// 担当職業紹介者IDの値が入力されているか

@@ -46,9 +46,11 @@
 <main>
 	<h2>アカウント登録</h2>
 	<ul>
+	  <p style="color:red">
 	<c:forEach var="message" items="${ messages }">
 		<li><c:out value="${ message }" /></li>
 	</c:forEach>
+	</p>
 	</ul>
 	<form action="/nexus/web/account-regist" method="post">
 		<table>

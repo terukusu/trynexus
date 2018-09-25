@@ -18,7 +18,6 @@ import jp.or.adash.nexus.services.AccountEditService;
 public class AccountEditCompletionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -32,24 +31,48 @@ public class AccountEditCompletionServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+		//0		アカウント更新情報を取得
 		String id = request.getParameter("id");
 		String name = request.getParameter("name");
 		String kana = request.getParameter("kana");
 		String authority = request.getParameter("authority");
 		String password = request.getParameter("password");
-		//0アカウント情報のオブジェクトを作成
+
+
+
+		//0		アカウント情報のオブジェクトを作成
 		Staff staff = new Staff(id, name, kana, authority, password,
 				null, null, null, null, null);
-		// 1.アカウントIDを元にアカウント情報を更新する。
+
+
+
+		//0		エラーチェック
 		AccountEditService service = new AccountEditService();
+		if (!service.errorsCheck(staff)) {
+			staff = service.getStaffAccount(id);
+			//0	アカウント情報をセット
+			request.setAttribute("staff", staff);
+			request.setAttribute("messages", service.getMessages());
+
+			//0	JSPにフォワード
+			 request.getRequestDispatcher("/accountedit.jsp").forward(request, response);
+			 //ここにjspを入力
+			return;
+		}
+
+
+
+		//0		アカウント情報を更新する。
 		service.updateStaff(staff);
-		// 2.アカウント情報をリクエストに格納する
+		//	0.アカウント情報をセット
 		request.setAttribute("Staff", staff);
 		request.setAttribute("messages", service.getMessages());
-		// 3.JSPにフォワードする
+		//0	JSPにフォワードする
 		request.getRequestDispatcher("/accounteditcompletion.jsp").forward(request, response);
 
 	}
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

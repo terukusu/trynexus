@@ -7,6 +7,7 @@ import java.util.List;
 import jp.or.adash.nexus.dao.AccountDao;
 import jp.or.adash.nexus.dao.SaibanDao;
 import jp.or.adash.nexus.entity.Staff;
+import jp.or.adash.nexus.utils.common.DataCommons;
 import jp.or.adash.nexus.utils.common.MessageCommons;
 import jp.or.adash.nexus.utils.dao.Transaction;
 
@@ -18,7 +19,10 @@ import jp.or.adash.nexus.utils.dao.Transaction;
  *
  */
 public class AccountService {
-
+	/**
+	 *エラーメッセージを格納するリスト
+	 */
+	private String errMsg = null;
 	/**
 	 * トランザクションオブジェクト
 	 */
@@ -110,6 +114,44 @@ public class AccountService {
 			transaction.close();
 		}
 
+
+		return result;
+	}
+
+	/**
+	 * アカウント情報の内容をチェックする
+	 * @param staff アカウント情報
+	 * @return 処理結果（true:成功、false:失敗）
+	 */
+	public boolean errorsCheck(Staff staff) {
+		boolean result = true; // チェック結果
+
+		//0名前空欄チェック
+		if (staff.getName().equals("")) {
+			messages.add("名前が入力されていません。");
+			result = false;
+		}
+		// 0ふりがな空欄チェック
+		if (staff.getKana().equals("")) {
+			messages.add("ふりがなが入力されていません。");
+			result = false;
+		}
+		// 0ひらがなチェック
+		errMsg = DataCommons.chkHiragana(staff.getKana());
+		if (errMsg != null) {
+			messages.add(errMsg);
+			result = false;
+		}
+		//0パスワード空欄チェック
+		if (staff.getPassword().equals("")) {
+			messages.add("パスワードが入力されていません。");
+			result = false;
+		}
+		String pass = staff.getPassword();
+		if(pass.length() <= 8) {
+			messages.add("パスワードは８文字以上で入力してください。");
+			result = false;
+		}
 
 		return result;
 	}
