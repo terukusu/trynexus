@@ -134,6 +134,19 @@
 					<option value="7">無期派遣パート</option>
 				</select>
 			</div>
+						<div class="listbox1">
+				<h4>路線</h4>
+				<select name="rosen" tabindex="5">
+					<option value="0"></option>
+					<option value="0">大阪地下鉄</option>
+					<option value="1">御堂筋線</option>
+					<option value="2">中央線</option>
+					<option value="3">JR大阪環状線</option>
+					<option value="4">近鉄線</option>
+					<option value="5">阪急線</option>
+					<option value="6">阪神線</option>
+				</select>
+			</div>
 			<!--隠し項目（年齢など他）-->
 			<input name="" type="hidden" value="" /> <input name=""
 				type="hidden" value="" />
