@@ -36,7 +36,13 @@ public class AccountService {
 		transaction = new Transaction();
 		messages = new ArrayList<String>();
 	}
-
+	/**
+	 * 処理結果メッセージを取得する
+	 * @return 処理結果メッセージ
+	 */
+	public List<String> getMessages() {
+		return messages;
+	}
 
 	/**
 	 * 登録完了メッセージ
@@ -61,25 +67,30 @@ public class AccountService {
 		boolean result = false;
 
 		try {
-			// データベース接続を開始する
+			// 0データベース接続を開始する
 			transaction.open();
 
-			// トランザクションを開始する
+			// 0トランザクションを開始する
 			transaction.beginTrans();
 
-			// 商品単価を取得する
-			AccountDao accountdao = new AccountDao(transaction);
+			/**
+			 * 探番Daoからidを所得 Staffオブジェクトにsetする
+			 */
 			SaibanDao saibandao = new SaibanDao(transaction);
+			int id = saibandao.getAccountId();
+			staff.setId(id);
 
 
+			/**
+			 * アカウント情報を登録
+			 */
+			AccountDao accountdao = new AccountDao(transaction);
 			int count = accountdao.insert(staff);
-
 			//countが返ってくる
 			if (count > 0) {
 				// 完了メッセージをセットする
 				messages.add(MSG_ACCOUNT_REGIST_COMPLETE);
 				result = true;
-
 			} else {
 				// エラーメッセージをセットする
 				messages.add(MSG_ACCOUNT_REGIST_FAILURE);
@@ -92,13 +103,13 @@ public class AccountService {
 		} catch(IOException e) {
 			// トランザクションをロールバックする
 			transaction.rollback();
-
 			// エラーメッセージをセットする
 			messages.add(MessageCommons.ERR_DB_CONNECT);
 		} finally {
 			// データベース接続をを終了する
 			transaction.close();
 		}
+
 
 		return result;
 	}

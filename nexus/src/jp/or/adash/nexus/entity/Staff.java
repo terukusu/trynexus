@@ -46,6 +46,14 @@ public class Staff {
 	}
 
 	/**
+	 *探番idをセットする。
+	 *
+	 */
+	public void setId(int id) {
+		this.id = String.valueOf(id);
+	}
+
+	/**
 	 * 職業紹介者IDを返す
 	 * @return id
 	 */

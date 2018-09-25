@@ -144,15 +144,16 @@ public class SaibanDao {
 		sql.append("select staffsaiban");
 		sql.append(" from saiban");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
-
-			// SQL文を実行する
+			int getsaiban = -1;
+			// SQL文を実行する  複数取れたレコードの中から
 			try (ResultSet rs = ps.executeQuery()) {
-				// 番号を返す
-				int getsaiban = rs.getInt("staffsaiban") + 1;
 
-				// インクリメントした値で　采番マスタ更新
-				update(getsaiban);
-
+				// 番号を返す　カーソルを１レコード目に移した
+				if(rs.next()) {
+					getsaiban = rs.getInt("staffsaiban") + 1;
+					// インクリメントした値で　采番マスタ更新
+					updateAccountId(getsaiban);
+				}
 				return getsaiban;
 
 			} catch (SQLException e) {
@@ -172,11 +173,11 @@ public class SaibanDao {
 
 		// SQL文を生成する
 		StringBuffer sql = new StringBuffer();
-		sql.append("update saiban set");
-		sql.append(" staffsaiban = saiban");
+		sql.append("update saiban set staffsaiban = ?");
+		//sql
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
-
-			// SQL文を実行する
+			ps.setInt(1, accountId);
+		// SQL文を実行する
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			throw new IOException(e);
