@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import jp.or.adash.nexus.entity.SimpleKyujin;
+import jp.or.adash.nexus.entity.Todouhuken;
 import jp.or.adash.nexus.services.JobSearchService;
+import jp.or.adash.nexus.services.TodouhukenService;
 
 
 /**
@@ -63,13 +65,13 @@ public class JobSearchServlet extends HttpServlet {
 		joblargecd3 = request.getParameter("joblargecd3");
 
 		// 1.8基本給下限を取得
-		int salarymin = -1;
+		int salarymin = 0;
 		if (!"".equals(request.getParameter("salarymin"))
 				&& request.getParameter("salarymin") != null) {
 			salarymin = Integer.parseInt(request.getParameter("salarymin"));
 		}
 		// 1.9 基本給上限を取得
-		int salarymax = -1;
+		int salarymax = 0;
 		if (!"".equals(request.getParameter("salarymax"))
 				&& request.getParameter("salarymax") != null) {
 			salarymax = Integer.parseInt(request.getParameter("salarymax"));
@@ -81,7 +83,7 @@ public class JobSearchServlet extends HttpServlet {
 
 
 		// 1.11 雇用形態コードを取得
-		int koyoukeitaicd = -1;
+		int koyoukeitaicd = 0;
 		if (!"".equals(request.getParameter("koyoukeitaicd"))
 				&& request.getParameter("koyoukeitaicd") != null) {
 			koyoukeitaicd = Integer.parseInt(request.getParameter("koyoukeitaicd"));
@@ -95,8 +97,13 @@ public class JobSearchServlet extends HttpServlet {
 			kyujinlist = service.getKyujin(job, addresscd,jobsmallcd1, jobsmallcd2, jobsmallcd3, joblargecd1, joblargecd2, joblargecd3,
 					salarymin, salarymax ,koyoukeitaicd);
 
+			List<Todouhuken> todouhukenlist = new ArrayList<Todouhuken>();
+			TodouhukenService service1 = new TodouhukenService();
+			todouhukenlist = service1.getTodouhukenList();
+
 		// 1.3 リクエストに求人票情報をセットする
 		request.setAttribute("kyujin", kyujinlist);
+		request.setAttribute("todouhuken", todouhukenlist);
 
 		// 1.4 JSPにフォワードする
 		request.getRequestDispatcher("/jobsearch.jsp")

@@ -18,35 +18,35 @@
 </head>
 <body>
 	<!-- ヘッダー　-->
-	<header> <section>
-	<h1 class="logo">
-		<a href="#">LOGO</a>
-	</h1>
-	<nav>
-	<ul class="mainnavi">
-		<li><a href="#"><i class="fas fa-home"></i>検索</a></li>
-		<li><a href="#"><i class="fas fa-search"></i>登録&amp;閲覧</a>
-			<ul class="drop-menu">
-				<li><a href="#">求人情報<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="#">求職者情報<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="#">企業マスタ<i class="fas fa-angle-right"></i></a></li>
-				<li><a href="#">マッチング履歴<i class="fas fa-angle-right"></i></a></li>
-			</ul></li>
-		<li><a href="#"><i class="far fa-bookmark"></i>管理</a></li>
-	</ul>
-	</nav>
-	<div class="user">
-		<div class="user__wrapper">
-			<!-- <div class="user__image"></div> -->
-			<div class="user__name">
-				<a href="#">山田 太郎<i class="fas fa-ellipsis-v"></i></a>
-				<ul class="drop-menu">
-					<li><a href="#">サインアウト<i class="fas fa-angle-right"></i></a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	</section> </header>
+<header>
+  <section>
+    <h1 class="logo"><a href="./stafftop.jsp">LOGO</a></h1>
+    <nav>
+      <ul class="mainnavi">
+        <li><a href="./jobsearch"><i class="fas fa-home"></i>検索</a></li>
+        <li>
+          <a href="./jobseekerservlet"><i class="fas fa-search"></i>登録&amp;閲覧</a>
+          <ul class="drop-menu">
+            <li><a href="./detail">求人情報<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="./jobseekerservlet">求職者情報<i class="fas fa-angle-right"></i></a></li>
+            <li><a href="./matchingdisservlet">マッチング登録<i class="fas fa-angle-right"></i></a></li>
+          </ul>
+        </li>
+        <li><a href="./AccountListServlet"><i class="far fa-bookmark"></i>管理</a></li>
+      </ul>
+    </nav>
+    <div class="user">
+      <div class="user__wrapper">
+        <div class="user__name">
+          <a href="#"><c:out value="${ Staff.name }" /><i class="fas fa-ellipsis-v"></i></a>
+          <ul class="drop-menu">
+            <li><a href="./logoutservlet">ログアウト<i class="fas fa-angle-right"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
 	<main> <!--　求人検索項目 -->
 	<div id="job_search">
 		<h3 style="float: none;">求人検索項目</h3>
@@ -65,6 +65,7 @@
 			<div class="listbox1">
 				<h4 class="word">勤務地</h4>
 				<select name="addresscd" tabindex="2" style="width: 400px;">
+					<option value=""></option>
 					<option value="1">北海道</option>
 					<option value="2">青森県</option>
 					<option value="3">岩手県</option>
