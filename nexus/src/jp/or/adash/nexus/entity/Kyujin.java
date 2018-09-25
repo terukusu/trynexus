@@ -121,11 +121,14 @@ public class Kyujin {
 	private String hiddenetc;
 	private Date createdt;
 	private String createuserid;
-	private Date upDatedt;
-	private String upDateuserid;
+	private Date updatedt;
+	private String updateuserid;
 	private String deleteflag;
+
 	public Kyujin() {
+
 	}
+
 	public Kyujin(String no, Date receptiondt, Date perioddt, String companyno, String addresscd, String jobsmallcd1,
 			String jobsmallcd2, String jobsmallcd3, String joblargecd1, String joblargecd2, String joblargecd3,
 			String jobcategorysmallcd, String jobcategorylargecd, String companykana,
@@ -136,7 +139,7 @@ public class Kyujin {
 			int endtime, int establishdt, long capital, String companyfeature, String tantouyakushoku,
 			String tantoukana, String tantou, String tantoustaff_id, String applicationform, String background,
 			String hiddensex, int hiddenagemin, int hiddenagemax, String hiddenetc, Date createdt,
-			String createuserid, Date upDatedt, String upDateuserid, String deleteflag) {
+			String createuserid, Date updatedt, String updateuserid, String deleteflag) {
 		super();
 		this.no = no;
 		this.receptiondt = receptiondt;
@@ -191,8 +194,8 @@ public class Kyujin {
 		this.hiddenetc = hiddenetc;
 		this.createdt = createdt;
 		this.createuserid = createuserid;
-		this.upDatedt = upDatedt;
-		this.upDateuserid = upDateuserid;
+		this.updatedt = updatedt;
+		this.updateuserid = updateuserid;
 		this.deleteflag = deleteflag;
 	}
 
@@ -622,18 +625,18 @@ public class Kyujin {
 
 	/**
 	 * 最終更新日を返す
-	 * @return upDatedt
+	 * @return updatedt
 	 */
-	public Date getUpDatedt() {
-		return upDatedt;
+	public Date getUpdatedt() {
+		return updatedt;
 	}
 
 	/**
 	 * 最終更新ユーザーを返す
-	 * @return upDateuserid
+	 * @return updateuserid
 	 */
-	public String getUpDateuserid() {
-		return upDateuserid;
+	public String getUpdateuserid() {
+		return updateuserid;
 	}
 
 	/**
@@ -644,9 +647,13 @@ public class Kyujin {
 		return deleteflag;
 	}
 
-	public void setNo(String str) {
+	/**
+	 * 求人Ｎo.をセットする
+	 * @param no 求人Ｎo.
+	 */
+	public void setNo(String no) {
 		// TODO 自動生成されたメソッド・スタブ
-
+		this.no = no;
 	}
 
 }

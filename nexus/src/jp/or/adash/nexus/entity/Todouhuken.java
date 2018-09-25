@@ -13,9 +13,12 @@ public class Todouhuken {
 	 */
 	private String cd;
 	private String name;
+	
+	
 	public Todouhuken() {
 
 	}
+
 	public Todouhuken(String cd, String name) {
 		this.cd = cd;
 		this.name = name;

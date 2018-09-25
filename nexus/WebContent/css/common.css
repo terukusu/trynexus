@@ -11,6 +11,7 @@ body{
   background: #f6f6f6;
 }
 
+
 main{
   width:980px;
   padding:50px 0;
@@ -24,6 +25,7 @@ h2{
 }
 
 h3 {
+	float:left;
 	font-size:1.5rem;
 	margin-top:20px;
 	margin-bottom:20px;
@@ -80,6 +82,7 @@ table tr:nth-child(2n+1) {
 	padding-left: 10px;
 	margin-left:5px;
 	margin-right:5px;
+	margin-bottom:5px;
 	letter-spacing: 0.5rem;
 	font-weight: bold;
 }
@@ -101,6 +104,16 @@ table tr:nth-child(2n+1) {
 	float:left;
 }
 
+.a h2{
+	margin-left;
+	margin-right;}
 
+.a .main-b{
+	float:right;
+	clear:both;
+	margin:10px;}
 
-
+.clear{
+	clear:both;
+}
+}

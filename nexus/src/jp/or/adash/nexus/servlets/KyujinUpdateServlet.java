@@ -1,5 +1,4 @@
-package jp.or.adash.nexus.kyujin.servlets;
-
+package jp.or.adash.nexus.servlets;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -10,22 +9,24 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import jp.or.adash.nexus.entity.Kyujin;
-import jp.or.adash.nexus.kyujin.services.KyujinService;
+import jp.or.adash.nexus.entity.Staff;
+import jp.or.adash.nexus.services.KyujinService;
 
 
 /**
- * Servlet implementation class KyujinInsertServlet
+ * Servlet implementation class KyujinUpdateServlet
  */
-@WebServlet("/KyujinInsertServlet")
-public class KyujinInsertServlet extends HttpServlet {
+@WebServlet("/web/kyujin-update")
+public class KyujinUpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public KyujinInsertServlet() {
+	public KyujinUpdateServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -36,19 +37,26 @@ public class KyujinInsertServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// 1.1 リクエストから値を取得する
+
+		HttpSession session = request.getSession(true);
+		Staff staff = (Staff) session.getAttribute("UserData");
+
+
+
 		String no = request.getParameter("no");
 		//		String hiddenno = request.getParameter("hiddenno");
 		Date receptiondt = null;
 		try {
-			receptiondt = (Date) (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")).parse(request.getParameter("receptiondt"));
+			receptiondt = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("receptiondt"));
+
 		} catch (ParseException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
+
 		Date perioddt = null;
 		try {
-			perioddt = (Date) (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")).parse(request.getParameter("perioddt"));
-		} catch (ParseException e) {
+			perioddt = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("perioddt"));		} catch (ParseException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
@@ -75,20 +83,24 @@ public class KyujinInsertServlet extends HttpServlet {
 		String detail = request.getParameter("detail");
 		String koyoukeitaicd = request.getParameter("koyoukeitaicd");
 		String koyoukikan = request.getParameter("koyoukikan");
+
 		Date koyoukikankaishi = null;
 		try {
-			koyoukikankaishi = (Date) (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")).parse(request.getParameter("koyoukikankaishi"));
+			koyoukikankaishi = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("koyoukikankaishi"));
 		} catch (ParseException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
 		Date koyoukikanowari = null;
 		try {
-			koyoukikanowari = (Date) (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")).parse(request.getParameter("koyoukikanowari"));
+			koyoukikanowari = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("koyoukikanowari"));
 		} catch (ParseException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
+
+
+
 		String education = request.getParameter("education");
 		String experience = request.getParameter("experience");
 		String license = request.getParameter("license");
@@ -112,39 +124,37 @@ public class KyujinInsertServlet extends HttpServlet {
 		int hiddenagemin = Integer.parseInt(request.getParameter("hiddenagemin"));
 		int hiddenagemax = Integer.parseInt(request.getParameter("hiddenagemax"));
 		String hiddenetc = request.getParameter("hiddenetc");
+
+
+
 		Date createdt= null;
-		try {
-			createdt= (Date) (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")).parse(request.getParameter("koyoukikanowari"));
-		} catch (ParseException e) {
-			// TODO 自動生成された catch ブロック
-			e.printStackTrace();
-		}
+
 		String createuserid = request.getParameter("createuserid");
-		Date upDatedt = null;
-		try {
-			upDatedt = (Date) (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")).parse(request.getParameter("upDatedt"));
-		} catch (ParseException e) {
-			// TODO 自動生成された catch ブロック
-			e.printStackTrace();
-		}
-		String upDateuserid = request.getParameter("upDateuserid");
-		String deleteflag = request.getParameter("deleteflag");
+
+		Date updatedt = null;
+
+
+
+
+//		String updateuserid = staff.getId();
+		String updateuserid = "1234";
+
+		String deleteflag = "0";
 
 		// 1.2求人票オブジェクトを作成
 
 		Kyujin kyujin = new Kyujin(
-				no, receptiondt, perioddt, companyno, addresscd, jobsmallcd1,
-				jobsmallcd2, jobsmallcd3, joblargecd1, joblargecd2, joblargecd3,
-				jobcategorysmallcd, jobcategorylargecd, companykana,
-				companyname, companypostal, companyplace, companyurl, postal,
-				address, nearstation, job, hakencd, detail, koyoukeitaicd,
-				koyoukikan, koyoukikankaishi, koyoukikanowari, education, experience,
-				license, agemin, agemax, salarymin, salarymax, salaryformcd, begintime,
-				endtime, establishdt, capital, companyfeature, tantouyakushoku,
-				tantoukana, tantou, tantoustaff_id, applicationform, background,
-				hiddensex, hiddenagemin, hiddenagemax, hiddenetc, createdt,
-				createuserid, upDatedt, upDateuserid, deleteflag);
-
+				         no, receptiondt, perioddt,  companyno,  addresscd, jobsmallcd1,
+						 jobsmallcd2,  jobsmallcd3,  joblargecd1,  joblargecd2,  joblargecd3,
+						 jobcategorysmallcd,  jobcategorylargecd,  companykana,
+						 companyname,  companypostal,  companyplace,  companyurl,  postal,
+						 address,  nearstation,  job,  hakencd,  detail,  koyoukeitaicd,
+						 koyoukikan,  koyoukikankaishi,  koyoukikanowari,  education, experience,
+						 license, agemin, agemax,  salarymin,  salarymax,  salaryformcd, begintime,
+						 endtime, establishdt,  capital,  companyfeature,  tantouyakushoku,
+						 tantoukana,  tantou,  tantoustaff_id,  applicationform,  background,
+						 hiddensex, hiddenagemin,  hiddenagemax,  hiddenetc,  createdt,
+						 createuserid, updatedt, updateuserid,  deleteflag);
 		// 1.3 入力チェック
 		KyujinService service = new KyujinService();
 		if (!service.check(kyujin)) {
@@ -160,10 +170,13 @@ public class KyujinInsertServlet extends HttpServlet {
 		}
 
 		// 1.6　求人票を更新する
-		service.insertKyujin(kyujin);
+
+		service.updateKyujin(kyujin);
 
 		// 処理結果メッセージをリクエストに格納する
-		request.setAttribute("kyujin", kyujin);
+
+		request.setAttribute("Staff", staff);
+//		request.setAttribute("kyujin", kyujin);
 		request.setAttribute("messages", service.getMessages());
 
 		// 1.8 JSPにフォワード
