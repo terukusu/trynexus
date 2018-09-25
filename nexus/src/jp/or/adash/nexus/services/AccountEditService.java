@@ -6,6 +6,7 @@ import java.util.List;
 
 import jp.or.adash.nexus.entity.Staff;
 import jp.or.adash.nexus.utils.common.DataCommons;
+import jp.or.adash.nexus.utils.common.MessageCommons;
 import jp.or.adash.nexus.utils.dao.AccountEditDao;
 import jp.or.adash.nexus.utils.dao.Transaction;
 
@@ -88,17 +89,17 @@ public class AccountEditService {
 		Staff staff = null;
 
 		try {
-			// データベース接続を開始する
+			//0	データベース接続を開始する
 			transaction.open();
 
-			// 商品単価を取得する
+			//0	商品単価を取得する
 			AccountEditDao dao = new AccountEditDao(transaction);
 			staff = dao.selectStaff(id);
 
 		} catch (IOException e) {
-			// エラーメッセージをセットする
+
 		} finally {
-			// データベース接続をを終了する
+			//0データベース接続をを終了する
 			transaction.close();
 		}
 
@@ -138,6 +139,49 @@ public class AccountEditService {
 		if(pass.length() <= 8) {
 			messages.add("パスワードは８文字以上で入力してください。");
 			result = false;
+		}
+
+		return result;
+	}
+	/*	 * アカウントIDを元にアカウント情報に削除フラグを立てる
+	 * @return 処理結果（true:成功、false:失敗）
+	 */
+	public boolean deleteStaff(String id) {
+		boolean result = false; // 処理結果
+
+		try {
+			//0	データベース接続を開始する
+			transaction.open();
+
+			//0	 トランザクションを開始する
+			transaction.beginTrans();
+
+			//0 削除する
+			AccountEditDao dao = new AccountEditDao(transaction);
+			int count = dao.delete(id);
+
+			if (count > 0) {
+				//0	完了メッセージをセットする
+				messages.add("アカウントの削除が完了しました。");
+				result = true;
+			} else {
+				//0エラーメッセージをセットする
+				messages.add("アカウント削除ができませんでした。");
+				result = false;
+			}
+
+			//0	トランザクションをコミットする
+			transaction.commit();
+
+		} catch (IOException e) {
+			//0	トランザクションをロールバックする
+			transaction.rollback();
+
+			//0	エラーメッセージをセットする
+			messages.add(MessageCommons.ERR_DB_CONNECT);
+		} finally {
+			//0	 データベース接続をを終了する
+			transaction.close();
 		}
 
 		return result;

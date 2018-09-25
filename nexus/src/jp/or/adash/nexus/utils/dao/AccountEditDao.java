@@ -100,4 +100,30 @@ public class AccountEditDao {
 
 		return staff;
 	}
+	/**
+	 * アカウントIDを元にアカウントに削除フラグを立てる
+	 * @param staff アカウント情報
+	 * @return 更新件数
+	 * @throws IOException
+	 */
+	public int delete(String id) throws IOException {
+		int count = 0;
+
+		// SQL文を生成する
+		StringBuffer sql = new StringBuffer();
+		sql.append("update staff set");
+		sql.append(" deleteflag = 1");
+		sql.append(" where");
+		sql.append(" id = ?");
+		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
+			ps.setString(1, id);
+
+			// SQL文を実行する
+			count = ps.executeUpdate();
+		} catch (SQLException e) {
+			throw new IOException(e);
+		}
+
+		return count;
+	}
 }
