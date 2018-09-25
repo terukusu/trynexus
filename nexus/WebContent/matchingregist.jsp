@@ -112,7 +112,7 @@
 			</tr>
 			<tr>
 				<td><font size="5">職業紹介者ID</font></td>
-				<td><input type="text" name="staffid" size="4" value="<c:out value="${ staff.id }" />"></td>
+				<td><input type="text" name="staffid" size="4" value="<c:out value="${ Staff.id }" />"></td>
 
 			</tr>
 			<tr>
