@@ -5,7 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jp.or.adash.nexus.dao.MatchingDao;
+import jp.or.adash.nexus.entity.JobSeekerMain;
+import jp.or.adash.nexus.entity.Kyujin;
 import jp.or.adash.nexus.entity.MatchingCase;
+import jp.or.adash.nexus.utils.common.DataCommons;
 import jp.or.adash.nexus.utils.common.MessageCommons;
 import jp.or.adash.nexus.utils.dao.Transaction;
 
@@ -16,7 +19,6 @@ import jp.or.adash.nexus.utils.dao.Transaction;
  *
  */
 public class MatchingService {
-
 
 	String errMsg = null;
 
@@ -52,8 +54,17 @@ public class MatchingService {
 	 * @param code 商品コード
 	 * @return true:存在する、false:存在しない
 	 */
+	KyujinService kyujinservice = new KyujinService();
+	private String kyujinno;
+	Kyujin kyujin = kyujinservice.getKyujin(kyujinno);
+
+	JobSeekerService jobseekerService = new JobSeekerService();
+	private String jobseekerid;
+	JobSeekerMain jobseekermain = jobseekerService.getJobseekermaininfo(jobseekerid);
 
 
+	private static final String mss1 = "求人NO::登録した番号がありません。";
+	private static final String mss２ = "求職者NO::登録した番号がありません。";
 	/*String no = request.getParameter("kyujinno");
 
 	private boolean exists(kyujinno) {
@@ -78,32 +89,90 @@ public class MatchingService {
 
 
 
-
-
-
-
-
-
-
-
-	/**
-	 * エラーチェック
+/**
+	 * マッチング情報の内容をチェックする
+	 * @param matching マッチング情報
+	 * @return 処理結果（true:成功、false:失敗）
 	 */
-	public boolean check(MatchingService ms) {
-		//フラグをtrueに
-		boolean result = true;
+	public boolean check(MatchingCase matching) {
+		boolean result = true;	// チェック結果
+
+		if (kyujin == null) {
+			// 1登録がない場合エラーメッセージをセットする。
+			// 1エラーメッセージをセットする
+			messages.add(mss1);
+			result = false;
+		}
+		if (jobseekermain == null) {
+			// 1登録がない場合エラーメッセージをセットする。
+			messages.add(mss２);
+			result = false;
+		}
+
+				// 求人IDの値が入力されているか
+				if (matching.getKyujinno().equals("")) {
+					messages.add("求人NOが入力されていません。");
+					result = false;
+				}
+
+				errMsg = DataCommons.chksDigits(matching.getKyujinno(), 14);
+				messages.add(errMsg);
+
+				// 求職者IDの値が入力されているか
+				if (matching.getJobseekerid().equals("")) {
+					messages.add("求職者IDが入力されていません。");
+					result = false;
+				}
+
+				errMsg = DataCommons.chksDigits(matching.getJobseekerid(), 8);
+				messages.add(errMsg);
+
+
+
+				// 職業紹介者IDの値が入力されているか
+				if (matching.getStaffid().equals("")) {
+					messages.add("職業紹介者IDが入力されていません。");
+					result = false;
+				}
+
+				errMsg = DataCommons.chksDigits(matching.getStaffid(), 4);
+				messages.add(errMsg);
+
+				//面接日の値が入力されているか
+				if (matching.getInterviewdt() == null) {
+					messages.add("面接日が入力されていません。");
+					result = false;
+				}
+
+				//入社日の値が入力されているか
+				if (matching.getEnterdt() == null) {
+					messages.add("入社日が入力されていません。");
+					result = false;
+				}
+				// 評価の値が入力されているか
+				if (matching.getAssessment().equals("")) {
+					messages.add("評価が入力されていません。");
+					result = false;
+				}
+
+				// 備考の値が入力されているか
+				errMsg = DataCommons.chksDigits(matching.getNote(), 200);
+				messages.add(errMsg);
+
+				return result;
+				}
 
 		//求人NOの桁数チェック
 //		errMsg = DataCommons.chksDigits()
-		return result;
-	}
+		//return result;
+
 
 	/**
 	 * 商品コードを元に、商品情報を取得する
 	 * @param code 商品コード
 	 * @return 商品情報
 	 */
-	/*public MatchingCases getItem(int id, String kyujinno, String jobseekerid, String staffid, Date interviewdt,
+	/*public MatchingCases getItem(int id, String kyujinno, String jobmatchingid, String staffid, Date interviewdt,
 			Date enterdt,
 			String assessment, String note, Timestamp createdt, String createuserid,
 			Timestamp upDatedt, String upDateuserid) {
@@ -352,3 +421,4 @@ public class MatchingService {
 	 */
 	private static final String MSG_MATCHING_REGIST_FAILURE = "マッチング登録が失敗しました。";
 }
+

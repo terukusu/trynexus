@@ -43,7 +43,7 @@ public class MatchingDao {
 		sql.append("(kyujinno,jobseekerid,staffid,interviewdt,enterdt,assessment,"
 				+ "note,createuserid,updateuserid");
 		sql.append(") values (");
-		sql.append("?,?,?,?,?,?,?,1,1");
+		sql.append("?,?,?,?,?,?,?,?,?");
 		sql.append(")");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
 			//ps.setInt(1,matching.getId());
@@ -54,8 +54,8 @@ public class MatchingDao {
 			ps.setDate(5,DataCommons.convertToSqlDate(matching.getEnterdt()));
 			ps.setString(6,matching.getAssessment());
 			ps.setString(7,matching.getNote());
-//			ps.setString(8,matching.getCreateuserid());
-//			ps.setString(9,matching.getUpDateuserid());
+			ps.setString(8,matching.getCreateuserid());
+			ps.setString(9,matching.getUpDateuserid());
 
 
 			// SQL文を実行する
