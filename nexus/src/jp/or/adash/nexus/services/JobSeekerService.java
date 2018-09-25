@@ -12,7 +12,6 @@ import jp.or.adash.nexus.entity.JobSeekerMain;
 import jp.or.adash.nexus.entity.Jobseeker_simple_entity;
 import jp.or.adash.nexus.entity.StaffName;
 import jp.or.adash.nexus.utils.common.DataCommons;
-import jp.or.adash.nexus.utils.common.MessageCommons;
 import jp.or.adash.nexus.utils.dao.Transaction;
 
 
@@ -44,7 +43,7 @@ public class JobSeekerService {
 	 * @return 求職者情報一覧
      *@aihara
 	 */
-public List<Jobseeker_simple_entity> getJobSeekerList(){
+/*	public List<Jobseeker_simple_entity> getJobSeekerList(){
 	List<Jobseeker_simple_entity> jobseekerList = new ArrayList<Jobseeker_simple_entity>();
 	try {
 		// データベース接続を開始する
@@ -64,7 +63,7 @@ public List<Jobseeker_simple_entity> getJobSeekerList(){
 
 	return jobseekerList;
 	}
-
+*/
 	/*
 	 * 求職者idを元に求職者情報の詳細情報を取得する
 	 * @return 求職者情報の詳細情報

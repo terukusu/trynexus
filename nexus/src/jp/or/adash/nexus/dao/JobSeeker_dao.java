@@ -40,7 +40,7 @@ public class JobSeeker_dao {
 	 * @auther aihara
 	 * @throws IOException
 	 */
-	public List<Jobseeker_simple_entity> selectJobseekerList() throws IOException {
+/*	public List<Jobseeker_simple_entity> selectJobseekerList() throws IOException {
 		List<Jobseeker_simple_entity> jobseeker = new ArrayList<Jobseeker_simple_entity>();
 
 		// SQL文を生成する
@@ -72,6 +72,7 @@ public class JobSeeker_dao {
 
 		return jobseeker;
 	}
+	*/
 	/**
 	 * 求職者IDを元に、求職者情報（1件）を取得する
 	 * @auther aihara
