@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jp.or.adash.nexus.entity.JobSeeker;
+import jp.or.adash.nexus.entity.JobSeekerMain;
 import jp.or.adash.nexus.utils.dao.Transaction;
 
 
@@ -252,7 +253,7 @@ public class JobSeekerDao {
 	 * @return 更新件数
 	 * @throws IOException
 	 */
-	public int update(JobSeeker seeker) throws IOException {
+	public int update(JobSeekerMain seeker) throws IOException {
 		int count = 0;
 
 		// SQL文を生成する
@@ -288,7 +289,7 @@ public class JobSeekerDao {
 		sql.append(" pasokonskill = ?,");
 		sql.append(" caution = ?,");
 		sql.append(" tantoustaffid = ?,");
-		sql.append(" password = ?,");
+		sql.append(" password = ?");
 		sql.append(" where");
 		sql.append(" id = ?");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
