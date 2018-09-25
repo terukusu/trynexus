@@ -62,8 +62,8 @@
 			</tr>
 	</table>
 	<div>
-    	<input type=submit value="ログイン">
-    	<input type="reset"value="リセット">
+    	<input class="main-b" type=submit value="ログイン">
+    	<input class="main-b" type="reset"value="リセット">
 	</div>
     </form>
 
