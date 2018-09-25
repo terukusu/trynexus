@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -81,16 +82,17 @@
 				<tr>
 					<th>受付年月日</th>
 					<td>
-						<!--  fmt:formatDate name="receptiondt" value="${ kyujin.receptiondt }" pattern="yyyy-MM-dd" /-->
+
 						<input type="date" name="receptiondt"
-						value="${ kyujin.receptiondt }"size="10" maxlength="10"
+						value="<fmt:formatDate value="${ kyujin.receptiondt }" pattern="yyyy-MM-dd"/>"size="10"
+						maxlength="10"
 						tabindex="2">
 					</td>
 				</tr>
 				<tr>
 					<th>求人有効年月日</th>
 					<td><input type="date" name="perioddt"
-						value="<c:out value="${ kyujin.perioddt }" />" size="10"
+						value="<fmt:formatDate value="${ kyujin.perioddt }" pattern="yyyy-MM-dd"/>" size="10"
 						maxlength="10" tabindex="3"></td>
 				</tr>
 				<tr>
@@ -296,13 +298,13 @@
 				<tr>
 					<th>雇用期間開始年月日</th>
 					<td><input type="date" name="koyoukikankaishi"
-						value="<c:out value="${ kyujin.koyoukikankaishi }" />" size="10"
+						value="<fmt:formatDate value="${ kyujin.koyoukikankaishi }" pattern="yyyy-MM-dd"/>" size="10"
 						maxlength="10" tabindex="33"></td>
 				</tr>
 				<tr>
 					<th>雇用期間終了年月日</th>
 					<td><input type="date" name="koyoukikanowari"
-						value="<c:out value="${ kyujin.koyoukikanowari }" />" size="10"
+						value="<fmt:formatDate value="${ kyujin.koyoukikanowari }" pattern="yyyy-MM-dd"/>" size="10"
 						maxlength="10" tabindex="34"></td>
 				</tr>
 				<tr>
