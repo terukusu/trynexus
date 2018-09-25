@@ -24,11 +24,11 @@ public class Todouhuken {
 		String no = null;
 		no = request.getParameter("no");
 
-		// 1.3 リクエストに求人票情報をセットする
-		request.setAttribute("no", no);
+		// 1.3 リクエストに都道府県情報をセットする
+		request.setAttribute("Todouhukenlist", no);
 
 		// 1.4 JSPにフォワードする
-		request.getRequestDispatcher("/jobregist.jsp")
+		request.getRequestDispatcher("/jobsearch.jsp")
 				.forward(request, response);
 	}
 }
