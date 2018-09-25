@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	background: #f6f6f6;
+	font-size: 14px;
+	margin: 0px;
+	padding: 0px;
+	text-align: left;
+}
+
+/*　job_regist　*/
+#job_regist {
+	width: 980px;
+	margin-top: 0;
+	margin-bottom: 50px;
+	margin-right: auto;
+	margin-left: auto;
+	clear: both;
+}
+
+#job_regist table th {
+	letter-spacing: 0.3em;
+}
+
+#job_regist table td {
+	text-align: left;
+}

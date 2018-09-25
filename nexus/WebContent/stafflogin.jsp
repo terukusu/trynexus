@@ -2,16 +2,41 @@
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>ログイン（紹介者・スタッフ）</title>
-    <link rel="stylesheet" type="text/css" href="stafflogin.css" />
+
+<meta charset="UTF-8">
+
+<title>ログイン</title>
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"rel="stylesheet" >
+<link href="./css?family=M+PLUS+1p" rel="stylesheet">
+<link href="./css/bootstrap-reboot.css" rel="stylesheet">
+<link href="./css/common.css" rel="stylesheet">
+<link href="./css/header.css" rel="stylesheet">
+<link href="./css/footer.css" rel="stylesheet">
+<link href="./css/stafflogin.css" rel="stylesheet">
+
 </head>
+
 <body>
+<header>
+  <section>
+    <h1 class="logo"><a href="/nexus/top">TryNexus</a></h1>
+    <div class="user">
+      <div class="user__wrapper">
+        <!-- <div class="user__image"></div> -->
+        <div class="user__name">
+          <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+          <ul class="drop-menu">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+
 <div><!--　コンテナー-->
 	<div>
 		<h1>ログイン</h1>
@@ -37,8 +62,8 @@
 			</tr>
 	</table>
 	<div>
-    	<input type=submit value="ログイン">
-    	<input type="reset"value="リセット">
+    	<input class="main-b" type=submit value="ログイン">
+    	<input class="main-b" type="reset"value="リセット">
 	</div>
     </form>
 

@@ -55,12 +55,11 @@ public class LoginServlet extends HttpServlet {
 		      // メニューバーの名前用にStaffにuserDataを格納
 			  request.setAttribute("Staff", userData);
 		      //0　メインjspにフォワード
-		      request.getRequestDispatcher("/stafftop.jsp").
-		      forward(request, response);
+		      response.sendRedirect("/nexus/web/staff-top");
 		}else{
 			//0 認証失敗した場合エラーメッセージの表示
 			request.setAttribute("message", "IDまたはパスワードが違います");
-			request.getRequestDispatcher("/stafflogin.jsp").
+			request.getRequestDispatcher("/nexus/top").
 		      forward(request, response);
 			}
 		}
