@@ -136,8 +136,8 @@ public class KyujinUpdateServlet extends HttpServlet {
 
 
 
-//		String updateuserid = staff.getId();
-		String updateuserid = "1234";
+		String updateuserid = staff.getId();
+//		String updateuserid = "1234";
 
 		String deleteflag = "0";
 
@@ -159,6 +159,8 @@ public class KyujinUpdateServlet extends HttpServlet {
 		KyujinService service = new KyujinService();
 		if (!service.check(kyujin)) {
 			// 1.4 入力チェックでエラーがあった場合、エラーメッセージをセット
+//			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//			kyujin.setReceptiondt(sdf.format(kyujin.receptiondt()));
 			request.setAttribute("kyujin", kyujin);
 			request.setAttribute("messages", service.getMessages());
 
@@ -183,5 +185,7 @@ public class KyujinUpdateServlet extends HttpServlet {
 		request.getRequestDispatcher("/jobregist.jsp")
 				.forward(request, response);
 	}
-
+	public java.util.Date convertToUtilDate(java.sql.Date sqlDate){
+	    return sqlDate;
+	}
 }
