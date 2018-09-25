@@ -15,9 +15,18 @@
 <link href="../css/common.css" rel="stylesheet">
 <link href="../css/header.css" rel="stylesheet">
 <link href="../css/footer.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/default.css">
+<link rel="stylesheet" href="../css/default.date.css">
 <!-- <link href="css/ootuka.css" rel="stylesheet"> -->
 <link href="../css/matchingregist.css" rel="stylesheet">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/Base/jquery-ui.css" >
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+<script type="text/javascript" src="../js/calender.js"></script>
 </head>
 
 <body>
@@ -93,7 +102,7 @@
 			</tr>
 			<tr>
 				<td><font size="5">入社日</font></td>
-				<td><input type="date" name="enterdt"></td>
+				<td><input type="text" class="datepicker" name="enterdt"></td>
 
 			</tr>
 			<tr>
@@ -107,7 +116,9 @@
 			</tr>
 			<tr>
 				<td><font size="5">面接日</font></td>
-				<td><input type="date" name="interviewdt"></td>
+
+				<td><input type="text" class="datepicker" name="interviewdt" >
+</td>
 
 			</tr>
 			<tr>

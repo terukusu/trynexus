@@ -15,13 +15,6 @@
 <link href="../css/header.css" rel="stylesheet">
 <link href="../css/footer.css" rel="stylesheet">
 <link href="../css/stafftop.css" rel="stylesheet">
-<!-- URLの階層が変わるためリンクを２種類用意している
-<link href="css/bootstrap-reboot.css" rel="stylesheet">
-<link href="css/applicantlist.css" rel="stylesheet">
-<link href="css/common.css" rel="stylesheet">
-<link href="css/header.css" rel="stylesheet">
-<link href="css/footer.css" rel="stylesheet">
-<link href="css/stafftop.css" rel="stylesheet">-->
 </head>
 <body>
 

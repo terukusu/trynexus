@@ -14,6 +14,14 @@
 <link href="../css/header.css" rel="stylesheet" type="text/css" />
 <link href="../css/footer.css" rel="stylesheet" type="text/css" />
 <link href="../css/job_seeker.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/Base/jquery-ui.css" >
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+<script type="text/javascript" src="../js/calender.js"></script>
 <title>求職者情報登録</title>
 </head>
 <body><!-- ヘッダー　-->
@@ -74,7 +82,7 @@
 		</tr>
 		<tr>
 			<th>生年月日</th>
-			<td><input type="date" name="birthdt" value="<c:out value="${ seeker.birthdt }" />"></td>
+			<td><input type="text" class="datepicker" name="birthdt" value="<c:out value="${ seeker.birthdt }" />"></td>
 		</tr>
 		<tr>
 			<th>性別</th>
@@ -429,5 +437,6 @@
     </main>
 	<!-- フッター　-->
 <footer> <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館)　All Rights Reserved.</small> </footer>
+
 </body>
 </html>
