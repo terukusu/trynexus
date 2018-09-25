@@ -67,7 +67,7 @@ public class AccountEditDao {
 
 		// SQL文を生成する
 		StringBuffer sql = new StringBuffer();
-		sql.append("select id,name,kana,authority");
+		sql.append("select id,name,kana,authority,password");
 		sql.append(" from staff");
 		sql.append(" where id = ?");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
@@ -82,7 +82,7 @@ public class AccountEditDao {
 							rs.getString("name"),
 							rs.getString("kana"),
 							rs.getString("authority"),
-							null,
+							rs.getString("password"),
 							null,
 							null,
 							null,
