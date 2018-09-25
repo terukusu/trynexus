@@ -46,7 +46,7 @@
 </header>
 <main>
 	<h2>アカウント一覧</h2>
-	<input class="main-b newbutton" type="button" value="新規登録" onclick="location.href='/nexus/web/account-regist'">
+	<input class="main-b newbutton" type="button" value="新規登録" onclick="location.href='/nexus/web/account-disp'">
 	<table>
 		<tr>
 			<th></th>
