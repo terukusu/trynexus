@@ -58,15 +58,15 @@
 			</tr>
 			<tr>
 				<td>アカウントID</td>
-				<td><input type="hidden" name="hiddenid" value="<c:out value="${ staff.id }" />"></td>
+				<td><input type="hidden" name="hiddenid" value="<c:out value="${ staff.id }"/>" required></td>
 			</tr>
 			<tr>
 				<td>氏名</td>
-				<td><input type="text" name="name" value="<c:out value="${ staff.name }" />"></td>
+				<td><input type="text" name="name" value="<c:out value="${ staff.name }"/>" required></td>
 			</tr>
 			<tr>
 				<td>氏名（かな）</td>
-				<td><input type="text" name="kana" value="<c:out value="${ staff.kana }" />"></td>
+				<td><input type="text" name="kana" value="<c:out value="${ staff.kana }"/>" required></td>
 			</tr>
 			<tr>
 				<td>ユーザー権限</td>
@@ -77,7 +77,7 @@
 			</tr>
 			<tr>
 				<td>パスワード</td>
-				<td><input type="password" name="password"></td>
+				<td><input type="password" name="password" required></td>
 			</tr>
 		</table>
 		<input class="main-b" type="button" onclick="location.href='/nexus/web/account-list'" value="戻る">
