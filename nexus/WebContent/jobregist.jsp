@@ -69,7 +69,7 @@
       </tr>
       <tr>
          <td>求人No.</td>
-    <td><input type="text" name="no" value="<c:out value="${  kyujin.no }" />" size="14"></td>
+    <td><input type="text" name="no" value="<c:out value="${  kyujin.no }" />" size="14" maxlength="14"></td>
   </tr>
   <tr>
     <td>受付年月日</td>
@@ -91,7 +91,7 @@
 
      <select name="jobcategorylargecd">
 		<option></option>
-      	 <option>1</option>
+      	 <option>111</option>
      </select>
 
      <!-- input type="text" name="jobcategorylargecd" value="<c:out value="${ kyujin.jobcategorylargecd }" />" maxlength="1
@@ -103,18 +103,18 @@
      <td>
      <select name="jobcategorysmallcd">
 		<option></option>
-      	 <option>2</option>
+      	 <option>222</option>
       	 </select>
      <!--input type="text" name="jobcategorysmallcd" value="<c:out value="${ kyujin.jobcategorysmallcd }" />" maxlength="3"-->
      </td>
   </tr>
   <tr>
-    <td>事業所名（かな）</td>
-     <td><input type="text" name="companykana" value="<c:out value="${ kyujin.companykana }" />"></td>
+    <td>事業所名（半角ｶﾅ）</td>
+     <td><input type="text" name="companykana" value="<c:out value="${ kyujin.companykana }" />" size="20" maxlength="54"></td>
   </tr>
   <tr>
     <td>事業所名</td>
-     <td><input type="text" name="companyname" value="<c:out value="${ kyujin.companyname }" />"></td>
+     <td><input type="text" name="companyname" value="<c:out value="${ kyujin.companyname }" />" maxlength="60"></td>
   </tr>
   <tr>
     <td>事業所郵便番号</td>
@@ -122,11 +122,11 @@
   </tr>
   <tr>
     <td>事業所所在地</td>
-     <td><input type="text" name="companyplace" value="<c:out value="${ kyujin.companyplace }" />"></td>
+     <td><input type="text" name="companyplace" value="<c:out value="${ kyujin.companyplace }" />" size="50" maxlength="75"></td>
   </tr>
   <tr>
     <td>事業所URL</td>
-     <td><input type="text" name="companyurl" value="<c:out value="${ kyujin.companyurl }" />"></td>
+     <td><input type="text" name="companyurl" value="<c:out value="${ kyujin.companyurl }" />"  size="50" maxlength="100"></td>
   </tr>
   <tr>
     <td>創業設立年</td>
@@ -134,7 +134,7 @@
   </tr>
   <tr>
     <td>資本金</td>
-     <td><input type="number" name="capital" value="<c:out value="${ kyujin.capital }" />">円</td>
+     <td><input type="number" name="capital" value="<c:out value="${ kyujin.capital }" />"  maxlength="16">円</td>
   </tr>
   <tr>
     <td>会社の特徴</td>
@@ -145,7 +145,7 @@
   <tr>
     <td>職種大分類コード１</td>
      <td>
-     <select name="joblargecd1">
+     <select name="joblargecd1" >
 		<option></option>
       	 <option>3</option>
   	 </select>
@@ -278,15 +278,15 @@
   </tr>
   <tr>
     <td>就業場所住所</td>
-     <td><input type="text" name="address" value="<c:out value="${ kyujin.address }" />"></td>
+     <td><input type="text" name="address" value="<c:out value="${ kyujin.address }" />" size="50" maxlength="90"></td>
   </tr>
   <tr>
     <td>就業場所最寄り駅</td>
-     <td><input type="text" name="nearstation" value="<c:out value="${ kyujin.nearstation }" />"></td>
+     <td><input type="text" name="nearstation" value="<c:out value="${ kyujin.nearstation }" />" maxlength="30"></td>
   </tr>
   <tr>
     <td>職種</td>
-     <td><input type="text" name="job" value="<c:out value="${ kyujin.job }" />"></td>
+     <td><input type="text" name="job" value="<c:out value="${ kyujin.job }" />" size="30" maxlength="28"></td>
   </tr>
   <tr>
     <td>派遣/請負</td>
@@ -301,7 +301,7 @@
   <tr>
     <td>仕事の内容</td>
       <td>
-      <textarea name="applicationform"><c:out value="${ kyujin.detail }" /></textarea>
+      <textarea name="detail"><c:out value="${ kyujin.detail }" /></textarea>
       </td>
   </tr>
   <tr>
@@ -338,15 +338,15 @@
   </tr>
   <tr>
     <td>学歴</td>
-     <td><input type="text" name="education" value="<c:out value="${ kyujin.education }" />"></td>
+     <td><input type="text" name="education" value="<c:out value="${ kyujin.education }" />" size="30" maxlength="64"></td>
   </tr>
   <tr>
     <td>必要な経験等</td>
-     <td><input type="text" name="experience" value="<c:out value="${ kyujin.experience }" />"></td>
+     <td><input type="text" name="experience" value="<c:out value="${ kyujin.experience }" />" size="50" maxlength="84"></td>
   </tr>
   <tr>
     <td>必要な免許・資格等</td>
-     <td><input type="text" name="license" value="<c:out value="${ kyujin.license }" />"></td>
+     <td><input type="text" name="license" value="<c:out value="${ kyujin.license }" />" size="50" maxlength="84"></td>
   </tr>
   <tr>
     <td>年齢制限・下限</td>
@@ -358,11 +358,11 @@
   </tr>
   <tr>
     <td>基本給下限</td>
-     <td><input type="number" name="salarymin" value="<c:out value="${ kyujin.salarymin }" />">円</td>
+     <td><input type="number" name="salarymin" value="<c:out value="${ kyujin.salarymin }" />" size="10" maxlength="7">円</td>
   </tr>
   <tr>
     <td>基本給上限</td>
-     <td><input type="number" name="salarymax" value="<c:out value="${ kyujin.salarymax }" />">円</td>
+     <td><input type="number" name="salarymax" value="<c:out value="${ kyujin.salarymax }" />" size="10" maxlength="7">円</td>
   </tr>
   <tr>
     <td>賃金形態</td>
@@ -385,19 +385,19 @@
   </tr>
   <tr>
     <td>選考担当者課係名/役職名</td>
-     <td><input type="text" name="tantouyakushoku" value="<c:out value="${ kyujin.tantouyakushoku }" />"></td>
+     <td><input type="text" name="tantouyakushoku" value="<c:out value="${ kyujin.tantouyakushoku }" />" maxlength="28"></td>
   </tr>
   <tr>
-    <td>選考担当者名（カナ）</td>
-     <td><input type="text" name="tantoukana" value="<c:out value="${ kyujin.tantoukana }" />"></td>
+    <td>選考担当者名（半角ｶﾅ）</td>
+     <td><input type="text" name="tantoukana" value="<c:out value="${ kyujin.tantoukana }" />" maxlength="28"></td>
   </tr>
   <tr>
     <td>選考担当者名</td>
-     <td><input type="text" name="tantou" value="<c:out value="${ kyujin.tantou }" />"></td>
+     <td><input type="text" name="tantou" value="<c:out value="${ kyujin.tantou }" />" maxlength="14"></td>
   </tr>
   <tr>
     <td>担当職業紹介者ID</td>
-     <td><input type="text" name="tantoustaff_id" value="<c:out value="${ kyujin.tantoustaff_id }" />"></td>
+     <td><input type="text" name="tantoustaff_id" value="<c:out value="${ kyujin.tantoustaff_id }" />" maxlength="4"></td>
   </tr>
   <tr>
     <td>応募書類</td>
@@ -459,8 +459,8 @@
 	<button type="submit" id="kyujin-insert" class="main-b" onclick="MovePages(this)">登録</button>
 </c:if>
 <c:if test="${ kyujin.no != null }">
-	<button type="submit" id="kyujin-update"  class="main-b" onclick="MovePages(this)">更新</button>
 	<button type="submit" id="kyujin-delete" class="main-b" onclick="MovePages(this)">削除</button>
+	<button type="submit" id="kyujin-update"  class="main-b" onclick="MovePages(this)">更新</button>
 </c:if>
 
 </form>
