@@ -48,8 +48,8 @@ public class KyujinDeleteServlet extends HttpServlet {
 		KyujinService service = new KyujinService();
 
 		// 1.6　求人票を更新する
-//		service.deleteKyujin(no, staff.getId());
-		service.deleteKyujin(no, "2222");
+		service.deleteKyujin(no, staff.getId());
+//		service.deleteKyujin(no, "2222");
 
 		// 処理結果メッセージをリクエストに格納する
 

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import jp.or.adash.nexus.entity.JobSeeker;
+import jp.or.adash.nexus.entity.JobSeekerMain;
 import jp.or.adash.nexus.entity.Staff;
 import jp.or.adash.nexus.services.JobSeekerService;
 
@@ -67,7 +67,7 @@ public class JobSeekerEditServlet extends HttpServlet {
 		int huyou = -1;
 		if (!"".equals(request.getParameter("huyou"))
 				&& request.getParameter("huyou") != null) {
-			age = Integer.parseInt(request.getParameter("huyou"));
+			huyou = Integer.parseInt(request.getParameter("huyou"));
 		}
 		String education = request.getParameter("education");
 		String hopejob1 = request.getParameter("hopejob1");
@@ -79,33 +79,34 @@ public class JobSeekerEditServlet extends HttpServlet {
 		int hopeworkingDate = -1;
 		if (!"".equals(request.getParameter("hopeworkingDate"))
 				&& request.getParameter("hopeworkingDate") != null) {
-			age = Integer.parseInt(request.getParameter("hopeworkingDate"));
+			hopeworkingDate = Integer.parseInt(request.getParameter("hopeworkingDate"));
 		}
 		int hopebegintime = -1;
 		if (!"".equals(request.getParameter("hopebegintime"))
 				&& request.getParameter("hopebegintime") != null) {
-			age = Integer.parseInt(request.getParameter("hopebegintime"));
+			hopebegintime = Integer.parseInt(request.getParameter("hopebegintime"));
 		}
 		int hopeendtime = -1;
 		if (!"".equals(request.getParameter("hopeendtime"))
 				&& request.getParameter("hopeendtime") != null) {
-			age = Integer.parseInt(request.getParameter("hopeendtime"));
+			hopeendtime = Integer.parseInt(request.getParameter("hopeendtime"));
 		}
 		int hopesalary = -1;
 		if (!"".equals(request.getParameter("hopesalary"))
 				&& request.getParameter("hopesalary") != null) {
-			age = Integer.parseInt(request.getParameter("hopesalary"));
+			hopesalary = Integer.parseInt(request.getParameter("hopesalary"));
 		}
 		int hopejikyu = -1;
 		if (!"".equals(request.getParameter("hopejikyu"))
 				&& request.getParameter("hopejikyu") != null) {
-			age = Integer.parseInt(request.getParameter("hopejikyu"));
+			hopejikyu = Integer.parseInt(request.getParameter("hopejikyu"));
 		}
 		String hopeetc = request.getParameter("hopeetc");
 		String driverlicense = request.getParameter("driverlicense");
 		String licenseetc = request.getParameter("licensetc");
 		String pasokonskill = request.getParameter("pasokonskill");
 		String caution = request.getParameter("caution");
+		String tantoustaffname = request.getParameter("tantoustaffname");
 		String tantoustaffid = request.getParameter("tantoustaffid");
 		String password = request.getParameter("password");
 		Date createdt = null;
@@ -116,23 +117,23 @@ public class JobSeekerEditServlet extends HttpServlet {
 		String deleteflag = request.getParameter("deleteflag");
 
 		//求人情報のオブジェクトを作成
-		JobSeeker seeker = new JobSeeker(id, name, kana, birthdt, sex, age, postal,
+		JobSeekerMain seeker = new JobSeekerMain(id, name, kana, sex, birthdt, age, postal,
 				address, nearstation, phone, mobile, partner, huyou,
 				education, hopejob1, hopejob2, hopejob3, hopejobcategory,
 				hopeworkplace, hopekoyoukeitai, hopeworkingDate, hopebegintime, hopeendtime,
 				hopesalary, hopejikyu, hopeetc, driverlicense, licenseetc, pasokonskill,
-				caution, tantoustaffid, password, createdt, createuserid,
+				caution, tantoustaffname, tantoustaffid, password, createdt, createuserid,
 				upDatedt, upDateuserid, deleteflag);
 
 		//入力チェック
 		JobSeekerService service = new JobSeekerService();
 		if (!service.check(seeker)) {
 			//入力チェックでエラーがあった場合、エラーメッセージをセット
-			request.setAttribute("seeker", seeker);
+			request.setAttribute("info", seeker);
 			request.setAttribute("messages", service.getMessages());
 
 			//JSPにフォワード
-			request.getRequestDispatcher("/applicantedit.jsp") //ここにjspを入力
+			request.getRequestDispatcher("/applicant_maininfo.jsp") //ここにjspを入力
 					.forward(request, response);
 
 			return;
@@ -143,11 +144,11 @@ public class JobSeekerEditServlet extends HttpServlet {
 
 		//処理結果メッセージをリクエストに格納する
 		request.setAttribute("Staff", staff);
-		request.setAttribute("seeker", seeker);
+		request.setAttribute("info", seeker);
 		request.setAttribute("messages", service.getMessages());
 
 		// 1.8 JSPにフォワード
-		request.getRequestDispatcher("/applicantedit.jsp") //ここにjspを入力
+		request.getRequestDispatcher("/applicant_maininfo.jsp") //ここにjspを入力
 				.forward(request, response);
 	}
 

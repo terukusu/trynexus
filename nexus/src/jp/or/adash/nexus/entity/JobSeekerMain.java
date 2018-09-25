@@ -1,6 +1,6 @@
 package jp.or.adash.nexus.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class JobSeekerMain{
 	/**

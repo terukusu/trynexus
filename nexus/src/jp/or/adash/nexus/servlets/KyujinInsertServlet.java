@@ -128,8 +128,8 @@ public class KyujinInsertServlet extends HttpServlet {
 		}*/
 //		String createuserid = request.getParameter("createuserid");
 
-//		String createuserid = staff.getId();
-		String createuserid = "1234";
+		String createuserid = staff.getId();
+//		String createuserid = "1234";
 
 		Date updatedt = null;
 /*		try {
@@ -140,8 +140,8 @@ public class KyujinInsertServlet extends HttpServlet {
 		}*/
 /*		String updateuserid = request.getParameter("updateuserid");
 		String deleteflag = request.getParameter("deleteflag");*/
-//		String updateuserid = staff.getId();
-		String updateuserid = "1234";
+		String updateuserid = staff.getId();
+//		String updateuserid = "1234";
 
 		String deleteflag = "0";
 
