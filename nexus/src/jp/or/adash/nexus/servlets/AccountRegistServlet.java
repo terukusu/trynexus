@@ -72,6 +72,7 @@ public class AccountRegistServlet extends HttpServlet {
 					request.setAttribute("staff", staff);
 					request.setAttribute("messages", service.getMessages());
 
+
 					//0	JSPにフォワード
 					 request.getRequestDispatcher("/accountregist.jsp").forward(request, response);
 					 //ここにjspを入力

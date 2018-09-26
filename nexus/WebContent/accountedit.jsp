@@ -105,7 +105,7 @@
 		<input type="hidden" name="id" value="${ Staff.id }">
 		<input type="submit" value="削除" onclick="kakunin()" >
 	</form>
-
+<input class="main-b" type="button" value="戻る" onclick="location.href='/nexus/web/account-list'">
 	<!--   <input class="main-b" type="button"
 		onclick="location.href='/nexus/web/account-list'" value="戻る">
 	-->
