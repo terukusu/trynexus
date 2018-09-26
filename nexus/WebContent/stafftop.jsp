@@ -70,7 +70,7 @@
           </th>
         </tr>
         <tr>
-          <td><a href="/nexus/web/kyujin-disp">■求人情報</a></td>
+          <td><a href="/nexus/web/kyujin-disp">■求人登録</a></td>
         </tr>
         <tr>
           <td><a href="/nexus/web/jobseeker-list">■求職者情報</a></td>
