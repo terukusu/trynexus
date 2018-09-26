@@ -13,7 +13,9 @@ import javax.servlet.http.HttpSession;
 
 import jp.or.adash.nexus.entity.SimpleKyujin;
 import jp.or.adash.nexus.entity.Staff;
+import jp.or.adash.nexus.entity.Todouhuken;
 import jp.or.adash.nexus.services.JobSearchService;
+import jp.or.adash.nexus.services.TodouhukenService;
 
 /**
  * Servlet implementation class KyujinServlet
@@ -97,12 +99,18 @@ public class JobSearchServlet extends HttpServlet {
 		kyujinlist = service.getKyujin(job, addresscd, jobsmallcd1, jobsmallcd2, jobsmallcd3, joblargecd1, joblargecd2,
 				joblargecd3,
 				salarymin, salarymax, koyoukeitaicd);
+		// 1.都道府県リストを取得する
+		TodouhukenService todouhukenservice = new TodouhukenService();
+		List<Todouhuken> todouhukenlist = todouhukenservice.getTodouhukenList();
+
+
+
 
 		// 1.3 リクエストに求人票情報をセットする
 
 		request.setAttribute("Staff", staff);
 		request.setAttribute("kyujin", kyujinlist);
-
+		request.setAttribute("todouhukenlist",todouhukenlist);
 		// 1.4 JSPにフォワードする
 		request.getRequestDispatcher("/jobsearch.jsp")
 				.forward(request, response);
