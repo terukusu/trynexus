@@ -14,6 +14,9 @@
 <link href="../css/header.css" rel="stylesheet" type="text/css" />
 <link href="../css/footer.css" rel="stylesheet" type="text/css" />
 <link href="../css/job_search.css" rel="stylesheet" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
 <title>求人検索項目</title>
 </head>
 <body>
@@ -161,6 +164,7 @@
 	</main>
 	<!-- フッター　-->
 	<footer> <small>Copyright(C) 2009有限責任事業組合
-		大阪職業教育協働機構(A'ワーク創造館) All Rights Reserved.</small> </footer>
+		大阪職業教育協働機構(A'ワーク創造館) All Rights Reserved.</small>
+		</footer>
 </body>
 </html>

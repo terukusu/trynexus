@@ -6,8 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>アカウント編集</title>
-<script type="text/javascript" src="../js/delete.js">
-</script>
+<script type="text/javascript" src="../js/common.js"></script>
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
 	rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p"
@@ -16,6 +15,9 @@
 <link href="../css/common.css" rel="stylesheet">
 <link href="../css/header.css" rel="stylesheet">
 <link href="../css/footer.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
 </head>
 <body>
 	<header>
