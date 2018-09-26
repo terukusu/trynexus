@@ -4,6 +4,7 @@ package jp.or.adash.nexus.servlets;
  */
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,9 +13,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import jp.or.adash.nexus.entity.Job;
+import jp.or.adash.nexus.entity.JobCategory;
 import jp.or.adash.nexus.entity.JobSeekerMain;
 import jp.or.adash.nexus.entity.Staff;
+import jp.or.adash.nexus.entity.Todouhuken;
+import jp.or.adash.nexus.services.JobCategoryService;
 import jp.or.adash.nexus.services.JobSeekerService;
+import jp.or.adash.nexus.services.JobService;
+import jp.or.adash.nexus.services.TodouhukenService;
 
 /**
  * Servlet implementation class jobseekermaininfoservlet
@@ -40,6 +47,23 @@ public class jobseekermaininfoservlet extends HttpServlet {
 		// 1.求職者情報一覧を取得する
 		JobSeekerService service = new JobSeekerService();
 		JobSeekerMain js_info = service.getJobseekermaininfo(js_id);
+		// 1.都道府県リストを取得する
+				TodouhukenService Tservice = new TodouhukenService();
+				List<Todouhuken> Tlist = Tservice.getTodouhukenList();
+				// 2.都道府県リストをリクエストに格納する
+				request.setAttribute("Todouhukenlist",Tlist);
+
+				// 1.職種大分類リストを取得する
+				JobService Lservice = new JobService();
+				List<Job> Llist = Lservice.getLargeJobList();
+				// 2.職種大分類リストをリクエストに格納する
+				request.setAttribute("Largelist", Llist);
+
+				// 1.業種大分類リストを取得する
+				JobCategoryService JCLservice = new JobCategoryService();
+				List<JobCategory> JCLlist = JCLservice.getLargeJobCategoryList();
+				// 2.業種大分類リストをリクエストに格納する
+				request.setAttribute("JCLargelist", JCLlist);
 
 		// 2.求職者情報をリクエストに格納する
 		request.setAttribute("Staff", staff);

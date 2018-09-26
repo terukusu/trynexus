@@ -44,7 +44,7 @@ public class JobCategoryDao {
 		sql.append("select largecd, name");
 		sql.append(" from jobcategory");
 		sql.append(" where middlecd = 0 and smallcd =0");
-		sql.append(" order by cast largecd");
+		sql.append(" order by largecd");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
 			// SQL文を実行する
 			try (ResultSet rs = ps.executeQuery()) {

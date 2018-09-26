@@ -351,73 +351,47 @@
 			</tr>
 			<tr>
 				<th>希望職種1</th>
-				<td><input type="text" name="hopejob1" value="${ info.hopejob1 }" /></td>
+				<td><select name="hopejob1">
+				<c:forEach var="job" items="${ Largelist }">
+				<option value="${ job.largecd }"${ job.name }
+				<c:if test="${job.largecd == info.hopejob1 }">selected</c:if>>${ job.name }
+				</option></c:forEach></select>
+				</td>
 			</tr>
 			<tr>
 				<th>希望職種2</th>
-				<td><input type="text" name="hopejob2" value="${ info.hopejob2 }" /></td>
+				<td><select name="hopejob2">
+				<c:forEach var="job" items="${ Largelist }">
+				<option value="${ job.largecd }"${ job.name }
+				<c:if test="${job.largecd == info.hopejob2 }">selected</c:if>>${ job.name }
+				</option></c:forEach></select>
+				</td>
 			</tr>
 			<tr>
 				<th>希望職種3</th>
-				<td><input type="text" name="hopejob3" value="${ info.hopejob3 }" /></td>
+				<td><select name="hopejob3">
+				<c:forEach var="job" items="${ Largelist }">
+				<option value="${ job.largecd }"${ job.name }
+				<c:if test="${job.largecd == info.hopejob3 }">selected</c:if>>${ job.name }
+				</option></c:forEach></select>
+				</td>
 			</tr>
 			<tr>
 				<th>希望業種</th>
-				<td><input type="text" name="hopejobcategory" value="${ info.hopejobcategory }" /></td>
+				<td><select name="hopejobcategory">
+				<c:forEach var="jobcategory" items="${ JCLargelist }">
+				<option value="${ jobcategory.largecd }"${ jobcategory.name }
+				<c:if test="${jobcategory.largecd == info.hopejobcategory }">selected</c:if>>${ jobcategory.name }
+				</option></c:forEach></select>
+				</td>
 			</tr>
 			<tr>
 			<th>希望勤務地</th>
 			<td><select name="hopeworkplace">
-<option value="">都道府県</option>
-<option value="01"  <c:if test="${ info.hopeworkplace == 1 }">selected</c:if>>北海道</option>
-<option value="02"  <c:if test="${ info.hopeworkplace == 2 }">selected</c:if>>青森県</option>
-<option value="03"  <c:if test="${ info.hopeworkplace == 3 }">selected</c:if>>岩手県</option>
-<option value="04"  <c:if test="${ info.hopeworkplace == 4 }">selected</c:if>>宮城県</option>
-<option value="05"  <c:if test="${ info.hopeworkplace == 5 }">selected</c:if>>秋田県</option>
-<option value="06"  <c:if test="${ info.hopeworkplace == 6 }">selected</c:if>>山形県</option>
-<option value="07"  <c:if test="${ info.hopeworkplace == 7 }">selected</c:if>>福島県</option>
-<option value="08"  <c:if test="${ info.hopeworkplace == 8 }">selected</c:if>>茨城県</option>
-<option value="09"  <c:if test="${ info.hopeworkplace == 9 }">selected</c:if>>栃木県</option>
-<option value="10"  <c:if test="${ info.hopeworkplace == 10 }">selected</c:if>>群馬県</option>
-<option value="11"  <c:if test="${ info.hopeworkplace == 11 }">selected</c:if>>埼玉県</option>
-<option value="12"  <c:if test="${ info.hopeworkplace == 12 }">selected</c:if>>千葉県</option>
-<option value="13"  <c:if test="${ info.hopeworkplace == 13 }">selected</c:if>>東京都</option>
-<option value="14"  <c:if test="${ info.hopeworkplace == 14 }">selected</c:if>>神奈川県</option>
-<option value="15"  <c:if test="${ info.hopeworkplace == 15 }">selected</c:if>>新潟県</option>
-<option value="16"  <c:if test="${ info.hopeworkplace == 16 }">selected</c:if>>富山県</option>
-<option value="17"  <c:if test="${ info.hopeworkplace == 17 }">selected</c:if>>石川県</option>
-<option value="18"  <c:if test="${ info.hopeworkplace == 18 }">selected</c:if>>福井県</option>
-<option value="19"  <c:if test="${ info.hopeworkplace == 19 }">selected</c:if>>山梨県</option>
-<option value="20"  <c:if test="${ info.hopeworkplace == 20 }">selected</c:if>>長野県</option>
-<option value="21"  <c:if test="${ info.hopeworkplace == 21 }">selected</c:if>>岐阜県</option>
-<option value="22"  <c:if test="${ info.hopeworkplace == 22 }">selected</c:if>>静岡県</option>
-<option value="23"  <c:if test="${ info.hopeworkplace == 23 }">selected</c:if>>愛知県</option>
-<option value="24"  <c:if test="${ info.hopeworkplace == 24 }">selected</c:if>>三重県</option>
-<option value="25"  <c:if test="${ info.hopeworkplace == 25 }">selected</c:if>>滋賀県</option>
-<option value="26"  <c:if test="${ info.hopeworkplace == 26 }">selected</c:if>>京都府</option>
-<option value="27"  <c:if test="${ info.hopeworkplace == 27 }">selected</c:if>>大阪府</option>
-<option value="28"  <c:if test="${ info.hopeworkplace == 28 }">selected</c:if>>兵庫県</option>
-<option value="29"  <c:if test="${ info.hopeworkplace == 29 }">selected</c:if>>奈良県</option>
-<option value="30"  <c:if test="${ info.hopeworkplace == 30 }">selected</c:if>>和歌山県</option>
-<option value="31"  <c:if test="${ info.hopeworkplace == 31 }">selected</c:if>>鳥取県</option>
-<option value="32"  <c:if test="${ info.hopeworkplace == 32 }">selected</c:if>>島根県</option>
-<option value="33"  <c:if test="${ info.hopeworkplace == 33 }">selected</c:if>>岡山県</option>
-<option value="34"  <c:if test="${ info.hopeworkplace == 34 }">selected</c:if>>広島県</option>
-<option value="35"  <c:if test="${ info.hopeworkplace == 35 }">selected</c:if>>山口県</option>
-<option value="36"  <c:if test="${ info.hopeworkplace == 36 }">selected</c:if>>徳島県</option>
-<option value="37"  <c:if test="${ info.hopeworkplace == 37 }">selected</c:if>>香川県</option>
-<option value="38"  <c:if test="${ info.hopeworkplace == 38 }">selected</c:if>>愛媛県</option>
-<option value="39"  <c:if test="${ info.hopeworkplace == 39 }">selected</c:if>>高知県</option>
-<option value="40"  <c:if test="${ info.hopeworkplace == 40 }">selected</c:if>>福岡県</option>
-<option value="41"  <c:if test="${ info.hopeworkplace == 41 }">selected</c:if>>佐賀県</option>
-<option value="42"  <c:if test="${ info.hopeworkplace == 42 }">selected</c:if>>長崎県</option>
-<option value="43"  <c:if test="${ info.hopeworkplace == 43 }">selected</c:if>>熊本県</option>
-<option value="44"  <c:if test="${ info.hopeworkplace == 44 }">selected</c:if>>大分県</option>
-<option value="45"  <c:if test="${ info.hopeworkplace == 45 }">selected</c:if>>宮崎県</option>
-<option value="46"  <c:if test="${ info.hopeworkplace == 46 }">selected</c:if>>鹿児島県</option>
-<option value="47"  <c:if test="${ info.hopeworkplace == 47 }">selected</c:if>>沖縄県</option>
-</select></td>
-			<tr>
+			<c:forEach var="todouhuken" items="${ Todouhukenlist }">
+			<option value="${ todouhuken.cd }"
+			<c:if test="${todouhuken.cd == info.hopeworkplace }">selected</c:if>>${ todouhuken.name }
+			</option></c:forEach></select></td><tr>
 				<th>希望雇用形態</th>
 				<td>
 				<input type="radio" name="hopekoyoukeitai" value="1" <c:if test="${ info.hopekoyoukeitai == 1 }">chacked</c:if>/> 正社員

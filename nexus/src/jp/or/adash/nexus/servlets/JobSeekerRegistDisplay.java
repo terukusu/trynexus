@@ -10,9 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import jp.or.adash.nexus.entity.Job;
+import jp.or.adash.nexus.entity.JobCategory;
 import jp.or.adash.nexus.entity.JobSeeker;
 import jp.or.adash.nexus.entity.Staff;
 import jp.or.adash.nexus.entity.Todouhuken;
+import jp.or.adash.nexus.services.JobCategoryService;
+import jp.or.adash.nexus.services.JobService;
 import jp.or.adash.nexus.services.TodouhukenService;
 
 
@@ -42,14 +46,22 @@ public class JobSeekerRegistDisplay extends HttpServlet {
 		// 1.1 リクエストから求職者情報を取得
 		JobSeeker seeker = null;
 		// 1.都道府県リストを取得する
-				TodouhukenService service = new TodouhukenService();
-				List<Todouhuken> todouhukenlist = service.getTodouhukenList();
+				TodouhukenService Tservice = new TodouhukenService();
+				List<Todouhuken> Tlist = Tservice.getTodouhukenList();
 				// 2.都道府県リストをリクエストに格納する
-				request.setAttribute("todouhuken",todouhukenlist);
-				// 3.JSPにフォワードする
-//				request.getRequestDispatcher("/todouhukenlist.jsp").forward(request,response);
-//				String id = request.getParameter("id");
+				request.setAttribute("Todouhukenlist",Tlist);
 
+				// 1.職種大分類リストを取得する
+				JobService Lservice = new JobService();
+				List<Job> Llist = Lservice.getLargeJobList();
+				// 2.職種大分類リストをリクエストに格納する
+				request.setAttribute("Largelist", Llist);
+
+				// 1.業種大分類リストを取得する
+				JobCategoryService JCLservice = new JobCategoryService();
+				List<JobCategory> JCLlist = JCLservice.getLargeJobCategoryList();
+				// 2.業種大分類リストをリクエストに格納する
+				request.setAttribute("JCLargelist", JCLlist);
 /*
 				// 1.2 求職者IDがある場合、求職者情報を取得
 				JobSeeker seeker = null;

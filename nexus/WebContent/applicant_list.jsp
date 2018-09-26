@@ -97,7 +97,8 @@
 				</td>
 				<td><c:out value="${ jobseeker.id }" /></td>
 				<td><c:out value="${ jobseeker.js_name }" /></td>
-				<td><c:out value="${ jobseeker.sex }" /></td>
+				<td><c:if test="${ jobseeker.sex == 1 }">男</c:if>
+				<c:if test="${ jobseeker.sex == 2 }">女</c:if></td>
 				<td><c:out value="${ jobseeker.age }" /></td>
 				<td><c:out value="${ jobseeker.hopejobcategory }" /></td>
 				<td><c:out value="${ jobseeker.hopejob1 }" /></td>
