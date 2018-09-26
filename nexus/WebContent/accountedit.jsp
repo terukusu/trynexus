@@ -92,6 +92,7 @@
 						test="${Staff.authority == 1}">管理者</c:if> <c:if
 						test="${Staff.authority == 2}">その他</c:if></td>
 			</tr>
+
 			<tr>
 				<td>新しいパスワード</td>
 				<td><input type="password" name="password"

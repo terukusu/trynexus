@@ -31,6 +31,7 @@ public class AccountListDao {
 	public List<Staff> selectAccountList() throws IOException {
 		List<Staff> account = new ArrayList<Staff>();
 
+
 		// SQL文を生成する
 		StringBuffer sql = new StringBuffer();
 		sql.append("SELECT id,name,kana,authority,password");
