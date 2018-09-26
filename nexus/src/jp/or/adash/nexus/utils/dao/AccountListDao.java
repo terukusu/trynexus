@@ -35,6 +35,7 @@ public class AccountListDao {
 		StringBuffer sql = new StringBuffer();
 		sql.append("SELECT id,name,kana,authority,password");
 		sql.append(" from staff");
+		sql.append(" where deleteflag = 0");
 		sql.append(" order by id");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
 			// SQL文を実行する
