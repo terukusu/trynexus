@@ -33,17 +33,17 @@ public class JobCategoryListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// 1.業種大分類リストを取得する
-		JobCategoryService Lservice = new JobCategoryService();
-		List<JobCategory> Llist = Lservice.getLargeJobCategoryList();
+		JobCategoryService JCLservice = new JobCategoryService();
+		List<JobCategory> JCLlist = JCLservice.getLargeJobCategoryList();
 		// 2.業種大分類リストをリクエストに格納する
-		request.setAttribute("Largelist", Llist);
+		request.setAttribute("JCLargelist", JCLlist);
 
 
 		// 1.業種小分類リストを取得する
-		JobCategoryService Sservice = new JobCategoryService();
-		List<JobCategory> Slist = Sservice.getSmallJobCategoryList();
+		JobCategoryService JCSservice = new JobCategoryService();
+		List<JobCategory> JCSlist = JCSservice.getSmallJobCategoryList();
 		// 2.業種小分類リストをリクエストに格納する
-		request.setAttribute("Smalllist", Slist);
+		request.setAttribute("JCSmalllist", JCSlist);
 		// 3.JSPにフォワードする
 		request.getRequestDispatcher("/jobcategorylist.jsp").forward(request, response);
 	}
