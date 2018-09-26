@@ -63,63 +63,20 @@
 					placeholder="業種名より検索します。" tabindex="1"></textarea>
 			</div>
 			<div class="listbox1">
-				<h4 class="word">勤務地</h4>
-				<select name="addresscd" tabindex="2" style="width: 400px;">
-					<option value="1">北海道</option>
-					<option value="2">青森県</option>
-					<option value="3">岩手県</option>
-					<option value="4">宮城県</option>
-					<option value="5">秋田県</option>
-					<option value="6">山形県</option>
-					<option value="7">福島県</option>
-					<option value="8">茨城県</option>
-					<option value="9">栃木県</option>
-					<option value="10">群馬県</option>
-					<option value="11">埼玉県</option>
-					<option value="12">千葉県</option>
-					<option value="13">東京都</option>
-					<option value="14">神奈川県</option>
-					<option value="15">新潟県</option>
-					<option value="16">富山県</option>
-					<option value="17">石川県</option>
-					<option value="18">福井県</option>
-					<option value="19">山梨県</option>
-					<option value="20">長野県</option>
-					<option value="21">岐阜県</option>
-					<option value="22">静岡県</option>
-					<option value="23">愛知県</option>
-					<option value="24">三重県</option>
-					<option value="25">滋賀県</option>
-					<option value="26">京都府</option>
-					<option value="27">大阪府</option>
-					<option value="28">兵庫県</option>
-					<option value="29">奈良県</option>
-					<option value="30">和歌山県</option>
-					<option value="31">鳥取県</option>
-					<option value="32">島根県</option>
-					<option value="33">岡山県</option>
-					<option value="34">広島県</option>
-					<option value="35">山口県</option>
-					<option value="36">徳島県</option>
-					<option value="37">香川県</option>
-					<option value="38">愛媛県</option>
-					<option value="39">高知県</option>
-					<option value="40">福岡県</option>
-					<option value="41">佐賀県</option>
-					<option value="42">長崎県</option>
-					<option value="43">熊本県</option>
-					<option value="44">大分県</option>
-					<option value="45">宮崎県</option>
-					<option value="46">鹿児島県</option>
-					<option value="47">沖縄県</option>
-				</select>
+				<h4>勤務地</h4>
+<select name="addresscd">
+				<option value=""></option>
+			<c:forEach var="todouhuken" items="${ todouhukenlist }">
+				<option value="${ todouhuken.cd }">${ todouhuken.name }</option>
+			</c:forEach>
+</select>
 			</div>
-			<div class="listbox1" style="clear: left;">
+			<div class="listbox1">
 				<h4>給料</h4>
 				<input name="salarymin" type="number" maxlength="2" tabindex="3"
-					min="0" style="width: 90px;" /> 万円～ <input name="salarymax"
+					min="0" style="width: 70px;" /> 万円～ <input name="salarymax"
 					type="number" maxlength="2" tabindex="4" min="0"
-					style="width: 90px;" /> 万円
+					style="width: 70px;" /> 万円
 			</div>
 			<div class="listbox1">
 				<h4>雇用形態</h4>
@@ -137,7 +94,7 @@
 						<div class="listbox1">
 				<h4>路線</h4>
 				<select name="rosen" tabindex="5">
-					<option value="0"></option>
+					<option value=""></option>
 					<option value="0">大阪地下鉄</option>
 					<option value="1">御堂筋線</option>
 					<option value="2">中央線</option>
@@ -153,7 +110,7 @@
 			<!--ここまで隠し項目-->
 			<div class="listbox2">
 				<h4 class="word">求人詳細内をフリーワード検索</h4>
-				<textarea class="word" name="job" cols="60" rows="6"
+				<textarea class="word" name="job" cols="60" rows="5"
 					placeholder="求人詳細項目より検索します。"></textarea>
 			</div>
 			<div class="listbox3">

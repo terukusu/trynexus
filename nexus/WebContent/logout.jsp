@@ -42,6 +42,16 @@
 <a href="/nexus/top">ログイン画面へ</a>
 </div>
 </div>
-
+<!-- フッター　-->
+<footer>
+  <small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館)　All Rights Reserved.</small>
+</footer>
+<script type="text/javascript">
+window.location.hash="no-back";
+window.location.hash="no-back-button";
+window.onhashchange=function(){
+    window.location.hash="no-back";
+}
+</script>
 </body>
 </html>
