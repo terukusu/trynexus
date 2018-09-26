@@ -11,7 +11,6 @@ body{
   background: #f6f6f6;
 }
 
-
 main{
   width:980px;
   padding:50px 0;
@@ -82,7 +81,6 @@ table tr:nth-child(2n+1) {
 	padding-left: 10px;
 	margin-left:5px;
 	margin-right:5px;
-	margin-bottom:5px;
 	letter-spacing: 0.5rem;
 	font-weight: bold;
 }
@@ -108,12 +106,4 @@ table tr:nth-child(2n+1) {
 	margin-left;
 	margin-right;}
 
-.a .main-b{
-	float:right;
-	clear:both;
-	margin:10px;}
 
-.clear{
-	clear:both;
-}
-}

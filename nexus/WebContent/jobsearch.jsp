@@ -9,11 +9,11 @@
 	rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p"
 	rel="stylesheet" type="text/css" />
-<link href="../css/bootstrap-reboot.css" rel="stylesheet" type="text/css" />
-<link href="../css/common.css" rel="stylesheet" type="text/css" />
-<link href="../css/header.css" rel="stylesheet" type="text/css" />
-<link href="../css/footer.css" rel="stylesheet" type="text/css" />
-<link href="../css/job_search.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap-reboot.css" rel="stylesheet" type="text/css" />
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/header.css" rel="stylesheet" type="text/css" />
+<link href="css/footer.css" rel="stylesheet" type="text/css" />
+<link href="css/job_search.css" rel="stylesheet" type="text/css" />
 <title>求人検索項目</title>
 </head>
 <body>
@@ -63,8 +63,8 @@
 					placeholder="業種名より検索します。" tabindex="1"></textarea>
 			</div>
 			<div class="listbox1">
-				<h4 class="word">勤務地</h4>
-				<select name="addresscd" tabindex="2" style="width: 400px;">
+				<h4>勤務地</h4>
+				<select name="addresscd" tabindex="2">
 					<option value=""></option>
 					<option value="1">北海道</option>
 					<option value="2">青森県</option>
@@ -115,12 +115,12 @@
 					<option value="47">沖縄県</option>
 				</select>
 			</div>
-			<div class="listbox1" style="clear: left;">
+			<div class="listbox1">
 				<h4>給料</h4>
 				<input name="salarymin" type="number" maxlength="2" tabindex="3"
-					min="0" style="width: 90px;" /> 万円～ <input name="salarymax"
+					min="0" style="width: 70px;" /> 万円～ <input name="salarymax"
 					type="number" maxlength="2" tabindex="4" min="0"
-					style="width: 90px;" /> 万円
+					style="width: 70px;" /> 万円
 			</div>
 			<div class="listbox1">
 				<h4>雇用形態</h4>
@@ -154,7 +154,7 @@
 			<!--ここまで隠し項目-->
 			<div class="listbox2">
 				<h4 class="word">求人詳細内をフリーワード検索</h4>
-				<textarea class="word" name="job" cols="60" rows="6"
+				<textarea class="word" name="job" cols="60" rows="5"
 					placeholder="求人詳細項目より検索します。"></textarea>
 			</div>
 			<div class="listbox3">

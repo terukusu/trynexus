@@ -9,21 +9,11 @@ body {
 	text-align: left;
 }
 
-h3 {
-	
-	font-size:1.5rem;
-	margin-top:20px;
-	margin-bottom:20px;
-	color:#004d91;
-	clear: both;
-}
-
 
 /*　ここよりjob_search　*/
 
 /*　job_search　*/
 #job_search {
-	background-color: #CCC;
 	margin-top: 0;
 	margin-bottom: 50px;
 	margin-right: auto;
@@ -34,7 +24,7 @@ h3 {
 /* セレクト項目見出し */
 h4 {
 	background-color: #329bcf;
-	width: 270px;
+	width: 225px;
 	line-height: normal;
 	color: #FFF;
 	text-align: center;
@@ -46,12 +36,12 @@ h4 {
 }
 /* セレクト項目見出し（大） */
 h4.word {
-	width:400px;
+	width:470px;
 	letter-spacing: 0.6em;
 }
 /*セレクト項目*/
 select {
-	width: 280px;
+	width: 225px;
 	height:100px:
 }
 /*セレクト項目（小）*/
@@ -59,7 +49,7 @@ select.second {
 	width: 130px;
 }
 
-/*　ｈ２とセレクト項目の囲み範囲*/
+/*　ｈ3とセレクト項目の囲み範囲*/
 .listbox1 {
 	float: left;
 	height:60px;
@@ -67,13 +57,8 @@ select.second {
 	padding: 5px;
 }
 .listbox2 {
-	margin-top: 5px;
-	margin-right: 5px;
-	margin-bottom: 10px;
-	margin-left: 5px;
-	
+	margin: 5px;
 	padding: 5px;
-	clear: left;
 	float: left;
 }
 .listbox3 {
@@ -82,7 +67,7 @@ select.second {
 	padding: 5px;
 }
 textarea.word {
-	width:400px;
+	width:470px;
 }
 /*　送信ボタン　*/
 input.submit_button {
@@ -114,7 +99,7 @@ input.reset_button {
 
 /*　job_search_list　*/
 #job_search_list {
-	width:100%;
+
 	margin-top: 20px;
 	margin-bottom: 20px;
 	margin-right: auto;
@@ -123,15 +108,4 @@ input.reset_button {
 	clear: both;
 }
 
-
-/*　kyujinyoko　widthサイズ仮定　*/
-#kyujinyoko {
-	width:100%;
-	margin-top: 10px;
-	margin-bottom: 0;
-	margin-right: auto;
-	margin-left: auto;
-	padding-top:10px;
-	clear: both;
-}
 
