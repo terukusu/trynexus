@@ -43,11 +43,13 @@ public class SaibanDao {
 			// SQL文を実行する
 			try (ResultSet rs = ps.executeQuery()) {
 				// 番号を返す
-				int getsaiban = rs.getInt("kyujinsaiban") + 1;
+				int getsaiban = -1;
+				if(rs.next()) {
+					getsaiban = rs.getInt("kyujinsaiban") +1;
 
-				// インクリメントした値で　采番マスタ更新
-				update(getsaiban);
-
+					// インクリメントした値で　采番マスタ更新
+					updatesaiban(getsaiban);
+				}
 				return getsaiban;
 
 			} catch (SQLException e) {
@@ -62,20 +64,20 @@ public class SaibanDao {
 	 * 采番マスタを更新する
 	 * @throws IOException
 	 */
-	public void update(int saiban) throws IOException {
+	public void updatesaiban(int getsaiban) throws IOException {
 
 		// SQL文を生成する
 		StringBuffer sql = new StringBuffer();
 		sql.append("update saiban set");
-		sql.append(" kyujinsaiban = saiban");
+		sql.append(" kyujinsaiban = ");
+		sql.append("?");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
-
+			ps.setInt(1, getsaiban);
 			// SQL文を実行する
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			throw new IOException(e);
 		}
-
 	}
 
 

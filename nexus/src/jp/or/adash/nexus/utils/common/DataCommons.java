@@ -19,6 +19,9 @@ public class DataCommons {
 	 * @return 文字列のバイト数（取得エラーの場合は、マイナス値を返す）
 	 */
 	public int getBytes(String str) {
+		if (str == null) {
+			return 0;
+		}
 		try {
 			return str.getBytes("UTF-8").length;
 		} catch (UnsupportedEncodingException e) {
@@ -59,11 +62,26 @@ public class DataCommons {
 	/**
 	 *【エラー】形式チェック（数値）
 	 * エラー発生条件：文字列
-	 * @param int 整数
+	 * @param int 数値
 	 * @return string エラーメッセージ
 	 * @author y.Koura
 	 */
 	public static String chkInt(int i) {
+		try {
+			return null;
+		} catch (NumberFormatException e) {
+			return "数値ではない値が入力されています";
+		}
+	}
+
+	/**
+	 *【エラー】形式チェック（数値Long）
+	 * エラー発生条件：文字列
+	 * @param long 数値
+	 * @return string エラーメッセージ
+	 * @author
+	 */
+	public static String chkLong(long l) {
 		try {
 			return null;
 		} catch (NumberFormatException e) {
@@ -184,7 +202,20 @@ public class DataCommons {
 			return null;
 		}
 	}
-
+	/**
+	 *【エラー】桁数チェック（数値Long）
+	 * @param long 数値(検査項目)、int 数値(桁数)
+	 * @return string エラーメッセージ
+	 * @author
+	 */
+	public static String chklDigits(long l, int digits) {
+		int len =  String.valueOf( l ).length();
+		if (len > digits) {
+			return "入力可能桁数（" + digits + "）を超えています";
+		} else {
+			return null;
+		}
+	}
 	/**
 	 *【エラー】桁数チェック（文字）
 	 * @param int 文字(検査項目)、int 数値(桁数)
@@ -208,7 +239,11 @@ public class DataCommons {
 	 */
 
 	public static java.sql.Date convertToSqlDate(java.util.Date utilDate){
-	    return new java.sql.Date(utilDate.getTime());
+		if (utilDate != null) {
+			return new java.sql.Date(utilDate.getTime());
+		} else {
+			return null;
+		}
 	}
 }
 

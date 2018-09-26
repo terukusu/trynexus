@@ -41,6 +41,7 @@ public class KyujinDao {
 	public int insert(Kyujin kyujin) throws IOException {
 		int count = 0;
 
+
 		// SQL文を生成する
 		StringBuffer sql = new StringBuffer();
 		sql.append("insert into kyujin(");
@@ -78,7 +79,9 @@ public class KyujinDao {
 			ps.setString(24, kyujin.getDetail());
 			ps.setString(25, kyujin.getKoyoukeitaicd());
 			ps.setString(26, kyujin.getKoyoukikan());
+
 			ps.setDate(27, DataCommons.convertToSqlDate(kyujin.getKoyoukikankaishi()));
+
 			ps.setDate(28, DataCommons.convertToSqlDate(kyujin.getKoyoukikanowari()));
 			ps.setString(29, kyujin.getEducation());
 			ps.setString(30, kyujin.getExperience());

@@ -99,15 +99,33 @@ public class KyujinInsertServlet extends HttpServlet {
 		String education = request.getParameter("education");
 		String experience = request.getParameter("experience");
 		String license = request.getParameter("license");
-		int agemin = Integer.parseInt(request.getParameter("agemin"));
-		int agemax = Integer.parseInt(request.getParameter("agemax"));
-		int salarymin = Integer.parseInt(request.getParameter("salarymin"));
-		int salarymax = Integer.parseInt(request.getParameter("salarymax"));
+
+		// 空データでparseIntをするとエラーになるので、空データ以外はチェック。空データーは０をセット
+		int agemin = 0;
+		if (!request.getParameter("agemin").equals("")) {
+		       agemin = Integer.parseInt(request.getParameter("agemin"));}
+		int agemax = 0;
+		if (!request.getParameter("agemax").equals("")) {
+		    agemax = Integer.parseInt(request.getParameter("agemax"));}
+		int salarymin = 0;
+		if (!request.getParameter("salarymin").equals("")) {
+			salarymin = Integer.parseInt(request.getParameter("salarymin"));}
+		int salarymax = 0;
+		if  (!request.getParameter("salarymax").equals("")) {
+			salarymax = Integer.parseInt(request.getParameter("salarymax"));}
 		String salaryformcd = request.getParameter("salaryformcd");
-		int begintime = Integer.parseInt(request.getParameter("begintime"));
-		int endtime = Integer.parseInt(request.getParameter("endtime"));
-		int establishdt = Integer.parseInt(request.getParameter("establishdt"));
-		long capital = Long.parseLong(request.getParameter("capital"));
+		int begintime = 0;
+		if (!request.getParameter("begintime").equals("")) {
+		    begintime = Integer.parseInt(request.getParameter("begintime"));}
+		int endtime = 0;
+		if (!request.getParameter("endtime").equals("")) {
+		    endtime = Integer.parseInt(request.getParameter("endtime"));}
+		int establishdt = 0;
+		if (!request.getParameter("establishdt").equals("")) {
+		    establishdt = Integer.parseInt(request.getParameter("establishdt"));}
+		long capital = 0;
+		if (!request.getParameter("capital").equals("")) {
+		    capital = Long.parseLong(request.getParameter("capital"));}
 		String companyfeature = request.getParameter("companyfeature");
 		String tantouyakushoku = request.getParameter("tantouyakushoku");
 		String tantoukana = request.getParameter("tantoukana");
@@ -116,8 +134,12 @@ public class KyujinInsertServlet extends HttpServlet {
 		String applicationform = request.getParameter("applicationform");
 		String background = request.getParameter("background");
 		String hiddensex = request.getParameter("hiddensex");
-		int hiddenagemin = Integer.parseInt(request.getParameter("hiddenagemin"));
-		int hiddenagemax = Integer.parseInt(request.getParameter("hiddenagemax"));
+		int hiddenagemin = 0;
+		if (!request.getParameter("hiddenagemin").equals("")) {
+		    hiddenagemin = Integer.parseInt(request.getParameter("hiddenagemin"));}
+		int hiddenagemax = 0;
+		if (!request.getParameter("hiddenagemax").equals("")) {
+		    hiddenagemax = Integer.parseInt(request.getParameter("hiddenagemax"));}
 		String hiddenetc = request.getParameter("hiddenetc");
 		Date createdt= null;
 /*		try {
@@ -165,6 +187,7 @@ public class KyujinInsertServlet extends HttpServlet {
 		KyujinService service = new KyujinService();
 		if (!service.check(kyujin)) {
 			// 1.4 入力チェックでエラーがあった場合、エラーメッセージをセット
+            kyujin.setNo(null);
 			request.setAttribute("kyujin", kyujin);
 			request.setAttribute("messages", service.getMessages());
 
