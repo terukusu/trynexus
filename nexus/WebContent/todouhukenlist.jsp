@@ -9,7 +9,7 @@
 </head>
 <body>
 <select name="cd">
-			<c:forEach var="todouhuken" items="${ list }">
+			<c:forEach var="todouhuken" items="${ Todouhukenlist }">
 				<option value="${ todouhuken.cd }">${ todouhuken.name }</option>
 			</c:forEach>
 </select>
