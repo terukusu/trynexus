@@ -144,10 +144,10 @@ public class SaibanDao {
 		sql.append("select staffsaiban");
 		sql.append(" from saiban");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
+
 			int getsaiban = -1;
 			// SQL文を実行する  複数取れたレコードの中から
 			try (ResultSet rs = ps.executeQuery()) {
-
 				// 番号を返す　カーソルを１レコード目に移した
 				if(rs.next()) {
 					getsaiban = rs.getInt("staffsaiban") + 1;
