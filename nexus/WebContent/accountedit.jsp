@@ -101,9 +101,9 @@
 		<input class="main-b" type="submit" value="更新">
 	</form>
 
-	<form name="delete" action="/nexus/web/account-delete" method="GET">
+	<form name="delete" action="/nexus/web/account-delete" method="GET" onsubmit="return kakunin()">
 		<input type="hidden" name="id" value="${ Staff.id }">
-		<input class="main-b" type="submit" value="削除" onclick="kakunin()" >
+		<input class="main-b" type="submit" value="削除"  >
 	</form>
 <input class="main-b" type="button" value="戻る" onclick="location.href='/nexus/web/account-list'">
 	<!--   <input class="main-b" type="button"

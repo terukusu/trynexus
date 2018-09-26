@@ -52,7 +52,7 @@ public class AccountEditCompletionServlet extends HttpServlet {
 		if (!service.errorsCheck(staff)) {
 			staff = service.getStaffAccount(id);
 			//0	アカウント情報をセット
-			request.setAttribute("staff", staff);
+			request.setAttribute("Staff", staff);
 			request.setAttribute("messages", service.getMessages());
 
 			//0	JSPにフォワード
