@@ -9,13 +9,13 @@
 </head>
 <body>
 <select name="largecd">
-			<c:forEach var="jobcategory" items="${ Largelist }">
+			<c:forEach var="jobcategory" items="${ JCLargelist }">
 				<option value="${ jobcategory.largecd }">${ jobcategory.name }</option>
 			</c:forEach>
 </select>
 
 <select name="smallcd">
-			<c:forEach var="jobcategory" items="${ Smalllist }">
+			<c:forEach var="jobcategory" items="${ JCSmalllist }">
 				<option value="${ jobcategory.smallcd }">${ jobcategory.name }</option>
 			</c:forEach>
 </select>
