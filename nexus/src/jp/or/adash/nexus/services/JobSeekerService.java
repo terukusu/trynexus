@@ -10,8 +10,8 @@ import jp.or.adash.nexus.dao.SaibanDao;
 import jp.or.adash.nexus.entity.JobSeeker;
 import jp.or.adash.nexus.entity.JobSeekerMain;
 import jp.or.adash.nexus.entity.Jobseeker_simple_entity;
+import jp.or.adash.nexus.entity.StaffName;
 import jp.or.adash.nexus.utils.common.DataCommons;
-import jp.or.adash.nexus.utils.common.MessageCommons;
 import jp.or.adash.nexus.utils.dao.Transaction;
 
 
@@ -43,6 +43,7 @@ public class JobSeekerService {
 	 * @return 求職者情報一覧
      *@aihara
 	 */
+	/*
 public List<Jobseeker_simple_entity> getJobSeekerList(){
 	List<Jobseeker_simple_entity> jobseekerList = new ArrayList<Jobseeker_simple_entity>();
 	try {
@@ -63,13 +64,14 @@ public List<Jobseeker_simple_entity> getJobSeekerList(){
 
 	return jobseekerList;
 	}
+	*/
 	/**
 	 * 求職者idを元に絞込み、求職者情報を取得する
 	 * @param id 求職者id
 	 * @return idで絞り込んだ求職者情報
      *@aihara
 	 */
-public List<Jobseeker_simple_entity> getJobseeker(String js_id) {
+/*public List<Jobseeker_simple_entity> getJobseeker(String js_id) {
 	List<Jobseeker_simple_entity> jobseeker = null;
 
 	try {
@@ -89,7 +91,7 @@ public List<Jobseeker_simple_entity> getJobseeker(String js_id) {
 
 	return jobseeker;
 }
-
+*/
 	/*
 	 * 求職者情報の詳細情報を取得する
 	 * @return 求職者情報の詳細情報
@@ -115,12 +117,14 @@ public JobSeekerMain getJobseekermaininfo(String js_id) {
 
 	return jobseeker;
 }
+
 	/**
-	 * 求職者IDを元に、求職者情報を取得する
-	 * @param id 求職者ID
+	 * 求職者情報を検索する
+	 * @param 求職者ID js_id,求職者かな名 js_kana,担当紹介者氏名 st_name
 	 * @return 求職者情報
+	 * @author aihara
 	 */
-	public List<Jobseeker_simple_entity> getJobSeeker(String js_id) {
+	public List<Jobseeker_simple_entity> getJobSeeker(String js_id,String js_kana,String st_name) {
 		List<Jobseeker_simple_entity> seeker = null;
 
 		try {
@@ -129,7 +133,7 @@ public JobSeekerMain getJobseekermaininfo(String js_id) {
 
 			// 商品単価を取得する
 			JobSeeker_dao dao = new JobSeeker_dao(transaction);
-			seeker = dao.selectJobSeekerId(js_id);
+			seeker = dao.selectJobSeeker(js_id, js_kana, st_name);
 
 		} catch(IOException e) {
 			// エラーメッセージをセットする
@@ -141,7 +145,30 @@ public JobSeekerMain getJobseekermaininfo(String js_id) {
 		return seeker;
 	}
 
+	/**
+	 * 担当紹介者氏名を取得する
+	 * @return 担当紹介者氏名情報
+	 */
+	public List<StaffName> getTantoStaff() {
+		List<StaffName> staff = null;
 
+		try {
+			// データベース接続を開始する
+			transaction.open();
+
+			// 商品単価を取得する
+			JobSeeker_dao dao = new JobSeeker_dao(transaction);
+			staff = dao.selectTantoStaff();
+
+		} catch(IOException e) {
+			// エラーメッセージをセットする
+		} finally {
+			// データベース接続をを終了する
+			transaction.close();
+		}
+
+		return staff;
+	}
 
 	/**
 	 * 求職者情報の内容をチェックする

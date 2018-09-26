@@ -2,7 +2,6 @@ package jp.or.adash.nexus.servlets;
 
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,9 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import jp.or.adash.nexus.entity.Jobseeker_simple_entity;
 import jp.or.adash.nexus.entity.Staff;
-import jp.or.adash.nexus.services.JobSeekerService;
+//import jp.or.adash.nexus.services.JobSeekerService;
 
 /**
  * Servlet implementation class JobSeekerServlet
@@ -38,12 +36,12 @@ public class JobSeekerListShowServlet extends HttpServlet {
 		Staff staff = (Staff) session.getAttribute("UserData");
 
     	// 1.求職者情報一覧を取得する
-		JobSeekerService service = new JobSeekerService();
-		List<Jobseeker_simple_entity> list = service.getJobSeekerList();
+//		JobSeekerService service = new JobSeekerService();
+//		List<Jobseeker_simple_entity> list = service.getJobSeekerList();
 
 		// 2.求職者情報をリクエストに格納する
 		request.setAttribute("Staff", staff);
-		request.setAttribute("list", list);
+//		request.setAttribute("list", list);
 		// 3.JSPにフォワードする
 		request.getRequestDispatcher("/applicant_list.jsp").forward(request, response);
 	}

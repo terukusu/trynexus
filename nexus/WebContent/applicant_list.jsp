@@ -50,19 +50,19 @@
 	<main>
 	<h2>求職者情報検索</h2>
 	<div id="box">
-		<form action="/nexus/web/jobseeker-show" method="post">
+		<form action="/nexus/web/jobseeker-search" method="post">
 			<table>
 				<tr>
-					<td><p>求職者ID:</p> <input type="text" name="js_id" /></td>
-					<td><p>求職者かな名:</p> <input type="text" name="js_name" /></td>
-					<td><p>担当職業紹介者:</p> <select name="st_name">
-							<option value="">田中さん</option>
-							<option value="25">てるてる</option>
-							<option value="26">あっち兄さん</option>
-							<option value="27" selected></option>
-							<option value="28"></option>
-							<option value="29"></option>
-							<option value="30"></option>
+					<td><p>求職者ID:</p>
+						<input type="text" name="js_id" /></td>
+					<td><p>求職者かな名:</p>
+						<input type="text" name="js_kana" /></td>
+					<td><p>担当職業紹介者:</p>
+						<select name="st_name">
+						<option selected></option>
+						<c:forEach var="staff" items="${ st_name }">
+							<option value="${ staff.name }"><c:out value="${ staff.name }" /></option>
+						</c:forEach>
 					</select></td>
 					<td><input type="submit" class="main-b" name="send" value="検索"></td>
 				</tr>
