@@ -6,7 +6,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>実習</title>
+<title>トップページ</title>
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"rel="stylesheet" >
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
 <link href="../css/bootstrap-reboot.css" rel="stylesheet">
