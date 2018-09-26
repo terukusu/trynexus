@@ -24,7 +24,9 @@ import jp.or.adash.nexus.services.JobService;
 import jp.or.adash.nexus.services.TodouhukenService;
 
 /**
+ * 求職者の詳細を表示、編集するサーブレット
  * Servlet implementation class jobseekermaininfoservlet
+ * @author Y.Okamura & T.Uchi
  */
 @WebServlet("/web/jobseeker-info")
 public class jobseekermaininfoservlet extends HttpServlet {
@@ -48,22 +50,22 @@ public class jobseekermaininfoservlet extends HttpServlet {
 		JobSeekerService service = new JobSeekerService();
 		JobSeekerMain js_info = service.getJobseekermaininfo(js_id);
 		// 1.都道府県リストを取得する
-				TodouhukenService Tservice = new TodouhukenService();
-				List<Todouhuken> Tlist = Tservice.getTodouhukenList();
-				// 2.都道府県リストをリクエストに格納する
-				request.setAttribute("Todouhukenlist",Tlist);
+		TodouhukenService Tservice = new TodouhukenService();
+		List<Todouhuken> Tlist = Tservice.getTodouhukenList();
+		// 2.都道府県リストをリクエストに格納する
+		request.setAttribute("Todouhukenlist",Tlist);
 
-				// 1.職種大分類リストを取得する
-				JobService Lservice = new JobService();
-				List<Job> Llist = Lservice.getLargeJobList();
-				// 2.職種大分類リストをリクエストに格納する
-				request.setAttribute("Largelist", Llist);
+		// 1.職種大分類リストを取得する
+		JobService Lservice = new JobService();
+		List<Job> Llist = Lservice.getLargeJobList();
+		// 2.職種大分類リストをリクエストに格納する
+		request.setAttribute("Largelist", Llist);
 
-				// 1.業種大分類リストを取得する
-				JobCategoryService JCLservice = new JobCategoryService();
-				List<JobCategory> JCLlist = JCLservice.getLargeJobCategoryList();
-				// 2.業種大分類リストをリクエストに格納する
-				request.setAttribute("JCLargelist", JCLlist);
+		// 1.業種大分類リストを取得する
+		JobCategoryService JCLservice = new JobCategoryService();
+		List<JobCategory> JCLlist = JCLservice.getLargeJobCategoryList();
+		// 2.業種大分類リストをリクエストに格納する
+		request.setAttribute("JCLargelist", JCLlist);
 
 		// 2.求職者情報をリクエストに格納する
 		request.setAttribute("Staff", staff);

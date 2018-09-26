@@ -17,7 +17,9 @@ import jp.or.adash.nexus.entity.Staff;
 import jp.or.adash.nexus.services.JobSeekerService;
 
 /**
+ * 求職者情報を編集するサーブレット
  * Servlet implementation class JobSeekerEditServlet
+ * @author Y.Okamura & T.Uchi
  */
 @WebServlet("/web/jobseeker-edit")
 public class JobSeekerEditServlet extends HttpServlet {

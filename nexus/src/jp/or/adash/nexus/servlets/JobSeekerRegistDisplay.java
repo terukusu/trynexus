@@ -22,7 +22,9 @@ import jp.or.adash.nexus.services.TodouhukenService;
 
 
 /**
+ * 求職者の登録画面を表示するサーブレット
  * Servlet implementation class JobSeekerRegistDisplay
+ * @author Y.Okamura & T.Uchi
  */
 @WebServlet("/web/jobseeker-disp")
 public class JobSeekerRegistDisplay extends HttpServlet {
@@ -62,14 +64,7 @@ public class JobSeekerRegistDisplay extends HttpServlet {
 				List<JobCategory> JCLlist = JCLservice.getLargeJobCategoryList();
 				// 2.業種大分類リストをリクエストに格納する
 				request.setAttribute("JCLargelist", JCLlist);
-/*
-				// 1.2 求職者IDがある場合、求職者情報を取得
-				JobSeeker seeker = null;
-				if (id != "") {
-					JobSeekerService service = new JobSeekerService();
-					seeker = service.getJobSeeker(id);
-				}
-*/
+
 				// 1.3 リクエストに求職者情報をセットする
 				request.setAttribute("Staff", staff);
 				request.setAttribute("seeker", seeker);

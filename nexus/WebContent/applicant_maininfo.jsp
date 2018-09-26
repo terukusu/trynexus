@@ -441,21 +441,23 @@
 			</tr>
 			<tr>
 				<th>パソコンスキル</th>
-				<td><input type="text" name="pasokonskill" value="${ info.pasokonskill }" /></td>
+				<td><textarea rows="4" cols="40" name="pasokonskill" value="${ info.pasokonskill }" />
+				</textarea></td>
 			</tr>
 			<tr>
 				<th>留意点</th>
-				<td><input type="text" name="caution" value="${ info.caution }" /></td>
+				<td><textarea rows="4" cols="40" name="caution" value="${ info.caution }" />
+				</textarea></td>
 			</tr>
 			<tr>
 				<th>担当職業者紹介者氏名</th>
-				<td><input type="hidden" name="tantoustaffname" value="<c:out value="${ info.tantoustaffname }" />">
-				<c:out value="${ info.tantoustaffname }" /></td>
+				<td><input type="hidden" name="tantoustaffname" value="<c:out value="${ Staff.name }" />">
+				<c:out value="${ Staff.name }" /></td>
 			</tr>
 			<tr>
 				<th>担当職業者紹介者ID</th>
-				<td><input type="hidden" name="tantoustaffid" value="<c:out value="${ info.tantoustaffid }" />">
-				<c:out value="${ info.tantoustaffid }" /></td>
+				<td><input type="hidden" name="tantoustaffid" value="<c:out value="${ Staff.id }" />">
+				<c:out value="${ Staff.id }" /></td>
 			</tr>
 		</table>
 		<input type="submit" value="更新" class="main-b">

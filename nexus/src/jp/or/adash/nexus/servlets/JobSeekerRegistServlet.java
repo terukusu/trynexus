@@ -19,7 +19,9 @@ import jp.or.adash.nexus.services.JobSeekerService;
 
 
 /**
+ * 求職者情報を登録するサーブレット
  * Servlet implementation class JobSeekerRegistServlet
+ * @author Y.Okamura & T.Uchi
  */
 @WebServlet("/web/jobseeker-regist")
 public class JobSeekerRegistServlet extends HttpServlet {
@@ -123,21 +125,8 @@ public class JobSeekerRegistServlet extends HttpServlet {
 		String tantoustaffid = request.getParameter("tantoustaffid");
 		String password = request.getParameter("password");
 		Date createdt = null;
-		/*
-		try {
-			createdt = sdf.parse(request.getParameter("createdt"));
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}*/
 		String createuserid = request.getParameter("createuserid");
-
 		Date upDatedt = null;
-		/*
-		try {
-			upDatedt = sdf.parse(request.getParameter("upDatedt"));
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}*/
 		String upDateuserid = request.getParameter("upDateuerid");
 		String deleteflag = request.getParameter("deleteflag");
 
@@ -174,11 +163,11 @@ public class JobSeekerRegistServlet extends HttpServlet {
 			//処理結果メッセージをリクエストに格納する
 
 			request.setAttribute("Staff", staff);
-			request.setAttribute("seeker", seeker);
+			request.setAttribute("info", seeker);
 			request.setAttribute("messages", service.getMessages());
 
 			// 1.8 JSPにフォワード
-			request.getRequestDispatcher("/applicantedit.jsp") //ここにjspを入力
+			request.getRequestDispatcher("/applicant_maininfo.jsp") //ここにjspを入力
 				.forward(request, response);
 	}
 

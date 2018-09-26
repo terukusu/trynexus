@@ -15,7 +15,11 @@ import jp.or.adash.nexus.utils.common.DataCommons;
 import jp.or.adash.nexus.utils.dao.Transaction;
 
 
-
+/**
+ * 求職者サービス
+ * @author S.aihara & Y.Okamura & T.Uchi
+ *
+ */
 
 public class JobSeekerService {
 
@@ -69,7 +73,7 @@ public List<Jobseeker_simple_entity> getJobSeekerList(){
 	 * 求職者idを元に絞込み、求職者情報を取得する
 	 * @param id 求職者id
 	 * @return idで絞り込んだ求職者情報
-     *@aihara
+     * @author aihara
 	 */
 /*public List<Jobseeker_simple_entity> getJobseeker(String js_id) {
 	List<Jobseeker_simple_entity> jobseeker = null;
@@ -95,7 +99,7 @@ public List<Jobseeker_simple_entity> getJobSeekerList(){
 	/*
 	 * 求職者情報の詳細情報を取得する
 	 * @return 求職者情報の詳細情報
-     *@aihara
+     * @author aihara
 	 */
 public JobSeekerMain getJobseekermaininfo(String js_id) {
 	JobSeekerMain jobseeker = null;
@@ -148,6 +152,7 @@ public JobSeekerMain getJobseekermaininfo(String js_id) {
 	/**
 	 * 担当紹介者氏名を取得する
 	 * @return 担当紹介者氏名情報
+	 * @author aihara
 	 */
 	public List<StaffName> getTantoStaff() {
 		List<StaffName> staff = null;
@@ -174,6 +179,7 @@ public JobSeekerMain getJobseekermaininfo(String js_id) {
 	 * 求職者情報の内容をチェックする
 	 * @param seeker 求職者情報
 	 * @return 処理結果（true:成功、false:失敗）
+	 * @author Y.Okamura & T.Uchi
 	 */
 	public boolean check(JobSeeker seeker) {
 		boolean result = true;		// チェック結果
@@ -338,12 +344,12 @@ public JobSeekerMain getJobseekermaininfo(String js_id) {
 					result = false;
 				}
 				*/
-
+				/*
 				if(seeker.getHopeworkplace() != ("")) {
 				errMsg = DataCommons.chksDigits(seeker.getHopeworkplace(), 2);
 				messages.add(errMsg);
 				}
-
+				*/
 				/*
 				// 雇用形態の値が入力されているか
 				if (seeker.getHopekoyoukeitai() == null) {
@@ -462,6 +468,7 @@ public JobSeekerMain getJobseekermaininfo(String js_id) {
 	 * 求職者情報の内容をチェックする
 	 * @param seeker 求職者情報
 	 * @return 処理結果（true:成功、false:失敗）
+	 * @author Y.Okamura & T.Uchi
 	 */
 	public boolean check(JobSeekerMain seeker) {
 		boolean result = true;		// チェック結果
@@ -753,6 +760,7 @@ public JobSeekerMain getJobseekermaininfo(String js_id) {
 	 * 求職者情報を登録する
 	 * @param item 商品データ
 	 * @return 処理結果（true:成功、false:失敗）
+	 * @author Y.Okamura & T.Uchi
 	 */
 	public boolean registItem(JobSeeker seeker) {
 		boolean result = false;
@@ -775,6 +783,7 @@ public JobSeekerMain getJobseekermaininfo(String js_id) {
 	 * 求職者情報をデータベースに登録する
 	 * @param seeker 求職者情報
 	 * @return 処理結果（true:成功、false:失敗）
+	 * @author Y.Okamura & T.Uchi
 	 */
 	public boolean insertJobSeeker(JobSeeker seeker) {
 		boolean result = false;		// 処理結果
@@ -830,6 +839,7 @@ public JobSeekerMain getJobseekermaininfo(String js_id) {
 	 * 求職者情報を更新する
 	 * @param seeker 求職者情報
 	 * @return 処理結果（true:成功、false:失敗）
+	 * @author Y.Okamura & T.Uchi
 	 */
 	public boolean updateJobSeeker(JobSeekerMain seeker) {
 		boolean result = false;	// 処理結果
