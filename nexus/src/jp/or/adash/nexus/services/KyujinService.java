@@ -114,6 +114,7 @@ public class KyujinService {
 			DataCommons commons = new DataCommons();
 
 			// 事業所番号の長さが適切か
+
 			int length = commons.getBytes(kyujin.getCompanyno());
 			if (length <= 0 || length > 13) {
 				messages.add("事業所番号が不当です。");
@@ -379,25 +380,26 @@ public class KyujinService {
 				result = false;
 			}
 			//創業設立年チェック
-		    Date date = new Date();
-		    SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
-		    int year = Integer.parseInt(sdf.format(date));
-			msg = DataCommons.chkiDigits(kyujin.getEstablishdt(),4);
-			if ( msg != null ) {
-				messages.add(msg);
-				result = false;
-			}
-			msg = DataCommons.chkInt(kyujin.getEstablishdt());
-			if ( msg != null ) {
-				messages.add(msg);
-				result = false;
-			}
+			if (kyujin.getEstablishdt() != 0) {
+				Date date = new Date();
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+				int year = Integer.parseInt(sdf.format(date));
+				msg = DataCommons.chkiDigits(kyujin.getEstablishdt(),4);
+				if ( msg != null ) {
+					messages.add(msg);
+					result = false;
+				}
+				msg = DataCommons.chkInt(kyujin.getEstablishdt());
+				if ( msg != null ) {
+					messages.add(msg);
+					result = false;
+				}
 			//578 は日本最古の創業年
-			if (kyujin.getEstablishdt() > year || kyujin.getEstablishdt() < 578) {
-				messages.add("創業設立念が不当な値です。");
-				result = false;
-		    }
-
+				if (kyujin.getEstablishdt() > year || kyujin.getEstablishdt() < 578) {
+					messages.add("創業設立年が不当な値です。");
+					result = false;
+				}
+			}
 
 			//資本金チェック
 			msg = DataCommons.chklDigits(kyujin.getCapital(),16);

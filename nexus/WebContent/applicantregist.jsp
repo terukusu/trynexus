@@ -233,8 +233,7 @@
 				<tr>
 					<th>その他希望</th>
 					<td><textarea rows="4" cols="40" name="hopeetc"
-							value="<c:out value="${ seeker.hopeetc }" />">
-			</textarea></td>
+					<c:out value="${ seeker.hopeetc }" />></textarea></td>
 				</tr>
 				<tr>
 					<th>自動車免許</th>
@@ -249,20 +248,18 @@
 				<tr>
 					<th>その他免許</th>
 					<td><textarea rows="4" cols="40" name="licenseetc"
-							value="<c:out value="${ seeker.licenseetc }" />">
+<c:out value="${ seeker.licenseetc }" />>
 			</textarea></td>
 				</tr>
 				<tr>
 					<th>パソコンスキル</th>
 					<td><textarea rows="4" cols="40" name="pasokonskill"
-							value="<c:out value="${ seeker.pasokonskill }" />">
-				</textarea></td>
+					<c:out value="${ seeker.pasokonskill }" />></textarea></td>
 				</tr>
 				<tr>
 					<th>留意点</th>
-					<td><textarea rows="4" cols="40" name="caution"
-							value="<c:out value="${ seeker.caution }" />">身体上に注意することを書いてください。
-			</textarea></td>
+					<td><textarea rows="4" cols="40" name="caution" placeholder="身体上に注意することを書いてください。"
+					<c:out value="${ seeker.caution }" />></textarea></td>
 				</tr>
 				<tr>
 					<th>担当職業者紹介者ID</th>

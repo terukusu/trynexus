@@ -392,13 +392,13 @@
 				</tr>
 				<tr>
 					<th>就業時間・始業</th>
-					<td><input type="text" name="begintime"
+					<td><input type="number" name="begintime"
 						value="<c:out value="${ kyujin.begintime }" />" size="8"
 						maxlength="4" tabindex="47"></td>
 				</tr>
 				<tr>
 					<th>就業時間・終業</th>
-					<td><input type="text" name="endtime"
+					<td><input type="number" name="endtime"
 						value="<c:out value="${ kyujin.endtime }" />" size="8"
 						maxlength="4" tabindex="48"></td>
 				</tr>
