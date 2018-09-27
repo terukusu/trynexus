@@ -17,13 +17,20 @@
 <link href="../css/footer.css" rel="stylesheet">
 <link href="../css/job_regist.css" rel="stylesheet" type="text/css" />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
-<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/Base/jquery-ui.css" >
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
-<script type="text/javascript" src="../js/common.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+<link rel="stylesheet"
+	href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/Base/jquery-ui.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+<script type="text/javascript" src="../js/jobregist.js"></script>
+<script type="text/javascript" src="../js/calender.js"></script>
 </head>
 <body>
 
@@ -85,23 +92,19 @@
 					<th>求人No.</th>
 					<td><input type="text" name="no"
 						value="<c:out value="${  kyujin.no }" />" size="20" maxlength="14"
-						tabindex="1"></td>
+						tabindex="1" readonly></td>
 				</tr>
 				<tr>
 					<th>受付年月日</th>
-					<td>
-
-						<input type="text" class="datepicker" name="receptiondt"
-						value="<fmt:formatDate value="${ kyujin.receptiondt }" pattern="yyyy-MM-dd"/>"size="10"
-						maxlength="10"
-						tabindex="2">
-					</td>
+					<td><input type="text" class="datepicker" name="receptiondt"
+						value="<fmt:formatDate value="${ kyujin.receptiondt }" pattern="yyyy-MM-dd"/>"
+						size="10" maxlength="10" tabindex="2"></td>
 				</tr>
 				<tr>
 					<th>求人有効年月日</th>
 					<td><input type="text" class="datepicker" name="perioddt"
-						value="<fmt:formatDate value="${ kyujin.perioddt }" pattern="yyyy-MM-dd"/>" size="10"
-						maxlength="10" tabindex="3"></td>
+						value="<fmt:formatDate value="${ kyujin.perioddt }" pattern="yyyy-MM-dd"/>"
+						size="10" maxlength="10" tabindex="3"></td>
 				</tr>
 				<tr>
 					<th>事業所番号</th>
@@ -114,7 +117,8 @@
 				<tr>
 					<th>産業大分類コード</th>
 					<td><select name="jobcategorylargecd" tabindex="5">
-							<c:forEach var="jobcategory" items="${ Largelist }">
+							<option></option>
+							<c:forEach var="jobcategory" items="${ JCLargelist }">
 								<option value="${ jobcategory.largecd }">${ jobcategory.name }</option>
 							</c:forEach>
 					</select></td>
@@ -122,7 +126,8 @@
 				<tr>
 					<th>産業細分類コード</th>
 					<td><select name="jobcategorysmallcd" tabindex="6">
-							<c:forEach var="jobcategory" items="${ Smalllist }">
+							<option></option>
+							<c:forEach var="jobcategory" items="${ JCSmalllist }">
 								<option value="${ jobcategory.smallcd }">${ jobcategory.name }</option>
 							</c:forEach>
 					</select></td>
@@ -178,6 +183,7 @@
 				<tr>
 					<th>職種大分類コード１</th>
 					<td><select name="joblargecd1" tabindex="15">
+							<option></option>
 							<c:forEach var="job" items="${ Largelist }">
 								<option value="${ job.largecd }">${ job.name }</option>
 							</c:forEach>
@@ -186,6 +192,7 @@
 				<tr>
 					<th>職種細分類コード１</th>
 					<td><select name="jobsmallcd1" tabindex="16">
+							<option></option>
 							<c:forEach var="job" items="${ Smalllist }">
 								<option value="${ job.smallcd }">${ job.name }</option>
 							</c:forEach>
@@ -194,6 +201,7 @@
 				<tr>
 					<th>職種大分類コード2</th>
 					<td><select name="joblargecd2" tabindex="17">
+							<option></option>
 							<c:forEach var="job" items="${ Largelist }">
 								<option value="${ job.largecd }">${ job.name }</option>
 							</c:forEach>
@@ -202,6 +210,7 @@
 				<tr>
 					<th>職種細分類コード2</th>
 					<td><select name="jobsmallcd2" tabindex="18">
+							<option></option>
 							<c:forEach var="job" items="${ Smalllist }">
 								<option value="${ job.smallcd }">${ job.name }</option>
 							</c:forEach>
@@ -210,6 +219,7 @@
 				<tr>
 					<th>職種大分類コード3</th>
 					<td><select name="joblargecd3" tabindex="19">
+							<option></option>
 							<c:forEach var="job" items="${ Largelist }">
 								<option value="${ job.largecd }">${ job.name }</option>
 							</c:forEach>
@@ -218,6 +228,7 @@
 				<tr>
 					<th>職種細分類コード3</th>
 					<td><select name="jobsmallcd3" tabindex="20">
+							<option></option>
 							<c:forEach var="job" items="${ Smalllist }">
 								<option value="${ job.smallcd }">${ job.name }</option>
 							</c:forEach>
@@ -233,6 +244,7 @@
 				<tr>
 					<th>就業場所都道府県</th>
 					<td><select name="adresscd" tabindex="22">
+							<option></option>
 							<c:forEach var="todouhuken" items="${ list }">
 								<option value="${ todouhuken.cd }">${ todouhuken.name }</option>
 							</c:forEach>
@@ -264,8 +276,8 @@
 						value="2"
 						<c:if test="${2 == kyujin.hakencd}" >checked="checked"</c:if>
 						tabindex="27"> 請負 <input type="radio" name="hakencd"
-						value=""
-						<c:if test="${null == kyujin.hakencd}" >checked="checked"</c:if>
+						value="3"
+						<c:if test="${1 != kyujin.hakencd && 2 != kyujin.hakencd }" >checked="checked"</c:if>
 						tabindex="28"> その他</td>
 
 				</tr>
@@ -300,20 +312,22 @@
 						<c:if test="${1 == kyujin.koyoukikan}">checked="checked"</c:if>
 						tabindex="31"> 有り <input type="radio" name="koyoukikan"
 						value="2"
-						<c:if test="${2 == kyujin.koyoukikan}">checked="checked"</c:if>
+						<c:if test="${1 != kyujin.koyoukikan}">checked="checked"</c:if>
 						tabindex="32"> 無し</td>
 				</tr>
 				<tr>
 					<th>雇用期間開始年月日</th>
-					<td><input type="text" class="datepicker" name="koyoukikankaishi"
-						value="<fmt:formatDate value="${ kyujin.koyoukikankaishi }" pattern="yyyy-MM-dd"/>" size="10"
-						maxlength="10" tabindex="33"></td>
+					<td><input type="text" class="datepicker"
+						name="koyoukikankaishi"
+						value="<fmt:formatDate value="${ kyujin.koyoukikankaishi }" pattern="yyyy-MM-dd"/>"
+						size="10" maxlength="10" tabindex="33"></td>
 				</tr>
 				<tr>
 					<th>雇用期間終了年月日</th>
-					<td><input type="text" class="datepicker" name="koyoukikanowari"
-						value="<fmt:formatDate value="${ kyujin.koyoukikanowari }" pattern="yyyy-MM-dd"/>" size="10"
-						maxlength="10" tabindex="34"></td>
+					<td><input type="text" class="datepicker"
+						name="koyoukikanowari"
+						value="<fmt:formatDate value="${ kyujin.koyoukikanowari }" pattern="yyyy-MM-dd"/>"
+						size="10" maxlength="10" tabindex="34"></td>
 				</tr>
 				<tr>
 					<th>学歴</th>
@@ -372,7 +386,7 @@
 						<c:if test="${5 == kyujin.salaryformcd}">checked="checked"</c:if>
 						tabindex="45"> 年棒 <input type="radio" name="salaryformcd"
 						value="6"
-						<c:if test="${6 == kyujin.salaryformcd}">checked="checked"</c:if>
+						<c:if test="${1 != kyujin.salaryformcd && 3 != kyujin.salaryformcd && 4 != kyujin.salaryformcd && 5 != kyujin.salaryformcd}">checked="checked"</c:if>
 						tabindex="46"> その他</td>
 				</tr>
 				<tr>
@@ -394,7 +408,7 @@
 						maxlength="28" tabindex="49"></td>
 				</tr>
 				<tr>
-					<th>選考担当者名（半角ｶﾅ）</th>
+					<th>選考担当者名（ひらがな）</th>
 					<td><input type="text" name="tantoukana"
 						value="<c:out value="${ kyujin.tantoukana }" />" size="30"
 						maxlength="28" tabindex="50"></td>
@@ -430,8 +444,8 @@
 						value="2"
 						<c:if test="${2 == kyujin.hiddensex}">checked="checked"</c:if>
 						tabindex="56"> 女 <input type="radio" name="hiddensex"
-						value=""
-						<c:if test="${null == kyujin.hiddensex}">checked="checked"</c:if>
+						value="3"
+						<c:if test="${1 != kyujin.hiddensex && 2 != kyujin.hiddensex}">checked="checked"</c:if>
 						tabindex="57"> その他</td>
 				</tr>
 				<tr>
@@ -474,16 +488,17 @@
 			<button type="button" class="main-b" onClick="window.CloseWindow();"
 				tabindex="62">閉じる</button>
 
-			<!-- jsで新規時登録ボタンのみ、更新時削除ボタンと更新ボタン表示制御、※削除と戻るボタングレー等に色変えた方がいい -->
+			<!-- jsで新規時登録ボタンのみ、更新時削除ボタンと更新ボタン表示制御、※押し間違えやすいので削除と戻るボタングレー等に色変えか位置変え検討-->
 			<c:if test="${ kyujin.no == null }">
 				<button type="submit" id="kyujin-insert" class="main-b"
 					onclick="MovePages(this)" tabindex="61">登録</button>
 			</c:if>
 			<c:if test="${ kyujin.no != null }">
-				<button type="submit" id="kyujin-delete" class="main-b"
-					onclick="MovePages(this)" tabindex="63">削除</button>
-				<button type="submit" id="kyujin-update" class="main-b"
+
+					<button type="submit" id="kyujin-update" class="main-b"
 					onclick="MovePages(this)" tabindex="61">更新</button>
+					<button type="submit" id="kyujin-delete" class="main-b"
+					onclick="MovePages(this)" tabindex="63">削除</button>
 			</c:if>
 
 
