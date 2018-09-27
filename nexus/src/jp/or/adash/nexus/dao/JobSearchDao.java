@@ -12,7 +12,13 @@ import jp.or.adash.nexus.entity.SimpleKyujin;
 import jp.or.adash.nexus.utils.dao.Transaction;
 
 public class JobSearchDao {
-
+/*
+ * TODO 検索サーブレットの作成（今は初期表示サーブレットと兼用している）
+ * TODO　検索項目のデータベース利用（業種マスタでjobnameを検索してコード取得、kyujinマスタを検索）
+ * TODO　路線の選択
+ * TODO　最小給与および最大給与をちゃんと検索できるようにする
+ *
+ */
 	/**
 	 * データベース接続オブジェクト
 	 */
@@ -32,15 +38,14 @@ public class JobSearchDao {
 	 * @return 商品オブジェクト
 	 * @throws IOException
 	 */
-	public List<SimpleKyujin> selectKyujin(String job, String addresscd, String jobsmallcd1, String jobsmallcd2, String jobsmallcd3,
+	public List<SimpleKyujin> selectKyujin(String job, String addresscd,
+			String jobsmallcd1, String jobsmallcd2,String jobsmallcd3,
 			String joblargecd1, String joblargecd2, String joblargecd3,
-			int salarymin, int salarymax, int koyoukeitaicd)
+			String jobcategorysmallcd,String jobcategorylargecd,
+			String koyoukeitaicd,int salarymin, int salarymax)
 			throws IOException {
 		List<SimpleKyujin> kyujinlist = new ArrayList<SimpleKyujin>();
 
-
-
-/*
 		//where句を付け足す処理
 		int setFlag = 0;
 		int setFlagJobsmallcd1 = 0;
@@ -50,10 +55,10 @@ public class JobSearchDao {
 		int setFlagJoblargecd2 = 0;
 		int setFlagJoblargecd3 = 0;
 		int setFlagJob = 0;
+		int setFlagAddresscd = 0;
 		int setFlagKoyoukeitaicd = 0;
 		int setFlagSalarymin = 0;
 		int setFlagSalarymax = 0;
-
 
 		List<String> whereStr = new ArrayList<String>();
 
@@ -91,83 +96,79 @@ public class JobSearchDao {
 			whereStr.add("job = ?");
 			setFlagJob = ++setFlag;
 		}
-
-		if (koyoukeitaicd != 0 && !"".equals(koyoukeitaicd)) {
+		if (addresscd != null && !"".equals(addresscd)) {
+			whereStr.add("addresscd = ?");
+			setFlagAddresscd = ++setFlag;
+		}
+		if (koyoukeitaicd != null && !"".equals(koyoukeitaicd)) {
 			whereStr.add("koyoukeitaicd = ?");
 			setFlagKoyoukeitaicd = ++setFlag;
 		}
-		if (salarymin != 0 && !"".equals(salarymin)) {
+		if (salarymin != 0) {
 			whereStr.add("salarymin => ?");
 			setFlagSalarymin = ++setFlag;
 		}
-		if (salarymin != 0 && !"".equals(salarymax)) {
+		if (salarymin != 0) {
 			whereStr.add("salarymax =< ?");
 			setFlagSalarymax = ++setFlag;
 		}
 
 
 
-			if(setFlagJobsmallcd1 != 0){
+		StringBuilder sqlSearchJob = new StringBuilder();
+		sqlSearchJob.append("select no, companyno,addresscd, jobsmallcd1,jobsmallcd2,jobsmallcd3,");
+		sqlSearchJob.append("joblargecd1,joblargecd2,joblargecd3,");
+		sqlSearchJob.append("jobcategorysmallcd,jobcategorylargecd,");
+		sqlSearchJob.append("companyname,address,addresscd,nearstation,job,koyoukeitaicd, ");
+		sqlSearchJob.append("agemin,agemax,salarymin,salarymax,deleteflag ");
+		sqlSearchJob.append(" from kyujin");
+		sqlSearchJob.append(" where deleteflag like '0'");
+		if(setFlag != 0 ) {
+			sqlSearchJob.append(" and ");
+		sqlSearchJob.append(String.join(" and ", whereStr));
+		}
+		try (PreparedStatement ps = conn.prepareStatement(sqlSearchJob.toString())) {
+
+			if (setFlagJobsmallcd1 != 0) {
 				ps.setString(setFlagJobsmallcd1, jobsmallcd1);
 			}
 
-			if(setFlagJobsmallcd2 != 0){
+			if (setFlagJobsmallcd2 != 0) {
 				ps.setString(setFlagJobsmallcd2, jobsmallcd2);
 			}
 
-			if(setFlagJobsmallcd3 != 0){
+			if (setFlagJobsmallcd3 != 0) {
 				ps.setString(setFlagJobsmallcd3, jobsmallcd3);
 			}
 
-			if(setFlagJoblargecd1 != 0){
+			if (setFlagJoblargecd1 != 0) {
 				ps.setString(setFlagJoblargecd1, joblargecd1);
 			}
 
-			if(setFlagJoblargecd2 != 0){
+			if (setFlagJoblargecd2 != 0) {
 				ps.setString(setFlagJoblargecd2, joblargecd2);
 			}
 
-			if(setFlagJoblargecd3 != 0){
+			if (setFlagJoblargecd3 != 0) {
 				ps.setString(setFlagJoblargecd3, joblargecd3);
 			}
 
-			if(setFlagJob != 0){
+			if (setFlagJob != 0) {
 				ps.setString(setFlagJob, job);
 			}
-
-			if(setFlagKoyoukeitaicd != 0){
-				ps.setInt(setFlagKoyoukeitaicd, koyoukeitaicd);
+			if (setFlagAddresscd != 0) {
+				ps.setString(setFlagAddresscd, addresscd);
 			}
-
-			if(setFlagSalarymin != 0){
+			if (setFlagKoyoukeitaicd != 0) {
+				ps.setString(setFlagKoyoukeitaicd, koyoukeitaicd);
+			}
+			if (setFlagSalarymin != 0) {
 				ps.setInt(setFlagSalarymin, salarymin);
 			}
-
-			if(setFlagSalarymax != 0){
+			if (setFlagSalarymax != 0) {
 				ps.setInt(setFlagSalarymax, salarymax);
 			}
 
-			}catch (SQLException e) {
-				throw new IOException(e);
-			}
-	 */
-
-		StringBuilder sqlSearchJob = new StringBuilder();
-
-		sqlSearchJob.append("select no, companyno,addresscd, jobsmallcd1,jobsmallcd2,jobsmallcd3,");
-		sqlSearchJob.append("joblargecd1,joblargecd2,joblargecd3,");
-		sqlSearchJob.append("companyname,address,addresscd,nearstation,job,koyoukeitaicd, ");
-		sqlSearchJob.append("agemin,agemax,salarymin,salarymax ");
-		sqlSearchJob.append(" from kyujin");
-		sqlSearchJob.append(" order by no;");
-/*		sqlSearchJob.append(" where ");
-		sqlSearchJob.append(String.join(" and ", whereStr));
- */
-
-		// SQL文を生成する
-
-
-		try (PreparedStatement ps = this.conn.prepareStatement(sqlSearchJob.toString())) {
 			// SQL文を実行する
 			try (ResultSet rs = ps.executeQuery()) {
 				// 1.取得結果をリストに格納する
@@ -178,10 +179,11 @@ public class JobSearchDao {
 									rs.getString("jobsmallcd3"),
 									rs.getString("joblargecd1"), rs.getString("joblargecd2"),
 									rs.getString("joblargecd3"),
+									rs.getString("jobcategorysmallcd"),rs.getString("jobcategorylargecd"),
 									rs.getString("companyname"), rs.getString("address"), rs.getString("addresscd"),
 									rs.getString("nearstation"), rs.getString("job"), rs.getString("koyoukeitaicd"),
 									rs.getInt("agemin"), rs.getInt("agemax"), rs.getInt("salarymin"),
-									rs.getInt("salarymax")));
+									rs.getInt("salarymax"), rs.getString("deleteflag")));
 				}
 			} catch (SQLException e) {
 				throw new IOException(e);

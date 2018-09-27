@@ -29,6 +29,7 @@ public class JobSearchServlet extends HttpServlet {
 	 */
 	public JobSearchServlet() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -66,7 +67,20 @@ public class JobSearchServlet extends HttpServlet {
 		// 1.7 職業大分類コード3を取得
 		String joblargecd3 = null;
 		joblargecd3 = request.getParameter("joblargecd3");
+		// 1.7 職業大分類コード3を取得
+		String jobcategorysmallcd = null;
+		jobcategorysmallcd = request.getParameter("jobcategorysmallcd");
+		// 1.7 職業大分類コード3を取得
+		String jobcategorylargecd = null;
+		jobcategorylargecd = request.getParameter("jobcategorylargecd");
+		// 1.7 職業大分類コード3を取得
+		String jobcategory = null;
+		jobcategory = request.getParameter("jobcategory");
 
+
+		// 1.11 雇用形態コードを取得
+		String koyoukeitaicd = null;
+		koyoukeitaicd = request.getParameter("koyoukeitaicd");
 		// 1.8基本給下限を取得
 		int salarymin = 0;
 		if (!"".equals(request.getParameter("salarymin"))
@@ -84,12 +98,6 @@ public class JobSearchServlet extends HttpServlet {
 		String addresscd = null;
 		addresscd = request.getParameter("addresscd");
 
-		// 1.11 雇用形態コードを取得
-		int koyoukeitaicd = 0;
-		if (!"".equals(request.getParameter("koyoukeitaicd"))
-				&& request.getParameter("koyoukeitaicd") != null) {
-			koyoukeitaicd = Integer.parseInt(request.getParameter("koyoukeitaicd"));
-		}
 
 		// 2.求人票の取得
 
@@ -97,12 +105,11 @@ public class JobSearchServlet extends HttpServlet {
 		JobSearchService service = new JobSearchService();
 		kyujinlist = service.getKyujin(job, addresscd, jobsmallcd1, jobsmallcd2, jobsmallcd3, joblargecd1, joblargecd2,
 				joblargecd3,
-				salarymin, salarymax, koyoukeitaicd);
+				jobcategorysmallcd,jobcategorylargecd,
+				koyoukeitaicd,salarymin, salarymax);
 		// 1.都道府県リストを取得する
 		TodouhukenService todouhukenservice = new TodouhukenService();
 		List<Todouhuken> todouhukenlist = todouhukenservice.getTodouhukenList();
-
-
 
 
 		// 1.3 リクエストに求人票情報をセットする
@@ -120,6 +127,7 @@ public class JobSearchServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 }

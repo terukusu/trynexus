@@ -56,7 +56,9 @@ public class JobSearchService {
 	 * @return 求人リスト
 	 */
 	public List<SimpleKyujin> getKyujin(String job, String addresscd,String jobsmallcd1, String jobsmallcd2, String jobsmallcd3, String joblargecd1,
-			String joblargecd2, String joblargecd3, int salarymin, int salarymax, int koyoukeitaicd) {
+			String joblargecd2, String joblargecd3,
+			String jobcategorysmallcd, String jobcategorylargecd,
+			String koyoukeitaicd,int salarymin, int salarymax) {
 		List<SimpleKyujin> kyujinlist = new ArrayList<SimpleKyujin>();
 
 		try {
@@ -66,8 +68,10 @@ public class JobSearchService {
 			// 1.求人票を取得する
 			JobSearchDao dao = new JobSearchDao(transaction);
 
-			kyujinlist = dao.selectKyujin(job, addresscd,jobsmallcd1, jobsmallcd2, jobsmallcd3, joblargecd1,
-					joblargecd2, joblargecd3, salarymin, salarymax,  koyoukeitaicd);
+			kyujinlist = dao.selectKyujin(job, addresscd,jobsmallcd1, jobsmallcd2, jobsmallcd3,
+					joblargecd1,joblargecd2, joblargecd3,
+					jobcategorysmallcd,jobcategorylargecd,
+					koyoukeitaicd,salarymin, salarymax);
 
 		} catch(IOException e) {
 			// 1.エラーメッセージをセットする
