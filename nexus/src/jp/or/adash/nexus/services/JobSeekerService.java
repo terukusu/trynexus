@@ -465,7 +465,7 @@ public JobSeekerMain getJobseekermaininfo(String js_id) {
 
 
 	/**
-	 * 求職者情報の内容をチェックする
+	 * 求職者詳細情報の内容をチェックする
 	 * @param seeker 求職者情報
 	 * @return 処理結果（true:成功、false:失敗）
 	 * @author Y.Okamura & T.Uchi
@@ -633,12 +633,12 @@ public JobSeekerMain getJobseekermaininfo(String js_id) {
 			result = false;
 		}
 		*/
-
+		/*
 		if(seeker.getHopeworkplace() != ("")) {
 		errMsg = DataCommons.chksDigits(seeker.getHopeworkplace(), 2);
 		messages.add(errMsg);
 		}
-
+		*/
 		/*
 		// 雇用形態の値が入力されているか
 		if (seeker.getHopekoyoukeitai() == null) {
@@ -731,53 +731,26 @@ public JobSeekerMain getJobseekermaininfo(String js_id) {
 		if (seeker.getPassword().equals("")) {
 			messages.add("パスワードが入力されていません。");
 			result = false;
-/*
-				// パスワードの値が入力されているか
-				if (seeker.getPassword().equals("")) {
-					messages.add("パスワードが入力されていません。");
-					result = false;
-				}
-*/
-/*
-		// 商品名の長さが適切か
-		DataCommons commons = new DataCommons();
-		int length = commons.getBytes(item.getItemName());
-		if (length <= 0 || length >= 100) {
-			messages.add("商品名の文字数が多すぎます。");
-			result = false;
-		}
-
-		// 単価の値が正しいか
-		if (item.getUnitPrice() <= 0) {
-			messages.add("単価は1円以上で入力してください。");
-			result = false;
 		}
 */
-		return result;
-
-	}
-	/**
-	 * 求職者情報を登録する
-	 * @param item 商品データ
-	 * @return 処理結果（true:成功、false:失敗）
-	 * @author Y.Okamura & T.Uchi
-	 */
-	public boolean registItem(JobSeeker seeker) {
-		boolean result = false;
-		result = this.insertJobSeeker(seeker);
-
 /*
-		// データベースに商品が既に存在するかどうか確認する
-		if (exists(seeker.getId())) {
-			// 存在する場合は、商品データを更新する
-			result = this.updateItem(seeker);
-		} else {
-			// 存在しなければ、商品データを登録する
-			result = this.insertItem(seeker);
-		}
+// 商品名の長さが適切か
+DataCommons commons = new DataCommons();
+int length = commons.getBytes(item.getItemName());
+if (length <= 0 || length >= 100) {
+	messages.add("商品名の文字数が多すぎます。");
+	result = false;
+}
+
+// 単価の値が正しいか
+if (item.getUnitPrice() <= 0) {
+	messages.add("単価は1円以上で入力してください。");
+	result = false;
+}
 */
-		return result;
-	}
+return result;
+
+}
 
 	/**
 	 * 求職者情報をデータベースに登録する
