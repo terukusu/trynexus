@@ -89,9 +89,11 @@
 			<table>
 				<tr>
 					<th>求人No.</th>
-					<td><input type="text" name="no"
+					<td><c:out value="${  kyujin.no }" />
+					<!-- 1手入力用<input type="text" name="no"
 						value="<c:out value="${  kyujin.no }" />" size="20" maxlength="14"
-						tabindex="1" readonly></td>
+						tabindex="1" readonly>-->
+						</td>
 				</tr>
 				<tr>
 					<th>受付年月日</th>
@@ -112,7 +114,7 @@
 						maxlength="13" tabindex="4"></td>
 				</tr>
 
-				<!-- コード類はc:でマスタからのリスト表示 -->
+				<!-- 1マスタからのリスト表示 -->
 				<tr>
 					<th>産業大分類コード</th>
 					<td><select name="jobcategorylargecd" tabindex="5">
@@ -239,7 +241,7 @@
 						value="<c:out value="${ kyujin.postal }" />" size="10"
 						maxlength="8" tabindex="21"></td>
 				</tr>
-				<!--　メモ： リストで就業場所コードマスタを参照 -->
+				<!-- 1就業場所コードマスタを参照 -->
 				<tr>
 					<th>就業場所都道府県</th>
 					<td><select name="adresscd" tabindex="22">
@@ -483,24 +485,23 @@
 			</table>
 
 
-			<!-- jsでウィンドウクローズにする -->
+			<!-- jsでウィンドウクローズ-->
 			<button type="button" class="main-b" onClick="window.CloseWindow();"
 				tabindex="62">閉じる</button>
 
-			<!-- jsで新規時登録ボタンのみ、更新時削除ボタンと更新ボタン表示制御、※押し間違えやすいので削除と戻るボタングレー等に色変えか位置変え検討-->
+			<!-- jsで新規時登録ボタンのみ、更新時削除ボタンと更新ボタン表示制御-->
+			<!-- ※押し間違えやすいので削除と戻るボタングレー等に色変えか位置変え検討
+			※enter押すとすぐに登録ボタン-->
 			<c:if test="${ kyujin.no == null }">
 				<button type="submit" id="kyujin-insert" class="main-b"
 					onclick="MovePages(this)" tabindex="61">登録</button>
 			</c:if>
 			<c:if test="${ kyujin.no != null }">
-
 					<button type="submit" id="kyujin-update" class="main-b"
 					onclick="MovePages(this)" tabindex="61">更新</button>
 					<button type="submit" id="kyujin-delete" class="main-b"
 					onclick="MovePages(this)" tabindex="63">削除</button>
 			</c:if>
-
-
 		</div>
 	</form>
 	</main>
