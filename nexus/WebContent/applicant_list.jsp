@@ -14,7 +14,9 @@
 <link href="../css/common.css" rel="stylesheet">
 <link href="../css/header.css" rel="stylesheet">
 <link href="../css/footer.css" rel="stylesheet">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
 </head>
 <body>
 
@@ -50,19 +52,19 @@
 	<main>
 	<h2>求職者情報検索</h2>
 	<div id="box">
-		<form action="/nexus/web/jobseeker-show" method="post">
+		<form action="/nexus/web/jobseeker-search" method="post">
 			<table>
 				<tr>
-					<td><p>求職者ID:</p> <input type="text" name="js_id" /></td>
-					<td><p>求職者かな名:</p> <input type="text" name="js_name" /></td>
-					<td><p>担当職業紹介者:</p> <select name="st_name">
-							<option value="">田中さん</option>
-							<option value="25">てるてる</option>
-							<option value="26">あっち兄さん</option>
-							<option value="27" selected></option>
-							<option value="28"></option>
-							<option value="29"></option>
-							<option value="30"></option>
+					<td><p>求職者ID:</p>
+						<input type="text" name="js_id" /></td>
+					<td><p>求職者かな名:</p>
+						<input type="text" name="js_kana" /></td>
+					<td><p>担当職業紹介者:</p>
+						<select name="st_name">
+						<option selected></option>
+						<c:forEach var="staff" items="${ st_name }">
+							<option value="${ staff.name }"><c:out value="${ staff.name }" /></option>
+						</c:forEach>
 					</select></td>
 					<td><input type="submit" class="main-b" name="send" value="検索"></td>
 				</tr>
@@ -97,7 +99,8 @@
 				</td>
 				<td><c:out value="${ jobseeker.id }" /></td>
 				<td><c:out value="${ jobseeker.js_name }" /></td>
-				<td><c:out value="${ jobseeker.sex }" /></td>
+				<td><c:if test="${ jobseeker.sex == 1 }">男</c:if>
+				<c:if test="${ jobseeker.sex == 2 }">女</c:if></td>
 				<td><c:out value="${ jobseeker.age }" /></td>
 				<td><c:out value="${ jobseeker.hopejobcategory }" /></td>
 				<td><c:out value="${ jobseeker.hopejob1 }" /></td>

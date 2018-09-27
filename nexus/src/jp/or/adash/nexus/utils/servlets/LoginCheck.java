@@ -5,12 +5,12 @@ import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import jp.or.adash.nexus.entity.Staff;
@@ -34,8 +34,9 @@ public class LoginCheck implements Filter {
             chain.doFilter(request, response);
         }else{
             //　0セッションがnullならば、ログイン画面へ飛ばす
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/stafflogin.jsp");
-            dispatcher.forward(request,response);
+//            RequestDispatcher dispatcher = request.getRequestDispatcher("/stafflogin.jsp");
+//            dispatcher.forward(request,response);
+            ((HttpServletResponse)response).sendRedirect("/nexus/top");
         }
 	}
 	public void init(FilterConfig fConfig) throws ServletException {

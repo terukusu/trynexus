@@ -15,7 +15,7 @@ import jp.or.adash.nexus.services.TodouhukenService;
 /**
  * Servlet implementation class TodouhukenListServlet
  */
-@WebServlet("/web/todouhuken-list")
+@WebServlet("/todouhuken-list")
 public class TodouhukenListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -32,10 +32,10 @@ public class TodouhukenListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 1.都道府県リストを取得する
-		TodouhukenService service = new TodouhukenService();
-		List<Todouhuken> list = service.getTodouhukenList();
+		TodouhukenService Tservice = new TodouhukenService();
+		List<Todouhuken> Tlist = Tservice.getTodouhukenList();
 		// 2.都道府県リストをリクエストに格納する
-		request.setAttribute("list",list);
+		request.setAttribute("Todouhukenlist",Tlist);
 		// 3.JSPにフォワードする
 		request.getRequestDispatcher("/todouhukenlist.jsp").forward(request,response);
 	}

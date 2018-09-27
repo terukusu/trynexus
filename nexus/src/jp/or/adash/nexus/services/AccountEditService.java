@@ -136,7 +136,7 @@ public class AccountEditService {
 			result = false;
 		}
 		String pass = staff.getPassword();
-		if(pass.length() <= 8) {
+		if(pass.length() <= 7) {
 			messages.add("パスワードは８文字以上で入力してください。");
 			result = false;
 		}

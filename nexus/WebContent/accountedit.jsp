@@ -6,8 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>アカウント編集</title>
-<script type="text/javascript" src="../js/delete.js">
-</script>
+<script type="text/javascript" src="../js/common.js"></script>
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
 	rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p"
@@ -16,6 +15,9 @@
 <link href="../css/common.css" rel="stylesheet">
 <link href="../css/header.css" rel="stylesheet">
 <link href="../css/footer.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
 </head>
 <body>
 	<header>
@@ -92,6 +94,7 @@
 						test="${Staff.authority == 1}">管理者</c:if> <c:if
 						test="${Staff.authority == 2}">その他</c:if></td>
 			</tr>
+
 			<tr>
 				<td>新しいパスワード</td>
 				<td><input type="password" name="password"
@@ -101,11 +104,11 @@
 		<input class="main-b" type="submit" value="更新">
 	</form>
 
-	<form name="delete" action="/nexus/web/account-delete" method="GET">
+	<form name="delete" action="/nexus/web/account-delete" method="GET" onsubmit="return kakunin()">
 		<input type="hidden" name="id" value="${ Staff.id }">
-		<input type="submit" value="削除" onclick="kakunin()" >
+		<input class="main-b" type="submit" value="削除"  >
 	</form>
-
+<input class="main-b" type="button" value="戻る" onclick="location.href='/nexus/web/account-list'">
 	<!--   <input class="main-b" type="button"
 		onclick="location.href='/nexus/web/account-list'" value="戻る">
 	-->

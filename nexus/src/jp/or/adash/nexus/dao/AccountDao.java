@@ -39,7 +39,7 @@ public class AccountDao {
 
 		// SQL文を生成する
 		StringBuffer sql = new StringBuffer();
-		sql.append("insert into ishida.staff");
+		sql.append("insert into staff");
 		sql.append("(id, name, kana, authority, password, createuserid, updateuserid, deleteflag)");
 		sql.append("values");
 		sql.append("(?, ?, ?, ?, ?, ?, ?, ?)");

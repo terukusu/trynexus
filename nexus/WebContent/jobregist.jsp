@@ -16,6 +16,14 @@
 <link href="../css/header.css" rel="stylesheet">
 <link href="../css/footer.css" rel="stylesheet">
 <link href="../css/job_regist.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/Base/jquery-ui.css" >
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
 </head>
 <body>
 
@@ -83,7 +91,7 @@
 					<th>受付年月日</th>
 					<td>
 
-						<input type="date" name="receptiondt"
+						<input type="text" class="datepicker" name="receptiondt"
 						value="<fmt:formatDate value="${ kyujin.receptiondt }" pattern="yyyy-MM-dd"/>"size="10"
 						maxlength="10"
 						tabindex="2">
@@ -91,7 +99,7 @@
 				</tr>
 				<tr>
 					<th>求人有効年月日</th>
-					<td><input type="date" name="perioddt"
+					<td><input type="text" class="datepicker" name="perioddt"
 						value="<fmt:formatDate value="${ kyujin.perioddt }" pattern="yyyy-MM-dd"/>" size="10"
 						maxlength="10" tabindex="3"></td>
 				</tr>
@@ -297,13 +305,13 @@
 				</tr>
 				<tr>
 					<th>雇用期間開始年月日</th>
-					<td><input type="date" name="koyoukikankaishi"
+					<td><input type="text" class="datepicker" name="koyoukikankaishi"
 						value="<fmt:formatDate value="${ kyujin.koyoukikankaishi }" pattern="yyyy-MM-dd"/>" size="10"
 						maxlength="10" tabindex="33"></td>
 				</tr>
 				<tr>
 					<th>雇用期間終了年月日</th>
-					<td><input type="date" name="koyoukikanowari"
+					<td><input type="text" class="datepicker" name="koyoukikanowari"
 						value="<fmt:formatDate value="${ kyujin.koyoukikanowari }" pattern="yyyy-MM-dd"/>" size="10"
 						maxlength="10" tabindex="34"></td>
 				</tr>
@@ -486,8 +494,5 @@
 		<small>Copyright(C) 2009有限責任事業組合 大阪職業教育協働機構(A'ワーク創造館) All
 			Rights Reserved.</small>
 	</footer>
-	<script type="text/javascript"
-		src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	<script type="text/javascript" src="../js/jobregist.js"></script>
 </body>
 </html>

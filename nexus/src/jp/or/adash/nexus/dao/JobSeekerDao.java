@@ -12,8 +12,10 @@ import jp.or.adash.nexus.entity.JobSeeker;
 import jp.or.adash.nexus.entity.JobSeekerMain;
 import jp.or.adash.nexus.utils.dao.Transaction;
 
-
-
+/**
+ * 求職者情報を取り扱うDAO
+ * @author Y.Okamura & T.Uchi
+ */
 public class JobSeekerDao {
 
 	/**
@@ -34,6 +36,7 @@ public class JobSeekerDao {
 	 * @param seeker 登録する求職者の情報
 	 * @return 登録件数
 	 * @throws IOException
+	 * @author Y.Okamura & T.Uchi
 	 */
 	public int insert(JobSeeker seeker) throws IOException {
 		int count = 0;
@@ -113,6 +116,7 @@ public class JobSeekerDao {
 	 * @param id 求職者ID
 	 * @return 求職者オブジェクト
 	 * @throws IOException
+	 * @author Y.Okamura & T.Uchi
 	 */
 	public JobSeeker selectJobSeeker(String id) throws IOException {
 		JobSeeker seeker = null;
@@ -184,6 +188,7 @@ public class JobSeekerDao {
 	 * 求職者の一覧を取得する
 	 * @return 求職者リスト
 	 * @throws IOException
+	 * @author Y.Okamura & T.Uchi
 	 */
 	public List<JobSeeker> selectJobSeekerList() throws IOException {
 		List<JobSeeker> jobseekers = new ArrayList<JobSeeker>();
@@ -252,6 +257,7 @@ public class JobSeekerDao {
 	 * @param seeker 求職者
 	 * @return 更新件数
 	 * @throws IOException
+	 * @author Y.Okamura & T.Uchi
 	 */
 	public int update(JobSeekerMain seeker) throws IOException {
 		int count = 0;

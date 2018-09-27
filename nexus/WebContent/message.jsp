@@ -13,6 +13,9 @@
 <link href="css/common.css" rel="stylesheet" type="text/css" />
 <link href="css/header.css" rel="stylesheet" type="text/css" />
 <link href="css/footer.css" rel="stylesheet" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
 </head>
 <body>
 
@@ -59,6 +62,7 @@
     		<p>恐れ入りますが、ログインができない場合、</p>
     		<p>アカウントをお持ちでない場合は、当館管理担当者までお申し出くださいませ。</p>
    		 </div>
+   	<a href="/nexus/top">ログイン画面に戻る</a>
 
 	</div><!--　コンテナ終了-->
 
