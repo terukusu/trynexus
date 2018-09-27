@@ -74,14 +74,14 @@ public class KyujinRegistDisplayServlet extends HttpServlet {
 		JobCategoryService JCLservice = new JobCategoryService();
 		List<JobCategory> JCLlist = JCLservice.getLargeJobCategoryList();
 		// 2.業種大分類リストをリクエストに格納する
-		request.setAttribute("Largelist", JCLlist);
+		request.setAttribute("JCLargelist", JCLlist);
 
 
 		// 1.業種小分類リストを取得する
 		JobCategoryService JCSservice = new JobCategoryService();
 		List<JobCategory> JCSlist = JCSservice.getSmallJobCategoryList();
 		// 2.業種小分類リストをリクエストに格納する
-		request.setAttribute("Smalllist", JCSlist);
+		request.setAttribute("JCSmalllist", JCSlist);
 
 		// 1.職種大分類リストを取得する
 		JobService Lservice = new JobService();
