@@ -1,3 +1,9 @@
+/**
+ * アカウント登録初期画面の表示用
+ * @author A.Ishida
+ *
+ */
+
 package jp.or.adash.nexus.servlets;
 
 import java.io.IOException;

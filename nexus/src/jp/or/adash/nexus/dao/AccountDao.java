@@ -10,7 +10,7 @@ import jp.or.adash.nexus.utils.dao.Transaction;
 
 /**
  * アカウント登録データアクセスクラス
- * @author Ishida
+ * @author A.Ishida
  *
  */
 public class AccountDao {

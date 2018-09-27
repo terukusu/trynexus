@@ -15,7 +15,7 @@ import jp.or.adash.nexus.utils.dao.Transaction;
 
 /**
  * アカウント登録処理クラス
- * @author Ishida
+ * @author A.Ishida
  *
  */
 public class AccountService {
