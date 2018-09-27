@@ -2,6 +2,7 @@ package jp.or.adash.nexus.services;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -378,6 +379,9 @@ public class KyujinService {
 				result = false;
 			}
 			//創業設立年チェック
+		    Date date = new Date();
+		    SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+		    int year = Integer.parseInt(sdf.format(date));
 			msg = DataCommons.chkiDigits(kyujin.getEstablishdt(),4);
 			if ( msg != null ) {
 				messages.add(msg);
@@ -388,6 +392,13 @@ public class KyujinService {
 				messages.add(msg);
 				result = false;
 			}
+			//578 は日本最古の創業年
+			if (kyujin.getEstablishdt() > year || kyujin.getEstablishdt() < 578) {
+				messages.add("創業設立念が不当な値です。");
+				result = false;
+		    }
+
+
 			//資本金チェック
 			msg = DataCommons.chklDigits(kyujin.getCapital(),16);
 			if ( msg != null ) {
