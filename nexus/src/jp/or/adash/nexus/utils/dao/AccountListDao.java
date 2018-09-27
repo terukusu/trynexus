@@ -26,7 +26,7 @@ public class AccountListDao {
 	/**
 	 * アカウントの情報一覧を取得する
 	 * @return アカウントリスト
-	 * @throws IOException
+	 * @author H.Tomonari
 	 */
 	public List<Staff> selectAccountList() throws IOException {
 		List<Staff> account = new ArrayList<Staff>();

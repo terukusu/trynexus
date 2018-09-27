@@ -36,8 +36,8 @@ public class AccountListService {
 	}
 	/**
 	 * アカウント情報一覧を取得する
-	 * @return アカウント情報一覧
-	 *@Tomonari
+	 * @return アカウント一覧リスト
+	 * @author H.Tomonari
 	 */
 	public List<Staff> getAccountList() {
 		List<Staff> AccountList = new ArrayList<Staff>();

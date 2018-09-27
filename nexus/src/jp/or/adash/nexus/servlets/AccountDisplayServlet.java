@@ -33,7 +33,7 @@ public class AccountDisplayServlet extends HttpServlet {
 		Staff staff = (Staff) session.getAttribute("UserData");
 
 		request.setAttribute("Staff", staff);
-		//フォワードする
+		//0	フォワードする
 		request.getRequestDispatcher("/accountregist.jsp")
 		.forward(request, response);
 

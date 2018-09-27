@@ -24,9 +24,9 @@ public class AccountEditDao {
 	}
 	/**
 	 * アカウントを更新する
-	 * @param staff 職業紹介者
+	 * @param staff アカウント情報
 	 * @return 更新件数
-	 * @throws IOException
+	 * @author H.Tomonari
 	 */
 	public int update(Staff staff) throws IOException {
 		int count = 0;
@@ -60,7 +60,7 @@ public class AccountEditDao {
 	 * アカウントIDを元に、アカウント情報（1件）を取得する
 	 * @param id アカウントID
 	 * @return スタッフオブジェクト
-	 * @throws IOException
+	 * @author H.Tomonari
 	 */
 	public Staff selectStaff(String id) throws IOException {
 		Staff staff = null;
@@ -104,7 +104,7 @@ public class AccountEditDao {
 	 * アカウントIDを元にアカウントに削除フラグを立てる
 	 * @param staff アカウント情報
 	 * @return 更新件数
-	 * @throws IOException
+	 * @author H.Tomonari
 	 */
 	public int delete(String id) throws IOException {
 		int count = 0;

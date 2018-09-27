@@ -14,8 +14,8 @@ import jp.or.adash.nexus.utils.dao.Transaction;
 
 
 /**
- * 商品に関する処理を定義するクラス
- * @author T.Kawasaki
+ * アカウント登録処理クラス
+ * @author Ishida
  *
  */
 public class AccountService {
@@ -58,14 +58,11 @@ public class AccountService {
 	 */
 	private static final String MSG_ACCOUNT_REGIST_FAILURE = "アカウント登録に失敗しました。";
 
-
-
-
-
 	/**
 	 * アカウント情報を登録する
-	 * @param item 商品データ
+	 * @param Staff　アカウント情報
 	 * @return 処理結果（true:成功、false:失敗）
+	 * @author Ishida
 	 */
 	public boolean registAccount(Staff staff) {
 		boolean result = false;
@@ -77,40 +74,33 @@ public class AccountService {
 			// 0トランザクションを開始する
 			transaction.beginTrans();
 
-			/**
-			 * 探番Daoからidを所得 Staffオブジェクトにsetする
-			 */
+			//0 探番Daoからidを所得 Staffオブジェクトにセットする
 			SaibanDao saibandao = new SaibanDao(transaction);
 			int id = saibandao.getAccountId();
 			staff.setId(id);
-
-
-			/**
-			 * アカウント情報を登録
-			 */
+			//0	アカウント情報を登録
 			AccountDao accountdao = new AccountDao(transaction);
 			int count = accountdao.insert(staff);
-			//countが返ってくる
 			if (count > 0) {
-				// 完了メッセージをセットする
+				//0 完了メッセージをセットする
 				messages.add(MSG_ACCOUNT_REGIST_COMPLETE);
 				result = true;
 			} else {
-				// エラーメッセージをセットする
+				//0	 エラーメッセージをセットする
 				messages.add(MSG_ACCOUNT_REGIST_FAILURE);
 				result = false;
 			}
 
-			// トランザクションをコミットする
+			//0 トランザクションをコミットする
 			transaction.commit();
 
 		} catch(IOException e) {
-			// トランザクションをロールバックする
+			//0 トランザクションをロールバックする
 			transaction.rollback();
-			// エラーメッセージをセットする
+			//0 エラーメッセージをセットする
 			messages.add(MessageCommons.ERR_DB_CONNECT);
 		} finally {
-			// データベース接続をを終了する
+			//0 データベース接続をを終了する
 			transaction.close();
 		}
 

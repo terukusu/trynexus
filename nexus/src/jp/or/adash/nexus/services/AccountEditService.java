@@ -31,13 +31,16 @@ public class AccountEditService {
 		transaction = new Transaction();
 		messages = new ArrayList<String>();
 	}
-
+	/**
+	 * @return エラーメッセージ
+	 */
 	public List<String> getMessages() {
 		return messages;
 	}
 
 	/**
 	 * アカウント情報を更新する
+	 * @author H.Tomonari
 	 * @param Staff アカウント情報
 	 * @return 処理結果（true:成功、false:失敗）
 	 */
@@ -82,8 +85,9 @@ public class AccountEditService {
 
 	/**
 	 * アカウントIDを元に、アカウント情報を取得する
+	 * @author H.Tomonari
 	 * @param id アカウントID
-	 * @return 求職者情報
+	 * @return アカウント情報
 	 */
 	public Staff getStaffAccount(String id) {
 		Staff staff = null;
@@ -108,6 +112,7 @@ public class AccountEditService {
 
 	/**
 	 * アカウント情報の内容をチェックする
+	 * @author H.Tomonari
 	 * @param staff アカウント情報
 	 * @return 処理結果（true:成功、false:失敗）
 	 */
@@ -135,6 +140,7 @@ public class AccountEditService {
 			messages.add("パスワードが入力されていません。");
 			result = false;
 		}
+		//0パスワード８文字以上チェック
 		String pass = staff.getPassword();
 		if(pass.length() <= 7) {
 			messages.add("パスワードは８文字以上で入力してください。");
@@ -144,6 +150,8 @@ public class AccountEditService {
 		return result;
 	}
 	/*	 * アカウントIDを元にアカウント情報に削除フラグを立てる
+	 * @author H.Tomonari
+	 * @param id アカウントID
 	 * @return 処理結果（true:成功、false:失敗）
 	 */
 	public boolean deleteStaff(String id) {

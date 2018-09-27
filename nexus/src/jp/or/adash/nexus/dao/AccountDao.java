@@ -9,8 +9,8 @@ import jp.or.adash.nexus.entity.Staff;
 import jp.or.adash.nexus.utils.dao.Transaction;
 
 /**
- * 商品データアクセスクラス
- * @author T.Kawasaki
+ * アカウント登録データアクセスクラス
+ * @author Ishida
  *
  */
 public class AccountDao {
@@ -29,10 +29,10 @@ public class AccountDao {
 	}
 
 	/**
-	 * 商品を登録する
-	 * @param item 登録する商品の情報
+	 * アカウントを登録する
+	 * @param Staff アカウント情報
 	 * @return 登録件数
-	 * @throws IOException
+	 * @auther Ishida
 	 */
 	public int insert(Staff staff) throws IOException {
 		int count = 0;
@@ -43,9 +43,7 @@ public class AccountDao {
 		sql.append("(id, name, kana, authority, password, createuserid, updateuserid, deleteflag)");
 		sql.append("values");
 		sql.append("(?, ?, ?, ?, ?, ?, ?, ?)");
-		//プリコンパイル（約束事）みたいな　これすると実行が早くなる　psにデータをいったん入れる
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
-		//1は?の1こめ　データにセットしてる
 			ps.setString(1, staff.getId());
 			ps.setString(2, staff.getName());
 			ps.setString(3, staff.getKana());
