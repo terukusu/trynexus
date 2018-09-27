@@ -89,10 +89,9 @@
 			<table>
 				<tr>
 					<th>求人No.</th>
-					<td><c:out value="${  kyujin.no }" />
-					<!-- 1手入力用<input type="text" name="no"
+					<td><input type="text" name="no"
 						value="<c:out value="${  kyujin.no }" />" size="20" maxlength="14"
-						tabindex="1" readonly>-->
+						tabindex="1" placeholder="記入不要です" readonly>
 						</td>
 				</tr>
 				<tr>
@@ -114,7 +113,8 @@
 						maxlength="13" tabindex="4"></td>
 				</tr>
 
-				<!-- 1マスタからのリスト表示 -->
+			<!-- 1やりたかったメモ：一行テキストボックスはenter押すとすぐに登録なのでsubmit変更かjsとかで制御、日本語入力オン-に-->
+
 				<tr>
 					<th>産業大分類コード</th>
 					<td><select name="jobcategorylargecd" tabindex="5">
@@ -241,7 +241,7 @@
 						value="<c:out value="${ kyujin.postal }" />" size="10"
 						maxlength="8" tabindex="21"></td>
 				</tr>
-				<!-- 1就業場所コードマスタを参照 -->
+
 				<tr>
 					<th>就業場所都道府県</th>
 					<td><select name="adresscd" tabindex="22">
@@ -485,14 +485,12 @@
 			</table>
 
 
-			<!-- jsでウィンドウクローズ-->
+			<!-- 2やるべきメモ：別ウインドウで開いていないため閉じてしまうと再度立ち上げになるので戻る制御にしてください -->
 			<button type="button" class="main-b" onClick="window.CloseWindow();"
 				tabindex="62">閉じる</button>
 
-			<!-- jsで新規時登録ボタンのみ、更新時削除ボタンと更新ボタン表示制御-->
-			<!-- ※押し間違えやすいので削除と戻るボタングレー等に色変えか位置変え検討
-			※enter押すとすぐに登録ボタン-->
-			<c:if test="${ kyujin.no == null }">
+			<!-- 3やりたかったメモ：押し間違えやすいので削除と戻るボタングレー等に色変えか位置変え検討-->
+				<c:if test="${ kyujin.no == null }">
 				<button type="submit" id="kyujin-insert" class="main-b"
 					onclick="MovePages(this)" tabindex="61">登録</button>
 			</c:if>
