@@ -13,6 +13,8 @@ import jp.or.adash.nexus.entity.Staff;
 
 /**
  * Servlet implementation class StaffTopServlet
+ * ログイン後のスタッフメニューに遷移させるためのサーブレット
+ * @author pgjavaAT
  */
 @WebServlet("/web/staff-top")
 public class StaffTopServlet extends HttpServlet {

@@ -1,3 +1,10 @@
+/**
+ * Javascriptの機能を一つにまとめたファイル
+ * カレンダーの表示、アカウント削除の確認、
+ * ウィンドウのクローズ、IDごとにURL遷移先の変更
+ * @author a.taya
+ */
+
 // カレンダー
 $(function() {
 	  $('.datepicker').datepicker({
@@ -32,6 +39,7 @@ function MovePages(ele){
 	$("#form").attr("action",url + page_id );
 }
 
+// ブラウザの戻るボタンを無効化する
 $(function(){
 window.location.hash="no-back";
 window.location.hash="no-back-button";

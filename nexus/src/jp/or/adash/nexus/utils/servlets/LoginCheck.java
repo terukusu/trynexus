@@ -21,12 +21,6 @@ public class LoginCheck implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		// 0セッションが存在しない場合NULLを返す
         HttpSession session = ((HttpServletRequest)request).getSession();
-
-		// 1.内作
-		// Staff user = new Staff(null, null, null, null, null, null, null, null, null, null);
-		// session.setAttribute("UserData", user);
-		// 1.内作
-
         Staff userData = (Staff)session.getAttribute("UserData");
 
         if(userData != null){
@@ -34,8 +28,6 @@ public class LoginCheck implements Filter {
             chain.doFilter(request, response);
         }else{
             //　0セッションがnullならば、ログイン画面へ飛ばす
-//            RequestDispatcher dispatcher = request.getRequestDispatcher("/stafflogin.jsp");
-//            dispatcher.forward(request,response);
             ((HttpServletResponse)response).sendRedirect("/nexus/top");
         }
 	}

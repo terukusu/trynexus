@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class TopDisplayServlet
- * トップページのスタッフメニューへ遷移させるサーブレット
- *
+ * ログイン画面のURLを/topにするためのサーブレット
+ * @author a.taya
  */
 @WebServlet("/top")
 public class TopDisplayServlet extends HttpServlet {
@@ -31,6 +31,7 @@ public class TopDisplayServlet extends HttpServlet {
 		// 1 JSPにフォワード
 		request.getRequestDispatcher("/stafflogin.jsp").forward(request, response);
 	}
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doGet(request, response);
