@@ -394,10 +394,10 @@
 			</option></c:forEach></select></td><tr>
 				<th>希望雇用形態</th>
 				<td>
-				<input type="radio" name="hopekoyoukeitai" value="1" <c:if test="${ info.hopekoyoukeitai == 1 }">chacked</c:if>/> 正社員
-				<input type="radio" name="hopekoyoukeitai" value="2" <c:if test="${ info.hopekoyoukeitai == 2 }">chacked</c:if>/> 正社員以外
-				<input type="radio" name="hopekoyoukeitai" value="3" <c:if test="${ info.hopekoyoukeitai == 3 }">chacked</c:if>/> 有期雇用派遣
-				<input type="radio" name="hopekoyoukeitai" value="4" <c:if test="${ info.hopekoyoukeitai == 4 }">chacked</c:if>/> 無期雇用派遣</td>
+				<input type="radio" name="hopekoyoukeitai" value="1" <c:if test="${ info.hopekoyoukeitai == 1 }">checked</c:if>/> 正社員
+				<input type="radio" name="hopekoyoukeitai" value="2" <c:if test="${ info.hopekoyoukeitai == 2 }">checked</c:if>/> 正社員以外
+				<input type="radio" name="hopekoyoukeitai" value="3" <c:if test="${ info.hopekoyoukeitai == 3 }">checked</c:if>/> 有期雇用派遣
+				<input type="radio" name="hopekoyoukeitai" value="4" <c:if test="${ info.hopekoyoukeitai == 4 }">checked</c:if>/> 無期雇用派遣</td>
 			</tr>
 			<tr>
 				<th>希望勤務日時</th>
@@ -421,33 +421,29 @@
 			</tr>
 			<tr>
 				<th>その他希望</th>
-				<td><textarea rows="4" cols="40" name="hopeetc" value="<c:out value="${ info.hopeetc }" />">
-			</textarea></td>
+				<td><textarea rows="4" cols="40" name="hopeetc"><c:out value="${ info.hopeetc }" /></textarea></td>
 			</tr>
 			<tr>
 			<th>自動車免許</th>
-			<td><input type="radio" name="driverlicense" value="0" <c:if test="${ info.driverlicense == 0 }">chacked</c:if>/> 無し
-				<input type="radio" name="driverlicense" value="1" <c:if test="${ info.driverlicense == 1 }">chacked</c:if>/> 普通
-				<input type="radio" name="driverlicense" value="2" <c:if test="${ info.driverlicense == 2 }">chacked</c:if>/> AT限定
-				<input type="radio" name="driverlicense" value="3" <c:if test="${ info.driverlicense == 3 }">chacked</c:if>/> 中型
-				<input type="radio" name="driverlicense" value="4" <c:if test="${ info.driverlicense == 4 }">chacked</c:if>/> 大型
-				<input type="radio" name="driverlicense" value="5" <c:if test="${ info.driverlicense == 5 }">chacked</c:if>/> 原付
-				<input type="radio" name="driverlicense" value="6" <c:if test="${ info.driverlicense == 6 }">chacked</c:if>/> 2種</td>
+			<td><input type="radio" name="driverlicense" value="0" <c:if test="${ info.driverlicense == 0 }">checked</c:if> /> 無し
+				<input type="radio" name="driverlicense" value="1" <c:if test="${ info.driverlicense == 1 }">checked</c:if> /> 普通
+				<input type="radio" name="driverlicense" value="2" <c:if test="${ info.driverlicense == 2 }">checked</c:if> /> AT限定
+				<input type="radio" name="driverlicense" value="3" <c:if test="${ info.driverlicense == 3 }">checked</c:if> /> 中型
+				<input type="radio" name="driverlicense" value="4" <c:if test="${ info.driverlicense == 4 }">checked</c:if> /> 大型
+				<input type="radio" name="driverlicense" value="5" <c:if test="${ info.driverlicense == 5 }">checked</c:if> /> 原付
+				<input type="radio" name="driverlicense" value="6" <c:if test="${ info.driverlicense == 6 }">checked</c:if> /> 2種</td>
 		</tr>
 			<tr>
 				<th>その他免許</th>
-				<td><textarea rows="4" cols="40" name="licenseetc" value="<c:out value="${ info.licenseetc }" />">
-			</textarea></td>
+				<td><textarea rows="4" cols="40" name="licenseetc"><c:out value="${ info.licenseetc }" /></textarea></td>
 			</tr>
 			<tr>
 				<th>パソコンスキル</th>
-				<td><textarea rows="4" cols="40" name="pasokonskill" value="${ info.pasokonskill }" />
-				</textarea></td>
+				<td><textarea rows="4" cols="40" name="pasokonskill"><c:out value="${ info.pasokonskill }" /></textarea></td>
 			</tr>
 			<tr>
 				<th>留意点</th>
-				<td><textarea rows="4" cols="40" name="caution" value="${ info.caution }" />
-				</textarea></td>
+				<td><textarea rows="4" cols="40" name="caution"><c:out value="${ info.caution }" /></textarea></td>
 			</tr>
 			<tr>
 				<th>担当職業者紹介者氏名</th>

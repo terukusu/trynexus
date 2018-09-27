@@ -16,9 +16,6 @@ import jp.or.adash.nexus.entity.MatchingCase;
 import jp.or.adash.nexus.entity.Staff;
 import jp.or.adash.nexus.services.MatchingService;
 
-//import jp.or.adash.sample.entity.Item;
-//import jp.or.adash.sample.services.ItemService;
-
 /**
  * Servlet implementation class MaServlet
  */
@@ -41,12 +38,6 @@ public class MatchingServlet extends HttpServlet {
 
 		HttpSession session = request.getSession(true);
 		Staff staff = (Staff) session.getAttribute("UserData");
-
-
-
-		//1.1 リクエストから値を取得する
-		//int id = Integer.parseInt(request.getParameter("id"));
-		//int id=100;
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
 		String kyujinno = request.getParameter("kyujinno");
@@ -81,9 +72,9 @@ public class MatchingServlet extends HttpServlet {
 				createdt,
 				createuserid, upDatedt, upDateuserid);
 
-
 		MatchingService service = new MatchingService();
-		if(!service.check(matching)) {
+
+		if (!service.check(matching)) {
 			//入力チェックでエラーがあった場合、エラーメッセージをセット
 			request.setAttribute("Staff", staff);
 			request.setAttribute("matching", matching);
@@ -91,66 +82,21 @@ public class MatchingServlet extends HttpServlet {
 
 			//JSPにフォワード
 			request.getRequestDispatcher("/matchingregist.jsp")
-			.forward(request, response);
-
-			return;
-		}
-		//KyujinService kyujinservice = new KyujinService();
-		//Kyujin kyujin = kyujinservice.getKyujin(kyujinno);
-
-		//JobSeekerService jobseekerService = new JobSeekerService();
-		//JobSeekerMain jobseekermain = jobseekerService.getJobseekermaininfo(jobseekerid);
-
-		/*if (kyujin == null) {
-
-
-			// 1登録がない場合エラーメッセージをセットする。
-			// 1エラーメッセージをセットする
-			messages.add("登録された番号がありません");
-			result = false;
-		}
-		if (jobseekermain == null) {
-
-
-			// 1登録がない場合エラーメッセージをセットする。
-			messages.add("登録された番号がありません。");
-			result = false;
-		}
-/*
-		/* 11 登録完了メッセージ
-		 */
-
-		service.insertMatchingCases(matching);
-		// 1.3 入力チェック
-		/*MaService service = new MaService();
-		if (!service.check(matching)) {
-			// 1.4 入力チェックでエラーがあった場合、エラーメッセージをセット
-			request.setAttribute("id", matching);
-			request.setAttribute("messages", service.getMessages());
-
-			// 1.5 JSPにフォワード
-			request.getRequestDispatcher("/input.jsp")
 					.forward(request, response);
 
 			return;
 		}
 
-		if ("".equals(hiddenCode)) {
-			// 1.6 商品コードがない場合、商品を登録する
-			service.insertMatchingCases(matching);
-		} else {
-			// 1.7 商品コードがある場合、商品を更新する
-			service.updateItem(item);
-		}
-		*/
-		//1  処理結果メッセージをリクエストに格納する
+		service.insertMatchingCases(matching);
+
+		//処理結果メッセージをリクエストに格納する
 		request.setAttribute("Staff", staff);
 		request.setAttribute("matching", matching);
 		request.setAttribute("messages", service.getMessages());
 
 		//1.8 JSPにフォワード
 		request.getRequestDispatcher("/matchingregist.jsp")
-				.forward(request, response);
+		.forward(request, response);
 	}
 
 }

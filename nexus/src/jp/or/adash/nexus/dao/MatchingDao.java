@@ -10,7 +10,7 @@ import jp.or.adash.nexus.utils.common.DataCommons;
 import jp.or.adash.nexus.utils.dao.Transaction;
 /**
  * 商品データアクセスクラス
- * @author T.Kawasaki
+ * @author ji
  *
  */
 public class MatchingDao {
@@ -71,96 +71,3 @@ public class MatchingDao {
 
 
 
-	//private void setString(int i, String jobseekerid) {
-		// TODO 自動生成されたメソッド・スタブ
-
-
-
-
-	 /* 商品コードを元に、商品情報（1件）を取得する
-	 * @param kyuNo 求人番号
-	 * @return 求人オブジェクト
-	 * @throws IOException
-	 */
-
-//マッチング登録時の照合　↓
-
-	/*
-	public MatchingCase selectMatching(MatchingCase matching) throws IOException {
-	MatchingCase matchingObject = null;
-		// SQL文を生成する
-		StringBuffer sql = new StringBuffer();
-		sql.append("select kyujinno , jobseekerid FROM matchingcase where kyujinno = ?");
-		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
-			ps.setInt(1, itemNo);
-			// SQL文を実行する
-			try (ResultSet rs = ps.executeQuery()) {
-				//  1取得結果をリストに格納する
-				while (rs.next()) {
-					return new Kyuno(rs.getInt("no");
-				}
-			} catch (SQLException e) {
-				throw new IOException(e);
-			}
-		} catch (SQLException e) {
-			throw new IOException(e);
-		}
-		return item;
-}
-/*
-	/**
-	 * 商品の一覧を取得する
-	 * @return 商品リスト
-	 * @throws IOException
-	 */
-	/*public List<Item> selectItemList() throws IOException {
-		List<Item> items = new ArrayList<Item>();
-		// SQL文を生成する
-		StringBuffer sql = new StringBuffer();
-		sql.append("select code, name, unitprice");
-		sql.append(" from item");
-		sql.append(" order by code");
-		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
-			// SQL文を実行する
-			try (ResultSet rs = ps.executeQuery()) {
-				// 1取得結果をリストに格納する
-				while (rs.next()) {
-					items.add(new Item(rs.getInt("code"),
-							rs.getString("name"),
-							rs.getInt("unitprice")));
-				}
-			} catch (SQLException e) {
-				throw new IOException(e);
-			}
-		} catch (SQLException e) {
-			throw new IOException(e);
-		}
-		return items;
-	}
-	/**
-	 * 商品データを更新する
-	 * @param item 商品データ
-	 * @return 更新件数
-	 * @throws IOException
-	 */
-	/*
-	 public int update(Item item) throws IOException {
-		int count = 0;
-		// SQL文を生成する
-		StringBuffer sql = new StringBuffer();
-		sql.append("update item set");
-		sql.append(" name = ?");
-		sql.append(", unitprice = ?");
-		sql.append(" where");
-		sql.append(" code = ?");
-		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
-			ps.setString(1, item.getItemName());
-			ps.setInt(2, item.getUnitPrice());
-			ps.setInt(3, item.getItemNo());
-			// SQL文を実行する
-			count = ps.executeUpdate();
-		} catch (SQLException e) {
-			throw new IOException(e);
-		}
-		return count;
-		*/

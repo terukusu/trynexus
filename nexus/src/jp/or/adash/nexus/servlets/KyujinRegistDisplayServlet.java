@@ -10,9 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import jp.or.adash.nexus.entity.Job;
+import jp.or.adash.nexus.entity.JobCategory;
 import jp.or.adash.nexus.entity.Kyujin;
 import jp.or.adash.nexus.entity.Staff;
 import jp.or.adash.nexus.entity.Todouhuken;
+import jp.or.adash.nexus.services.JobCategoryService;
+import jp.or.adash.nexus.services.JobService;
 import jp.or.adash.nexus.services.KyujinService;
 import jp.or.adash.nexus.services.TodouhukenService;
 
@@ -65,6 +69,32 @@ public class KyujinRegistDisplayServlet extends HttpServlet {
 		// 2.都道府県リストをリクエストに格納する
 		request.setAttribute("list",list);
 		request.setAttribute("Staff", staff);
+
+		// 1.業種大分類リストを取得する
+		JobCategoryService JCLservice = new JobCategoryService();
+		List<JobCategory> JCLlist = JCLservice.getLargeJobCategoryList();
+		// 2.業種大分類リストをリクエストに格納する
+		request.setAttribute("JCLargelist", JCLlist);
+
+
+		// 1.業種小分類リストを取得する
+		JobCategoryService JCSservice = new JobCategoryService();
+		List<JobCategory> JCSlist = JCSservice.getSmallJobCategoryList();
+		// 2.業種小分類リストをリクエストに格納する
+		request.setAttribute("JCSmalllist", JCSlist);
+
+		// 1.職種大分類リストを取得する
+		JobService Lservice = new JobService();
+		List<Job> Llist = Lservice.getLargeJobList();
+		// 2.職種大分類リストをリクエストに格納する
+		request.setAttribute("Largelist", Llist);
+
+		// 1.職種小分類リストを取得する
+		JobService Sservice = new JobService();
+		List<Job> Slist = Sservice.getSmallJobList();
+		// 2.職種小分類リストをリクエストに格納する
+		request.setAttribute("Smalllist", Slist);
+
 
 		// 1.4 JSPにフォワードする
 		request.getRequestDispatcher("/jobregist.jsp")

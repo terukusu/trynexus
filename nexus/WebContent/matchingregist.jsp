@@ -91,13 +91,13 @@
 				<td><font size="5">求人No</font></td>
 				<td>
 				<input type="text" name="kyujinno" size="14">
-				<input type="submit" value="求人No一覧" onclick="window.open('http://localhost:8080/nexus/web/job-search')"></td>
+				<input type="button" value="求人No一覧" onclick="window.open('http://localhost:8080/nexus/web/job-search')"></td>
 
 			</tr>
 			<tr>
 				<td><font size="5">求職者No</font></td>
 				<td><input type="text" name="jobseekerid" size="8">
-				<input type="submit" value="求職者一覧" onclick="window.open('http://localhost:8080/nexus/web/jobseeker-list')"></td>
+				<input type="button" value="求職者一覧" onclick="window.open('http://localhost:8080/nexus/web/jobseeker-list')"></td>
 
 			</tr>
 			<tr>
