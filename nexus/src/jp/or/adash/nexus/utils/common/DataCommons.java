@@ -5,6 +5,9 @@ package jp.or.adash.nexus.utils.common;
 
 import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
+import java.util.IllegalFormatException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * データを扱う際に使える共通クラス
@@ -232,10 +235,30 @@ public class DataCommons {
 	}
 
 	/**
-	 * java.util.Dateクラスをjava.sql.Dateに変換するメソッド
-	 * @param utilDate 変換したいjava.util.Dateクラスのオブジェクト
-	 * @return java.sql.Date java.sql.Date型に変換されたオブジェクト
-	 * @author a.taya
+	 * 【エラー】時間チェック（数値）
+	 * @param int 数値（検査項目）
+	 * @return string エラーメッセージ
+	 * @author pgjavaAT
+	 */
+	public static String chkTime(int i) {
+		try {
+			String sttime = String.format("%04d", i);
+			Pattern p = Pattern.compile("^([0-1][0-9]|[2][0-3])[0-5][0-9]$");
+			Matcher m = p.matcher(sttime);
+			if ( !m.find() ) {
+				return "就業時間・始業を時間で入れてください";
+			}
+		}catch(IllegalFormatException e){
+			return "時間は4桁の半角数字で入力してください";
+		}
+		return null;
+	}
+
+	/**
+	 * java.util.Dateクラスをjava.sql.Dateに変換
+	 * @param utilDate 日付（変換対象）
+	 * @return java.sql.Date 変換後の日付
+	 * @author pgjavaAT
 	 */
 
 	public static java.sql.Date convertToSqlDate(java.util.Date utilDate){
