@@ -40,6 +40,7 @@ public class MatchingServlet extends HttpServlet {
 		Staff staff = (Staff) session.getAttribute("UserData");
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
+		Integer id = Integer.parseInt(request.getParameter("id"));
 		String kyujinno = request.getParameter("kyujinno");
 		String jobseekerid = request.getParameter("jobseekerid");
 		String stffid = request.getParameter("staffid");
@@ -68,7 +69,7 @@ public class MatchingServlet extends HttpServlet {
 		String upDateuserid = staff.getId();
 
 		//1.2 マッチング結果オブジェクトを作成
-		MatchingCase matching = new MatchingCase(kyujinno, jobseekerid, stffid, interviewdt, enterdt, assessment, note,
+		MatchingCase matching = new MatchingCase(id, kyujinno, jobseekerid, stffid, interviewdt, enterdt, assessment, note,
 				createdt,
 				createuserid, upDatedt, upDateuserid);
 

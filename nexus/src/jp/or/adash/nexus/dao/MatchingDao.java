@@ -75,7 +75,7 @@ public class MatchingDao {
 	 * @return
 	 * @throws IOException
 	 */
-	public MatchingCase selectMatchingCase(String id) throws IOException {
+	public MatchingCase select(String id) throws IOException {
 		MatchingCase MatchingCase = null;
 
 		// SQL文を生成する
@@ -91,6 +91,7 @@ public class MatchingDao {
 				//0取得結果をリストに格納する
 				while(rs.next()) {
 					MatchingCase= new MatchingCase(
+							rs.getInt("id"),
 							rs.getString("kyujinno"),
 							rs.getString("jobseekerid"),
 							rs.getString("staffid"),
@@ -112,6 +113,51 @@ public class MatchingDao {
 		}
 
 		return MatchingCase;
+	}
+
+	/**
+	 * マッチング結果の更新
+	 * @param mcase 更新対象のデータ
+	 * @return 更新行数
+	 * @throws IOException
+	 */
+	public int update(MatchingCase mcase) throws IOException {
+		int count = 0;
+
+		// SQL文を生成する
+		StringBuffer sql = new StringBuffer();
+		sql.append("update matchingcase set");
+		sql.append(" kyujinno = ?,");
+		sql.append(" jobseekerid = ?,");
+		sql.append(" staffid = ?,");
+		sql.append(" interviewdt = ?,");
+		sql.append(" enterdt = ?,");
+		sql.append(" assessment = ?,");
+		sql.append(" note = ?,");
+		sql.append(" updatedt = ?,");
+		sql.append(" updateuserid = ?,");
+		sql.append(" where");
+		sql.append(" id = ?");
+		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
+
+			ps.setString(1, mcase.getKyujinno());
+			ps.setString(2, mcase.getJobseekerid());
+			ps.setString(3, mcase.getStaffid());
+			ps.setDate(4, DataCommons.convertToSqlDate(mcase.getInterviewdt()));
+			ps.setDate(5, DataCommons.convertToSqlDate(mcase.getEnterdt()));
+			ps.setString(6, mcase.getAssessment());
+			ps.setString(7, mcase.getNote());
+			ps.setDate(8, DataCommons.convertToSqlDate(mcase.getUpDatedt()));
+			ps.setString(9, mcase.getUpDateuserid());
+			ps.setInt(10, mcase.getId());
+
+			// SQL文を実行する
+			count = ps.executeUpdate();
+		} catch(SQLException e) {
+			throw new IOException(e);
+		}
+
+		return count;
 	}
 }
 
