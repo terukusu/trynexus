@@ -3,14 +3,16 @@ package jp.or.adash.nexus.dao;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import jp.or.adash.nexus.entity.MatchingCase;
 import jp.or.adash.nexus.utils.common.DataCommons;
 import jp.or.adash.nexus.utils.dao.Transaction;
 /**
- * 商品データアクセスクラス
+ * マッチングデータアクセスクラス
  * @author ji
+ * @author pgjavaAT
  *
  */
 public class MatchingDao {
@@ -67,6 +69,50 @@ public class MatchingDao {
 		return count;
 	}
 
+	/**
+	 * idを元にマッチング結果のデータを取得する
+	 * @param id
+	 * @return
+	 * @throws IOException
+	 */
+	public MatchingCase selectMatchingCase(String id) throws IOException {
+		MatchingCase MatchingCase = null;
+
+		// SQL文を生成する
+		StringBuffer sql = new StringBuffer();
+		sql.append("select * "
+				+ "from matchingcase "
+				+ "where kyujinno = ?; ");
+		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
+			ps.setString(1, id);
+
+			// SQL文を実行する
+			try (ResultSet rs = ps.executeQuery()) {
+				//0取得結果をリストに格納する
+				while(rs.next()) {
+					MatchingCase= new MatchingCase(
+							rs.getString("kyujinno"),
+							rs.getString("jobseekerid"),
+							rs.getString("staffid"),
+							rs.getDate("interviewdt"),
+							rs.getDate("enterdt"),
+							rs.getString("assessment"),
+							rs.getString("note"),
+							rs.getDate("createdt"),
+							rs.getString("createuserid"),
+							rs.getDate("upDatedt"),
+							rs.getString("updateuserid")
+							);
+				}
+			} catch(SQLException e) {
+				throw new IOException(e);
+			}
+		} catch(SQLException e) {
+			throw new IOException(e);
+		}
+
+		return MatchingCase;
+	}
 }
 
 
