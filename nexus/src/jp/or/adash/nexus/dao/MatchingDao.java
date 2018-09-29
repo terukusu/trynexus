@@ -31,8 +31,8 @@ public class MatchingDao {
 	}
 
 	/**
-	 * マッチング結果を登録する
-	 * @param matching 登録する商品の情報
+	 * マッチング情報を登録する
+	 * @param matching
 	 * @return 登録件数
 	 * @throws IOException
 	 */
@@ -70,9 +70,9 @@ public class MatchingDao {
 	}
 
 	/**
-	 * idを元にマッチング結果のデータを取得する
+	 * idを元にマッチング情報のデータを取得する
 	 * @param id
-	 * @return
+	 * @return 取得したデータ
 	 * @throws IOException
 	 */
 	public MatchingCase select(String id) throws IOException {
@@ -116,12 +116,12 @@ public class MatchingDao {
 	}
 
 	/**
-	 * マッチング結果の更新
-	 * @param mcase 更新対象のデータ
-	 * @return 更新行数
+	 * マッチング情報の更新
+	 * @param matching 更新対象のデータ
+	 * @return 更新行数 0じゃなければ更新成功
 	 * @throws IOException
 	 */
-	public int update(MatchingCase mcase) throws IOException {
+	public int update(MatchingCase matching) throws IOException {
 		int count = 0;
 
 		// SQL文を生成する
@@ -140,16 +140,16 @@ public class MatchingDao {
 		sql.append(" id = ?");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
 
-			ps.setString(1, mcase.getKyujinno());
-			ps.setString(2, mcase.getJobseekerid());
-			ps.setString(3, mcase.getStaffid());
-			ps.setDate(4, DataCommons.convertToSqlDate(mcase.getInterviewdt()));
-			ps.setDate(5, DataCommons.convertToSqlDate(mcase.getEnterdt()));
-			ps.setString(6, mcase.getAssessment());
-			ps.setString(7, mcase.getNote());
-			ps.setDate(8, DataCommons.convertToSqlDate(mcase.getUpDatedt()));
-			ps.setString(9, mcase.getUpDateuserid());
-			ps.setInt(10, mcase.getId());
+			ps.setString(1, matching.getKyujinno());
+			ps.setString(2, matching.getJobseekerid());
+			ps.setString(3, matching.getStaffid());
+			ps.setDate(4, DataCommons.convertToSqlDate(matching.getInterviewdt()));
+			ps.setDate(5, DataCommons.convertToSqlDate(matching.getEnterdt()));
+			ps.setString(6, matching.getAssessment());
+			ps.setString(7, matching.getNote());
+			ps.setDate(8, DataCommons.convertToSqlDate(matching.getUpDatedt()));
+			ps.setString(9, matching.getUpDateuserid());
+			ps.setInt(10, matching.getId());
 
 			// SQL文を実行する
 			count = ps.executeUpdate();

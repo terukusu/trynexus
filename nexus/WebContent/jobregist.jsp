@@ -1,3 +1,7 @@
+<!-- @author ??? & pgjavaAT
+	18/09/30 閉じるボタンをトップへ戻るに変更
+ -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -486,8 +490,8 @@
 
 
 			<!-- 2やるべきメモ：別ウインドウで開いていないため閉じてしまうと再度立ち上げになるので戻る制御にしてください -->
-			<button type="button" class="main-b" onClick="window.CloseWindow();"
-				tabindex="62">閉じる</button>
+			<button type="button" class="main-b"
+				onClick="location.href='./staff-top'" tabindex="62">トップに戻る</button>
 
 			<!-- 3やりたかったメモ：押し間違えやすいので削除と戻るボタングレー等に色変えか位置変え検討-->
 				<c:if test="${ kyujin.no == null }">

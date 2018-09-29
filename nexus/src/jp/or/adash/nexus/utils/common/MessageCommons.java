@@ -2,7 +2,7 @@ package jp.or.adash.nexus.utils.common;
 
 /**
  * 共通メッセージクラス
- * @author T.Kawasaki
+ * @author T.Kawasaki & pgjavaAT
  *
  */
 public class MessageCommons {
@@ -10,4 +10,20 @@ public class MessageCommons {
 	 * データベース接続時のエラーメッセージ
 	 */
 	public static final String ERR_DB_CONNECT = "データベースアクセスに失敗しました。";
+	/**
+	 * 登録完了メッセージ
+	 */
+	public static final String MSG_REGIST_COMPLETE = "登録が完了しました。";
+	/**
+	 * 登録失敗メッセージ
+	 */
+	public static final String MSG_REGIST_FAILURE = "登録が失敗しました。";
+	/**
+	 * 更新完了メッセージ
+	 */
+	public static final String MSG_UPDATE_COMPLETE = "更新が完了しました。";
+	/**
+	 * 更新失敗メッセージ
+	 */
+	public static final String MSG_UPDATE_FAILURE = "更新が失敗しました。";
 }

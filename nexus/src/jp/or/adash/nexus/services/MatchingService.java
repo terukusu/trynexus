@@ -124,7 +124,6 @@ public class MatchingService {
 	 * @param matching マッチング情報
 	 * @return マッシング情報を登録する。
 	 */
-
 	public boolean insertMatchingCases(MatchingCase matching) {
 		boolean result = false; //1処理結果
 
@@ -141,11 +140,11 @@ public class MatchingService {
 
 			if (count > 0) {
 				// 1完了メッセージをセットする
-				messages.add(MSG_MATCHING_REGIST_COMPLETE);
+				messages.add(MessageCommons.MSG_REGIST_COMPLETE);
 				result = true;
 			} else {
 				// 1エラーメッセージをセットする
-				messages.add(MSG_MATCHING_REGIST_FAILURE);
+				messages.add(MessageCommons.MSG_REGIST_FAILURE);
 				result = false;
 			}
 
@@ -166,11 +165,52 @@ public class MatchingService {
 		return result;
 	}
 
-	/* 1登録完了メッセージ
-	 */
-	private static final String MSG_MATCHING_REGIST_COMPLETE = "マッチング登録が完了しました。";
 
-	/* 1登録完了メッセージ
+	/**
+	 * マッチング情報の更新
+	 * @param matching
+	 * @return
 	 */
-	private static final String MSG_MATCHING_REGIST_FAILURE = "マッチング登録が失敗しました。";
+	public boolean updateMatchingCases(MatchingCase matching) {
+		boolean result = false; //1処理結果
+
+		try {
+			// 1データベース接続を開始する
+			transaction.open();
+
+			// 1トランザクションを開始する
+			transaction.beginTrans();
+
+			// 1商品単価を取得する
+			MatchingDao dao = new MatchingDao(transaction);
+			int count = dao.update(matching);
+
+			if (count > 0) {
+				// 1完了メッセージをセットする
+				messages.add(MessageCommons.MSG_UPDATE_COMPLETE);
+				result = true;
+			} else {
+				// 1エラーメッセージをセットする
+				messages.add(MessageCommons.MSG_UPDATE_FAILURE);
+				result = false;
+			}
+
+			//1 トランザクションをコミットする
+			transaction.commit();
+
+		} catch (IOException e) {
+			// 1トランザクションをロールバックする
+			transaction.rollback();
+
+			// 1エラーメッセージをセットする
+			messages.add(MessageCommons.ERR_DB_CONNECT);
+		} finally {
+			//1 データベース接続をを終了する
+			transaction.close();
+		}
+
+		return result;
+	}
+
+
 }

@@ -30,7 +30,8 @@ function CloseWindow(){
 	window.open('about:blank','_self').close();
 }
 
-//IDを取得してそれを元にURL遷移
+//ele.idを元に、formタグのactionのURLを再設定する
+//type=submitのみ使用可
 function MovePages(ele){
 	var page_id = ele.id;
 	var loc = location.pathname;
