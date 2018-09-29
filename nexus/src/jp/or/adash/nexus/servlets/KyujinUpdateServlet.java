@@ -88,14 +88,12 @@ public class KyujinUpdateServlet extends HttpServlet {
 		try {
 			koyoukikankaishi = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("koyoukikankaishi"));
 		} catch (ParseException e) {
-			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
 		Date koyoukikanowari = null;
 		try {
 			koyoukikanowari = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("koyoukikanowari"));
 		} catch (ParseException e) {
-			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
 
@@ -104,7 +102,7 @@ public class KyujinUpdateServlet extends HttpServlet {
 		String education = request.getParameter("education");
 		String experience = request.getParameter("experience");
 		String license = request.getParameter("license");
-		// 空データでparseIntをするとエラーになるので、空データ以外はチェック。空データーは０をセット
+		// 空データでparseIntをするとエラーになるので、空データ以外はチェック。空データは０をセット
 		int agemin = 0;
 		if (!request.getParameter("agemin").equals("")) {
 		       agemin = Integer.parseInt(request.getParameter("agemin"));}
@@ -158,7 +156,6 @@ public class KyujinUpdateServlet extends HttpServlet {
 
 
 		String updateuserid = staff.getId();
-//		String updateuserid = "1234";
 
 		String deleteflag = "0";
 

@@ -125,9 +125,9 @@ public class DataCommons {
 	 * @return string エラーメッセージ
 	 * @author y.Koura
 	 */
-	public static String chkCompanyno(String Str) {
+	public static String chkCompanyno(String str) {
 		String MATCH_CNO = "^[0-9]{4}-[0-9]{6}-[0-9]{1}$";
-		if (Str.matches(MATCH_CNO)) {
+		if (str.matches(MATCH_CNO)) {
 			return null;
 		} else {
 			return "事業所番号は xxxx-xxxxxx-x の形式で入力してください";
