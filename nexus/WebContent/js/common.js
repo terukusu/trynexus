@@ -32,7 +32,7 @@ function CloseWindow(){
 }
 
 //ele.idを元に、formタグのactionのURLを再設定する
-//type="submit"のみ使用可
+//type="submit"のみ使用可 formにid="form"を設定して使用
 function MovePages(ele){
 	var page_id = ele.id;
 	var loc = location.pathname;

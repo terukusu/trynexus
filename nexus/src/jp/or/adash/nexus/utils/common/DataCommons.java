@@ -21,7 +21,7 @@ public class DataCommons {
 	 * @param str 文字列
 	 * @return 文字列のバイト数（取得エラーの場合は、マイナス値を返す）
 	 */
-	public int getBytes(String str) {
+	public static int getBytes(String str) {
 		if (str == null) {
 			return 0;
 		}
