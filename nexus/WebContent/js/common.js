@@ -5,6 +5,7 @@
  * @author a.taya
  */
 
+
 // カレンダー
 $(function() {
 	  $('.datepicker').datepicker({
