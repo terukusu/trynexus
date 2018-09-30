@@ -82,7 +82,7 @@
 
 	<ul>
 		<c:forEach var="message" items="${ messages }">
-			<li><font color=#F00 size=7"><c:out value="${ message }" /></font></li>
+			<li><font color=#F00 size="7"><c:out value="${ message }" /></font></li>
 		</c:forEach>
 	</ul>
 
@@ -148,7 +148,16 @@
 			</tr>
 
 		</table>
-		<font size="5"><input class="main-b" type="submit" value="登録"></font>
+			<c:if test="${ matching.id == null }">
+				<button type="submit" id="match-regist" class="main-b"
+					onclick="MovePages(this)" tabindex="61">登録</button>
+			</c:if>
+			<c:if test="${ matching.id != null }">
+				<button type="submit" id="match-update" class="main-b"
+					onclick="MovePages(this)" tabindex="61">更新</button>
+				<button type="submit" id="match-delete" class="main-b2"
+					onclick="MovePages(this)" tabindex="63">削除</button>
+			</c:if>
 	</form>
 
 

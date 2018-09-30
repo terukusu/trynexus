@@ -502,11 +502,9 @@
 			</table>
 
 
-			<!-- 2やるべきメモ：別ウインドウで開いていないため閉じてしまうと再度立ち上げになるので戻る制御にしてください -->
 			<button type="button" class="main-b"
 				onClick="location.href='./job-search'" tabindex="62">求人一覧に戻る</button>
 
-			<!-- 3やりたかったメモ：押し間違えやすいので削除と戻るボタングレー等に色変えか位置変え検討-->
 			<c:if test="${ kyujin.no == null }">
 				<button type="submit" id="kyujin-insert" class="main-b"
 					onclick="MovePages(this)" tabindex="61">登録</button>
@@ -514,7 +512,7 @@
 			<c:if test="${ kyujin.no != null }">
 				<button type="submit" id="kyujin-update" class="main-b"
 					onclick="MovePages(this)" tabindex="61">更新</button>
-				<button type="submit" id="kyujin-delete" class="main-b"
+				<button type="submit" id="kyujin-delete" class="main-b2"
 					onclick="MovePages(this)" tabindex="63">削除</button>
 			</c:if>
 		</div>

@@ -11,7 +11,6 @@
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p"
 	rel="stylesheet">
 <link href="../css/bootstrap-reboot.css" rel="stylesheet">
-<link href="../css/applicantlist.css" rel="stylesheet">
 <link href="../css/common.css" rel="stylesheet">
 <link href="../css/header.css" rel="stylesheet">
 <link href="../css/footer.css" rel="stylesheet">
