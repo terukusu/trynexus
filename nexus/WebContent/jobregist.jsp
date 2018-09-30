@@ -40,7 +40,9 @@
 	<header>
 		<section>
 			<h1 class="logo">
-				<a href="/nexus/web/staff-top">LOGO</a>
+				<a href="/nexus/web/staff-top"><img
+					src="../css/TryNexus-Logo.png" width="97" height="70" alt="TryNexus" /></a>
+			</h1>
 			</h1>
 			<nav>
 				<ul class="mainnavi">
@@ -95,8 +97,7 @@
 					<th>求人No.</th>
 					<td><input type="text" name="no"
 						value="<c:out value="${  kyujin.no }" />" size="20" maxlength="14"
-						tabindex="1" placeholder="※編集不可" readonly>※編集不可
-						</td>
+						tabindex="1" placeholder="※編集不可" readonly>※編集不可</td>
 				</tr>
 				<tr>
 					<th>受付年月日</th>
@@ -117,7 +118,7 @@
 						maxlength="13" tabindex="4"></td>
 				</tr>
 
-			<!-- 1やりたかったメモ：一行テキストボックスはenter押すとすぐに登録なので
+				<!-- 1やりたかったメモ：一行テキストボックスはenter押すとすぐに登録なので
 			submit変更かjsとかで制御、日本語入力オン-に-->
 
 				<tr>
@@ -474,22 +475,28 @@
 				</tr>
 				<tr>
 					<th>新規登録日</th>
-					<td><input type="text" name="createdt" value="<fmt:formatDate value="${ kyujin.createdt }"
-					pattern="yyyy-MM-dd"/>" size="10" readonly>※編集不可</td>
+					<td><input type="text" name="createdt"
+						value="<fmt:formatDate value="${ kyujin.createdt }"
+					pattern="yyyy-MM-dd"/>"
+						size="10" readonly>※編集不可</td>
 				</tr>
 				<tr>
 					<th>新規登録ユーザ</th>
 					<td><input type="text" name="createuserid"
-						value="<c:out value="${ kyujin.createuserid }" />" size="4" readonly>※編集不可</td>
+						value="<c:out value="${ kyujin.createuserid }" />" size="4"
+						readonly>※編集不可</td>
 				<tr>
 					<th>最終更新日</th>
-					<td><input type="text" name="updatedt" value="<fmt:formatDate value="${ kyujin.updatedt }"
-					pattern="yyyy-MM-dd"/>" size="10" readonly>※編集不可</td>
+					<td><input type="text" name="updatedt"
+						value="<fmt:formatDate value="${ kyujin.updatedt }"
+					pattern="yyyy-MM-dd"/>"
+						size="10" readonly>※編集不可</td>
 				</tr>
 				<tr>
 					<th>最終更新ユーザ</th>
 					<td><input type="text" name="updateuserid"
-						value="<c:out value="${ kyujin.updateuserid }" />" size="4" readonly>※編集不可</td>
+						value="<c:out value="${ kyujin.updateuserid }" />" size="4"
+						readonly>※編集不可</td>
 				</tr>
 
 			</table>
@@ -500,14 +507,14 @@
 				onClick="location.href='./job-search'" tabindex="62">求人一覧に戻る</button>
 
 			<!-- 3やりたかったメモ：押し間違えやすいので削除と戻るボタングレー等に色変えか位置変え検討-->
-				<c:if test="${ kyujin.no == null }">
+			<c:if test="${ kyujin.no == null }">
 				<button type="submit" id="kyujin-insert" class="main-b"
 					onclick="MovePages(this)" tabindex="61">登録</button>
 			</c:if>
 			<c:if test="${ kyujin.no != null }">
-					<button type="submit" id="kyujin-update" class="main-b"
+				<button type="submit" id="kyujin-update" class="main-b"
 					onclick="MovePages(this)" tabindex="61">更新</button>
-					<button type="submit" id="kyujin-delete" class="main-b"
+				<button type="submit" id="kyujin-delete" class="main-b"
 					onclick="MovePages(this)" tabindex="63">削除</button>
 			</c:if>
 		</div>
