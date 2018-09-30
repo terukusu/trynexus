@@ -11,22 +11,22 @@
 	rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p"
 	rel="stylesheet">
-<link href="../css/bootstrap-reboot.css" rel="stylesheet">
-<link href="../css/common.css" rel="stylesheet">
-<link href="../css/header.css" rel="stylesheet">
-<link href="../css/footer.css" rel="stylesheet">
+<link href="../../css/bootstrap-reboot.css" rel="stylesheet">
+<link href="../../css/common.css" rel="stylesheet">
+<link href="../../css/header.css" rel="stylesheet">
+<link href="../../css/footer.css" rel="stylesheet">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
 </head>
 <body>
 	<header>
 		<section>
 			<h1 class="logo">
 				<a href="/nexus/web/staff-top"><img
-					src="../css/TryNexus-Logo.png" width="97" height="70" alt="TryNexus" /></a>
+					src="../../css/TryNexus-Logo.png" width="97" height="70" alt="TryNexus" /></a>
 			</h1>
 			</h1>
 			<nav>
@@ -42,7 +42,7 @@
 							<li><a href="/nexus/web/match-disp">マッチング登録<i
 									class="fas fa-angle-right"></i></a></li>
 						</ul></li>
-					<li><a href="/nexus/web/account-list"><i
+					<li><a href="/nexus/web/admin/account-list"><i
 							class="far fa-bookmark"></i>管理</a></li>
 				</ul>
 			</nav>
@@ -67,7 +67,7 @@
 			<li><c:out value="${ message }" /></li>
 		</c:forEach>
 	</ul>
-	<form action="/nexus/web/account-editcomp" method="post">
+	<form action="/nexus/web/admin/account-editcomp" method="post">
 		<table>
 			<tr>
 				<th>項目名</th>
@@ -108,14 +108,14 @@
 		<input class="main-b" type="submit" value="更新">
 	</form>
 
-	<form name="delete" action="/nexus/web/account-delete" method="GET"
+	<form name="delete" action="/nexus/web/admin/account-delete" method="GET"
 		onsubmit="return kakunin()">
 		<input type="hidden" name="id" value="${ Staff.id }"> <input
 			class="main-b" type="submit" value="削除">
 	</form>
 	<input class="main-b" type="button" value="戻る"
-		onclick="location.href='/nexus/web/account-list'"> <!--   <input class="main-b" type="button"
-		onclick="location.href='/nexus/web/account-list'" value="戻る">
+		onclick="location.href='/nexus/web/admin/account-list'"> <!--   <input class="main-b" type="button"
+		onclick="location.href='/nexus/web/admin/account-list'" value="戻る">
 	--> <!--  <form method="post" action="AccountEditCompletionServlet">
 					<input type="hidden" name="id" value="<c:out value="${ Staff.id }" />">
 					<input type="hidden" name="name" value="<c:out value="${ Staff.name }" />">

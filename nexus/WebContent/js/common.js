@@ -20,7 +20,7 @@ function kakunin(){
 	 }
 
 	  /*if (ret == true){
-	    location.href = "/nexus/web/account-delete?id='1234'";
+	    location.href = "/nexus/web/admin/account-delete?id='1234'";
 	  }*/
 	}
 /**
