@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -104,7 +105,7 @@
 				<tr>
 					<th>生年月日</th>
 					<td><input type="text" class="datepicker" name="birthdt"
-						value="<c:out value="${ seeker.birthdt }" />"></td>
+						value="<fmt:formatDate value="${ seeker.birthdt }" pattern="yyyy-MM-dd"/>"></td>
 				</tr>
 				<tr>
 					<th>性別</th>
