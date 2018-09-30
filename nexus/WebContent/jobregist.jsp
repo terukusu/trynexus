@@ -95,9 +95,8 @@
 			<table>
 				<tr>
 					<th>求人No.</th>
-					<td><input type="text" name="no"
-						value="<c:out value="${  kyujin.no }" />" size="20" maxlength="14"
-						tabindex="1" placeholder="※編集不可" readonly>※編集不可</td>
+					<td><input type="hidden" name="no"
+						value="<c:out value="${ kyujin.no }" />"><c:out value="${ kyujin.no }" /></td>
 				</tr>
 				<tr>
 					<th>受付年月日</th>
@@ -475,28 +474,30 @@
 				</tr>
 				<tr>
 					<th>新規登録日</th>
-					<td><input type="text" name="createdt"
+					<td><input type="hidden" name="createdt"
 						value="<fmt:formatDate value="${ kyujin.createdt }"
-					pattern="yyyy-MM-dd"/>"
-						size="10" readonly>※編集不可</td>
+					pattern="yyyy-MM-dd"/>">
+						<fmt:formatDate value="${ kyujin.createdt }"
+					pattern="yyyy-MM-dd"/></td>
 				</tr>
 				<tr>
 					<th>新規登録ユーザ</th>
-					<td><input type="text" name="createuserid"
-						value="<c:out value="${ kyujin.createuserid }" />" size="4"
-						readonly>※編集不可</td>
+					<td><input type="hidden" name="createuserid"
+						value="<c:out value="${ kyujin.createuserid }" />">
+						<c:out value="${ kyujin.createuserid }" /></td>
 				<tr>
 					<th>最終更新日</th>
-					<td><input type="text" name="updatedt"
+					<td><input type="hidden" name="updatedt"
 						value="<fmt:formatDate value="${ kyujin.updatedt }"
-					pattern="yyyy-MM-dd"/>"
-						size="10" readonly>※編集不可</td>
+					pattern="yyyy-MM-dd"/>">
+						<fmt:formatDate value="${ kyujin.updatedt }"
+					pattern="yyyy-MM-dd"/></td>
 				</tr>
 				<tr>
 					<th>最終更新ユーザ</th>
-					<td><input type="text" name="updateuserid"
-						value="<c:out value="${ kyujin.updateuserid }" />" size="4"
-						readonly>※編集不可</td>
+					<td><input type="hidden" name="updateuserid"
+						value="<c:out value="${ kyujin.updateuserid }" />">
+						<c:out value="${ kyujin.updateuserid }" /></td>
 				</tr>
 
 			</table>
