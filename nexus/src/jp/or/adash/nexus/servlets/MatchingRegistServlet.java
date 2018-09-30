@@ -14,7 +14,6 @@ import javax.servlet.http.HttpSession;
 
 import jp.or.adash.nexus.entity.MatchingCase;
 import jp.or.adash.nexus.entity.Staff;
-import jp.or.adash.nexus.services.DBCheckService;
 import jp.or.adash.nexus.services.MatchingService;
 
 /**
@@ -42,13 +41,21 @@ public class MatchingRegistServlet extends HttpServlet {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		MatchingCase matching = null;
 		MatchingService service = new MatchingService();
-		DBCheckService dbcservice = new DBCheckService();
 
-		Integer id = service.getId()+1;
-		if(!request.getParameter("id").equals("")) {
-			id = Integer.parseInt(request.getParameter("id"));
+		//idが入力されていた場合、そのidのマッチング事例を表示する。
+		if(request.getParameter("id") != null) {
+			int id = Integer.parseInt(request.getParameter("id"));
+
+			matching = service.getMatching(id);
+			//処理結果メッセージをリクエストに格納する
+			request.setAttribute("Staff", staff);
+			request.setAttribute("matching", matching);
+			request.setAttribute("messages", service.getMessages());
+
+			//1.8 JSPにフォワード
+			request.getRequestDispatcher("/matchingregist.jsp")
+			.forward(request, response);
 		}
-
 		String kyujinno = request.getParameter("kyujinno");
 		String jobseekerid = request.getParameter("jobseekerid");
 		String staffid = request.getParameter("staffid");
@@ -75,30 +82,11 @@ public class MatchingRegistServlet extends HttpServlet {
 		String upDateuserid = staff.getId();
 
 		//1.2 マッチング結果オブジェクトを作成
-		matching = new MatchingCase(id, kyujinno, jobseekerid, staffid, interviewdt, enterdt, assessment, note,
+		matching = new MatchingCase(0, kyujinno, jobseekerid, staffid, interviewdt, enterdt, assessment, note,
 				createdt,
 				createuserid, upDatedt, upDateuserid);
 
-		if(!dbcservice.checkKyujin(kyujinno)) {
-			// 該当する求人がない場合、エラーメッセージをセット
-			request.setAttribute("Staff", staff);
-			request.setAttribute("matching", matching);
-			request.setAttribute("messages", dbcservice.getMessages());
-			request.getRequestDispatcher("/matchingregist.jsp")
-			.forward(request, response);
 
-			return;
-		}
-		if(!dbcservice.checkJobseeker(jobseekerid)) {
-			// 該当する求人がない場合、エラーメッセージをセット
-			request.setAttribute("Staff", staff);
-			request.setAttribute("matching", matching);
-			request.setAttribute("messages", dbcservice.getMessages());
-			request.getRequestDispatcher("/matchingregist.jsp")
-			.forward(request, response);
-
-			return;
-		}
 		if (!service.check(matching)) {
 			//入力チェックでエラーがあった場合、エラーメッセージをセット
 			request.setAttribute("Staff", staff);

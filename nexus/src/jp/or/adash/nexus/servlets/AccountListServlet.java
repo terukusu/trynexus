@@ -16,7 +16,7 @@ import jp.or.adash.nexus.services.AccountListService;
 /**
  * Servlet implementation class AccountListServlet
  */
-@WebServlet("/web/admin/account-list")
+@WebServlet("/web/account-list")
 public class AccountListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -35,6 +35,15 @@ public class AccountListServlet extends HttpServlet {
 
 		HttpSession session = request.getSession(true);
 		Staff staff = (Staff) session.getAttribute("UserData");
+		// 管理者以外の場合、staff-topに遷移
+		if(!staff.getAuthority().equals("1")) {
+			request.setAttribute("Staff", staff);
+			//0	フォワードする
+			request.getRequestDispatcher("/web/staff-top")
+			.forward(request, response);
+
+			return;
+		}
 
 		// 1.アカウント情報一覧を取得する
 		AccountListService service = new AccountListService();

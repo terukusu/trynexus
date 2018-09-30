@@ -42,7 +42,7 @@
 							<li><a href="/nexus/web/match-disp">マッチング登録<i
 									class="fas fa-angle-right"></i></a></li>
 						</ul></li>
-					<li><a href="/nexus/web/admin/account-list"><i
+					<li><a href="/nexus/web/account-list"><i
 							class="far fa-bookmark"></i>管理</a></li>
 				</ul>
 			</nav>
@@ -105,7 +105,7 @@
 					<th><label>管理</label></th>
 				</tr>
 				<tr>
-					<td><a href="/nexus/web/admin/account-list">■アカウント</a></td>
+					<td><a href="/nexus/web/account-list">■アカウント</a></td>
 				</tr>
 			</table>
 		</div>

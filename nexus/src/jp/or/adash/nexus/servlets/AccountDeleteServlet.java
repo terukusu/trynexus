@@ -13,7 +13,7 @@ import jp.or.adash.nexus.services.AccountEditService;
 /**
  * Servlet implementation class AccountDeleteServlet
  */
-@WebServlet("/web/admin/account-delete")
+@WebServlet("/web/account-delete")
 public class AccountDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

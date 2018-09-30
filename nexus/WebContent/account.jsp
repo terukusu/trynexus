@@ -10,23 +10,23 @@
 	rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p"
 	rel="stylesheet">
-<link href="../../css/bootstrap-reboot.css" rel="stylesheet">
-<link href="../../css/common.css" rel="stylesheet">
-<link href="../../css/header.css" rel="stylesheet">
-<link href="../../css/footer.css" rel="stylesheet">
-<link href="../../css/account.css" rel="stylesheet">
+<link href="../css/bootstrap-reboot.css" rel="stylesheet">
+<link href="../css/common.css" rel="stylesheet">
+<link href="../css/header.css" rel="stylesheet">
+<link href="../css/footer.css" rel="stylesheet">
+<link href="../css/account.css" rel="stylesheet">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
 </head>
 <body>
 	<header>
 		<section>
 			<h1 class="logo">
 				<a href="/nexus/web/staff-top"><img
-					src="../../css/TryNexus-Logo.png" width="97" height="70" alt="TryNexus" /></a>
+					src="../css/TryNexus-Logo.png" width="97" height="70" alt="TryNexus" /></a>
 			</h1>
 			<nav>
 				<ul class="mainnavi">
@@ -41,7 +41,7 @@
 							<li><a href="/nexus/web/match-disp">マッチング登録<i
 									class="fas fa-angle-right"></i></a></li>
 						</ul></li>
-					<li><a href="/nexus/web/admin/account-list"><i
+					<li><a href="/nexus/web/account-list"><i
 							class="far fa-bookmark"></i>管理</a></li>
 				</ul>
 			</nav>
@@ -62,7 +62,7 @@
 	<main>
 	<h2>アカウント一覧</h2>
 	<input class="main-b newbutton" type="button" value="新規登録"
-		onclick="location.href='/nexus/web/admin/account-disp'">
+		onclick="location.href='/nexus/web/account-disp'">
 	<table>
 		<tr>
 			<th></th>
@@ -74,7 +74,7 @@
 		<c:forEach var="account" items="${ accounts }">
 			<tr>
 				<td>
-					<form method="get" action="/nexus/web/admin/account-edit">
+					<form method="get" action="/nexus/web/account-edit">
 						<input type="hidden" name="id" value="${ account.id }"> <input
 							class="main-b" type="submit" value="編集">
 					</form>

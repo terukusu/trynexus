@@ -20,7 +20,7 @@ import jp.or.adash.nexus.entity.Staff;
 /**
  * Servlet implementation class AccountDisplayServlets
  */
-@WebServlet("/web/admin/account-disp")
+@WebServlet("/web/account-disp")
 public class AccountDisplayServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
