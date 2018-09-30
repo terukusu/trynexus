@@ -95,7 +95,7 @@
 					<th>求人No.</th>
 					<td><input type="text" name="no"
 						value="<c:out value="${  kyujin.no }" />" size="20" maxlength="14"
-						tabindex="1" placeholder="記入不要です" readonly>
+						tabindex="1" placeholder="※編集不可" readonly>※編集不可
 						</td>
 				</tr>
 				<tr>
@@ -117,7 +117,8 @@
 						maxlength="13" tabindex="4"></td>
 				</tr>
 
-			<!-- 1やりたかったメモ：一行テキストボックスはenter押すとすぐに登録なのでsubmit変更かjsとかで制御、日本語入力オン-に-->
+			<!-- 1やりたかったメモ：一行テキストボックスはenter押すとすぐに登録なので
+			submit変更かjsとかで制御、日本語入力オン-に-->
 
 				<tr>
 					<th>産業大分類コード</th>
@@ -391,7 +392,8 @@
 						<c:if test="${5 == kyujin.salaryformcd}">checked="checked"</c:if>
 						tabindex="45"> 年棒 <input type="radio" name="salaryformcd"
 						value="6"
-						<c:if test="${1 != kyujin.salaryformcd && 3 != kyujin.salaryformcd && 4 != kyujin.salaryformcd && 5 != kyujin.salaryformcd}">checked="checked"</c:if>
+						<c:if test="${1 != kyujin.salaryformcd && 3 != kyujin.salaryformcd &&
+						 4 != kyujin.salaryformcd && 5 != kyujin.salaryformcd}">checked="checked"</c:if>
 						tabindex="46"> その他</td>
 				</tr>
 				<tr>
@@ -472,18 +474,22 @@
 				</tr>
 				<tr>
 					<th>新規登録日</th>
-					<td><c:out value="${ kyujin.createdt }" /></td>
+					<td><input type="text" name="createdt" value="<fmt:formatDate value="${ kyujin.createdt }"
+					pattern="yyyy-MM-dd"/>" size="10" readonly>※編集不可</td>
 				</tr>
 				<tr>
 					<th>新規登録ユーザ</th>
-					<td><c:out value="${ kyujin.createuserid }" /></td>
+					<td><input type="text" name="createuserid"
+						value="<c:out value="${ kyujin.createuserid }" />" size="4" readonly>※編集不可</td>
 				<tr>
 					<th>最終更新日</th>
-					<td><c:out value="${ kyujin.updatedt }" /></td>
+					<td><input type="text" name="updatedt" value="<fmt:formatDate value="${ kyujin.updatedt }"
+					pattern="yyyy-MM-dd"/>" size="10" readonly>※編集不可</td>
 				</tr>
 				<tr>
 					<th>最終更新ユーザ</th>
-					<td><c:out value="${ kyujin.updateuserid }" /></td>
+					<td><input type="text" name="updateuserid"
+						value="<c:out value="${ kyujin.updateuserid }" />" size="4" readonly>※編集不可</td>
 				</tr>
 
 			</table>
@@ -491,7 +497,7 @@
 
 			<!-- 2やるべきメモ：別ウインドウで開いていないため閉じてしまうと再度立ち上げになるので戻る制御にしてください -->
 			<button type="button" class="main-b"
-				onClick="location.href='./staff-top'" tabindex="62">トップに戻る</button>
+				onClick="location.href='./job-search'" tabindex="62">求人一覧に戻る</button>
 
 			<!-- 3やりたかったメモ：押し間違えやすいので削除と戻るボタングレー等に色変えか位置変え検討-->
 				<c:if test="${ kyujin.no == null }">

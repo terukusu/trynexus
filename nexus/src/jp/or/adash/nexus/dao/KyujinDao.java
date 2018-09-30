@@ -300,9 +300,9 @@ public class KyujinDao {
 							rs.getInt("hiddenagemin"),
 							rs.getInt("hiddenagemax"),
 							rs.getString("hiddenetc"),
-							rs.getTimestamp("createdt"),
+							rs.getDate("createdt"),
 							rs.getString("createuserid"),
-							rs.getTimestamp("updatedt"),
+							rs.getDate("updatedt"),
 							rs.getString("updateuserid"),
 							rs.getString("deleteflag")));
 				}
