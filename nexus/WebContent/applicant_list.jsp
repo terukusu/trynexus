@@ -62,13 +62,13 @@
 	<main>
 	<h2>求職者情報検索</h2>
 	<div id="box">
-		<form action="/nexus/web/jobseeker-search" method="post">
+		<form action="/nexus/web/jobseeker-list" method="post">
 			<table>
 				<tr>
 					<td><p>求職者ID:</p> <input type="text" name="js_id" /></td>
 					<td><p>求職者かな名:</p> <input type="text" name="js_kana" /></td>
 					<td><p>担当職業紹介者:</p> <select name="st_name">
-							<option selected></option>
+							<option></option>
 							<c:forEach var="staff" items="${ st_name }">
 								<option value="${ staff.name }"><c:out
 										value="${ staff.name }" /></option>
