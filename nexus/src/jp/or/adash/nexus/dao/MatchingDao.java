@@ -57,7 +57,7 @@ public class MatchingDao {
 			ps.setString(6,matching.getAssessment());
 			ps.setString(7,matching.getNote());
 			ps.setString(8,matching.getCreateuserid());
-			ps.setString(9,matching.getUpDateuserid());
+			ps.setString(9,matching.getUpdateuserid());
 
 
 			// SQL文を実行する
@@ -75,22 +75,22 @@ public class MatchingDao {
 	 * @return 取得したデータ
 	 * @throws IOException
 	 */
-	public MatchingCase select(String id) throws IOException {
-		MatchingCase MatchingCase = null;
+	public MatchingCase select(int id) throws IOException {
+		MatchingCase matching = null;
 
 		// SQL文を生成する
 		StringBuffer sql = new StringBuffer();
 		sql.append("select * "
 				+ "from matchingcase "
-				+ "where kyujinno = ?; ");
+				+ "where id = ?; ");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
-			ps.setString(1, id);
+			ps.setInt(1, id);
 
 			// SQL文を実行する
 			try (ResultSet rs = ps.executeQuery()) {
 				//0取得結果をリストに格納する
 				while(rs.next()) {
-					MatchingCase= new MatchingCase(
+					matching = new MatchingCase(
 							rs.getInt("id"),
 							rs.getString("kyujinno"),
 							rs.getString("jobseekerid"),
@@ -112,7 +112,7 @@ public class MatchingDao {
 			throw new IOException(e);
 		}
 
-		return MatchingCase;
+		return matching;
 	}
 
 	/**
@@ -147,8 +147,8 @@ public class MatchingDao {
 			ps.setDate(5, DataCommons.convertToSqlDate(matching.getEnterdt()));
 			ps.setString(6, matching.getAssessment());
 			ps.setString(7, matching.getNote());
-			ps.setDate(8, DataCommons.convertToSqlDate(matching.getUpDatedt()));
-			ps.setString(9, matching.getUpDateuserid());
+			ps.setDate(8, DataCommons.convertToSqlDate(matching.getUpdatedt()));
+			ps.setString(9, matching.getUpdateuserid());
 			ps.setInt(10, matching.getId());
 
 			// SQL文を実行する
@@ -159,6 +159,7 @@ public class MatchingDao {
 
 		return count;
 	}
+
 }
 
 

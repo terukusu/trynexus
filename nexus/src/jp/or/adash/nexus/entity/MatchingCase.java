@@ -23,7 +23,7 @@ public class MatchingCase {
 	* updatedt 最終更新日
 	* updateuserid 最終更新ユーザー
 	 */
-	private Integer id;
+	private int id;
 	private String kyujinno;
 	private String jobseekerid;
 	private String staffid;
@@ -33,12 +33,12 @@ public class MatchingCase {
 	private String note;
 	private Date createdt;
 	private String createuserid;
-	private Date upDatedt;
-	private String upDateuserid;
+	private Date updatedt;
+	private String updateuserid;
 
-	public MatchingCase(Integer id, String kyujinno, String jobseekerid, String staffid, Date interviewdt, Date enterdt,
-			String assessment, String note, Date createdt, String createuserid, Date upDatedt,
-			String upDateuserid) {
+	public MatchingCase(int id, String kyujinno, String jobseekerid, String staffid, Date interviewdt, Date enterdt,
+			String assessment, String note, Date createdt, String createuserid, Date updatedt,
+			String updateuserid) {
 		this.id = id;
 		this.kyujinno = kyujinno;
 		this.jobseekerid = jobseekerid;
@@ -49,8 +49,8 @@ public class MatchingCase {
 		this.note = note;
 		this.createdt = createdt;
 		this.createuserid = createuserid;
-		this.upDatedt = upDatedt;
-		this.upDateuserid = upDateuserid;
+		this.updatedt = updatedt;
+		this.updateuserid = updateuserid;
 	}
 
 	/**
@@ -135,18 +135,18 @@ public class MatchingCase {
 
 	/**
 	 * 最終更新日を返す
-	 * @return upDatedt
+	 * @return updatedt
 	 */
-	public Date getUpDatedt() {
-		return upDatedt;
+	public Date getUpdatedt() {
+		return updatedt;
 	}
 
 	/**
 	 * 最終更新ユーザーを返す
-	 * @return upDateuserid
+	 * @return updateuserid
 	 */
-	public String getUpDateuserid() {
-		return upDateuserid;
+	public String getUpdateuserid() {
+		return updateuserid;
 	}
 
 }

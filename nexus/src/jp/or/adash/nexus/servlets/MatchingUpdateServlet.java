@@ -17,61 +17,57 @@ import jp.or.adash.nexus.entity.Staff;
 import jp.or.adash.nexus.services.MatchingService;
 
 /**
- * Servlet implementation class MaServlet
+ * マッチング情報更新のためのサーブレット
+ * @author pgjavaAT
  */
-@WebServlet("/web/match-regist")
-public class MatchingServlet extends HttpServlet {
+@WebServlet("/web/match-update")
+public class MatchingUpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	* @see HttpServlet#HttpServlet()
-	*/
-	public MatchingServlet() {
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public MatchingUpdateServlet() {
 		super();
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,
-			IOException {
-
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		HttpSession session = request.getSession(true);
 		Staff staff = (Staff) session.getAttribute("UserData");
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-		Integer id = Integer.parseInt(request.getParameter("id"));
+		int id = 0;
+		if (!request.getParameter("id").equals("")) {
+			id = Integer.parseInt(request.getParameter("id"));
+		}
 		String kyujinno = request.getParameter("kyujinno");
 		String jobseekerid = request.getParameter("jobseekerid");
-		String stffid = request.getParameter("staffid");
+		String staffid = request.getParameter("staffid");
 		Date interviewdt = null;
 		try {
-			interviewdt = sdf.parse(request.getParameter("interviewdt"));
+			interviewdt = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("interviewdt"));
 		} catch (ParseException e) {
-			// TODO 自動生成された catch ブロック
-			interviewdt = null;
+			e.printStackTrace();
 		}
-		//		request.getParameter("interviewdt");
 		Date enterdt = null;
 		try {
-			enterdt = sdf.parse(request.getParameter("enterdt"));
+			enterdt = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("enterdt"));
 		} catch (ParseException e) {
-			// TODO 自動生成された catch ブロック
-			enterdt = null;
+			e.printStackTrace();
 		}
-		//		request.getParameter("enterdt");
 		String assessment = request.getParameter("assessment");
 		String note = request.getParameter("note");
 		Date createdt = null;
-		Date upDatedt = null;
+		String createuserid = request.getParameter("createuserid");
+		Date updatedt = null;
+		String updateuserid = request.getParameter("updateuserid");
 
-		String createuserid = staff.getId();
-		String upDateuserid = staff.getId();
 
-		//1.2 マッチング結果オブジェクトを作成
-		MatchingCase matching = new MatchingCase(id, kyujinno, jobseekerid, stffid, interviewdt, enterdt, assessment, note,
-				createdt,
-				createuserid, upDatedt, upDateuserid);
+		MatchingCase matching = new MatchingCase(id, kyujinno, jobseekerid, staffid, interviewdt, enterdt,
+				assessment, note, createdt, createuserid, updatedt, updateuserid);
 
 		MatchingService service = new MatchingService();
 
@@ -88,7 +84,7 @@ public class MatchingServlet extends HttpServlet {
 			return;
 		}
 
-		service.insertMatchingCases(matching);
+		service.updateMatchingCase(matching);
 
 		//処理結果メッセージをリクエストに格納する
 		request.setAttribute("Staff", staff);
@@ -98,6 +94,14 @@ public class MatchingServlet extends HttpServlet {
 		//1.8 JSPにフォワード
 		request.getRequestDispatcher("/matchingregist.jsp")
 		.forward(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
 	}
 
 }

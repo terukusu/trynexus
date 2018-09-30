@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -87,9 +88,14 @@
 	</ul>
 
 
-	<form method="post" action="/nexus/web/match-regist">
+	<form id="form" method="post" action="">
 
-
+			<div class="listbox2">
+				<h4 class="word">マッチング事例の検索</h4>
+				<input type="text" class="word" name="id" cols="60" rows="1"
+					placeholder="マッチングNoを入力">
+				<input type="submit" value="検索" onclick="location.href='/nexus/web/match-search'">
+			</div>
 
 		<!--　　 　テーブル部分　-->
 
@@ -102,61 +108,74 @@
 
 			</tr>
 			<tr>
+				<td><font size="5">マッチングNo</font>
+				<td><input type="hidden" name="id" value="<c:out value="${ matching.id }" />">
+				<c:out value="${ matching.id }" />
+				</td>
+			</tr>
+			<tr>
 				<td><font size="5">求人No</font></td>
-				<td><input type="text" name="kyujinno" size="14"> <input
+				<td><input type="text" name="kyujinno"  value="<c:out value="${ matching.kyujinno }" />"><input
 					type="button" value="求人No一覧"
-					onclick="window.open('http://localhost:8080/nexus/web/job-search')"></td>
+					onclick="window.open('/nexus/web/job-search')"></td>
 
 			</tr>
 			<tr>
 				<td><font size="5">求職者No</font></td>
-				<td><input type="text" name="jobseekerid" size="8"> <input
+				<td><input type="text" name="jobseekerid"  value="<c:out value="${ matching.jobseekerid }" />"><input
 					type="button" value="求職者一覧"
-					onclick="window.open('http://localhost:8080/nexus/web/jobseeker-list')"></td>
+					onclick="window.open('/nexus/web/jobseeker-list')"></td>
 
 			</tr>
 			<tr>
 				<td><font size="5">入社日</font></td>
-				<td><input type="text" class="datepicker" name="enterdt"></td>
+				<td><input type="text" class="datepicker" name="enterdt"
+				value="<fmt:formatDate value="${ matching.enterdt }" pattern="yyyy-MM-dd"/>"></td>
 
 			</tr>
 			<tr>
 				<td><font size="5">評価</font></td>
-				<td><input name="assessment" type="radio" value="1"> 成功
-					<input name="assessment" type="radio" value="2"> 失敗 <input
-					name="assessment" type="radio" value="3" checked="checked">
+				<td><input name="assessment" type="radio" value="1"
+				<c:if test="${ 1 == matching.assessment }">checked="checked"</c:if>> 成功
+					<input name="assessment" type="radio" value="2"
+					<c:if test="${ 2 == matching.assessment }">checked="checked"</c:if>> 失敗
+					<input name="assessment" type="radio" value="3"
+					<c:if test="${ 1 != matching.assessment && 2 != matching.assessment }">checked="checked"</c:if>>
 					確認中</td>
 
 			</tr>
 			<tr>
 				<td><font size="5">面接日</font></td>
-
-				<td><input type="text" class="datepicker" name="interviewdt">
+				<td><input type="text" class="datepicker" name="interviewdt"
+				value="<fmt:formatDate value="${ matching.interviewdt }" pattern="yyyy-MM-dd"/>">
 				</td>
 
 			</tr>
 			<tr>
 				<td><font size="5">職業紹介者ID</font></td>
 				<td><input type="text" name="staffid" size="4"
-					value="<c:out value="${ Staff.id }" />"></td>
+					<c:if test="${ matching.staffid == null }">value="<c:out value="${ Staff.id }" />"</c:if>
+					<c:if test="${ matching.staffid != null }">value="<c:out value="${ matching.staffid }" />"</c:if>>
+					</td>
 
 			</tr>
 			<tr>
 				<td><font size="5">備考欄</font></td>
-				<td><textarea name="note" rows="7" cols="30"></textarea></td>
+				<td><textarea name="note" rows="7" cols="30"><c:out value="${ matching.note }" /></textarea></td>
 
 			</tr>
-
 		</table>
+			<button type="button" class="main-b"
+				onClick="location.href='./staff-top'">トップに戻る</button>
 			<c:if test="${ matching.id == null }">
 				<button type="submit" id="match-regist" class="main-b"
-					onclick="MovePages(this)" tabindex="61">登録</button>
+					onclick="MovePages(this)">登録</button>
 			</c:if>
-			<c:if test="${ matching.id != null }">
+			<c:if test="${ matching.id != null && matching.id != 0 }">
 				<button type="submit" id="match-update" class="main-b"
-					onclick="MovePages(this)" tabindex="61">更新</button>
+					onclick="MovePages(this)">更新</button>
 				<button type="submit" id="match-delete" class="main-b2"
-					onclick="MovePages(this)" tabindex="63">削除</button>
+					onclick="MovePages(this)">削除</button>
 			</c:if>
 	</form>
 
