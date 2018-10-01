@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import jp.or.adash.nexus.entity.MatchingCase;
 import jp.or.adash.nexus.utils.common.DataCommons;
 import jp.or.adash.nexus.utils.dao.Transaction;
+
 /**
  * マッチングデータアクセスクラス
  * @author ji
@@ -49,16 +50,15 @@ public class MatchingDao {
 		sql.append(")");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
 			//ps.setInt(1,matching.getId());
-			ps.setString(1,matching.getKyujinno());
-			ps.setString(2,matching.getJobseekerid());
-			ps.setString(3,matching.getStaffid());
-			ps.setDate(4,DataCommons.convertToSqlDate(matching.getInterviewdt()));
-			ps.setDate(5,DataCommons.convertToSqlDate(matching.getEnterdt()));
-			ps.setString(6,matching.getAssessment());
-			ps.setString(7,matching.getNote());
-			ps.setString(8,matching.getCreateuserid());
-			ps.setString(9,matching.getUpdateuserid());
-
+			ps.setString(1, matching.getKyujinno());
+			ps.setString(2, matching.getJobseekerid());
+			ps.setString(3, matching.getStaffid());
+			ps.setDate(4, DataCommons.convertToSqlDate(matching.getInterviewdt()));
+			ps.setDate(5, DataCommons.convertToSqlDate(matching.getEnterdt()));
+			ps.setString(6, matching.getAssessment());
+			ps.setString(7, matching.getNote());
+			ps.setString(8, matching.getCreateuserid());
+			ps.setString(9, matching.getUpdateuserid());
 
 			// SQL文を実行する
 			count = ps.executeUpdate();
@@ -89,7 +89,7 @@ public class MatchingDao {
 			// SQL文を実行する
 			try (ResultSet rs = ps.executeQuery()) {
 				//0取得結果をリストに格納する
-				while(rs.next()) {
+				while (rs.next()) {
 					matching = new MatchingCase(
 							rs.getInt("id"),
 							rs.getString("kyujinno"),
@@ -102,13 +102,12 @@ public class MatchingDao {
 							rs.getDate("createdt"),
 							rs.getString("createuserid"),
 							rs.getDate("upDatedt"),
-							rs.getString("updateuserid")
-							);
+							rs.getString("updateuserid"));
 				}
-			} catch(SQLException e) {
+			} catch (SQLException e) {
 				throw new IOException(e);
 			}
-		} catch(SQLException e) {
+		} catch (SQLException e) {
 			throw new IOException(e);
 		}
 
@@ -153,14 +152,32 @@ public class MatchingDao {
 
 			// SQL文を実行する
 			count = ps.executeUpdate();
-		} catch(SQLException e) {
+		} catch (SQLException e) {
 			throw new IOException(e);
 		}
 
 		return count;
 	}
 
+	public Integer countNum() {
+		Integer count = 0;
+
+		// SQL文を生成する
+		StringBuffer sql = new StringBuffer();
+		sql.append("select count(*) cnt from matchingcase");
+		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
+			// SQL文を実行する
+			try (ResultSet rs = ps.executeQuery()) {
+				//0取得結果をリストに格納する
+				while (rs.next()) {
+					count = rs.getInt("cnt");
+				}
+				// TODO trycatchが必要かどうか調べる
+			} catch (SQLException e) {
+			}
+		} catch (SQLException e) {
+		}
+
+		return count;
+	}
 }
-
-
-

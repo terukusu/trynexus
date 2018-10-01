@@ -26,4 +26,12 @@ public class MessageCommons {
 	 * 更新失敗メッセージ
 	 */
 	public static final String MSG_UPDATE_FAILURE = "更新が失敗しました。";
+	/**
+	 * 該当する求人がない場合のメッセージ
+	 */
+	public static final String MSG_KYUJIN_FAILURE = "該当する求人がありません。";
+	/**
+	 * 該当する求職者がない場合のメッセージ
+	 */
+	public static final String MSG_JOBSEEKER_FAILURE = "該当する求職者がありません。";
 }

@@ -223,12 +223,40 @@ public class MatchingService {
 			matching = dao.select(id);
 
 		} catch (IOException e) {
-			// エラーメッセージをセットする
+			// 1トランザクションをロールバックする
+			transaction.rollback();
+
+			// 1エラーメッセージをセットする
+			messages.add(MessageCommons.ERR_DB_CONNECT);
 		} finally {
 			// データベース接続を終了する
 			transaction.close();
 		}
 
 		return matching;
+	}
+
+	public Integer getId() {
+		Integer count = 0;
+		try {
+			// データベース接続を開始する
+			transaction.open();
+
+			// idを元にマッチング事例を取得
+			MatchingDao dao = new MatchingDao(transaction);
+			count = dao.countNum();
+
+		} catch (Exception e) {
+			// 1トランザクションをロールバックする
+			transaction.rollback();
+
+			// 1エラーメッセージをセットする
+			messages.add(MessageCommons.ERR_DB_CONNECT);
+		} finally {
+			// データベース接続を終了する
+			transaction.close();
+		}
+
+		return count;
 	}
 }
