@@ -40,8 +40,8 @@ public class MatchingSearchServlet extends HttpServlet {
 		MatchingService service = new MatchingService();
 
 		//idが入力されていた場合、そのidのマッチング事例を表示する。
-		if (request.getParameter("id") != null) {
-			int id = Integer.parseInt(request.getParameter("id"));
+		if (request.getParameter("no") != null) {
+			int id = Integer.parseInt(request.getParameter("no"));
 
 			matching = service.getMatching(id);
 			//処理結果メッセージをリクエストに格納する

@@ -40,8 +40,9 @@ public class MatchingUpdateServlet extends HttpServlet {
 		Staff staff = (Staff) session.getAttribute("UserData");
 
 		int id = 0;
-		if (!request.getParameter("id").equals("")) {
-			id = Integer.parseInt(request.getParameter("id"));
+		String testid = request.getParameter("id");
+		if (request.getParameter("no") != null) {
+			id = Integer.parseInt(request.getParameter("no"));
 		}
 		String kyujinno = request.getParameter("kyujinno");
 		String jobseekerid = request.getParameter("jobseekerid");
@@ -63,7 +64,7 @@ public class MatchingUpdateServlet extends HttpServlet {
 		Date createdt = null;
 		String createuserid = request.getParameter("createuserid");
 		Date updatedt = null;
-		String updateuserid = request.getParameter("updateuserid");
+		String updateuserid = staff.getId();
 
 
 		MatchingCase matching = new MatchingCase(id, kyujinno, jobseekerid, staffid, interviewdt, enterdt,

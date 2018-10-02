@@ -134,8 +134,7 @@ public class MatchingDao {
 		sql.append(" enterdt = ?,");
 		sql.append(" assessment = ?,");
 		sql.append(" note = ?,");
-		sql.append(" updatedt = ?,");
-		sql.append(" updateuserid = ?,");
+		sql.append(" updateuserid = ?");
 		sql.append(" where");
 		sql.append(" id = ?");
 		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
@@ -147,9 +146,8 @@ public class MatchingDao {
 			ps.setDate(5, DataCommons.convertToSqlDate(matching.getEnterdt()));
 			ps.setString(6, matching.getAssessment());
 			ps.setString(7, matching.getNote());
-			ps.setDate(8, DataCommons.convertToSqlDate(matching.getUpdatedt()));
-			ps.setString(9, matching.getUpdateuserid());
-			ps.setInt(10, matching.getId());
+			ps.setString(8, matching.getUpdateuserid());
+			ps.setInt(9, matching.getId());
 
 			// SQL文を実行する
 			count = ps.executeUpdate();

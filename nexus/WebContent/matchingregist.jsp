@@ -109,7 +109,7 @@
 			</tr>
 			<tr>
 				<td><font size="5">マッチングNo</font>
-				<td><input type="hidden" name="id" value="<c:out value="${ matching.id }" />">
+				<td><input type="hidden" name="no" value="<c:out value="${ matching.id }" />">
 				<c:out value="${ matching.id }" />
 				</td>
 			</tr>
