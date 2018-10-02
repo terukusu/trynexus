@@ -56,8 +56,8 @@
 							<li><a href="/nexus/web/match-disp">マッチング登録<i
 									class="fas fa-angle-right"></i></a></li>
 						</ul></li>
-					<li><a href="/nexus/web/account-list"><i
-							class="far fa-bookmark"></i>管理</a></li>
+					<c:if test="${Staff.authority == 1}"><li><a href="/nexus/web/account-list"><i
+							class="far fa-bookmark"></i>管理</a></li></c:if>
 				</ul>
 			</nav>
 			<div class="user">
