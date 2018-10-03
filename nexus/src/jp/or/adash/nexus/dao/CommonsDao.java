@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 import jp.or.adash.nexus.utils.dao.Transaction;
 
-public class DBCheckDao {
+public class CommonsDao {
 
 	/**
 	 * データベース接続オブジェクト
@@ -19,7 +19,7 @@ public class DBCheckDao {
 	 * コンストラクタ
 	 * @param transaction トランザクションオブジェクト
 	 */
-	public DBCheckDao(Transaction transaction) {
+	public CommonsDao(Transaction transaction) {
 		this.conn = transaction.getConnection();
 	}
 

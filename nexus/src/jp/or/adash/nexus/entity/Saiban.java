@@ -19,12 +19,14 @@ public class Saiban {
 	private int kyujinsaiban;
 	private int companysaiban;
 	private int staffsaiban;
+	private int matchingsaiban;
 
-	public Saiban(int staffsaiban, int jobseekersaiban, int kyujinsaiban, int companysaiban) {
+	public Saiban(int staffsaiban, int jobseekersaiban, int kyujinsaiban, int companysaiban, int matchingsaiban) {
 		this.staffsaiban =staffsaiban;
 		this.jobseekersaiban = jobseekersaiban;
 		this.kyujinsaiban = kyujinsaiban;
 		this.companysaiban = companysaiban;
+		this.matchingsaiban = matchingsaiban;
 	}
 
 
@@ -59,5 +61,13 @@ public class Saiban {
 	 */
 	public int getStaffsaiban() {
 		return staffsaiban;
+	}
+
+	/**
+	 * マッチング事例ID採番を返す
+	 * @return
+	 */
+	public int getMatchingsaiban() {
+		return matchingsaiban;
 	}
 }

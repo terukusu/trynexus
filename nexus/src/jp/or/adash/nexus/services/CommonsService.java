@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import jp.or.adash.nexus.dao.DBCheckDao;
+import jp.or.adash.nexus.dao.CommonsDao;
 import jp.or.adash.nexus.utils.common.MessageCommons;
 import jp.or.adash.nexus.utils.dao.Transaction;
 
@@ -12,7 +12,7 @@ import jp.or.adash.nexus.utils.dao.Transaction;
  * データベースへデータがあるか確認する処理を定義するクラス
  * @author pgjavaAT
  */
-public class DBCheckService {
+public class CommonsService {
 
 	String errMsg = null;
 
@@ -29,7 +29,7 @@ public class DBCheckService {
 	/**
 	 * コンストラクタ
 	 */
-	public DBCheckService() {
+	public CommonsService() {
 		transaction = new Transaction();
 		messages = new ArrayList<String>();
 	}
@@ -50,7 +50,7 @@ public class DBCheckService {
 			transaction.beginTrans();
 
 			// 1商品単価を取得する
-			DBCheckDao dao = new DBCheckDao(transaction);
+			CommonsDao dao = new CommonsDao(transaction);
 			result = dao.selectKyujinno(no);
 
 			if(!result) {
@@ -89,7 +89,7 @@ public class DBCheckService {
 			transaction.beginTrans();
 
 			// 1商品単価を取得する
-			DBCheckDao dao = new DBCheckDao(transaction);
+			CommonsDao dao = new CommonsDao(transaction);
 			result = dao.selectJobseeker(id);
 
 			if(result == false){
