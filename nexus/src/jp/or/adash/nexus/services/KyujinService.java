@@ -294,7 +294,7 @@ public class KyujinService {
 		}
 
 		// 年齢の下限・上限の値が適切か
-		msg = DataCommons.chkInt(kyujin.getAgemin());
+		msg = DataCommons.chkInt(String.valueOf(kyujin.getAgemin().toString()));
 		if (msg != null) {
 			messages.add(msg);
 			result = false;
@@ -304,7 +304,7 @@ public class KyujinService {
 			messages.add(msg);
 			result = false;
 		}
-		msg = DataCommons.chkInt(kyujin.getAgemax());
+		msg = DataCommons.chkInt(String.valueOf(kyujin.getAgemax().toString()));
 		if (msg != null) {
 			messages.add(msg);
 			result = false;
@@ -320,7 +320,7 @@ public class KyujinService {
 		}
 
 		// 基本給の下限・上限の値が適切か
-		msg = DataCommons.chkInt(kyujin.getSalarymin());
+		msg = DataCommons.chkInt(String.valueOf(kyujin.getSalarymin().toString()));
 		if (msg != null) {
 			messages.add(msg);
 			result = false;
@@ -330,7 +330,7 @@ public class KyujinService {
 			messages.add(msg);
 			result = false;
 		}
-		msg = DataCommons.chkInt(kyujin.getSalarymax());
+		msg = DataCommons.chkInt(String.valueOf(kyujin.getSalarymax().toString()));
 		if (msg != null) {
 			messages.add(msg);
 			result = false;
@@ -396,7 +396,7 @@ public class KyujinService {
 				messages.add(msg);
 				result = false;
 			}
-			msg = DataCommons.chkInt(kyujin.getEstablishdt());
+			msg = DataCommons.chkInt(String.valueOf(kyujin.getEstablishdt().toString()));
 			if (msg != null) {
 				messages.add(msg);
 				result = false;
@@ -463,7 +463,7 @@ public class KyujinService {
 			result = false;
 		}
 		// （求職者非公開）年齢の下限・上限の値が適切か
-		msg = DataCommons.chkInt(kyujin.getHiddenagemin());
+		msg = DataCommons.chkInt(String.valueOf(kyujin.getHiddenagemin().toString()));
 		if (msg != null) {
 			messages.add(msg);
 			result = false;
@@ -473,7 +473,7 @@ public class KyujinService {
 			messages.add(msg);
 			result = false;
 		}
-		msg = DataCommons.chkInt(kyujin.getHiddenagemax());
+		msg = DataCommons.chkInt(String.valueOf(kyujin.getHiddenagemax().toString()));
 		if (msg != null) {
 			messages.add(msg);
 			result = false;

@@ -96,4 +96,27 @@ public class CommonsDao {
 		}
 		return result;
 	}
+
+	public String getStaffName(String id) throws IOException {
+
+		StringBuffer sql = new StringBuffer();
+		sql.append("select  name "
+				+ "from staff "
+				+ "where  id = ?; ");
+		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
+			ps.setString(1, id);
+
+			// SQL文を実行する
+			try (ResultSet rs = ps.executeQuery()) {
+				while (rs.next()) {
+					 return rs.getString("name");
+				}
+			} catch (SQLException e) {
+				throw new IOException(e);
+			}
+		} catch (SQLException e) {
+			throw new IOException(e);
+		}
+		return null;
+	}
 }

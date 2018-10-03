@@ -111,6 +111,40 @@ public class CommonsService {
 
 		return result;
 	}
+
+	public String checkStaffName(String id) {
+		String staffName = null;
+
+		try {
+			// 1データベース接続を開始する
+			transaction.open();
+
+			// 1トランザクションを開始する
+			transaction.beginTrans();
+
+			// 1商品単価を取得する
+			CommonsDao dao = new CommonsDao(transaction);
+			staffName = dao.getStaffName(id);
+
+			if(staffName == null){
+				messages.add(MessageCommons.MSG_STAFFNAME_FAILURE);
+			}
+			//1 トランザクションをコミットする
+			transaction.commit();
+
+		} catch (IOException e) {
+			// 1トランザクションをロールバックする
+			transaction.rollback();
+
+			// 1エラーメッセージをセットする
+			messages.add(MessageCommons.ERR_DB_CONNECT);
+		} finally {
+			//1 データベース接続をを終了する
+			transaction.close();
+		}
+
+		return staffName;
+	}
 	/**
 	 * 処理結果メッセージを取得する
 	 * @return 処理結果メッセージ

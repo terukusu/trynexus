@@ -106,8 +106,8 @@
 				<tr>
 					<th width="20%">ID</th>
 					<td><input type="hidden" name="id"
-						value="<c:out value="${ info.id }" />"> <c:out
-							value="${ info.id }" /></td>
+						value="<c:out value="${ info.id }" />">
+				<fmt:formatNumber value="${ info.id }" pattern="00000000"/></td>
 				</tr>
 				<tr>
 					<th>名前</th>

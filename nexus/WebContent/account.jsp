@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -80,7 +81,7 @@
 							class="main-b" type="submit" value="編集">
 					</form>
 				</td>
-				<td><c:out value="${ account.id }" /></td>
+				<td><fmt:formatNumber value="${ account.id }" pattern="0000"/></td>
 				<td><c:out value="${ account.name }" /></td>
 				<td><c:out value="${ account.kana }" /></td>
 				<td><c:if test="${account.authority == 1}">管理者</c:if> <c:if
