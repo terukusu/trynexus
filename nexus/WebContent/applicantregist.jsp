@@ -282,7 +282,7 @@
 				<tr>
 					<th>担当職業者紹介者ID</th>
 					<td><input type="text" name="tantoustaffid"
-						value="<c:out value="${ seeker.tantoustaffid }" />"></td>
+						value="<c:out value="${ Staff.id }" />"></td>
 				</tr>
 				<tr>
 					<th>パスワード</th>

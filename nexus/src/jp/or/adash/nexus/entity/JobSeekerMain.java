@@ -35,6 +35,7 @@ public class JobSeekerMain{
 	* licenseetc その他免許
 	* pasokonskill パソコンスキル
 	* caution 留意点
+	* tantoustaffname 担当職業紹介者名
 	* tantoustaffid 担当職業紹介者ID
 	* password パスワード
 	* createdt 新規登録日

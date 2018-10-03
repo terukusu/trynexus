@@ -8,6 +8,11 @@ import java.sql.SQLException;
 
 import jp.or.adash.nexus.utils.dao.Transaction;
 
+/**
+ * 共通で使用するデータベースアクセスクラス
+ * @author pgjavaAT
+ *
+ */
 public class CommonsDao {
 
 	/**

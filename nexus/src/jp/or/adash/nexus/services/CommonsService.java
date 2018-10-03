@@ -9,7 +9,7 @@ import jp.or.adash.nexus.utils.common.MessageCommons;
 import jp.or.adash.nexus.utils.dao.Transaction;
 
 /**
- * データベースへデータがあるか確認する処理を定義するクラス
+ * 共通で使用するデータベースへの処理を定義するクラス
  * @author pgjavaAT
  */
 public class CommonsService {
