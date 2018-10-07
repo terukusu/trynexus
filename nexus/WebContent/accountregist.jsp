@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -76,7 +77,8 @@
 			<tr>
 				<td>アカウントID</td>
 				<td><input type="hidden" name="hiddenid"
-					value="<c:out value="${ staff.id }"/>" required></td>
+					value="<fmt:formatNumber
+					value="${ staff.id }" pattern="0000"/>" required></td>
 			</tr>
 			<tr>
 				<td>氏名</td>

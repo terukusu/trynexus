@@ -34,4 +34,8 @@ public class MessageCommons {
 	 * 該当する求職者がない場合のメッセージ
 	 */
 	public static final String MSG_JOBSEEKER_FAILURE = "該当する求職者がありません。";
+	/**
+	 * 該当するスタッフがない場合のメッセージ
+	 */
+	public static final String MSG_STAFFNAME_FAILURE = "該当するスタッフがいません";
 }

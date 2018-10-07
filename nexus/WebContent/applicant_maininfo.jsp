@@ -106,8 +106,8 @@
 				<tr>
 					<th width="20%">ID</th>
 					<td><input type="hidden" name="id"
-						value="<c:out value="${ info.id }" />"> <c:out
-							value="${ info.id }" /></td>
+						value="<c:out value="${ info.id }" />">
+				<fmt:formatNumber value="${ info.id }" pattern="00000000"/></td>
 				</tr>
 				<tr>
 					<th>名前</th>
@@ -690,14 +690,14 @@
 				<tr>
 					<th>担当職業者紹介者氏名</th>
 					<td><input type="hidden" name="tantoustaffname"
-						value="<c:out value="${ Staff.name }" />"> <c:out
-							value="${ Staff.name }" /></td>
+						value="<c:out value="${ info.tantoustaffname }" />"> <c:out
+							value="${ info.tantoustaffname }" /></td>
 				</tr>
 				<tr>
 					<th>担当職業者紹介者ID</th>
 					<td><input type="hidden" name="tantoustaffid"
-						value="<c:out value="${ Staff.id }" />"> <c:out
-							value="${ Staff.id }" /></td>
+						value="<c:out value="${ info.tantoustaffid }" />"> <c:out
+							value="${ info.tantoustaffid }" /></td>
 				</tr>
 			</table>
 			<input type="submit" value="更新" class="main-b">

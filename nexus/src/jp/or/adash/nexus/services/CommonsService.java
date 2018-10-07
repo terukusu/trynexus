@@ -4,15 +4,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import jp.or.adash.nexus.dao.DBCheckDao;
+import jp.or.adash.nexus.dao.CommonsDao;
 import jp.or.adash.nexus.utils.common.MessageCommons;
 import jp.or.adash.nexus.utils.dao.Transaction;
 
 /**
- * データベースへデータがあるか確認する処理を定義するクラス
+ * 共通で使用するデータベースへの処理を定義するクラス
  * @author pgjavaAT
  */
-public class DBCheckService {
+public class CommonsService {
 
 	String errMsg = null;
 
@@ -29,7 +29,7 @@ public class DBCheckService {
 	/**
 	 * コンストラクタ
 	 */
-	public DBCheckService() {
+	public CommonsService() {
 		transaction = new Transaction();
 		messages = new ArrayList<String>();
 	}
@@ -50,7 +50,7 @@ public class DBCheckService {
 			transaction.beginTrans();
 
 			// 1商品単価を取得する
-			DBCheckDao dao = new DBCheckDao(transaction);
+			CommonsDao dao = new CommonsDao(transaction);
 			result = dao.selectKyujinno(no);
 
 			if(!result) {
@@ -89,7 +89,7 @@ public class DBCheckService {
 			transaction.beginTrans();
 
 			// 1商品単価を取得する
-			DBCheckDao dao = new DBCheckDao(transaction);
+			CommonsDao dao = new CommonsDao(transaction);
 			result = dao.selectJobseeker(id);
 
 			if(result == false){
@@ -110,6 +110,40 @@ public class DBCheckService {
 		}
 
 		return result;
+	}
+
+	public String checkStaffName(String id) {
+		String staffName = null;
+
+		try {
+			// 1データベース接続を開始する
+			transaction.open();
+
+			// 1トランザクションを開始する
+			transaction.beginTrans();
+
+			// 1商品単価を取得する
+			CommonsDao dao = new CommonsDao(transaction);
+			staffName = dao.getStaffName(id);
+
+			if(staffName == null){
+				messages.add(MessageCommons.MSG_STAFFNAME_FAILURE);
+			}
+			//1 トランザクションをコミットする
+			transaction.commit();
+
+		} catch (IOException e) {
+			// 1トランザクションをロールバックする
+			transaction.rollback();
+
+			// 1エラーメッセージをセットする
+			messages.add(MessageCommons.ERR_DB_CONNECT);
+		} finally {
+			//1 データベース接続をを終了する
+			transaction.close();
+		}
+
+		return staffName;
 	}
 	/**
 	 * 処理結果メッセージを取得する

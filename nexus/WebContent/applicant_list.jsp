@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -105,7 +106,7 @@
 							value="<c:out value="${ jobseeker.id }" />">詳細</button>
 					</form>
 				</td>
-				<td><c:out value="${ jobseeker.id }" /></td>
+				<td><fmt:formatNumber value="${ jobseeker.id }" pattern="00000000"/></td>
 				<td><c:out value="${ jobseeker.js_name }" /></td>
 				<td><c:if test="${ jobseeker.sex == 1 }">男</c:if> <c:if
 						test="${ jobseeker.sex == 2 }">女</c:if></td>

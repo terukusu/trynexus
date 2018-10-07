@@ -8,7 +8,12 @@ import java.sql.SQLException;
 
 import jp.or.adash.nexus.utils.dao.Transaction;
 
-public class DBCheckDao {
+/**
+ * 共通で使用するデータベースアクセスクラス
+ * @author pgjavaAT
+ *
+ */
+public class CommonsDao {
 
 	/**
 	 * データベース接続オブジェクト
@@ -19,7 +24,7 @@ public class DBCheckDao {
 	 * コンストラクタ
 	 * @param transaction トランザクションオブジェクト
 	 */
-	public DBCheckDao(Transaction transaction) {
+	public CommonsDao(Transaction transaction) {
 		this.conn = transaction.getConnection();
 	}
 
@@ -90,5 +95,28 @@ public class DBCheckDao {
 			throw new IOException(e);
 		}
 		return result;
+	}
+
+	public String getStaffName(String id) throws IOException {
+
+		StringBuffer sql = new StringBuffer();
+		sql.append("select  name "
+				+ "from staff "
+				+ "where  id = ?; ");
+		try (PreparedStatement ps = this.conn.prepareStatement(sql.toString())) {
+			ps.setString(1, id);
+
+			// SQL文を実行する
+			try (ResultSet rs = ps.executeQuery()) {
+				while (rs.next()) {
+					 return rs.getString("name");
+				}
+			} catch (SQLException e) {
+				throw new IOException(e);
+			}
+		} catch (SQLException e) {
+			throw new IOException(e);
+		}
+		return null;
 	}
 }
